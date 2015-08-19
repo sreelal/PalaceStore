@@ -66,7 +66,14 @@
     else {
         _productImage.image = [UIImage imageNamed:@"no_image.png"];
     }
+}
 
+- (IBAction)cartAction:(id)sender {
+    
+}
+
+- (IBAction)wishlistAction:(id)sender {
+    
 }
 
 /*
