@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ItemView">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="twl-ml-Io9">
+                    <rect key="frame" x="20" y="5" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="EWy-Da-bvo"/>
+                        <constraint firstAttribute="height" constant="80" id="YaD-fl-ng3"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLabelLabelLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haL-6M-3WZ">
+                    <rect key="frame" x="8" y="88" width="104" height="32"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3I-T4-Hal">
+                    <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Fio-ht-UtW"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="K1e-85-J6E">
+                    <rect key="frame" x="50" y="35" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="centerX" secondItem="twl-ml-Io9" secondAttribute="centerX" id="4W8-4e-XYN"/>
+                <constraint firstAttribute="bottom" secondItem="k3I-T4-Hal" secondAttribute="bottom" id="8lA-yn-sVz"/>
+                <constraint firstItem="haL-6M-3WZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="V8v-MV-lng"/>
+                <constraint firstAttribute="trailing" secondItem="haL-6M-3WZ" secondAttribute="trailing" constant="8" id="bju-PY-JZB"/>
+                <constraint firstItem="twl-ml-Io9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="eX6-k6-uip"/>
+                <constraint firstAttribute="trailing" secondItem="k3I-T4-Hal" secondAttribute="trailing" id="fug-HA-BTX"/>
+                <constraint firstItem="k3I-T4-Hal" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hf1-aO-iel"/>
+                <constraint firstItem="k3I-T4-Hal" firstAttribute="centerX" secondItem="K1e-85-J6E" secondAttribute="centerX" id="l6v-0W-wnw"/>
+                <constraint firstItem="k3I-T4-Hal" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lPM-kM-aVL"/>
+                <constraint firstItem="haL-6M-3WZ" firstAttribute="top" secondItem="twl-ml-Io9" secondAttribute="bottom" constant="3" id="nBS-ud-qhH"/>
+                <constraint firstItem="k3I-T4-Hal" firstAttribute="centerY" secondItem="K1e-85-J6E" secondAttribute="centerY" constant="15" id="p8L-q9-AzH"/>
+                <constraint firstAttribute="bottom" secondItem="haL-6M-3WZ" secondAttribute="bottom" id="xiX-ub-P6u"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="activity" destination="K1e-85-J6E" id="QpH-s8-GOj"/>
+                <outlet property="btn" destination="k3I-T4-Hal" id="eQJ-ro-SPR"/>
+                <outlet property="imgView" destination="twl-ml-Io9" id="wfn-oA-Gut"/>
+                <outlet property="label" destination="haL-6M-3WZ" id="qE3-nj-DVQ"/>
+            </connections>
+            <point key="canvasLocation" x="117" y="125"/>
+        </view>
+    </objects>
+</document>
