@@ -104,7 +104,7 @@
 		E9E4E76A1B7386F100030E25 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E7691B7386F100030E25 /* Products.m */; };
 		E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76C1B7386F100030E25 /* Product_Details.m */; };
 		E9E4E7701B7386F100030E25 /* Product_Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76F1B7386F100030E25 /* Product_Attributes.m */; };
-		E9FCF67B1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */; };
+		FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,7 +277,7 @@
 		E9E4E76E1B7386F100030E25 /* Product_Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Attributes.h; sourceTree = "<group>"; };
 		E9E4E76F1B7386F100030E25 /* Product_Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Attributes.m; sourceTree = "<group>"; };
 		E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
-		E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -439,7 +439,7 @@
 				2EB7BBFC1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.h */,
 				2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */,
 				E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */,
-				E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */,
+				FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -850,7 +850,6 @@
 				E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */,
 				68B447AC1B47DB1900E470BF /* SwipeView.m in Sources */,
 				2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */,
-				E9FCF67B1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m in Sources */,
 				2E2161B01B648932008CF219 /* PalaceStore.xcdatamodeld in Sources */,
 				2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */,
 				68B5C8D91B47AEB600F3FD02 /* Banner.m in Sources */,
@@ -872,6 +871,7 @@
 				2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */,
 				E9A0AB381B74DAAB000ED4D3 /* NSNull+Empty.m in Sources */,
 				2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */,
+				FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */,
 				E989101C1B733B7D00F4466B /* PSProductDetailsViewController.m in Sources */,
 				E9E4E76A1B7386F100030E25 /* Products.m in Sources */,
 				2E207C101B497EAA00F74840 /* ItemView.m in Sources */,

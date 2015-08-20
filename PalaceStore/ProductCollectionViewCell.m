@@ -27,6 +27,11 @@
     self.priceInfo.text = _priceinformation;
     self.productInfo.text = product.name;
     
+    [_activity setHidesWhenStopped:YES];
+    [_activity setHidden:NO];
+    [_activity startAnimating];
+
+    
     [HelperClass addBorderForView:_bgView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
     _bgView.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.2];
 
@@ -47,7 +52,7 @@
                 
                 [HelperClass loadImageWithURL:imgURL andCompletionBlock:^(UIImage *img, NSData *imgData) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [_activity stopAnimating];
+                       [_activity stopAnimating];
                         if (img) _productImage.image = img;
                     });
                     
