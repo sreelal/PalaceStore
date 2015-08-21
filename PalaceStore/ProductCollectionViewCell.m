@@ -10,6 +10,7 @@
 #import "HelperClass.h"
 #import "PSProductViewController.h"
 #import "UIColor+CustomColor.h"
+#import "Cart.h"
 
 
 @interface ProductCollectionViewCell () {
@@ -75,7 +76,21 @@
 
 - (IBAction)cartAction:(id)sender
 {
+    Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
     
+    cartObj.category_id = self.selectedProductObj.category_id;
+    cartObj.price = self.selectedProductObj.price;
+    cartObj.product_id = self.selectedProductObj.product_id;
+    cartObj.model = self.selectedProductObj.model;
+    cartObj.name = self.selectedProductObj.name;
+    cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+    
+    [[DatabaseManager sharedInstance]saveContext];
+    
+    
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+
 }
 
 - (IBAction)wishlistAction:(id)sender

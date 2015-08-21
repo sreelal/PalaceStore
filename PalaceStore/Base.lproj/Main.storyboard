@@ -237,7 +237,9 @@
                                                         <constraint firstAttribute="bottom" secondItem="Lo9-Yf-Fmb" secondAttribute="bottom" id="Boo-vz-Vak">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="4"/>
                                                         </constraint>
-                                                        <constraint firstItem="Ylt-bU-AhW" firstAttribute="centerX" secondItem="RLQ-zU-nWd" secondAttribute="centerX" constant="0.5" id="Hbv-mz-elR"/>
+                                                        <constraint firstItem="Ylt-bU-AhW" firstAttribute="centerX" secondItem="RLQ-zU-nWd" secondAttribute="centerX" constant="0.5" id="Hbv-mz-elR">
+                                                            <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                                        </constraint>
                                                         <constraint firstAttribute="trailing" secondItem="Lo9-Yf-Fmb" secondAttribute="trailing" id="JeQ-iB-Y5H">
                                                             <variation key="heightClass=regular-widthClass=compact" constant="5"/>
                                                         </constraint>

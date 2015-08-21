@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PalaceStore/ProductCollectionViewCell.h"
-            timestampString = "461787910.780784"
+            timestampString = "461875298.267639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "activity"
             landmarkType = "19">
          </BreakpointContent>
@@ -52,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PalaceStore/ProductCollectionViewCell.m"
-            timestampString = "461788729.099836"
+            timestampString = "461875298.267639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "-loadProductInformation:"
             landmarkType = "5">
          </BreakpointContent>

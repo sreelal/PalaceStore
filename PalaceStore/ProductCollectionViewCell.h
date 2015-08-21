@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
 @property (weak, nonatomic) IBOutlet UILabel *productInfo;
 @property (weak, nonatomic) IBOutlet UILabel *priceInfo;
+@property(nonatomic, strong) Products * selectedProductObj;
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) IBOutlet UIView *bgView;
