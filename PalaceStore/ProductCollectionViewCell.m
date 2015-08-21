@@ -73,11 +73,13 @@
     }
 }
 
-- (IBAction)cartAction:(id)sender {
+- (IBAction)cartAction:(id)sender
+{
     
 }
 
-- (IBAction)wishlistAction:(id)sender {
+- (IBAction)wishlistAction:(id)sender
+{
     
 }
 
