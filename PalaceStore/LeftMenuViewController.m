@@ -6,7 +6,12 @@
 //  Copyright (c) 2015 Sreelal H. All rights reserved.
 //
 
+#import "RESideMenu.h"
+
 #import "LeftMenuViewController.h"
+
+#import "CartTableViewController.h"
+#import "PSHomeViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -19,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,10 +59,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if ((self.delegate!=nil) && ([self.delegate respondsToSelector:@selector(didSelectMenuItemAtIndex:)])) {
+//    if ((self.delegate!=nil) && ([self.delegate respondsToSelector:@selector(didSelectMenuItemAtIndex:)])) {
+//        
+//        [self.delegate didSelectMenuItemAtIndex:indexPath.row];
+//    }
+   
+    if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Home"])
+    {
+        PSHomeViewController * homeObj = (PSHomeViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"homeNavigationVC"];
+        [self.sideMenuViewController setContentViewController:homeObj];
         
-        [self.delegate didSelectMenuItemAtIndex:indexPath.row];
     }
-}
+    
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Cart"])
+    {
+        CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+        UINavigationController * cartNav = [[UINavigationController alloc]initWithRootViewController:cartObj];
+        [self.sideMenuViewController setContentViewController:cartNav];
+ 
+    }
+    [self.sideMenuViewController hideMenuViewController];
+
+   }
 
 @end

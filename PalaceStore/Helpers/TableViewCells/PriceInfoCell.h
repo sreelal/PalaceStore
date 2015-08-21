@@ -12,5 +12,7 @@
 
 @interface PriceInfoCell : UITableViewCell
 
+@property(nonatomic, strong) Products * currentProductObj
+;
 - (void)loadProductInformation:(Products*)productInfo;
 @end
