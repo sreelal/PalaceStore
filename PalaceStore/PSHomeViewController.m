@@ -18,6 +18,7 @@
 #import "Banner.h"
 #import "Constants.h"
 
+#import "ProfileViewController.h"
 
 
 @class DatabaseHandler;
@@ -39,6 +40,9 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
+   
+    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc]initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(ProfileView:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
     
     self.title = @"Palace";
     
@@ -50,7 +54,10 @@
     
     [self loadHomeData];
 }
-
+-(IBAction)ProfileView:(id)sender
+{
+    
+}
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];

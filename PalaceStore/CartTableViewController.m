@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.title = @"Cart";
     UIBarButtonItem * left = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"MenuIcon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(leftAction:)];
     
     self.navigationItem.leftBarButtonItem = left;
@@ -65,6 +65,7 @@
     
     [HelperClass loadImageWithURL:cartObj.thumb_image_url andCompletionBlock:^(UIImage *img, NSData *imgData) {
         cell.imageView.image = img;
+        [cell.imageView reloadInputViews];
     }];
     return cell;
    
