@@ -10,6 +10,7 @@
 #import "HelperClass.h"
 #import "PSProductViewController.h"
 #import "UIColor+CustomColor.h"
+#import "Cart.h"
 
 
 @interface ProductCollectionViewCell () {
@@ -26,6 +27,11 @@
     NSString *_priceinformation = [NSString stringWithFormat:@"%0.2f $",[product.price doubleValue]];
     self.priceInfo.text = _priceinformation;
     self.productInfo.text = product.name;
+    
+    [_activity setHidesWhenStopped:YES];
+    [_activity setHidden:NO];
+    [_activity startAnimating];
+
     
     [HelperClass addBorderForView:_bgView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
     _bgView.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.2];
@@ -47,7 +53,7 @@
                 
                 [HelperClass loadImageWithURL:imgURL andCompletionBlock:^(UIImage *img, NSData *imgData) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [_activity stopAnimating];
+                       [_activity stopAnimating];
                         if (img) _productImage.image = img;
                     });
                     
@@ -68,11 +74,27 @@
     }
 }
 
-- (IBAction)cartAction:(id)sender {
+- (IBAction)cartAction:(id)sender
+{
+    Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
     
+    cartObj.category_id = self.selectedProductObj.category_id;
+    cartObj.price = self.selectedProductObj.price;
+    cartObj.product_id = self.selectedProductObj.product_id;
+    cartObj.model = self.selectedProductObj.model;
+    cartObj.name = self.selectedProductObj.name;
+    cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+    
+    [[DatabaseManager sharedInstance]saveContext];
+    
+    
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+
 }
 
-- (IBAction)wishlistAction:(id)sender {
+- (IBAction)wishlistAction:(id)sender
+{
     
 }
 

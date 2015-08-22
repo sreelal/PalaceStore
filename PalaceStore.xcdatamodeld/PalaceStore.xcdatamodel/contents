@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7701" systemVersion="14E46" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Banner_Images" representedClassName="Banner_Images" syncable="YES">
         <attribute name="image_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Cart" syncable="YES"/>
+    <entity name="Cart" representedClassName="Cart" syncable="YES">
+        <attribute name="category_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="product_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="thumb_image_url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="LatestArrivals_Promotions" representedClassName="LatestArrivals_Promotions" syncable="YES">
         <attribute name="is_latest" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="is_promotion" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -65,11 +72,11 @@
     </entity>
     <elements>
         <element name="Banner_Images" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Cart" positionX="135" positionY="-9" width="128" height="135"/>
         <element name="LatestArrivals_Promotions" positionX="-36" positionY="63" width="128" height="180"/>
         <element name="Product_Attributes" positionX="421" positionY="-36" width="128" height="88"/>
         <element name="Product_Category" positionX="124" positionY="-153" width="128" height="135"/>
         <element name="Product_Details" positionX="315" positionY="108" width="128" height="193"/>
         <element name="Products" positionX="135" positionY="50" width="128" height="343"/>
-        <element name="Cart" positionX="135" positionY="-9" width="128" height="45"/>
     </elements>
 </model>

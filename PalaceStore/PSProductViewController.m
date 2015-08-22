@@ -174,23 +174,28 @@
 
 
 
+
 - (void)loadCachedProducts {
     
     NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"category_id == %d", [_productCategory.category_id intValue]];
     NSLog(@"Fetching started");
-    _productsCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS
-                                                 withPredicate:categoryPredicate];
+    
+    NSArray * tempCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:categoryPredicate];
+    //_productsCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:categoryPredicate];
     NSLog(@"Fetching over");
-    if ([_productsCollection count]) {
+    if ([tempCollection count])
+    {
         dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSSortDescriptor*  brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+            _productsCollection = [tempCollection sortedArrayUsingDescriptors:[NSArray arrayWithObject:brandDescriptor]];
+            
             [_productsCollectionView reloadData];
         });
     }
     
     categoryPredicate = nil;
 }
-
-
 
 - (void)managedObjectDidSave:(NSNotification *)notification {
     

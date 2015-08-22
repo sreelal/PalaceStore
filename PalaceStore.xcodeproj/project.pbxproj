@@ -89,6 +89,9 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC21B87420200E90BEF /* CartTableViewController.m */; };
+		B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC51B87468F00E90BEF /* Cart.m */; };
+		B7B8BDCA1B8755AC00E90BEF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */; };
 		E955908D1B735D760019AA51 /* PSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E955908C1B735D760019AA51 /* PSStarRatingView.m */; };
 		E955908F1B735E2D0019AA51 /* 5starsgray.png in Resources */ = {isa = PBXBuildFile; fileRef = E955908E1B735E2D0019AA51 /* 5starsgray.png */; };
 		E95590921B7361580019AA51 /* PriceInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95590911B7361580019AA51 /* PriceInfoCell.m */; };
@@ -104,7 +107,7 @@
 		E9E4E76A1B7386F100030E25 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E7691B7386F100030E25 /* Products.m */; };
 		E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76C1B7386F100030E25 /* Product_Details.m */; };
 		E9E4E7701B7386F100030E25 /* Product_Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76F1B7386F100030E25 /* Product_Attributes.m */; };
-		E9FCF67B1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */; };
+		FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -249,6 +252,13 @@
 		68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		68B5C8E61B47B07100F3FD02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68B5C8E71B47B07100F3FD02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B7B8BDC11B87420200E90BEF /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
+		B7B8BDC21B87420200E90BEF /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
+		B7B8BDC41B87468F00E90BEF /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = ../Cart.h; sourceTree = "<group>"; };
+		B7B8BDC51B87468F00E90BEF /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cart.m; path = ../Cart.m; sourceTree = "<group>"; };
+		B7B8BDC71B874E2500E90BEF /* PalaceStore-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PalaceStore-prefix.pch"; sourceTree = "<group>"; };
+		B7B8BDC81B8755AC00E90BEF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E955908B1B735D760019AA51 /* PSStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStarRatingView.h; sourceTree = "<group>"; };
 		E955908C1B735D760019AA51 /* PSStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStarRatingView.m; sourceTree = "<group>"; };
 		E955908E1B735E2D0019AA51 /* 5starsgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5starsgray.png; sourceTree = "<group>"; };
@@ -277,7 +287,7 @@
 		E9E4E76E1B7386F100030E25 /* Product_Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Attributes.h; sourceTree = "<group>"; };
 		E9E4E76F1B7386F100030E25 /* Product_Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Attributes.m; sourceTree = "<group>"; };
 		E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
-		E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
+		FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +356,8 @@
 		2E2161B11B64893D008CF219 /* Database Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7B8BDC41B87468F00E90BEF /* Cart.h */,
+				B7B8BDC51B87468F00E90BEF /* Cart.m */,
 				2E2161AE1B648932008CF219 /* PalaceStore.xcdatamodeld */,
 				2E1511B61B649EAC00D43865 /* DatabaseManager.h */,
 				2E1511B71B649EAC00D43865 /* DatabaseManager.m */,
@@ -368,6 +380,8 @@
 		2E497D791B48C97400F3DCE4 /* UI Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7B8BDC81B8755AC00E90BEF /* ProfileViewController.h */,
+				B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */,
 				58F37E141B454D68006F1810 /* MainViewController.h */,
 				58F37E151B454D68006F1810 /* MainViewController.m */,
 				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
@@ -385,6 +399,8 @@
 				58F37E3E1B455028006F1810 /* CustomViews */,
 				58F37E461B455028006F1810 /* TableViewCells */,
 				2EB7BBFB1B6CF2C8007BBD58 /* CollectionViewCell */,
+				B7B8BDC11B87420200E90BEF /* CartTableViewController.h */,
+				B7B8BDC21B87420200E90BEF /* CartTableViewController.m */,
 			);
 			name = "UI Module";
 			sourceTree = "<group>";
@@ -439,7 +455,7 @@
 				2EB7BBFC1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.h */,
 				2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */,
 				E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */,
-				E9FCF67A1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m */,
+				FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */,
 			);
 			name = CollectionViewCell;
 			sourceTree = "<group>";
@@ -481,6 +497,7 @@
 		58F37E0D1B454D68006F1810 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B7B8BDC71B874E2500E90BEF /* PalaceStore-prefix.pch */,
 				2E497D7A1B48DA8A00F3DCE4 /* Images */,
 				58F37E0E1B454D68006F1810 /* Info.plist */,
 				58F37E0F1B454D68006F1810 /* main.m */,
@@ -844,13 +861,13 @@
 				68B5C8CA1B47A79300F3FD02 /* UrlImageButton.m in Sources */,
 				2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */,
 				58F37E161B454D68006F1810 /* MainViewController.m in Sources */,
+				B7B8BDCA1B8755AC00E90BEF /* ProfileViewController.m in Sources */,
 				E9E4E75B1B73716B00030E25 /* ProductImageCell.m in Sources */,
 				58F37E491B455028006F1810 /* UIViewController+RESideMenu.m in Sources */,
 				E9D20B091B74B03200B52BBA /* ProductSpecificationCell.m in Sources */,
 				E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */,
 				68B447AC1B47DB1900E470BF /* SwipeView.m in Sources */,
 				2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */,
-				E9FCF67B1B6F6D4E0063A8E8 /* ProductCollectionViewCell.m in Sources */,
 				2E2161B01B648932008CF219 /* PalaceStore.xcdatamodeld in Sources */,
 				2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */,
 				68B5C8D91B47AEB600F3FD02 /* Banner.m in Sources */,
@@ -872,9 +889,12 @@
 				2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */,
 				E9A0AB381B74DAAB000ED4D3 /* NSNull+Empty.m in Sources */,
 				2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */,
+				FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */,
 				E989101C1B733B7D00F4466B /* PSProductDetailsViewController.m in Sources */,
+				B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */,
 				E9E4E76A1B7386F100030E25 /* Products.m in Sources */,
 				2E207C101B497EAA00F74840 /* ItemView.m in Sources */,
+				B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */,
 				2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */,
 				58F37E3C1B454F93006F1810 /* PSHomeViewController.m in Sources */,
 				2E1511B81B649EAC00D43865 /* DatabaseManager.m in Sources */,
@@ -1008,6 +1028,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
+				GCC_PREFIX_HEADER = "PalaceStore/PalaceStore-prefix.pch";
 				INFOPLIST_FILE = PalaceStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1022,6 +1043,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
+				GCC_PREFIX_HEADER = "PalaceStore/PalaceStore-prefix.pch";
 				INFOPLIST_FILE = PalaceStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
