@@ -107,6 +107,7 @@
 		E9E4E76A1B7386F100030E25 /* Products.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E7691B7386F100030E25 /* Products.m */; };
 		E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76C1B7386F100030E25 /* Product_Details.m */; };
 		E9E4E7701B7386F100030E25 /* Product_Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E4E76F1B7386F100030E25 /* Product_Attributes.m */; };
+		FC0E70181B89F8C0004380BE /* WishList.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0E70171B89F8C0004380BE /* WishList.m */; };
 		FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -287,6 +288,8 @@
 		E9E4E76E1B7386F100030E25 /* Product_Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Attributes.h; sourceTree = "<group>"; };
 		E9E4E76F1B7386F100030E25 /* Product_Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Attributes.m; sourceTree = "<group>"; };
 		E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
+		FC0E70161B89F8C0004380BE /* WishList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishList.h; sourceTree = "<group>"; };
+		FC0E70171B89F8C0004380BE /* WishList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishList.m; sourceTree = "<group>"; };
 		FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -323,6 +326,8 @@
 				E9E4E76C1B7386F100030E25 /* Product_Details.m */,
 				E9E4E7681B7386F100030E25 /* Products.h */,
 				E9E4E7691B7386F100030E25 /* Products.m */,
+				B7B8BDC41B87468F00E90BEF /* Cart.h */,
+				B7B8BDC51B87468F00E90BEF /* Cart.m */,
 			);
 			name = "CoreData Models";
 			sourceTree = "<group>";
@@ -356,8 +361,6 @@
 		2E2161B11B64893D008CF219 /* Database Module */ = {
 			isa = PBXGroup;
 			children = (
-				B7B8BDC41B87468F00E90BEF /* Cart.h */,
-				B7B8BDC51B87468F00E90BEF /* Cart.m */,
 				2E2161AE1B648932008CF219 /* PalaceStore.xcdatamodeld */,
 				2E1511B61B649EAC00D43865 /* DatabaseManager.h */,
 				2E1511B71B649EAC00D43865 /* DatabaseManager.m */,
@@ -463,6 +466,8 @@
 		58F37E011B454D68006F1810 = {
 			isa = PBXGroup;
 			children = (
+				FC0E70161B89F8C0004380BE /* WishList.h */,
+				FC0E70171B89F8C0004380BE /* WishList.m */,
 				58F37E0C1B454D68006F1810 /* PalaceStore */,
 				58F37E171B454D68006F1810 /* Main.storyboard */,
 				58F37E1A1B454D68006F1810 /* Images.xcassets */,
@@ -844,6 +849,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */,
+				FC0E70181B89F8C0004380BE /* WishList.m in Sources */,
 				68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */,
 				E95590921B7361580019AA51 /* PriceInfoCell.m in Sources */,
 				68B5C8C91B47A79300F3FD02 /* SDWebImageManager.m in Sources */,
