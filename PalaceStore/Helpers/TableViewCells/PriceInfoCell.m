@@ -10,6 +10,7 @@
 #import "Product_Details.h"
 
 #import "Cart.h"
+#import "WishList.h"
 
 @interface PriceInfoCell (){
 }
@@ -35,6 +36,22 @@
 - (IBAction)buyNowAction:(id)sender {
     
     NSLog(@"%s",__func__);
+    
+    WishList * wishListObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+    
+    wishListObj.category_id = self.currentProductObj.category_id;
+    wishListObj.price = self.currentProductObj.price;
+    wishListObj.product_id = self.currentProductObj.product_id;
+    wishListObj.model = self.currentProductObj.model;
+    wishListObj.name = self.currentProductObj.name;
+    wishListObj.thumb_image_url = self.currentProductObj.thumb_image_url;
+    
+    [[DatabaseManager sharedInstance]saveContext];
+    
+    
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to WishList" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+
 }
 - (IBAction)addToCartAction:(id)sender {
     NSLog(@"%s",__func__);
