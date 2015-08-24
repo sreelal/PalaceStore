@@ -11,7 +11,10 @@
 #import "LeftMenuViewController.h"
 
 #import "CartTableViewController.h"
+
 #import "PSHomeViewController.h"
+
+#import "WhishListViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -24,7 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart",@"WishList", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,7 +73,13 @@
         [self.sideMenuViewController setContentViewController:homeObj];
         
     }
-    
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"WishList"])
+    {
+        WhishListViewController * whishListObj = (WhishListViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"WhishListViewController"];
+        UINavigationController * whishNav = [[UINavigationController alloc]initWithRootViewController:whishListObj];
+        [self.sideMenuViewController setContentViewController:whishNav];
+        
+    }
     else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Cart"])
     {
         CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];

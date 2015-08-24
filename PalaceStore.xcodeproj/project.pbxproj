@@ -96,6 +96,7 @@
 		B7A427D71B8ACEA10054F1E0 /* MyCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */; };
 		B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */; };
 		B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D91B8AE2C00054F1E0 /* Shoes.png */; };
+		B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */; };
 		B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC21B87420200E90BEF /* CartTableViewController.m */; };
 		B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC51B87468F00E90BEF /* Cart.m */; };
 		E955908D1B735D760019AA51 /* PSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E955908C1B735D760019AA51 /* PSStarRatingView.m */; };
@@ -269,6 +270,8 @@
 		B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCartCell.m; sourceTree = "<group>"; };
 		B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCartCell.xib; sourceTree = "<group>"; };
 		B7A427D91B8AE2C00054F1E0 /* Shoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shoes.png; sourceTree = "<group>"; };
+		B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhishListViewController.h; sourceTree = "<group>"; };
+		B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhishListViewController.m; sourceTree = "<group>"; };
 		B7B8BDC11B87420200E90BEF /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
 		B7B8BDC21B87420200E90BEF /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
 		B7B8BDC41B87468F00E90BEF /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = ../Cart.h; sourceTree = "<group>"; };
@@ -397,6 +400,8 @@
 		2E497D791B48C97400F3DCE4 /* UI Module */ = {
 			isa = PBXGroup;
 			children = (
+				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
+				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
 				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
 				B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */,
 				58F37E141B454D68006F1810 /* MainViewController.h */,
@@ -908,6 +913,7 @@
 				58F37E131B454D68006F1810 /* AppDelegate.m in Sources */,
 				68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */,
 				68B5C8C81B47A79300F3FD02 /* SDWebImageDownloader.m in Sources */,
+				B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */,
 				68B5C8CB1B47A79300F3FD02 /* UrlImageView.m in Sources */,
 				68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */,
 				68B5C8D41B47AC6000F3FD02 /* RequestHandler.m in Sources */,

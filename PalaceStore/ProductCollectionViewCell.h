@@ -10,6 +10,7 @@
 #import "Products.h"
 
 @interface ProductCollectionViewCell : UICollectionViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UIButton *cartButton;
 @property (weak, nonatomic) IBOutlet UIButton *favButton;

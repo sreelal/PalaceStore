@@ -12,6 +12,7 @@
 #import "UIColor+CustomColor.h"
 #import "Cart.h"
 
+#import "WishList.h"
 
 @interface ProductCollectionViewCell () {
     BOOL isLoading;
@@ -23,6 +24,8 @@
 
 
 - (void)loadProductInformation:(Products *)product{
+    
+    self.selectedProductObj = product;
     
     NSString *_priceinformation = [NSString stringWithFormat:@"%0.2f $",[product.price doubleValue]];
     self.priceInfo.text = _priceinformation;
@@ -95,7 +98,21 @@
 
 - (IBAction)wishlistAction:(id)sender
 {
+    WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
     
+    wishObj.category_id = self.selectedProductObj.category_id;
+    wishObj.price = self.selectedProductObj.price;
+    wishObj.product_id = self.selectedProductObj.product_id;
+    wishObj.model = self.selectedProductObj.model;
+    wishObj.name = self.selectedProductObj.name;
+    wishObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+    
+    [[DatabaseManager sharedInstance]saveContext];
+    
+    
+    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+    [alert show];
+
 }
 
 /*
