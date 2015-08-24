@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.h
+//  ProfileCell.h
 //  PalaceStore
 //
 //  Created by Teja Swaroop on 24/08/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UITableViewController
+@interface ProfileCell : UITableViewCell
 
 @end
