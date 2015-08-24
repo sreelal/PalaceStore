@@ -89,9 +89,16 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */; };
+		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
+		B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */; };
+		B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D21B8ACAD30054F1E0 /* Profile.png */; };
+		B7A427D71B8ACEA10054F1E0 /* MyCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */; };
+		B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */; };
+		B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D91B8AE2C00054F1E0 /* Shoes.png */; };
+		B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */; };
 		B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC21B87420200E90BEF /* CartTableViewController.m */; };
 		B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC51B87468F00E90BEF /* Cart.m */; };
-		B7B8BDCA1B8755AC00E90BEF /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */; };
 		E955908D1B735D760019AA51 /* PSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E955908C1B735D760019AA51 /* PSStarRatingView.m */; };
 		E955908F1B735E2D0019AA51 /* 5starsgray.png in Resources */ = {isa = PBXBuildFile; fileRef = E955908E1B735E2D0019AA51 /* 5starsgray.png */; };
 		E95590921B7361580019AA51 /* PriceInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E95590911B7361580019AA51 /* PriceInfoCell.m */; };
@@ -253,13 +260,23 @@
 		68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		68B5C8E61B47B07100F3FD02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68B5C8E71B47B07100F3FD02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		B7A427CD1B8AC8DC0054F1E0 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
+		B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
+		B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		B7A427D21B8ACAD30054F1E0 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
+		B7A427D41B8ACEA10054F1E0 /* MyCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCartCell.h; sourceTree = "<group>"; };
+		B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCartCell.m; sourceTree = "<group>"; };
+		B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCartCell.xib; sourceTree = "<group>"; };
+		B7A427D91B8AE2C00054F1E0 /* Shoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shoes.png; sourceTree = "<group>"; };
+		B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhishListViewController.h; sourceTree = "<group>"; };
+		B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhishListViewController.m; sourceTree = "<group>"; };
 		B7B8BDC11B87420200E90BEF /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
 		B7B8BDC21B87420200E90BEF /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
 		B7B8BDC41B87468F00E90BEF /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = ../Cart.h; sourceTree = "<group>"; };
 		B7B8BDC51B87468F00E90BEF /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Cart.m; path = ../Cart.m; sourceTree = "<group>"; };
 		B7B8BDC71B874E2500E90BEF /* PalaceStore-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PalaceStore-prefix.pch"; sourceTree = "<group>"; };
-		B7B8BDC81B8755AC00E90BEF /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		E955908B1B735D760019AA51 /* PSStarRatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSStarRatingView.h; sourceTree = "<group>"; };
 		E955908C1B735D760019AA51 /* PSStarRatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSStarRatingView.m; sourceTree = "<group>"; };
 		E955908E1B735E2D0019AA51 /* 5starsgray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5starsgray.png; sourceTree = "<group>"; };
@@ -288,8 +305,8 @@
 		E9E4E76E1B7386F100030E25 /* Product_Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Attributes.h; sourceTree = "<group>"; };
 		E9E4E76F1B7386F100030E25 /* Product_Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Attributes.m; sourceTree = "<group>"; };
 		E9FCF6791B6F6D4E0063A8E8 /* ProductCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductCollectionViewCell.h; sourceTree = "<group>"; };
-		FC0E70161B89F8C0004380BE /* WishList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WishList.h; sourceTree = "<group>"; };
-		FC0E70171B89F8C0004380BE /* WishList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WishList.m; sourceTree = "<group>"; };
+		FC0E70161B89F8C0004380BE /* WishList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishList.h; path = ../WishList.h; sourceTree = "<group>"; };
+		FC0E70171B89F8C0004380BE /* WishList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishList.m; path = ../WishList.m; sourceTree = "<group>"; };
 		FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -383,8 +400,10 @@
 		2E497D791B48C97400F3DCE4 /* UI Module */ = {
 			isa = PBXGroup;
 			children = (
-				B7B8BDC81B8755AC00E90BEF /* ProfileViewController.h */,
-				B7B8BDC91B8755AC00E90BEF /* ProfileViewController.m */,
+				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
+				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
+				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
+				B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */,
 				58F37E141B454D68006F1810 /* MainViewController.h */,
 				58F37E151B454D68006F1810 /* MainViewController.m */,
 				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
@@ -402,6 +421,8 @@
 				58F37E3E1B455028006F1810 /* CustomViews */,
 				58F37E461B455028006F1810 /* TableViewCells */,
 				2EB7BBFB1B6CF2C8007BBD58 /* CollectionViewCell */,
+				FC0E70161B89F8C0004380BE /* WishList.h */,
+				FC0E70171B89F8C0004380BE /* WishList.m */,
 				B7B8BDC11B87420200E90BEF /* CartTableViewController.h */,
 				B7B8BDC21B87420200E90BEF /* CartTableViewController.m */,
 			);
@@ -411,6 +432,8 @@
 		2E497D7A1B48DA8A00F3DCE4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B7A427D91B8AE2C00054F1E0 /* Shoes.png */,
+				B7A427D21B8ACAD30054F1E0 /* Profile.png */,
 				E987AFE71B7A66A90050EADB /* favorite_Small.png */,
 				E987AFE51B7A665A0050EADB /* Cart_small.png */,
 				E955908E1B735E2D0019AA51 /* 5starsgray.png */,
@@ -466,8 +489,6 @@
 		58F37E011B454D68006F1810 = {
 			isa = PBXGroup;
 			children = (
-				FC0E70161B89F8C0004380BE /* WishList.h */,
-				FC0E70171B89F8C0004380BE /* WishList.m */,
 				58F37E0C1B454D68006F1810 /* PalaceStore */,
 				58F37E171B454D68006F1810 /* Main.storyboard */,
 				58F37E1A1B454D68006F1810 /* Images.xcassets */,
@@ -579,6 +600,12 @@
 		58F37E461B455028006F1810 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B7A427D41B8ACEA10054F1E0 /* MyCartCell.h */,
+				B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */,
+				B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */,
+				B7A427CD1B8AC8DC0054F1E0 /* ProfileCell.h */,
+				B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */,
+				B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */,
 				68B5C8CC1B47AB1700F3FD02 /* BannerTableViewCell.h */,
 				68B5C8CD1B47AB1700F3FD02 /* BannerTableViewCell.m */,
 				2E497DB31B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.h */,
@@ -789,6 +816,7 @@
 			files = (
 				687FF5471B48344300A99072 /* 8.png in Resources */,
 				2E497D981B48DA8A00F3DCE4 /* Casual-Shoes.png in Resources */,
+				B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */,
 				687FF5451B48344300A99072 /* 6.png in Resources */,
 				687FF5431B48344300A99072 /* 4.png in Resources */,
 				2E497DA41B48DA8A00F3DCE4 /* Search.png in Resources */,
@@ -800,6 +828,7 @@
 				687FF53C1B48344300A99072 /* 10.png in Resources */,
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
+				B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
 				687FF5411B48344300A99072 /* 2.png in Resources */,
@@ -808,9 +837,11 @@
 				2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */,
 				E955908F1B735E2D0019AA51 /* 5starsgray.png in Resources */,
 				2E497D991B48DA8A00F3DCE4 /* E--Gift-Vouchers.png in Resources */,
+				B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */,
 				2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */,
 				2E3285761B671306006EB0C8 /* login1.png in Resources */,
 				2E497DA21B48DA8A00F3DCE4 /* Real-Orange.png in Resources */,
+				B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */,
 				687FF53D1B48344300A99072 /* 11.png in Resources */,
 				2E497D941B48DA8A00F3DCE4 /* Adidas.png in Resources */,
 				687FF5481B48344300A99072 /* 9.png in Resources */,
@@ -867,10 +898,10 @@
 				68B5C8CA1B47A79300F3FD02 /* UrlImageButton.m in Sources */,
 				2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */,
 				58F37E161B454D68006F1810 /* MainViewController.m in Sources */,
-				B7B8BDCA1B8755AC00E90BEF /* ProfileViewController.m in Sources */,
 				E9E4E75B1B73716B00030E25 /* ProductImageCell.m in Sources */,
 				58F37E491B455028006F1810 /* UIViewController+RESideMenu.m in Sources */,
 				E9D20B091B74B03200B52BBA /* ProductSpecificationCell.m in Sources */,
+				B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */,
 				E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */,
 				68B447AC1B47DB1900E470BF /* SwipeView.m in Sources */,
 				2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */,
@@ -882,6 +913,7 @@
 				58F37E131B454D68006F1810 /* AppDelegate.m in Sources */,
 				68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */,
 				68B5C8C81B47A79300F3FD02 /* SDWebImageDownloader.m in Sources */,
+				B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */,
 				68B5C8CB1B47A79300F3FD02 /* UrlImageView.m in Sources */,
 				68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */,
 				68B5C8D41B47AC6000F3FD02 /* RequestHandler.m in Sources */,
@@ -903,8 +935,10 @@
 				B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */,
 				2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */,
 				58F37E3C1B454F93006F1810 /* PSHomeViewController.m in Sources */,
+				B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */,
 				2E1511B81B649EAC00D43865 /* DatabaseManager.m in Sources */,
 				58F37E481B455028006F1810 /* RESideMenu.m in Sources */,
+				B7A427D71B8ACEA10054F1E0 /* MyCartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

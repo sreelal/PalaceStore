@@ -2,11 +2,19 @@
 //  ProfileViewController.m
 //  PalaceStore
 //
-//  Created by Teja Swaroop on 21/08/15.
+//  Created by Teja Swaroop on 24/08/15.
 //  Copyright (c) 2015 Sreelal  Hamsavahanan. All rights reserved.
 //
 
 #import "ProfileViewController.h"
+
+#import "ProfileCell.h"
+
+#import "MyCartCell.h"
+
+#import "CartTableViewController.h"
+
+#import "WhishListViewController.h"
 
 @interface ProfileViewController ()
 
@@ -14,14 +22,21 @@
 
 @implementation ProfileViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationItem.title =@"Palace";
+}
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
 - (void)didReceiveMemoryWarning
@@ -29,28 +44,128 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
-    return 0;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        static NSString * simpleTableIdentifier = @"ProfielCell";
+        
+        ProfileCell * cell = (ProfileCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProfileCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
+    else if (indexPath.section == 1)
+    {
+        static NSString * simpleTableIdentifier = @"MyCartCell";
+        
+        MyCartCell * cell = (MyCartCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCartCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
+    else
+    {
+        static NSString * simpleTableIdentifier = @"MywhishListCell";
+        
+        MyCartCell * cell = (MyCartCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCartCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 190;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35.0;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return nil;
+    }
     
-    // Configure the cell...
+    UIView * headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 35)];
+    [headerView  setBackgroundColor:[UIColor redColor]];
     
-    return cell;
+    UILabel * cartLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 35)];
+    cartLabel.textAlignment = NSTextAlignmentLeft;
+    cartLabel.textColor = [UIColor whiteColor];
+    [headerView addSubview:cartLabel];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTintColor:[UIColor whiteColor]];
+    button.tag = section;
+    [button setTitle:@"More >" forState:UIControlStateNormal];
+    button.frame = CGRectMake(self.view.frame.size.width - 100, 0, 100, 35);
+    [headerView addSubview:button];
+    
+    if (section == 1)
+    {
+     cartLabel.text =@"My Cart";
+    }
+    if (section == 2)
+    {
+        cartLabel.text =@"My Whish list";
+    }
+
+    
+    return headerView;
 }
-*/
+-(IBAction)moreAction:(id)sender
+{
+    NSLog(@"%s",__func__);
+    
+    UIButton * btn = (UIButton*)sender;
+    
+    NSLog(@"btn tag %ld",(long)btn.tag);
+    
+    switch (btn.tag)
+    {
+        case 1:
+        {
+            CartTableViewController * cartObj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+            [self.navigationController pushViewController:cartObj animated:YES];
+        }
+            break;
+        case 2:
+        {
+            WhishListViewController * whishObj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"WhishListViewController"];
+            [self.navigationController pushViewController:whishObj animated:YES];
+
+        }
+            break;
+
+        default:
+            break;
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

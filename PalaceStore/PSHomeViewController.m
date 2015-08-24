@@ -56,6 +56,9 @@
 }
 -(IBAction)ProfileView:(id)sender
 {
+    ProfileViewController * profileView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+    
+    [self.navigationController pushViewController:profileView animated:YES];
     
 }
 - (void)viewWillAppear:(BOOL)animated {

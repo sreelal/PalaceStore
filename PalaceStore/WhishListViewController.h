@@ -1,5 +1,5 @@
 //
-//  ProfileViewController.h
+//  WhishListViewController.h
 //  PalaceStore
 //
 //  Created by Teja Swaroop on 24/08/15.
@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UITableViewController
+@interface WhishListViewController : UITableViewController
+
+@property(nonatomic, strong)NSArray * whishListArray;
+
 
 @end
