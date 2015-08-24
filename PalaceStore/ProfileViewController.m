@@ -14,6 +14,8 @@
 
 #import "CartTableViewController.h"
 
+#import "WhishListViewController.h"
+
 @interface ProfileViewController ()
 
 @end
@@ -154,6 +156,9 @@
             break;
         case 2:
         {
+            WhishListViewController * whishObj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"WhishListViewController"];
+            [self.navigationController pushViewController:whishObj animated:YES];
+
         }
             break;
 

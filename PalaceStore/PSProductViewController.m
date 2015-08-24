@@ -14,7 +14,9 @@
 #import "PSProductDetailsViewController.h"
 
 @interface PSProductViewController ()
-
+{
+    NSArray * rawCollection;
+}
 @property (weak, nonatomic) IBOutlet UICollectionView *productsCollectionView;
 @property (nonatomic, strong) NSArray *productsCollection;
 
@@ -88,18 +90,57 @@
             _firstBottomBorder.hidden = NO;
             _secondBottomBorder.hidden = YES;
             _thirdBottomBorder.hidden = YES;
+            
+            if ([rawCollection count])
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    NSSortDescriptor*  brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
+                    _productsCollection = [rawCollection sortedArrayUsingDescriptors:[NSArray arrayWithObject:brandDescriptor]];
+                    
+                    [_productsCollectionView reloadData];
+                });
+            }
+
+            
             break;
             
         case 2:
             _firstBottomBorder.hidden = YES;
             _secondBottomBorder.hidden = NO;
             _thirdBottomBorder.hidden = YES;
+            
+            NSLog(@"high to low");
+            
+            if ([rawCollection count])
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                
+                    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"price"  ascending:NO];
+                    _productsCollection = [rawCollection sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+                    
+                    [_productsCollectionView reloadData];
+                });
+            }
+            
             break;
             
         case 3:
             _firstBottomBorder.hidden = YES;
             _secondBottomBorder.hidden = YES;
             _thirdBottomBorder.hidden = NO;
+            
+            NSLog(@"low to high");
+            if ([rawCollection count])
+            {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    
+                    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:@"price"  ascending:YES];
+                    _productsCollection = [rawCollection sortedArrayUsingDescriptors:[NSArray arrayWithObjects:descriptor,nil]];
+                    
+                    [_productsCollectionView reloadData];
+                });
+            }
             break;
             
         default:
@@ -180,15 +221,15 @@
     NSPredicate *categoryPredicate = [NSPredicate predicateWithFormat:@"category_id == %d", [_productCategory.category_id intValue]];
     NSLog(@"Fetching started");
     
-    NSArray * tempCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:categoryPredicate];
-    //_productsCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:categoryPredicate];
+   rawCollection = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:categoryPredicate];
+
     NSLog(@"Fetching over");
-    if ([tempCollection count])
+    if ([rawCollection count])
     {
         dispatch_async(dispatch_get_main_queue(), ^{
             
             NSSortDescriptor*  brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES selector:@selector(caseInsensitiveCompare:)];
-            _productsCollection = [tempCollection sortedArrayUsingDescriptors:[NSArray arrayWithObject:brandDescriptor]];
+            _productsCollection = [rawCollection sortedArrayUsingDescriptors:[NSArray arrayWithObject:brandDescriptor]];
             
             [_productsCollectionView reloadData];
         });
