@@ -15,8 +15,9 @@
 @property (readonly, nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (readonly, nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-+ (id)sharedInstance;
 
++ (id)sharedInstance;
 - (void)saveContext;
+
 
 @end

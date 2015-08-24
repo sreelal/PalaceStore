@@ -38,7 +38,7 @@
     
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"PalaceStore" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
-    
+
     return _managedObjectModel;
 }
 

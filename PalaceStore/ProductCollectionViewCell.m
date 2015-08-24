@@ -79,39 +79,67 @@
 
 - (IBAction)cartAction:(id)sender
 {
-    Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
-    
-    cartObj.category_id = self.selectedProductObj.category_id;
-    cartObj.price = self.selectedProductObj.price;
-    cartObj.product_id = self.selectedProductObj.product_id;
-    cartObj.model = self.selectedProductObj.model;
-    cartObj.name = self.selectedProductObj.name;
-    cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
-    
-    [[DatabaseManager sharedInstance]saveContext];
-    
-    
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Cart"];
+    NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
 
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.selectedProductObj.category_id]];
+    
+    if (! [hasItem count] > 0)
+    {
+        Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        cartObj.category_id = self.selectedProductObj.category_id;
+        cartObj.price = self.selectedProductObj.price;
+        cartObj.product_id = self.selectedProductObj.product_id;
+        cartObj.model = self.selectedProductObj.model;
+        cartObj.name = self.selectedProductObj.name;
+        cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+        
+        [[DatabaseManager sharedInstance]saveContext];
+        
+        
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Palace Store" message:@"Current is Already in your Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+
+    }
+   
 }
 
 - (IBAction)wishlistAction:(id)sender
 {
-    WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"WishList"];
+    NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     
-    wishObj.category_id = self.selectedProductObj.category_id;
-    wishObj.price = self.selectedProductObj.price;
-    wishObj.product_id = self.selectedProductObj.product_id;
-    wishObj.model = self.selectedProductObj.model;
-    wishObj.name = self.selectedProductObj.name;
-    wishObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.selectedProductObj.category_id]];
     
-    [[DatabaseManager sharedInstance]saveContext];
-    
-    
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
+    if (![hasItem count] > 0)
+    {
+        WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        wishObj.category_id = self.selectedProductObj.category_id;
+        wishObj.price = self.selectedProductObj.price;
+        wishObj.product_id = self.selectedProductObj.product_id;
+        wishObj.model = self.selectedProductObj.model;
+        wishObj.name = self.selectedProductObj.name;
+        wishObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+        
+        [[DatabaseManager sharedInstance]saveContext];
+        
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+  
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Palace Store" message:@"Current is Already in your Wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }
 
 }
 

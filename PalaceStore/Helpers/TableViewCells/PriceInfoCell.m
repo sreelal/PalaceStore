@@ -57,20 +57,36 @@
     NSLog(@"%s",__func__);
     
     
-    Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Cart"];
+    NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     
-    cartObj.category_id = self.currentProductObj.category_id;
-    cartObj.price = self.currentProductObj.price;
-    cartObj.product_id = self.currentProductObj.product_id;
-    cartObj.model = self.currentProductObj.model;
-    cartObj.name = self.currentProductObj.name;
-    cartObj.thumb_image_url = self.currentProductObj.thumb_image_url;
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.currentProductObj.category_id]];
+   
+    if ([hasItem count] > 0)
+    {
+        Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        cartObj.category_id = self.currentProductObj.category_id;
+        cartObj.price = self.currentProductObj.price;
+        cartObj.product_id = self.currentProductObj.product_id;
+        cartObj.model = self.currentProductObj.model;
+        cartObj.name = self.currentProductObj.name;
+        cartObj.thumb_image_url = self.currentProductObj.thumb_image_url;
+        
+        [[DatabaseManager sharedInstance]saveContext];
+        
+        
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Palace Store" message:@"Current is Already in your Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }
     
-    [[DatabaseManager sharedInstance]saveContext];
-    
-    
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
     
 }
 
