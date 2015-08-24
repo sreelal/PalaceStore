@@ -8,6 +8,12 @@
 
 #import "ProfileViewController.h"
 
+#import "ProfileCell.h"
+
+#import "MyCartCell.h"
+
+#import "CartTableViewController.h"
+
 @interface ProfileViewController ()
 
 @end
@@ -28,7 +34,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 1;
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,15 +42,125 @@
     [super didReceiveMemoryWarning];
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        static NSString * simpleTableIdentifier = @"ProfielCell";
+        
+        ProfileCell * cell = (ProfileCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ProfileCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
+    else if (indexPath.section == 1)
+    {
+        static NSString * simpleTableIdentifier = @"MyCartCell";
+        
+        MyCartCell * cell = (MyCartCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCartCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
+    else
+    {
+        static NSString * simpleTableIdentifier = @"MywhishListCell";
+        
+        MyCartCell * cell = (MyCartCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+        
+        if (cell == nil)
+        {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCartCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        
+        return cell;
+    }
 }
-*/
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 190;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 35.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return nil;
+    }
+    
+    UIView * headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 35)];
+    [headerView  setBackgroundColor:[UIColor redColor]];
+    
+    UILabel * cartLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 35)];
+    cartLabel.textAlignment = NSTextAlignmentLeft;
+    cartLabel.textColor = [UIColor whiteColor];
+    [headerView addSubview:cartLabel];
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button addTarget:self action:@selector(moreAction:) forControlEvents:UIControlEventTouchUpInside];
+    [button setTintColor:[UIColor whiteColor]];
+    button.tag = section;
+    [button setTitle:@"More >" forState:UIControlStateNormal];
+    button.frame = CGRectMake(self.view.frame.size.width - 100, 0, 100, 35);
+    [headerView addSubview:button];
+    
+    if (section == 1)
+    {
+     cartLabel.text =@"My Cart";
+    }
+    if (section == 2)
+    {
+        cartLabel.text =@"My Whish list";
+    }
+
+    
+    return headerView;
+}
+-(IBAction)moreAction:(id)sender
+{
+    NSLog(@"%s",__func__);
+    
+    UIButton * btn = (UIButton*)sender;
+    
+    NSLog(@"btn tag %ld",(long)btn.tag);
+    
+    switch (btn.tag)
+    {
+        case 1:
+        {
+            CartTableViewController * cartObj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+            [self.navigationController pushViewController:cartObj animated:YES];
+        }
+            break;
+        case 2:
+        {
+        }
+            break;
+
+        default:
+            break;
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.

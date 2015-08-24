@@ -10,4 +10,11 @@
 
 @interface ProfileCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *profile;
+@property (strong, nonatomic) IBOutlet UILabel *addressLabel;
+
+- (IBAction)deleteAction:(id)sender;
+- (IBAction)purchaseAction:(id)sender;
+- (IBAction)editAction:(id)sender;
+
 @end

@@ -31,6 +31,9 @@
                         <state key="normal" title="Edit">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="editAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Fzh-M6-jBx"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EAp-Q5-6dA">
                         <rect key="frame" x="68" y="138" width="52" height="30"/>
@@ -42,6 +45,9 @@
                         <state key="normal" title="Delete">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="deleteAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="NJi-6d-fC8"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delivery Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="poA-Yh-Q6d">
                         <rect key="frame" x="152" y="18" width="145" height="21"/>
@@ -54,7 +60,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tR-OQ-2kc">
-                        <rect key="frame" x="157" y="138" width="140" height="30"/>
+                        <rect key="frame" x="167" y="138" width="140" height="30"/>
                         <color key="backgroundColor" red="0.63529411759999999" green="0.78039215689999997" blue="0.16078431369999999" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Upa-1a-NMY"/>
@@ -64,6 +70,9 @@
                         <state key="normal" title="Purchase History">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="purchaseAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="8wV-Yk-Zhg"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHIRIS NISWAMDEE SMALLLSYS INC 795E DRAGRAM TUCSON AZ 85705 USA" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HtC-ab-deW">
                         <rect key="frame" x="144" y="38" width="161" height="92"/>
@@ -83,15 +92,26 @@
                     <constraint firstItem="zbj-oP-rEN" firstAttribute="top" secondItem="4GC-nM-fvH" secondAttribute="bottom" constant="14" id="Ffm-g4-YGL"/>
                     <constraint firstItem="EAp-Q5-6dA" firstAttribute="leading" secondItem="zbj-oP-rEN" secondAttribute="trailing" constant="8" id="VPg-CO-QQh"/>
                     <constraint firstAttribute="trailingMargin" secondItem="poA-Yh-Q6d" secondAttribute="trailing" constant="15" id="X0n-4j-YsK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="4tR-OQ-2kc" secondAttribute="trailing" constant="5" id="ck2-Kf-72U"/>
                     <constraint firstItem="poA-Yh-Q6d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="dWg-LT-eqy"/>
+                    <constraint firstItem="4tR-OQ-2kc" firstAttribute="centerX" secondItem="HtC-ab-deW" secondAttribute="centerX" constant="12.5" id="dds-ef-2YC"/>
                     <constraint firstAttribute="trailingMargin" secondItem="HtC-ab-deW" secondAttribute="trailing" constant="7" id="fbg-Iu-A4O"/>
                     <constraint firstItem="zbj-oP-rEN" firstAttribute="centerY" secondItem="EAp-Q5-6dA" secondAttribute="centerY" id="jec-OF-gvZ"/>
                     <constraint firstItem="4GC-nM-fvH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="12" id="lAj-jz-JMi"/>
                     <constraint firstItem="4tR-OQ-2kc" firstAttribute="leading" secondItem="EAp-Q5-6dA" secondAttribute="trailing" constant="37" id="t3C-BI-Qym"/>
                     <constraint firstItem="zbj-oP-rEN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="uR6-LO-1H1"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="t3C-BI-Qym"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="436" y="428"/>
+            <connections>
+                <outlet property="addressLabel" destination="HtC-ab-deW" id="S1N-8l-oGU"/>
+                <outlet property="profile" destination="4GC-nM-fvH" id="xGd-Vz-v2L"/>
+            </connections>
+            <point key="canvasLocation" x="325" y="429"/>
         </tableViewCell>
     </objects>
     <resources>

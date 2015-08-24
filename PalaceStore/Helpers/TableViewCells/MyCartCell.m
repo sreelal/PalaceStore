@@ -1,14 +1,14 @@
 //
-//  ProfileCell.m
+//  MyCartCell.m
 //  PalaceStore
 //
 //  Created by Teja Swaroop on 24/08/15.
 //  Copyright (c) 2015 Sreelal  Hamsavahanan. All rights reserved.
 //
 
-#import "ProfileCell.h"
+#import "MyCartCell.h"
 
-@implementation ProfileCell
+@implementation MyCartCell
 
 - (void)awakeFromNib
 {
@@ -17,19 +17,15 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-
 }
 
-- (IBAction)deleteAction:(id)sender {
-        NSLog(@"%s",__func__);
+- (IBAction)removeAction:(id)sender {
+    
+    NSLog(@"%s",__func__);
 }
 
-- (IBAction)purchaseAction:(id)sender {
-        NSLog(@"%s",__func__);
-}
-
-- (IBAction)editAction:(id)sender {
+- (IBAction)placeOrderAction:(id)sender
+{
         NSLog(@"%s",__func__);
 }
 @end

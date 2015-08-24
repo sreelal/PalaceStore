@@ -93,6 +93,9 @@
 		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
 		B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */; };
 		B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D21B8ACAD30054F1E0 /* Profile.png */; };
+		B7A427D71B8ACEA10054F1E0 /* MyCartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */; };
+		B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */; };
+		B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */ = {isa = PBXBuildFile; fileRef = B7A427D91B8AE2C00054F1E0 /* Shoes.png */; };
 		B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC21B87420200E90BEF /* CartTableViewController.m */; };
 		B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = B7B8BDC51B87468F00E90BEF /* Cart.m */; };
 		E955908D1B735D760019AA51 /* PSStarRatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E955908C1B735D760019AA51 /* PSStarRatingView.m */; };
@@ -262,6 +265,10 @@
 		B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
 		B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
 		B7A427D21B8ACAD30054F1E0 /* Profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Profile.png; sourceTree = "<group>"; };
+		B7A427D41B8ACEA10054F1E0 /* MyCartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCartCell.h; sourceTree = "<group>"; };
+		B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCartCell.m; sourceTree = "<group>"; };
+		B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCartCell.xib; sourceTree = "<group>"; };
+		B7A427D91B8AE2C00054F1E0 /* Shoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Shoes.png; sourceTree = "<group>"; };
 		B7B8BDC11B87420200E90BEF /* CartTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartTableViewController.h; sourceTree = "<group>"; };
 		B7B8BDC21B87420200E90BEF /* CartTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartTableViewController.m; sourceTree = "<group>"; };
 		B7B8BDC41B87468F00E90BEF /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Cart.h; path = ../Cart.h; sourceTree = "<group>"; };
@@ -420,6 +427,7 @@
 		2E497D7A1B48DA8A00F3DCE4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B7A427D91B8AE2C00054F1E0 /* Shoes.png */,
 				B7A427D21B8ACAD30054F1E0 /* Profile.png */,
 				E987AFE71B7A66A90050EADB /* favorite_Small.png */,
 				E987AFE51B7A665A0050EADB /* Cart_small.png */,
@@ -587,6 +595,9 @@
 		58F37E461B455028006F1810 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				B7A427D41B8ACEA10054F1E0 /* MyCartCell.h */,
+				B7A427D51B8ACEA10054F1E0 /* MyCartCell.m */,
+				B7A427D61B8ACEA10054F1E0 /* MyCartCell.xib */,
 				B7A427CD1B8AC8DC0054F1E0 /* ProfileCell.h */,
 				B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */,
 				B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */,
@@ -800,6 +811,7 @@
 			files = (
 				687FF5471B48344300A99072 /* 8.png in Resources */,
 				2E497D981B48DA8A00F3DCE4 /* Casual-Shoes.png in Resources */,
+				B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */,
 				687FF5451B48344300A99072 /* 6.png in Resources */,
 				687FF5431B48344300A99072 /* 4.png in Resources */,
 				2E497DA41B48DA8A00F3DCE4 /* Search.png in Resources */,
@@ -811,6 +823,7 @@
 				687FF53C1B48344300A99072 /* 10.png in Resources */,
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
+				B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
 				687FF5411B48344300A99072 /* 2.png in Resources */,
@@ -919,6 +932,7 @@
 				B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */,
 				2E1511B81B649EAC00D43865 /* DatabaseManager.m in Sources */,
 				58F37E481B455028006F1810 /* RESideMenu.m in Sources */,
+				B7A427D71B8ACEA10054F1E0 /* MyCartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
