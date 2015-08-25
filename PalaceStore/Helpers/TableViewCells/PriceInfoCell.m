@@ -35,23 +35,34 @@
 }
 - (IBAction)buyNowAction:(id)sender {
     
-    NSLog(@"%s",__func__);
+    NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"WishList"];
+    NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     
-    WishList * wishListObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"product_id",self.currentProductObj.category_id]];
     
-    wishListObj.category_id = self.currentProductObj.category_id;
-    wishListObj.price = self.currentProductObj.price;
-    wishListObj.product_id = self.currentProductObj.product_id;
-    wishListObj.model = self.currentProductObj.model;
-    wishListObj.name = self.currentProductObj.name;
-    wishListObj.thumb_image_url = self.currentProductObj.thumb_image_url;
-    
-    [[DatabaseManager sharedInstance]saveContext];
-    
-    
-    UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to WishList" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-    [alert show];
-
+    if (![hasItem count] > 0)
+    {
+        WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        wishObj.category_id = self.currentProductObj.category_id;
+        wishObj.price = self.currentProductObj.price;
+        wishObj.product_id = self.currentProductObj.product_id;
+        wishObj.model = self.currentProductObj.model;
+        wishObj.name = self.currentProductObj.name;
+        wishObj.thumb_image_url = self.currentProductObj.thumb_image_url;
+        
+        [[DatabaseManager sharedInstance]saveContext];
+        
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }
+    else
+    {
+        UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Palace Store" message:@"Current is Already in your Wishlist" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [alert show];
+        
+    }
 }
 - (IBAction)addToCartAction:(id)sender {
     NSLog(@"%s",__func__);
@@ -60,7 +71,7 @@
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Cart"];
     NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     
-    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.currentProductObj.category_id]];
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"product_id",self.currentProductObj.category_id]];
    
     if ([hasItem count] > 0)
     {
