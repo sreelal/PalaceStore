@@ -115,7 +115,7 @@
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"WishList"];
     NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     
-    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.selectedProductObj.category_id]];
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"product_id",self.selectedProductObj.category_id]];
     
     if (![hasItem count] > 0)
     {
