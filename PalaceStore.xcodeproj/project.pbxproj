@@ -73,6 +73,18 @@
 		687FF5461B48344300A99072 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF5381B48344300A99072 /* 7.png */; };
 		687FF5471B48344300A99072 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF5391B48344300A99072 /* 8.png */; };
 		687FF5481B48344300A99072 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF53A1B48344300A99072 /* 9.png */; };
+		689FA5911B9342E500F65E3F /* btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5851B9342E500F65E3F /* btn-bg.png */; };
+		689FA5921B9342E500F65E3F /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5861B9342E500F65E3F /* facebook-icon.png */; };
+		689FA5931B9342E500F65E3F /* fb-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5871B9342E500F65E3F /* fb-background.png */; };
+		689FA5941B9342E500F65E3F /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5881B9342E500F65E3F /* key.png */; };
+		689FA5951B9342E500F65E3F /* profile-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5891B9342E500F65E3F /* profile-icon.png */; };
+		689FA5961B9342E500F65E3F /* textbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA58A1B9342E500F65E3F /* textbox.png */; };
+		689FA5971B9342E500F65E3F /* tick.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA58B1B9342E500F65E3F /* tick.png */; };
+		689FA5981B9342E500F65E3F /* btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA58D1B9342E500F65E3F /* btn-bg.png */; };
+		689FA5991B9342E500F65E3F /* radio-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA58E1B9342E500F65E3F /* radio-btn.png */; };
+		689FA59A1B9342E500F65E3F /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA58F1B9342E500F65E3F /* star.png */; };
+		689FA59B1B9342E500F65E3F /* text-box.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5901B9342E500F65E3F /* text-box.png */; };
+		689FA59F1B9347CD00F65E3F /* palace_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA59E1B9347CD00F65E3F /* palace_logo.png */; };
 		68B447AC1B47DB1900E470BF /* SwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B447AB1B47DB1900E470BF /* SwipeView.m */; };
 		68B5C8C41B47A79300F3FD02 /* AOImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8AF1B47A79300F3FD02 /* AOImageView.m */; };
 		68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8B11B47A79300F3FD02 /* AOScrollerView.m */; };
@@ -89,6 +101,8 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		68DADAC91B96056F005F6C85 /* PSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DADAC61B96056F005F6C85 /* PSLoginViewController.m */; };
+		68DADACA1B96056F005F6C85 /* PSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */; };
 		B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */; };
 		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
 		B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */; };
@@ -222,6 +236,18 @@
 		687FF5381B48344300A99072 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		687FF5391B48344300A99072 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		687FF53A1B48344300A99072 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		689FA5851B9342E500F65E3F /* btn-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-bg.png"; sourceTree = "<group>"; };
+		689FA5861B9342E500F65E3F /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
+		689FA5871B9342E500F65E3F /* fb-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-background.png"; sourceTree = "<group>"; };
+		689FA5881B9342E500F65E3F /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
+		689FA5891B9342E500F65E3F /* profile-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-icon.png"; sourceTree = "<group>"; };
+		689FA58A1B9342E500F65E3F /* textbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textbox.png; sourceTree = "<group>"; };
+		689FA58B1B9342E500F65E3F /* tick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tick.png; sourceTree = "<group>"; };
+		689FA58D1B9342E500F65E3F /* btn-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-bg.png"; sourceTree = "<group>"; };
+		689FA58E1B9342E500F65E3F /* radio-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn.png"; sourceTree = "<group>"; };
+		689FA58F1B9342E500F65E3F /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		689FA5901B9342E500F65E3F /* text-box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "text-box.png"; sourceTree = "<group>"; };
+		689FA59E1B9347CD00F65E3F /* palace_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palace_logo.png; sourceTree = "<group>"; };
 		68B447AA1B47DB1900E470BF /* SwipeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeView.h; sourceTree = "<group>"; };
 		68B447AB1B47DB1900E470BF /* SwipeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeView.m; sourceTree = "<group>"; };
 		68B5C8AE1B47A79300F3FD02 /* AOImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AOImageView.h; sourceTree = "<group>"; };
@@ -260,6 +286,10 @@
 		68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		68B5C8E61B47B07100F3FD02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68B5C8E71B47B07100F3FD02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		68DADAC51B96056F005F6C85 /* PSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLoginViewController.h; sourceTree = "<group>"; };
+		68DADAC61B96056F005F6C85 /* PSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLoginViewController.m; sourceTree = "<group>"; };
+		68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSignUpViewController.h; sourceTree = "<group>"; };
+		68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSignUpViewController.m; sourceTree = "<group>"; };
 		B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B7A427CD1B8AC8DC0054F1E0 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
@@ -400,6 +430,10 @@
 		2E497D791B48C97400F3DCE4 /* UI Module */ = {
 			isa = PBXGroup;
 			children = (
+				68DADAC51B96056F005F6C85 /* PSLoginViewController.h */,
+				68DADAC61B96056F005F6C85 /* PSLoginViewController.m */,
+				68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */,
+				68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */,
 				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
 				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
 				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
@@ -432,6 +466,8 @@
 		2E497D7A1B48DA8A00F3DCE4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				689FA5841B9342E500F65E3F /* loginpage */,
+				689FA58C1B9342E500F65E3F /* Registration */,
 				B7A427D91B8AE2C00054F1E0 /* Shoes.png */,
 				B7A427D21B8ACAD30054F1E0 /* Profile.png */,
 				E987AFE71B7A66A90050EADB /* favorite_Small.png */,
@@ -445,6 +481,7 @@
 				2E127D941B68594D005B0E1F /* img_btn_back@2x.png */,
 				2E127D951B68594D005B0E1F /* img_btn_next.png */,
 				2E127D961B68594D005B0E1F /* img_btn_next@2x.png */,
+				689FA59E1B9347CD00F65E3F /* palace_logo.png */,
 				687FF52C1B48344300A99072 /* Logo */,
 				2E497D7B1B48DA8A00F3DCE4 /* slice */,
 			);
@@ -653,6 +690,31 @@
 			path = PalaceStore/Logo;
 			sourceTree = SOURCE_ROOT;
 		};
+		689FA5841B9342E500F65E3F /* loginpage */ = {
+			isa = PBXGroup;
+			children = (
+				689FA5851B9342E500F65E3F /* btn-bg.png */,
+				689FA5861B9342E500F65E3F /* facebook-icon.png */,
+				689FA5871B9342E500F65E3F /* fb-background.png */,
+				689FA5881B9342E500F65E3F /* key.png */,
+				689FA5891B9342E500F65E3F /* profile-icon.png */,
+				689FA58A1B9342E500F65E3F /* textbox.png */,
+				689FA58B1B9342E500F65E3F /* tick.png */,
+			);
+			path = loginpage;
+			sourceTree = "<group>";
+		};
+		689FA58C1B9342E500F65E3F /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				689FA58D1B9342E500F65E3F /* btn-bg.png */,
+				689FA58E1B9342E500F65E3F /* radio-btn.png */,
+				689FA58F1B9342E500F65E3F /* star.png */,
+				689FA5901B9342E500F65E3F /* text-box.png */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		68B447A91B47DB1900E470BF /* SwipeView */ = {
 			isa = PBXGroup;
 			children = (
@@ -829,13 +891,18 @@
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
 				B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */,
+				689FA5981B9342E500F65E3F /* btn-bg.png in Resources */,
+				689FA59B1B9342E500F65E3F /* text-box.png in Resources */,
+				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
 				687FF5411B48344300A99072 /* 2.png in Resources */,
 				E987AFE81B7A66A90050EADB /* favorite_Small.png in Resources */,
 				2E497DA01B48DA8A00F3DCE4 /* Nivea.png in Resources */,
 				2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */,
+				689FA5931B9342E500F65E3F /* fb-background.png in Resources */,
 				E955908F1B735E2D0019AA51 /* 5starsgray.png in Resources */,
+				689FA5911B9342E500F65E3F /* btn-bg.png in Resources */,
 				2E497D991B48DA8A00F3DCE4 /* E--Gift-Vouchers.png in Resources */,
 				B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */,
 				2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */,
@@ -845,20 +912,27 @@
 				687FF53D1B48344300A99072 /* 11.png in Resources */,
 				2E497D941B48DA8A00F3DCE4 /* Adidas.png in Resources */,
 				687FF5481B48344300A99072 /* 9.png in Resources */,
+				689FA5991B9342E500F65E3F /* radio-btn.png in Resources */,
 				2E497D9F1B48DA8A00F3DCE4 /* Mobile.png in Resources */,
 				2E497DAE1B48E05000F3DCE4 /* HeaderBg.png in Resources */,
 				58F37E191B454D68006F1810 /* Main.storyboard in Resources */,
 				687FF53B1B48344300A99072 /* 1.png in Resources */,
 				58F37E1E1B454D68006F1810 /* LaunchScreen.xib in Resources */,
 				E987AFE61B7A665B0050EADB /* Cart_small.png in Resources */,
+				689FA5941B9342E500F65E3F /* key.png in Resources */,
+				689FA5921B9342E500F65E3F /* facebook-icon.png in Resources */,
 				2E497DA71B48DA8A00F3DCE4 /* Sports-wear.png in Resources */,
 				2E127D991B68594D005B0E1F /* img_btn_next.png in Resources */,
 				687FF5461B48344300A99072 /* 7.png in Resources */,
 				2E497D9D1B48DA8A00F3DCE4 /* left-arrow.png in Resources */,
+				689FA5971B9342E500F65E3F /* tick.png in Resources */,
+				689FA5961B9342E500F65E3F /* textbox.png in Resources */,
 				2E497D971B48DA8A00F3DCE4 /* Cart.png in Resources */,
 				687FF5441B48344300A99072 /* 5.png in Resources */,
 				2E497DAF1B48E05000F3DCE4 /* NavigationBg.png in Resources */,
+				689FA59A1B9342E500F65E3F /* star.png in Resources */,
 				2E497DA11B48DA8A00F3DCE4 /* Raincoats.png in Resources */,
+				689FA59F1B9347CD00F65E3F /* palace_logo.png in Resources */,
 				58F37E1B1B454D68006F1810 /* Images.xcassets in Resources */,
 				2E065A791B7AE1FC00C209D4 /* no_image.png in Resources */,
 				2E497DA31B48DA8A00F3DCE4 /* Right-arrow.png in Resources */,
@@ -908,6 +982,7 @@
 				2E2161B01B648932008CF219 /* PalaceStore.xcdatamodeld in Sources */,
 				2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */,
 				68B5C8D91B47AEB600F3FD02 /* Banner.m in Sources */,
+				68DADACA1B96056F005F6C85 /* PSSignUpViewController.m in Sources */,
 				2EFE41B81B6E03E0004711AF /* Product_Category.m in Sources */,
 				58F37E471B455028006F1810 /* RECommonFunctions.m in Sources */,
 				58F37E131B454D68006F1810 /* AppDelegate.m in Sources */,
@@ -931,6 +1006,7 @@
 				E989101C1B733B7D00F4466B /* PSProductDetailsViewController.m in Sources */,
 				B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */,
 				E9E4E76A1B7386F100030E25 /* Products.m in Sources */,
+				68DADAC91B96056F005F6C85 /* PSLoginViewController.m in Sources */,
 				2E207C101B497EAA00F74840 /* ItemView.m in Sources */,
 				B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */,
 				2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */,
