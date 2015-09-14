@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CartTableViewController : UITableViewController
+@interface CartTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    
+    IBOutlet UITableView *cartTableView;
+    IBOutlet UILabel *total;
+}
 
 @property(nonatomic, strong)NSArray * cartArray;
+@property (nonatomic, assign) BOOL isFromMenu;
+
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Products.h"
 #import "DatabaseManager.h"
 
 @interface DatabaseHandler : NSObject
@@ -25,4 +26,6 @@
 + (void)insertProductsDetails:(NSArray*)productsCollection forParentCategory:(NSNumber *)parentCategoryId;
 + (void)updateProductDetailswithProductID:(int)productID
                             andCategoryID:(int)categoryID withData:(NSDictionary*)dictionaryData;
++ (void)addToCartWithObj:(Products *)product;
+
 @end

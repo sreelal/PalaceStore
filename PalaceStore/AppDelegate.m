@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "UIBarButtonItem+Badge.h"
+#import "BBBadgeBarButtonItem.h"
 
 @interface AppDelegate ()
 
@@ -14,6 +16,107 @@
 
 @implementation AppDelegate
 
+
+#pragma mark - Helper Methods
+
++ (AppDelegate*)instance {
+    
+    return [[UIApplication sharedApplication] delegate];
+}
+
+- (void)showBusyView:(NSString *)textToDisplay {
+    
+    _hud = [MBProgressHUD showHUDAddedTo:self.window animated:YES];
+    
+    _hud.labelText = textToDisplay;
+}
+
+- (void)hideBusyView {
+    
+    [MBProgressHUD hideHUDForView:self.window animated:YES];
+    
+    self.hud=nil;
+}
+
+#pragma mark - Navigation Bar Buttons Helper Methods
+
+- (UIBarButtonItem *)getCartBarButtonItemWithTarget:(id)target andSelector:(SEL)cartAction {
+    
+    UIButton *cartButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 20)];
+    [cartButton addTarget:target action:cartAction forControlEvents:UIControlEventTouchUpInside];
+    [cartButton setImage:[UIImage imageNamed:@"cart_icon.png"] forState:UIControlStateNormal];
+    
+    
+    BBBadgeBarButtonItem *cartBarButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:cartButton];
+    
+    cartBarButton.badgeOriginX = 13;
+    cartBarButton.badgeOriginY = -9;
+    
+    return cartBarButton;
+}
+
+- (UIBarButtonItem *)getHomeBarButtonItemWithTarget:(id)target andSelector:(SEL)homeAction {
+    
+    UIImage *homeImage = [UIImage imageNamed:@"Home_icon.png"];
+     
+    UIBarButtonItem *homeButton = [[UIBarButtonItem alloc] initWithImage:homeImage
+     style:UIBarButtonItemStylePlain
+     target:target
+     action:homeAction];
+     
+    return homeButton;
+}
+
+
+
+
+
+- (NSArray *)getCartAndHomeButtonItemsWithTarget:(id)target andCartSelector:(SEL)cartAction andHomeSelector:(SEL)homeAction {
+    
+    UIButton *cartButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 20)];
+    [cartButton addTarget:target action:cartAction forControlEvents:UIControlEventTouchUpInside];
+    [cartButton setImage:[UIImage imageNamed:@"cart_icon.png"] forState:UIControlStateNormal];
+    
+    
+    BBBadgeBarButtonItem *cartBarButton = [[BBBadgeBarButtonItem alloc] initWithCustomUIButton:cartButton];
+    
+    cartBarButton.badgeOriginX = 13;
+    cartBarButton.badgeOriginY = -9;
+    
+    UIImage *homeImage = [UIImage imageNamed:@"Home_icon.png"];
+    UIBarButtonItem *navRightButton2 = [[UIBarButtonItem alloc] initWithImage:homeImage
+                                                                                                                style:UIBarButtonItemStylePlain
+                                                                                                               target:target
+                                                                                                               action:homeAction];
+                                        
+    cartBarButton.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+    navRightButton2.imageInsets = UIEdgeInsetsMake(-3, 5, 0, -5);
+    
+    NSArray *righBarButtonItems = [NSArray arrayWithObjects:cartBarButton, navRightButton2, nil];
+    
+    return righBarButtonItems;
+    
+//    UIImage *image1 = [UIImage imageNamed:@"cart_icon.png"];
+//    UIImage *image2 = [UIImage imageNamed:@"Home_icon.png"];
+//    
+//    UIBarButtonItem *navRightButton1 = [[UIBarButtonItem alloc] initWithImage:image1
+//                                                                        style:UIBarButtonItemStylePlain
+//                                                                       target:target
+//                                                                       action:cartAction];
+//    UIBarButtonItem *navRightButton2 = [[UIBarButtonItem alloc] initWithImage:image2
+//                                                                        style:UIBarButtonItemStylePlain
+//                                                                       target:target
+//                                                                       action:homeAction];
+//    
+//    navRightButton1.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
+//    navRightButton2.imageInsets = UIEdgeInsetsMake(-5, 15, 0, -15);
+//    
+//    NSArray *righBarButtonItems = [NSArray arrayWithObjects:navRightButton1, navRightButton2, nil];
+//    
+//    return righBarButtonItems;
+}
+
+#pragma mark - Application Delegates
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

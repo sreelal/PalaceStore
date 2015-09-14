@@ -8,10 +8,13 @@
 
 #import "PSSubCategoryViewController.h"
 #import "PSProductViewController.h"
-
+#import "Cart.h"
 #import "HelperClass.h"
 #import "WebHandler.h"
 #import "DatabaseHandler.h"
+#import "CartTableViewController.h"
+#import "UIBarButtonItem+Badge.h"
+#import "BBBadgeBarButtonItem.h"
 
 @interface PSSubCategoryViewController ()
 
@@ -24,11 +27,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
-    leftBarItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = leftBarItem;
+    [self initView];
     
-    self.title = @"Palace Store";
     
     _categoryLabel.text = [NSString stringWithFormat:@"%@ (%d)", _productCategory.name, [_productCategory.subcategory_count intValue]];
     
@@ -42,6 +42,8 @@
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] managedObjectContext]];
+    
+    [self updateCartCount];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -57,6 +59,7 @@
     NSLog(@"Fetching started");
     _subCategories = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:subCategoryPredicate];
     NSLog(@"Fetching over");
+    
     if ([_subCategories count]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [_collectionView reloadData];
@@ -68,8 +71,17 @@
 
 - (void)getUpdatedSubCategoryForCategoryId:(NSNumber *)categoryId {
     
+    [[AppDelegate instance] showBusyView:@"Loading Categories..."];
+    
     [WebHandler getSubCategoriesForCategoryId:[categoryId intValue] withCallback:^(id object, NSError *error) {
         
+        if (object == nil || error != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+            });
+            
+            //To Do:- Show Alert
+        }
     }];
 }
 
@@ -78,7 +90,56 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Helper Methods
+
+- (void)initView {
+    
+    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+    leftBarItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+    
+    
+    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
+    
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+}
+
+-(void)incrementBadge:(id)sender
+{
+    NSInteger val = [self.navigationItem.rightBarButtonItem.badgeValue integerValue];
+    val++;
+    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%ld",val%5];
+}
+
+- (void)updateCartCount {
+    
+    NSArray *rightBarButtonItems = self.navigationItem.rightBarButtonItems;
+    UIBarButtonItem *rightBarButtonItem = [rightBarButtonItems firstObject];
+    
+    NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:TABLE_CART withPredicate:nil];
+    
+    int count = 0;
+    
+    for (Cart *cart in cartItems) {
+        count = count + [cart.count intValue];
+    }
+    
+    rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%d", count];
+}
+
 #pragma mark - Button Actions
+
+- (IBAction)cartAction:(id)sender {
+    
+    CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+    
+    [self.navigationController pushViewController:cartObj animated:YES];
+}
+
+- (IBAction)homeAction:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
 
 - (void)navgationBackClicked:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
@@ -180,6 +241,10 @@
      //    NSLog(@"Deleted Obj : %@", deletedObjects);*/
     
     if ([[obj class] isSubclassOfClass:[Product_Category class]]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+        });
+        
         [self loadCachedSubCategories];
         
         NSLog(@"Did Save Sub Categories : \n%@", [obj class]);

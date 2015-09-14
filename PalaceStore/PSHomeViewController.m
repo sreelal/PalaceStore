@@ -11,6 +11,7 @@
 #import "PSProductViewController.h"
 
 #import "BannerTableViewCell.h"
+#import "Cart.h"
 #import "LatestArrivalPromotionTableViewCell.h"
 #import "CategoryTableViewCell.h"
 
@@ -19,7 +20,9 @@
 #import "Constants.h"
 
 #import "ProfileViewController.h"
-
+#import "UIBarButtonItem+Badge.h"
+#import "BBBadgeBarButtonItem.h"
+#import "CartTableViewController.h"
 
 @class DatabaseHandler;
 @interface PSHomeViewController ()
@@ -40,11 +43,8 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
-   
-    UIBarButtonItem * rightButton = [[UIBarButtonItem alloc]initWithTitle:@"Profile" style:UIBarButtonItemStylePlain target:self action:@selector(ProfileView:)];
-    self.navigationItem.rightBarButtonItem = rightButton;
     
-    self.title = @"Palace";
+    [self initView];
     
     _bannerCollection = [[NSMutableArray alloc] init];
     
@@ -66,6 +66,12 @@
     [super viewWillAppear:animated];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] managedObjectContext]];
+    
+    [self updateCartCount];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -86,7 +92,9 @@
             Banner_Images *bannerImage = obj;
             NSString *imgURL = bannerImage.image_url;
             
-            if (imgURL) [_bannerCollection addObject:imgURL];
+            NSString *encodedURL = [imgURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+            
+            if (imgURL) [_bannerCollection addObject:encodedURL];
         }];
         
         if ([_bannerCollection count]) {
@@ -125,11 +133,46 @@
 
 - (void)loadHomeData {
     
+    [[AppDelegate instance] showBusyView:@"Loading..."];
+    
     [WebHandler getHomeDetailsWithCallback:^(id object, NSError *error) {
-        if (object == nil) {
+        
+        if (object == nil || error != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+            });
+            
             //To Do:- Show Alert
         }
     }];
+}
+
+#pragma mark - Helper Methods
+
+- (void)initView {
+    
+    UIBarButtonItem *righBarButtonItem = [[AppDelegate instance] getCartBarButtonItemWithTarget:self andSelector:@selector(cartAction:)];
+    self.navigationItem.rightBarButtonItem = righBarButtonItem;
+}
+
+- (void)updateCartCount {
+    
+    NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:TABLE_CART withPredicate:nil];
+    
+    int count = 0;
+    
+    for (Cart *cart in cartItems) {
+        count = count + [cart.count intValue];
+    }
+    
+    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%d", count];
+}
+
+-(void)incrementBadge:(id)sender
+{
+    NSInteger val = [self.navigationItem.rightBarButtonItem.badgeValue integerValue];
+    val++;
+    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%ld",val%5];
 }
 
 #pragma mark - Button Actions
@@ -148,6 +191,17 @@
         productVC.productCategory = category;
         [self.navigationController pushViewController:productVC animated:YES];
     }
+}
+
+- (IBAction)cartAction:(id)sender {
+    
+    CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+    
+    [self.navigationController pushViewController:cartObj animated:YES];
+    
+    //cartObj.isFromMenu = YES;
+    //UINavigationController * cartNav = [[UINavigationController alloc]initWithRootViewController:cartObj];
+    //[self.sideMenuViewController setContentViewController:cartNav];
 }
 
 #pragma mark - UITableView Datasource
@@ -253,14 +307,16 @@
 - (void)managedObjectDidSave:(NSNotification *)notification {
     
     NSSet *insertObjects = [notification userInfo][@"inserted"];
-    NSSet *updatedObjects = [notification userInfo][@"updated"];
+    /*NSSet *updatedObjects = [notification userInfo][@"updated"];
     NSSet *deletedObjects = [notification userInfo][@"deleted"];
+    
+    NSLog(@"Inserted Obj : %@", insertObjects);
+    NSLog(@"Updated Obj : %@", updatedObjects);
+    NSLog(@"Deleted Obj : %@", deletedObjects);*/
     
     id obj = [insertObjects anyObject];
     
-    /*NSLog(@"Inserted Obj : %@", insertObjects);
-//    NSLog(@"Updated Obj : %@", updatedObjects);
-//    NSLog(@"Deleted Obj : %@", deletedObjects);*/
+    
     
     if ([[obj class] isSubclassOfClass:[Banner_Images class]]) {
         NSLog(@"Did Save Banner Images : \n%@", [obj class]);
@@ -269,6 +325,11 @@
         NSLog(@"Did Save Latest Arrivals : \n%@", [obj class]);
     }
     else if ([[obj class] isSubclassOfClass:[Product_Category class]]) {
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+        });
+        
         [self loadBannerImages];
         [self loadLatestArrivalsAndPromotions];
         [self loadCategories];

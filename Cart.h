@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * model;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) NSString * thumb_image_url;
+@property (nonatomic, retain) NSNumber * count;
 
 @end

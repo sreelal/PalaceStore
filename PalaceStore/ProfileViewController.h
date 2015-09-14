@@ -10,4 +10,6 @@
 
 @interface ProfileViewController : UITableViewController
 
+@property (nonatomic, assign) BOOL isFromMenu;
+
 @end

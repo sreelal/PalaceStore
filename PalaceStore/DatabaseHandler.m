@@ -14,6 +14,7 @@
 #import "LatestArrivals_Promotions.h"
 #import "Product_Category.h"
 #import "Products.h"
+#import "Cart.h"
 #import "Product_Details.h"
 #import "Product_Attributes.h"
 #import "NSNull+Empty.h"
@@ -234,7 +235,7 @@
                             andCategoryID:(int)categoryID withData:(NSDictionary*)dictionaryData{
     
     NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %d && product_id ==%d", categoryID,productID];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", [NSNumber numberWithInt:categoryID], [NSNumber numberWithInt:productID]];
     NSArray *results = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:predicate];
     Products* products = (Products*)[results lastObject];
     if (products) {
@@ -279,7 +280,40 @@
         }
         
     }
+}
 
++ (void)addToCartWithObj:(Products *)product {
+    
+    NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", product.category_id, product.product_id];
+    NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:TABLE_CART withPredicate:predicate];
+    Cart *cart = nil;
+    
+    if ([cartItems count]) {
+        cart = [cartItems lastObject];
+        int count = [cart.count intValue] + 1;
+        cart.count = [NSNumber numberWithInt:count];
+    }
+    else {
+        cart = [NSEntityDescription insertNewObjectForEntityForName:TABLE_CART inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        cart.category_id = product.category_id;
+        cart.price = product.price;
+        cart.product_id = product.product_id;
+        cart.model = product.model;
+        cart.name = product.name;
+        cart.thumb_image_url = product.thumb_image_url;
+        cart.count = [NSNumber numberWithInt:1];
+    }
+    
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"Sucessfully Saved Products");
+    }
 }
 
 @end

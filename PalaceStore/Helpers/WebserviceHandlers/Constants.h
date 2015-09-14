@@ -13,7 +13,8 @@
 #endif
 
 //------------------Webservice----------------------
-#define SERVICE_URL_ROOT     @"http://ezcomdesign.com/demo/palace/index.php?route=service/"
+//#define SERVICE_URL_ROOT     @"http://ezcomdesign.com/demo/palace/index.php?route=service/"
+#define SERVICE_URL_ROOT     @"http://www.palacestores.com/index.php?route=service/"
 #define SERVICE_HOME         @"home"
 #define SERVICE_CATEGORY     @"category"
 #define SERVICE_SUB_CATEGORY @"category&category="
@@ -33,6 +34,7 @@
 #define TABLE_LATEST_ARRIVALS_PROMOTIONS @"LatestArrivals_Promotions"
 #define TABLE_PRODUCT_CATEGORY @"Product_Category"
 #define TABLE_PRODUCTS @"Products"
+#define TABLE_CART @"Cart"
 #define TABLE_PRODUCTS_DETAILS @"Product_Details"
 #define TABLE_PRODUCTS_ATTRIBUTES @"Product_Attributes"
 

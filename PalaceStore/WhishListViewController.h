@@ -10,7 +10,7 @@
 
 @interface WhishListViewController : UITableViewController
 
-@property(nonatomic, strong)NSArray * whishListArray;
-
+@property (nonatomic, strong) NSArray * whishListArray;
+@property (nonatomic, assign) BOOL isFromMenu;
 
 @end

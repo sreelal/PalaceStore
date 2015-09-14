@@ -67,7 +67,6 @@ static NSOperationQueue *reqQueue;
 
 + (void)postRequestWithURL:(NSString *)url andDictionary:(NSDictionary *)dataDict withCallback:(void (^) (id result, NSError *error))callbackHandler {
     
-    //NSString *jsonRequest = [dataDict JSONRepresentation];
     NSString *jsonRequest = [RequestHandler getJSONStringForArrOrDict:dataDict];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
     NSData *requestData = [NSData dataWithBytes:[jsonRequest UTF8String] length:[jsonRequest length]];
@@ -75,7 +74,7 @@ static NSOperationQueue *reqQueue;
     [request setHTTPMethod:@"POST"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    [request setValue:[NSString stringWithFormat:@"%d", [requestData length]] forHTTPHeaderField:@"Content-Length"];
+    [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[requestData length]] forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody: requestData];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[self requestQueue] completionHandler:^(NSURLResponse *resp, NSData *data, NSError *error) {
@@ -90,6 +89,9 @@ static NSOperationQueue *reqQueue;
         
         callbackHandler(responseObject, error);        
     }];
+    
+    NSOperationQueue *queue = [self requestQueue];
+    NSLog(@"Operation Quesue Count: %lu", (unsigned long)queue.operationCount);
 }
 
 + (NSString *)getJSONStringForArrOrDict:(id)obj {

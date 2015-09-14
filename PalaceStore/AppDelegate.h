@@ -12,6 +12,19 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+@property (retain) MBProgressHUD *hud;
+
++ (AppDelegate *)instance;
+
+- (void)hideBusyView;
+
+- (void)showBusyView:(NSString *)textToDisplay;
+
+- (UIBarButtonItem *)getHomeBarButtonItemWithTarget:(id)target andSelector:(SEL)homeAction;
+
+- (UIBarButtonItem *)getCartBarButtonItemWithTarget:(id)target andSelector:(SEL)cartAction;
+
+- (NSArray *)getCartAndHomeButtonItemsWithTarget:(id)target andCartSelector:(SEL)cartAction andHomeSelector:(SEL)homeAction;
 
 @end
 

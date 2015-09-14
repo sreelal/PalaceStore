@@ -29,19 +29,11 @@
     _seperatorLabel.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.5];
     
     [HelperClass addBorderForView:_swipeView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
-    
-    //[self loadLatestArrivals:nil];
-    
+        
     _swipeView.alignment = SwipeViewAlignmentEdge;
     _swipeView.pagingEnabled = YES;
     _swipeView.itemsPerPage = 1;
     _swipeView.truncateFinalPage = YES;
-    
-    /*_nwArrivals = [[NSMutableArray alloc] initWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"image4.png", @"image", @"Mini Kit - Diamond", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Shirt.png", @"image", @"Shirt", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Shoes.png", @"image", @"Shoes", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Watch.png", @"image", @"Watch", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Sunglass.png", @"image", @"Sunglass", @"name", nil], nil];
-    
-    _promotionalItems = [[NSMutableArray alloc] initWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"apple_cinema_30-200x200.jpg", @"image", @"Apple Cinema", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"canon_eos_5d_1-200x200.jpg", @"image", @"Canon EOS", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"iphone_1-200x200.jpg", @"image", @"iPhone", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"macbook_1-200x200.jpg", @"image", @"Mac Book", @"name", nil], nil];
-    
-    _categories = [[NSMutableArray alloc] initWithObjects:[NSDictionary dictionaryWithObjectsAndKeys:@"kids.png", @"image", @"Kids", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Men.png", @"image", @"Men", @"name", nil], [NSDictionary dictionaryWithObjectsAndKeys:@"Women.png", @"image", @"Women", @"name", nil], nil];*/
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

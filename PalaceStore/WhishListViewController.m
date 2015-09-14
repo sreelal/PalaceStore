@@ -16,43 +16,63 @@
 
 @implementation WhishListViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     
-    self.title = @"My WhishList";
-    UIBarButtonItem * left = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"MenuIcon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(leftAction:)];
-    
-    self.navigationItem.leftBarButtonItem = left;
-
+    [self setupView];
 }
--(void)viewWillAppear:(BOOL)animated
-{
+
+-(void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
+    
     [self fetchWhishListObjectsFromDatabase];
 }
--(void)fetchWhishListObjectsFromDatabase
-{
+
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+}
+
+#pragma mark - Button Actions
+
+-(IBAction)leftAction:(id)sender {
+    
+    [self.sideMenuViewController presentLeftMenuViewController];
+}
+
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - Helper Methods
+
+- (void)fetchWhishListObjectsFromDatabase {
+    
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"WishList"];
     
     self.whishListArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
     [self.tableView reloadData];
 }
 
--(IBAction)leftAction:(id)sender
-{
-    [self.sideMenuViewController presentLeftMenuViewController];
+- (void)setupView {
     
-    
-}
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+    if (_isFromMenu) {
+        self.navigationItem.leftBarButtonItem = [HelperClass getMenuButtonItemWithTarget:self andAction:@selector(leftAction:)];
+    }
+    else {
+        UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+        leftBarItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem = leftBarItem;
+    }
 }
 
 #pragma mark - Table view data source
 
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     return [self.whishListArray count];
 }
 

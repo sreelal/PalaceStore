@@ -15,9 +15,12 @@
 #import "Product_Attributes.h"
 #import "ProductImageCell.h"
 #import "PriceInfoCell.h"
+#import "Cart.h"
 #import "ProductDescriptionCell.h"
 #import "ProductSpecificationCell.h"
 #import "PSProductSpecificationsViewController.h"
+#import "UIBarButtonItem+Badge.h"
+#import "CartTableViewController.h"
 
 @interface PSProductDetailsViewController ()
 
@@ -31,8 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+
+    [self initView];
     [self loadCachedDetails];
     [self getProductDetailsForProductID:_selectedProduct.product_id andCategoryID:_selectedProduct.category_id];
     
@@ -42,6 +45,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    
+    [self updateCartCount];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:)
                                                  name:NSManagedObjectContextDidSaveNotification
@@ -55,6 +60,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Helper Methods
+
+- (void)initView {
+    
+    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+    leftBarItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+    
+    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
+    
+    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
 }
 
 - (void)loadCachedDetails{
@@ -75,13 +93,53 @@
 
 - (void)getProductDetailsForProductID:(NSNumber*)productID andCategoryID:(NSNumber*)categoryID{
     
+    [[AppDelegate instance] showBusyView:@"Loading..."];
+    
     [WebHandler getproductdetailsWithproductID:[productID intValue]
                                  andCategoryID:[categoryID intValue]
                                   withCallback:^(id object, NSError *error) {
-        
+                                      if (object == nil || error != nil) {
+                                          dispatch_async(dispatch_get_main_queue(), ^{
+                                              [[AppDelegate instance] hideBusyView];
+                                          });
+                                          
+                                          //To Do:- Show Alert
+                                      }
+                                      
     }];
 }
 
+- (void)updateCartCount {
+    
+    NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:TABLE_CART withPredicate:nil];
+    
+    int count = 0;
+    
+    for (Cart *cart in cartItems) {
+        count = count + [cart.count intValue];
+    }
+    
+    self.navigationItem.rightBarButtonItem.badgeValue = [NSString stringWithFormat:@"%d", count];
+}
+
+#pragma mark - Button Actions
+
+- (IBAction)cartAction:(id)sender {
+    
+    CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+    
+    [self.navigationController pushViewController:cartObj animated:YES];
+}
+
+- (IBAction)homeAction:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark -  Tableview delegates
 
@@ -159,6 +217,10 @@
     id obj = [insertObjects anyObject];
     
     if ([[obj class] isSubclassOfClass:[Product_Details class]]||[[obj class] isSubclassOfClass:[Product_Attributes class]]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+        });
+        
         [self loadCachedDetails];
         NSLog(@"Did Save Sub Categories : \n%@", [obj class]);
     }

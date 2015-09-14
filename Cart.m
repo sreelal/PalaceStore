@@ -16,4 +16,6 @@
 @dynamic name;
 @dynamic thumb_image_url;
 @dynamic price;
+@dynamic count;
+
 @end

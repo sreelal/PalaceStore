@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>E421BE79-374E-41EF-8381-295D18FFB313</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>PalaceStore</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>C5CDD3E2BEEDAE2E2D83FB27B5728B641B57DD77</key>
 		<string>https://github.com/sreelal/PalaceStore.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PalaceStore.xcodeproj/project.xcworkspace</string>
+	<string>PalaceStore.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C5CDD3E2BEEDAE2E2D83FB27B5728B641B57DD77</key>

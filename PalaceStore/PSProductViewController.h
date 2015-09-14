@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "Product_Category.h"
+#import "AppDelegate.h"
+
 
 @interface PSProductViewController : UIViewController
 

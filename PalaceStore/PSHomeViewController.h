@@ -14,6 +14,7 @@
 #import "Banner_Images.h"
 #import "LatestArrivals_Promotions.h"
 #import "Product_Category.h"
+#import "AppDelegate.h"
 
 @interface PSHomeViewController : UIViewController
 

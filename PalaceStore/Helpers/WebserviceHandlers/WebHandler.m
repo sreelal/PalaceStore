@@ -11,7 +11,7 @@
 #import "HelperClass.h"
 #import "DatabaseHandler.h"
 #import "Banner.h"
-
+#import "AppDelegate.h"
 
 @implementation WebHandler
 
@@ -19,6 +19,8 @@
     
     if (![HelperClass hasNetwork]) {
         [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
         return;
     }
     
@@ -45,6 +47,8 @@
     
     if (![HelperClass hasNetwork]) {
         [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
         return;
     }
     
@@ -67,10 +71,12 @@
     
     if (![HelperClass hasNetwork]) {
         [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
         return;
     }
     
-    NSString *serviceURL = @"http://ezcomdesign.com/demo/palace/index.php?route=service/product&category=20";//[NSString stringWithFormat:@"%@%@%d", SERVICE_URL_ROOT, SERVICE_PRODUCT, categoryId];
+    NSString *serviceURL = [NSString stringWithFormat:@"%@%@%d", SERVICE_URL_ROOT, SERVICE_PRODUCT, categoryId];
     
     [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
         
@@ -93,9 +99,10 @@
 
 + (void)getproductdetailsWithproductID:(int)productID andCategoryID:(int)categoryID  withCallback:(ResponseCallback)callback{
     
-    
     if (![HelperClass hasNetwork]) {
         [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
         return;
     }
     

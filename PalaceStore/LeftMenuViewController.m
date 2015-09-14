@@ -7,14 +7,11 @@
 //
 
 #import "RESideMenu.h"
-
 #import "LeftMenuViewController.h"
-
 #import "CartTableViewController.h"
-
 #import "PSHomeViewController.h"
-
 #import "WhishListViewController.h"
+#import "ProfileViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -27,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart",@"WishList", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart",@"WishList", @"Profile", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,35 +58,36 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-//    if ((self.delegate!=nil) && ([self.delegate respondsToSelector:@selector(didSelectMenuItemAtIndex:)])) {
-//        
-//        [self.delegate didSelectMenuItemAtIndex:indexPath.row];
-//    }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
    
-    if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Home"])
-    {
+    if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Home"]) {
         PSHomeViewController * homeObj = (PSHomeViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"homeNavigationVC"];
         [self.sideMenuViewController setContentViewController:homeObj];
         
     }
-    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"WishList"])
-    {
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"WishList"]) {
         WhishListViewController * whishListObj = (WhishListViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"WhishListViewController"];
+        whishListObj.isFromMenu = YES;
+        
         UINavigationController * whishNav = [[UINavigationController alloc]initWithRootViewController:whishListObj];
         [self.sideMenuViewController setContentViewController:whishNav];
         
     }
-    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Cart"])
-    {
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Cart"]) {
         CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+        cartObj.isFromMenu = YES;
         UINavigationController * cartNav = [[UINavigationController alloc]initWithRootViewController:cartObj];
         [self.sideMenuViewController setContentViewController:cartNav];
  
     }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Profile"]) {
+        ProfileViewController * profileView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"ProfileViewController"];
+        profileView.isFromMenu = YES;
+        UINavigationController * profNav = [[UINavigationController alloc]initWithRootViewController:profileView];
+        [self.sideMenuViewController setContentViewController:profNav];
+    }
+    
     [self.sideMenuViewController hideMenuViewController];
-
-   }
+}
 
 @end

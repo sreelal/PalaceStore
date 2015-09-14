@@ -11,8 +11,9 @@
 #import "PSProductViewController.h"
 #import "UIColor+CustomColor.h"
 #import "Cart.h"
-
+#import "DatabaseHandler.h"
 #import "WishList.h"
+#import "UIViewController+Refresh.h"
 
 @interface ProductCollectionViewCell () {
     BOOL isLoading;
@@ -79,12 +80,29 @@
 
 - (IBAction)cartAction:(id)sender
 {
+    [DatabaseHandler addToCartWithObj:self.selectedProductObj];
+    
+    [self.callingController updateCartCount];
+    
+    /*Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+    
+    cartObj.category_id = self.selectedProductObj.category_id;
+    cartObj.price = self.selectedProductObj.price;
+    cartObj.product_id = self.selectedProductObj.product_id;
+    cartObj.model = self.selectedProductObj.model;
+    cartObj.name = self.selectedProductObj.name;
+    cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+    
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", self.selectedProductObj.category_id, self.selectedProductObj.product_id];
+    NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:@"Cart" withPredicate:predicate];
+    
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Cart"];
     NSArray * cartItmesArray = [[[DatabaseManager sharedInstance]managedObjectContext] executeFetchRequest:request error:nil];
 
-    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"%K == %@",@"category_id",self.selectedProductObj.category_id]];
+    NSArray * hasItem = [cartItmesArray filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", self.selectedProductObj.category_id, self.selectedProductObj.product_id]];
     
-    if (! [hasItem count] > 0)
+    if (![cartItems count])
     {
         Cart * cartObj = [NSEntityDescription insertNewObjectForEntityForName:@"Cart" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
         
@@ -94,8 +112,9 @@
         cartObj.model = self.selectedProductObj.model;
         cartObj.name = self.selectedProductObj.name;
         cartObj.thumb_image_url = self.selectedProductObj.thumb_image_url;
+        cartObj.count = [NSNumber numberWithInt:1];
         
-        [[DatabaseManager sharedInstance]saveContext];
+        [[DatabaseManager sharedInstance] saveContext];
         
         
         UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Success" message:@"Current item is added to Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
@@ -106,7 +125,7 @@
         UIAlertView * alert = [[UIAlertView alloc]initWithTitle:@"Palace Store" message:@"Current is Already in your Cart" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [alert show];
 
-    }
+    }*/
    
 }
 

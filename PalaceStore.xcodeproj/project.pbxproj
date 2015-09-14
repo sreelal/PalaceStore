@@ -10,6 +10,8 @@
 		2E065A791B7AE1FC00C209D4 /* no_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E065A781B7AE1FC00C209D4 /* no_image.png */; };
 		2E0673791B4A0E27002FF5C3 /* CategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0673781B4A0E27002FF5C3 /* CategoryView.m */; };
 		2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */; };
+		2E075BB61BA669D2000EB00F /* Home_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E075BB41BA669D2000EB00F /* Home_icon@2x.png */; };
+		2E075BB71BA669D2000EB00F /* Home_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E075BB51BA669D2000EB00F /* Home_icon@3x.png */; };
 		2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */; };
 		2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E127D911B6854FE005B0E1F /* PSSubCategoryViewController.m */; };
 		2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E127D931B68594D005B0E1F /* img_btn_back.png */; };
@@ -48,6 +50,12 @@
 		2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E497DB11B48E15300F3DCE4 /* MenuIcon.png */; };
 		2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E497DB41B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m */; };
 		2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */; };
+		2EB842221BA54F9B008228E4 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8421F1BA54F9B008228E4 /* UIBarButtonItem+Badge.m */; };
+		2EB842231BA54F9B008228E4 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB842211BA54F9B008228E4 /* UIButton+Badge.m */; };
+		2EB842251BA5535B008228E4 /* cart_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB842241BA5535B008228E4 /* cart_icon.png */; };
+		2EB842271BA5553C008228E4 /* Home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB842261BA5553C008228E4 /* Home_icon.png */; };
+		2EBCAC3A1BA5832D007B17AE /* UIViewController+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCAC391BA5832D007B17AE /* UIViewController+Refresh.m */; };
+		2EBCAC401BA59904007B17AE /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCAC3F1BA59904007B17AE /* BBBadgeBarButtonItem.m */; };
 		2EFE41B81B6E03E0004711AF /* Product_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE41B71B6E03E0004711AF /* Product_Category.m */; };
 		58F37E101B454D68006F1810 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E0F1B454D68006F1810 /* main.m */; };
 		58F37E131B454D68006F1810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E121B454D68006F1810 /* AppDelegate.m */; };
@@ -147,6 +155,8 @@
 		2E0673771B4A0E27002FF5C3 /* CategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryView.h; sourceTree = "<group>"; };
 		2E0673781B4A0E27002FF5C3 /* CategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryView.m; sourceTree = "<group>"; };
 		2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
+		2E075BB41BA669D2000EB00F /* Home_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home_icon@2x.png"; sourceTree = "<group>"; };
+		2E075BB51BA669D2000EB00F /* Home_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home_icon@3x.png"; sourceTree = "<group>"; };
 		2E0AFACE1B6D3ED9008D51FF /* CommonHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeaders.h; sourceTree = "<group>"; };
 		2E0FAAA11B6E34AA00384912 /* PSProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSProductViewController.h; sourceTree = "<group>"; };
 		2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProductViewController.m; sourceTree = "<group>"; };
@@ -198,6 +208,16 @@
 		2E497DB41B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivalPromotionTableViewCell.m; sourceTree = "<group>"; };
 		2EB7BBFC1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCollectionViewCell.m; sourceTree = "<group>"; };
+		2EB8421E1BA54F9B008228E4 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
+		2EB8421F1BA54F9B008228E4 /* UIBarButtonItem+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Badge.m"; sourceTree = "<group>"; };
+		2EB842201BA54F9B008228E4 /* UIButton+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Badge.h"; sourceTree = "<group>"; };
+		2EB842211BA54F9B008228E4 /* UIButton+Badge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Badge.m"; sourceTree = "<group>"; };
+		2EB842241BA5535B008228E4 /* cart_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart_icon.png; sourceTree = "<group>"; };
+		2EB842261BA5553C008228E4 /* Home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_icon.png; sourceTree = "<group>"; };
+		2EBCAC381BA5832D007B17AE /* UIViewController+Refresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Refresh.h"; path = "Category/UIViewController+Refresh.h"; sourceTree = "<group>"; };
+		2EBCAC391BA5832D007B17AE /* UIViewController+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Refresh.m"; path = "Category/UIViewController+Refresh.m"; sourceTree = "<group>"; };
+		2EBCAC3E1BA59904007B17AE /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
+		2EBCAC3F1BA59904007B17AE /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
 		2EFE41B61B6E03E0004711AF /* Product_Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Category.h; sourceTree = "<group>"; };
 		2EFE41B71B6E03E0004711AF /* Product_Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Category.m; sourceTree = "<group>"; };
 		58F37E0A1B454D68006F1810 /* PalaceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalaceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +410,9 @@
 				E9A0AB371B74DAAB000ED4D3 /* NSNull+Empty.m */,
 				E9A0AB391B74DD8F000ED4D3 /* NSString+Empty.h */,
 				E9A0AB3A1B74DD8F000ED4D3 /* NSString+Empty.m */,
+				2EBCAC381BA5832D007B17AE /* UIViewController+Refresh.h */,
+				2EBCAC391BA5832D007B17AE /* UIViewController+Refresh.m */,
+				2EB8421D1BA54F9B008228E4 /* CustomBadges */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -430,18 +453,6 @@
 		2E497D791B48C97400F3DCE4 /* UI Module */ = {
 			isa = PBXGroup;
 			children = (
-				68DADAC51B96056F005F6C85 /* PSLoginViewController.h */,
-				68DADAC61B96056F005F6C85 /* PSLoginViewController.m */,
-				68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */,
-				68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */,
-				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
-				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
-				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
-				B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */,
-				58F37E141B454D68006F1810 /* MainViewController.h */,
-				58F37E151B454D68006F1810 /* MainViewController.m */,
-				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
-				58F37E381B454E8D006F1810 /* LeftMenuViewController.m */,
 				58F37E3A1B454F93006F1810 /* PSHomeViewController.h */,
 				58F37E3B1B454F93006F1810 /* PSHomeViewController.m */,
 				2E127D901B6854FE005B0E1F /* PSSubCategoryViewController.h */,
@@ -450,6 +461,20 @@
 				2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */,
 				E989101A1B733B7D00F4466B /* PSProductDetailsViewController.h */,
 				E989101B1B733B7D00F4466B /* PSProductDetailsViewController.m */,
+				68DADAC51B96056F005F6C85 /* PSLoginViewController.h */,
+				68DADAC61B96056F005F6C85 /* PSLoginViewController.m */,
+				68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */,
+				68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */,
+				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
+				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
+				B7B8BDC11B87420200E90BEF /* CartTableViewController.h */,
+				B7B8BDC21B87420200E90BEF /* CartTableViewController.m */,
+				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
+				B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */,
+				58F37E141B454D68006F1810 /* MainViewController.h */,
+				58F37E151B454D68006F1810 /* MainViewController.m */,
+				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
+				58F37E381B454E8D006F1810 /* LeftMenuViewController.m */,
 				E97A478C1B787FB600DD3529 /* PSProductSpecificationsViewController.h */,
 				E97A478D1B787FB600DD3529 /* PSProductSpecificationsViewController.m */,
 				58F37E3E1B455028006F1810 /* CustomViews */,
@@ -457,8 +482,6 @@
 				2EB7BBFB1B6CF2C8007BBD58 /* CollectionViewCell */,
 				FC0E70161B89F8C0004380BE /* WishList.h */,
 				FC0E70171B89F8C0004380BE /* WishList.m */,
-				B7B8BDC11B87420200E90BEF /* CartTableViewController.h */,
-				B7B8BDC21B87420200E90BEF /* CartTableViewController.m */,
 			);
 			name = "UI Module";
 			sourceTree = "<group>";
@@ -491,6 +514,10 @@
 		2E497D7B1B48DA8A00F3DCE4 /* slice */ = {
 			isa = PBXGroup;
 			children = (
+				2EB842261BA5553C008228E4 /* Home_icon.png */,
+				2E075BB41BA669D2000EB00F /* Home_icon@2x.png */,
+				2E075BB51BA669D2000EB00F /* Home_icon@3x.png */,
+				2EB842241BA5535B008228E4 /* cart_icon.png */,
 				2E497DAC1B48E05000F3DCE4 /* HeaderBg.png */,
 				2E497D7C1B48DA8A00F3DCE4 /* Adidas.png */,
 				2E497D7D1B48DA8A00F3DCE4 /* Arrow.png */,
@@ -521,6 +548,27 @@
 				FCC8AE831B86557D00F13B3C /* ProductCollectionViewCell.m */,
 			);
 			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		2EB8421D1BA54F9B008228E4 /* CustomBadges */ = {
+			isa = PBXGroup;
+			children = (
+				2EB8421E1BA54F9B008228E4 /* UIBarButtonItem+Badge.h */,
+				2EB8421F1BA54F9B008228E4 /* UIBarButtonItem+Badge.m */,
+				2EB842201BA54F9B008228E4 /* UIButton+Badge.h */,
+				2EB842211BA54F9B008228E4 /* UIButton+Badge.m */,
+			);
+			name = CustomBadges;
+			path = Category/CustomBadges;
+			sourceTree = "<group>";
+		};
+		2EBCAC3D1BA59904007B17AE /* BarButtonBadge */ = {
+			isa = PBXGroup;
+			children = (
+				2EBCAC3E1BA59904007B17AE /* BBBadgeBarButtonItem.h */,
+				2EBCAC3F1BA59904007B17AE /* BBBadgeBarButtonItem.m */,
+			);
+			path = BarButtonBadge;
 			sourceTree = "<group>";
 		};
 		58F37E011B454D68006F1810 = {
@@ -592,6 +640,7 @@
 				68B5C8DC1B47AFC500F3FD02 /* Constants.h */,
 				68B5C8DD1B47AFC500F3FD02 /* HelperClass.h */,
 				68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */,
+				2EBCAC3D1BA59904007B17AE /* BarButtonBadge */,
 				2E17FE3E1B6562E6005D732A /* Category */,
 				687FF5281B48316700A99072 /* MarqueeView */,
 				68B447A91B47DB1900E470BF /* SwipeView */,
@@ -891,6 +940,7 @@
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
 				B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */,
+				2EB842271BA5553C008228E4 /* Home_icon.png in Resources */,
 				689FA5981B9342E500F65E3F /* btn-bg.png in Resources */,
 				689FA59B1B9342E500F65E3F /* text-box.png in Resources */,
 				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
@@ -917,6 +967,8 @@
 				2E497DAE1B48E05000F3DCE4 /* HeaderBg.png in Resources */,
 				58F37E191B454D68006F1810 /* Main.storyboard in Resources */,
 				687FF53B1B48344300A99072 /* 1.png in Resources */,
+				2E075BB61BA669D2000EB00F /* Home_icon@2x.png in Resources */,
+				2EB842251BA5535B008228E4 /* cart_icon.png in Resources */,
 				58F37E1E1B454D68006F1810 /* LaunchScreen.xib in Resources */,
 				E987AFE61B7A665B0050EADB /* Cart_small.png in Resources */,
 				689FA5941B9342E500F65E3F /* key.png in Resources */,
@@ -936,6 +988,7 @@
 				58F37E1B1B454D68006F1810 /* Images.xcassets in Resources */,
 				2E065A791B7AE1FC00C209D4 /* no_image.png in Resources */,
 				2E497DA31B48DA8A00F3DCE4 /* Right-arrow.png in Resources */,
+				2E075BB71BA669D2000EB00F /* Home_icon@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +1009,7 @@
 				2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */,
 				FC0E70181B89F8C0004380BE /* WishList.m in Sources */,
 				68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */,
+				2EB842231BA54F9B008228E4 /* UIButton+Badge.m in Sources */,
 				E95590921B7361580019AA51 /* PriceInfoCell.m in Sources */,
 				68B5C8C91B47A79300F3FD02 /* SDWebImageManager.m in Sources */,
 				68B5C8C41B47A79300F3FD02 /* AOImageView.m in Sources */,
@@ -966,6 +1020,7 @@
 				687FF52B1B48316700A99072 /* SLMarqueeView.m in Sources */,
 				68B5C8CE1B47AB1700F3FD02 /* BannerTableViewCell.m in Sources */,
 				E97A478E1B787FB600DD3529 /* PSProductSpecificationsViewController.m in Sources */,
+				2EBCAC3A1BA5832D007B17AE /* UIViewController+Refresh.m in Sources */,
 				E9E4E75E1B7371AF00030E25 /* ProductDescriptionCell.m in Sources */,
 				68B5C8C61B47A79300F3FD02 /* NSURLAdditions.m in Sources */,
 				2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */,
@@ -986,6 +1041,7 @@
 				2EFE41B81B6E03E0004711AF /* Product_Category.m in Sources */,
 				58F37E471B455028006F1810 /* RECommonFunctions.m in Sources */,
 				58F37E131B454D68006F1810 /* AppDelegate.m in Sources */,
+				2EB842221BA54F9B008228E4 /* UIBarButtonItem+Badge.m in Sources */,
 				68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */,
 				68B5C8C81B47A79300F3FD02 /* SDWebImageDownloader.m in Sources */,
 				B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */,
@@ -1000,6 +1056,7 @@
 				58F37E101B454D68006F1810 /* main.m in Sources */,
 				E9A0AB3B1B74DD8F000ED4D3 /* NSString+Empty.m in Sources */,
 				2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */,
+				2EBCAC401BA59904007B17AE /* BBBadgeBarButtonItem.m in Sources */,
 				E9A0AB381B74DAAB000ED4D3 /* NSNull+Empty.m in Sources */,
 				2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */,
 				FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */,

@@ -53,7 +53,8 @@
 
 + (void)loadImageWithURL:(NSString *)imageURL andCompletionBlock:(void(^)(UIImage *img, NSData *imgData))block {
     
-    NSURL *url = [NSURL URLWithString:imageURL];
+    NSString *encodedURL = [imageURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSURL *url = [NSURL URLWithString:encodedURL];
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul);
     
@@ -173,6 +174,13 @@
                                      forState:UIControlStateNormal];
     
     return leftBarButtonItem;
+}
+
++ (UIBarButtonItem *)getMenuButtonItemWithTarget:(id)target andAction:(SEL)action {
+    
+    UIBarButtonItem * menuButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"MenuIcon.png"] style:UIBarButtonItemStylePlain target:target action:action];
+    
+    return menuButtonItem;
 }
 
 + (void)makeRoundedImageViewForView:(UIImageView *)imgView {

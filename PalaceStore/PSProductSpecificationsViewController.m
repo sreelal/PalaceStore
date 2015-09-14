@@ -26,8 +26,9 @@
     [self prepareSpecificationsData];
 }
 
+#pragma mark - Helper Methods
 
-- (void)prepareSpecificationsData{
+- (void)prepareSpecificationsData {
     
     _specificationsData = [NSMutableDictionary dictionary];
     NSMutableDictionary *_fixedSpecifications = [NSMutableDictionary dictionary];
@@ -51,6 +52,20 @@
             _specificationsData[prod_Attributes.attributeName] = _attributesDictionary;
         }
     }
+}
+
+- (void)setupView {
+    
+    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+    leftBarItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+}
+
+#pragma mark - Button Actions
+
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark -  Tableview delegates

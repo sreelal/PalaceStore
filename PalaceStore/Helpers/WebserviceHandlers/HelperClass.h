@@ -40,6 +40,8 @@
 
 + (UIBarButtonItem *)getBackButtonItemWithTarget:(id)target andAction:(SEL)action;
 
++ (UIBarButtonItem *)getMenuButtonItemWithTarget:(id)target andAction:(SEL)action ;
+
 + (void)makeRoundedImageViewForView:(UIImageView *)imgView;
 
 @end

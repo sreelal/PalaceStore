@@ -22,12 +22,38 @@
 
 @implementation ProfileViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-    self.navigationItem.title =@"Palace";
+    
+    [self setupView];
 }
 
+#pragma mark - Helper Methods
+
+- (void)setupView {
+    
+    if (_isFromMenu) {
+        self.navigationItem.leftBarButtonItem = [HelperClass getMenuButtonItemWithTarget:self andAction:@selector(leftAction:)];
+    }
+    else {
+        UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+        leftBarItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem = leftBarItem;
+    }
+}
+
+#pragma mark - Button Actions
+
+-(IBAction)leftAction:(id)sender {
+    
+    [self.sideMenuViewController presentLeftMenuViewController];
+}
+
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark - Table view data source
 

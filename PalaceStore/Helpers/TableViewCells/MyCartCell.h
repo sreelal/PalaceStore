@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UIImageView *ratingImage;
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *offerLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
+
+- (void)loadProductImage:(NSString*)productURL;
 
 - (IBAction)removeAction:(id)sender;
 - (IBAction)placeOrderAction:(id)sender;

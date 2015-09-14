@@ -11,6 +11,7 @@
 
 @interface ProductCollectionViewCell : UICollectionViewCell
 
+@property (strong, nonatomic) id callingController;
 @property (weak, nonatomic) IBOutlet UIImageView *productImage;
 @property (weak, nonatomic) IBOutlet UIButton *cartButton;
 @property (weak, nonatomic) IBOutlet UIButton *favButton;
