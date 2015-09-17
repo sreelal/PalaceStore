@@ -81,6 +81,15 @@
 		687FF5461B48344300A99072 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF5381B48344300A99072 /* 7.png */; };
 		687FF5471B48344300A99072 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF5391B48344300A99072 /* 8.png */; };
 		687FF5481B48344300A99072 /* 9.png in Resources */ = {isa = PBXBuildFile; fileRef = 687FF53A1B48344300A99072 /* 9.png */; };
+		6895213B1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895213A1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m */; };
+		6895213D1BAB22CD00C9DDC6 /* PSCartAddressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */; };
+		6895213F1BAB22E600C9DDC6 /* PSCartLoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */; };
+		689521411BAB22FD00C9DDC6 /* PSCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689521401BAB22FD00C9DDC6 /* PSCartView.xib */; };
+		689521431BAB230D00C9DDC6 /* PSCartPaymentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */; };
+		689521461BAB232100C9DDC6 /* PSCartLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689521451BAB232100C9DDC6 /* PSCartLoginView.m */; };
+		689521491BAB233300C9DDC6 /* PSCartAddressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 689521481BAB233300C9DDC6 /* PSCartAddressView.m */; };
+		6895214C1BAB234300C9DDC6 /* PSCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895214B1BAB234300C9DDC6 /* PSCartView.m */; };
+		6895214F1BAB235600C9DDC6 /* PSCartPaymentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */; };
 		689FA5911B9342E500F65E3F /* btn-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5851B9342E500F65E3F /* btn-bg.png */; };
 		689FA5921B9342E500F65E3F /* facebook-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5861B9342E500F65E3F /* facebook-icon.png */; };
 		689FA5931B9342E500F65E3F /* fb-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 689FA5871B9342E500F65E3F /* fb-background.png */; };
@@ -256,6 +265,20 @@
 		687FF5381B48344300A99072 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
 		687FF5391B48344300A99072 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
 		687FF53A1B48344300A99072 /* 9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 9.png; sourceTree = "<group>"; };
+		689521391BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCheckoutBaseViewController.h; sourceTree = "<group>"; };
+		6895213A1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCheckoutBaseViewController.m; sourceTree = "<group>"; };
+		6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartAddressView.xib; sourceTree = "<group>"; };
+		6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartLoginView.xib; sourceTree = "<group>"; };
+		689521401BAB22FD00C9DDC6 /* PSCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartView.xib; sourceTree = "<group>"; };
+		689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartPaymentView.xib; sourceTree = "<group>"; };
+		689521441BAB232100C9DDC6 /* PSCartLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartLoginView.h; sourceTree = "<group>"; };
+		689521451BAB232100C9DDC6 /* PSCartLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartLoginView.m; sourceTree = "<group>"; };
+		689521471BAB233300C9DDC6 /* PSCartAddressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartAddressView.h; sourceTree = "<group>"; };
+		689521481BAB233300C9DDC6 /* PSCartAddressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartAddressView.m; sourceTree = "<group>"; };
+		6895214A1BAB234300C9DDC6 /* PSCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartView.h; sourceTree = "<group>"; };
+		6895214B1BAB234300C9DDC6 /* PSCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartView.m; sourceTree = "<group>"; };
+		6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartPaymentView.h; sourceTree = "<group>"; };
+		6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartPaymentView.m; sourceTree = "<group>"; };
 		689FA5851B9342E500F65E3F /* btn-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn-bg.png"; sourceTree = "<group>"; };
 		689FA5861B9342E500F65E3F /* facebook-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook-icon.png"; sourceTree = "<group>"; };
 		689FA5871B9342E500F65E3F /* fb-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-background.png"; sourceTree = "<group>"; };
@@ -482,6 +505,8 @@
 				2EB7BBFB1B6CF2C8007BBD58 /* CollectionViewCell */,
 				FC0E70161B89F8C0004380BE /* WishList.h */,
 				FC0E70171B89F8C0004380BE /* WishList.m */,
+				689521391BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.h */,
+				6895213A1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m */,
 			);
 			name = "UI Module";
 			sourceTree = "<group>";
@@ -665,6 +690,18 @@
 				2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */,
 				E955908B1B735D760019AA51 /* PSStarRatingView.h */,
 				E955908C1B735D760019AA51 /* PSStarRatingView.m */,
+				6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */,
+				6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */,
+				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
+				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
+				689521441BAB232100C9DDC6 /* PSCartLoginView.h */,
+				689521451BAB232100C9DDC6 /* PSCartLoginView.m */,
+				689521471BAB233300C9DDC6 /* PSCartAddressView.h */,
+				689521481BAB233300C9DDC6 /* PSCartAddressView.m */,
+				6895214A1BAB234300C9DDC6 /* PSCartView.h */,
+				6895214B1BAB234300C9DDC6 /* PSCartView.m */,
+				6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */,
+				6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */,
 			);
 			name = CustomViews;
 			path = Helpers/CustomViews;
@@ -930,12 +967,14 @@
 				B7A427D81B8ACEA10054F1E0 /* MyCartCell.xib in Resources */,
 				687FF5451B48344300A99072 /* 6.png in Resources */,
 				687FF5431B48344300A99072 /* 4.png in Resources */,
+				6895213D1BAB22CD00C9DDC6 /* PSCartAddressView.xib in Resources */,
 				2E497DA41B48DA8A00F3DCE4 /* Search.png in Resources */,
 				2E497D961B48DA8A00F3DCE4 /* Bottom-BG.png in Resources */,
 				2E127D981B68594D005B0E1F /* img_btn_back@2x.png in Resources */,
 				687FF5421B48344300A99072 /* 3.png in Resources */,
 				2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */,
 				2E497D9A1B48DA8A00F3DCE4 /* Fruit.png in Resources */,
+				689521431BAB230D00C9DDC6 /* PSCartPaymentView.xib in Resources */,
 				687FF53C1B48344300A99072 /* 10.png in Resources */,
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
@@ -943,6 +982,7 @@
 				2EB842271BA5553C008228E4 /* Home_icon.png in Resources */,
 				689FA5981B9342E500F65E3F /* btn-bg.png in Resources */,
 				689FA59B1B9342E500F65E3F /* text-box.png in Resources */,
+				6895213F1BAB22E600C9DDC6 /* PSCartLoginView.xib in Resources */,
 				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
@@ -959,6 +999,7 @@
 				2E3285761B671306006EB0C8 /* login1.png in Resources */,
 				2E497DA21B48DA8A00F3DCE4 /* Real-Orange.png in Resources */,
 				B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */,
+				689521411BAB22FD00C9DDC6 /* PSCartView.xib in Resources */,
 				687FF53D1B48344300A99072 /* 11.png in Resources */,
 				2E497D941B48DA8A00F3DCE4 /* Adidas.png in Resources */,
 				687FF5481B48344300A99072 /* 9.png in Resources */,
@@ -1026,7 +1067,10 @@
 				2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */,
 				68B5C8CA1B47A79300F3FD02 /* UrlImageButton.m in Sources */,
 				2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */,
+				6895214F1BAB235600C9DDC6 /* PSCartPaymentView.m in Sources */,
+				6895213B1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m in Sources */,
 				58F37E161B454D68006F1810 /* MainViewController.m in Sources */,
+				689521491BAB233300C9DDC6 /* PSCartAddressView.m in Sources */,
 				E9E4E75B1B73716B00030E25 /* ProductImageCell.m in Sources */,
 				58F37E491B455028006F1810 /* UIViewController+RESideMenu.m in Sources */,
 				E9D20B091B74B03200B52BBA /* ProductSpecificationCell.m in Sources */,
@@ -1034,6 +1078,7 @@
 				E9E4E76D1B7386F100030E25 /* Product_Details.m in Sources */,
 				68B447AC1B47DB1900E470BF /* SwipeView.m in Sources */,
 				2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */,
+				689521461BAB232100C9DDC6 /* PSCartLoginView.m in Sources */,
 				2E2161B01B648932008CF219 /* PalaceStore.xcdatamodeld in Sources */,
 				2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */,
 				68B5C8D91B47AEB600F3FD02 /* Banner.m in Sources */,
@@ -1056,6 +1101,7 @@
 				58F37E101B454D68006F1810 /* main.m in Sources */,
 				E9A0AB3B1B74DD8F000ED4D3 /* NSString+Empty.m in Sources */,
 				2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */,
+				6895214C1BAB234300C9DDC6 /* PSCartView.m in Sources */,
 				2EBCAC401BA59904007B17AE /* BBBadgeBarButtonItem.m in Sources */,
 				E9A0AB381B74DAAB000ED4D3 /* NSNull+Empty.m in Sources */,
 				2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */,
