@@ -8,6 +8,11 @@
 
 #import "PSCartAddressView.h"
 
+@interface PSCartAddressView ()
+@property (weak, nonatomic) IBOutlet UIButton *maleBtn;
+@property (weak, nonatomic) IBOutlet UIButton *femaleBtn;
+
+@end
 @implementation PSCartAddressView
 
 /*
@@ -17,5 +22,25 @@
     // Drawing code
 }
 */
+- (IBAction)didSelectGender:(id)sender {
+    
+    _maleBtn.selected = NO;
+    _femaleBtn.selected=NO;
+    UIButton *_selectedBtn = (UIButton*)sender;
+    _selectedBtn.selected = YES;
+}
+- (IBAction)didSelectnext:(id)sender {
+    
+    if (_cartAddressDelegate&&([_cartAddressDelegate respondsToSelector:@selector(didSuccessAddressOption)])) {
+        
+        
+        [_cartAddressDelegate didSuccessAddressOption];
+    }
+}
+- (IBAction)didSelectBillingSameAddress:(id)sender {
+    UIButton *_selectedBtn = (UIButton*)sender;
+    _selectedBtn.selected = !_selectedBtn.selected;
+
+}
 
 @end

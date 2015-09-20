@@ -622,9 +622,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xQO-bc-q28">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yft-5Y-Tck">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yft-5Y-Tck">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Login">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -634,15 +636,17 @@
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-TC-A6g">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="Address">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="didSelectNavigationButtonItem:" destination="g6q-6n-yje" eventType="touchUpInside" id="FST-Eq-hFR"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-2h-rdH">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-2h-rdH">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <state key="normal" title="Payment">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -650,13 +654,15 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="118-Wm-g5e">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
                                     </constraint>
                                     <constraint firstItem="yft-5Y-Tck" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="346-eg-63S"/>
-                                    <constraint firstItem="yft-5Y-Tck" firstAttribute="leading" secondItem="xQO-bc-q28" secondAttribute="leading" id="7tK-5x-v8G"/>
+                                    <constraint firstItem="yft-5Y-Tck" firstAttribute="leading" secondItem="xQO-bc-q28" secondAttribute="leading" id="7tK-5x-v8G">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="yft-5Y-Tck" secondAttribute="bottom" id="973-5T-UKm"/>
                                     <constraint firstItem="B9a-TC-A6g" firstAttribute="leading" secondItem="yft-5Y-Tck" secondAttribute="trailing" id="HJ8-yb-RmF"/>
                                     <constraint firstAttribute="trailing" secondItem="IVx-2h-rdH" secondAttribute="trailing" id="IA8-bz-XeU"/>
@@ -676,9 +682,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="118-Wm-g5e"/>
-                                        <exclude reference="346-eg-63S"/>
-                                        <exclude reference="7tK-5x-v8G"/>
-                                        <exclude reference="973-5T-UKm"/>
                                         <exclude reference="HJ8-yb-RmF"/>
                                         <exclude reference="LYE-XU-42l"/>
                                         <exclude reference="QxY-F1-6fb"/>
@@ -688,6 +691,9 @@
                                         <exclude reference="jNF-zI-XGQ"/>
                                         <exclude reference="lk4-Ny-yXh"/>
                                         <exclude reference="pBx-TT-4te"/>
+                                        <exclude reference="346-eg-63S"/>
+                                        <exclude reference="7tK-5x-v8G"/>
+                                        <exclude reference="973-5T-UKm"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -698,9 +704,6 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="118-Wm-g5e"/>
-                                        <include reference="346-eg-63S"/>
-                                        <include reference="7tK-5x-v8G"/>
-                                        <include reference="973-5T-UKm"/>
                                         <include reference="HJ8-yb-RmF"/>
                                         <include reference="LYE-XU-42l"/>
                                         <include reference="QxY-F1-6fb"/>
@@ -710,6 +713,9 @@
                                         <include reference="jNF-zI-XGQ"/>
                                         <include reference="lk4-Ny-yXh"/>
                                         <include reference="pBx-TT-4te"/>
+                                        <include reference="346-eg-63S"/>
+                                        <include reference="7tK-5x-v8G"/>
+                                        <include reference="973-5T-UKm"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -765,6 +771,12 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="addressBtn" destination="B9a-TC-A6g" id="zXV-h8-zPL"/>
+                        <outlet property="addressLeftContainer" destination="HJ8-yb-RmF" id="ECg-F5-WN6"/>
+                        <outlet property="loginBtn" destination="yft-5Y-Tck" id="lRC-kC-V10"/>
+                        <outlet property="loginLeftConstraint" destination="7tK-5x-v8G" id="Ndr-zh-1Gj"/>
+                        <outlet property="paymentBtn" destination="IVx-2h-rdH" id="tc2-1B-scV"/>
+                        <outlet property="paymentLeftConstraint" destination="jNF-zI-XGQ" id="k2q-Y5-nHs"/>
                         <outlet property="swipeBaseview" destination="RdE-Dk-AxK" id="Ldc-aJ-Rqn"/>
                     </connections>
                 </viewController>

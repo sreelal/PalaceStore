@@ -8,6 +8,17 @@
 
 #import "PSCartPaymentView.h"
 
+
+@interface PSCartPaymentView ()
+@property (weak, nonatomic) IBOutlet UIButton *codBtn;
+@property (weak, nonatomic) IBOutlet UIButton *bankDepositBtn;
+@property (weak, nonatomic) IBOutlet UIButton *mtnBtn;
+@property (weak, nonatomic) IBOutlet UIButton *tigoBtn;
+@property (weak, nonatomic) IBOutlet UIButton *airtelMoneyBtn;
+
+
+@end
+
 @implementation PSCartPaymentView
 
 /*
@@ -17,5 +28,16 @@
     // Drawing code
 }
 */
+- (IBAction)didSelectPaymentOption:(id)sender {
+    
+    [_codBtn setSelected:NO];
+    [_bankDepositBtn setSelected:NO];
+    [_mtnBtn setSelected:NO];
+    [_tigoBtn setSelected:NO];
+    [_airtelMoneyBtn setSelected:NO];
+
+    UIButton *_selected = (UIButton*)sender;
+    [_selected setSelected:YES];
+}
 
 @end

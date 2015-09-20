@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSCartAddressView : UIView
+
+@protocol PSCartAddressViewDelegate <NSObject>
+
+- (void)didSuccessAddressOption;
+
+@end
+
+@interface PSCartAddressView : UIView{
+    
+    
+}
+
+@property(nonatomic,assign)id <PSCartAddressViewDelegate> cartAddressDelegate;
 
 @end

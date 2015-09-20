@@ -13,7 +13,7 @@
 #import "PSCartPaymentView.h"
 #import "PSCartView.h"
 
-@interface PSCheckoutBaseViewController ()
+@interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate>
 @property (weak, nonatomic) IBOutlet SwipeView *swipeBaseview;
 @property (assign, nonatomic)NSInteger viewIndex;
 
@@ -21,6 +21,13 @@
 @property (weak, nonatomic)PSCartAddressView *cartAddressView;
 @property (weak, nonatomic)PSCartView *cartView;
 @property (weak, nonatomic)PSCartPaymentView *cartPaymentview;
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *paymentBtn;
+@property (weak, nonatomic) IBOutlet UIButton *addressBtn;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *addressLeftContainer;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *paymentLeftConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginLeftConstraint;
+@property (assign, nonatomic) NSInteger selectedIndex;
 
 @end
 
@@ -30,6 +37,8 @@
     [super viewDidLoad];
     _viewIndex = 0;
     _swipeBaseview.scrollEnabled = NO;
+    [self setSelectedPropertyForButton:_loginBtn];
+    _selectedIndex = _loginBtn.tag;
     // Do any additional setup after loading the view.
 }
 
@@ -63,6 +72,7 @@
             if (!_cartLoginView) {
                 
                 _cartLoginView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartLoginView" owner:self options:nil] firstObject];
+                _cartLoginView.loginDelegate = self;
                 //[ setTranslatesAutoresizingMaskIntoConstraints:NO];
             }
             targetView = _cartLoginView;
@@ -75,6 +85,7 @@
                 
                 _cartAddressView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartAddressView"
                                                                   owner:self options:nil] firstObject];
+                _cartAddressView.cartAddressDelegate = self;
             }
             targetView = _cartAddressView;
         }
@@ -82,18 +93,6 @@
             
             
         case 2:
-        {
-            if (!_cartView) {
-                
-                _cartView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartView"
-                                                           owner:self options:nil] firstObject];
-            }
-            targetView = _cartView;
-
-        }
-            break;
-            
-        case 3:
         {
             if (!_cartPaymentview) {
                 
@@ -119,8 +118,42 @@
 - (IBAction)didSelectNavigationButtonItem:(id)sender {
     
     UIButton *selectedButton = (UIButton*)sender;
+    [self setSelectedPropertyForButton:selectedButton];
     [_swipeBaseview scrollToItemAtIndex:selectedButton.tag duration:0.2];
 }
+
+- (void)setSelectedPropertyForButton:(UIButton*)btnSelected{
+    
+    [_loginBtn setBackgroundImage:[UIImage imageNamed:@"gray_arrow.png"] forState:UIControlStateNormal];
+    _loginBtn.titleLabel.textColor = [UIColor darkGrayColor];
+
+    [_addressBtn setBackgroundImage:[UIImage imageNamed:@"gray_arrow.png"] forState:UIControlStateNormal];
+    _addressBtn.titleLabel.textColor = [UIColor darkGrayColor];
+
+    [_paymentBtn setBackgroundImage:[UIImage imageNamed:@"gray_arrow.png"] forState:UIControlStateNormal];
+    _paymentBtn.titleLabel.textColor = [UIColor darkGrayColor];
+
+
+    [btnSelected setBackgroundImage:[UIImage imageNamed:@"red_arrow.png"] forState:UIControlStateNormal];
+    btnSelected.titleLabel.textColor = [UIColor whiteColor];
+}
+
+#pragma mark - Login Delegate
+
+
+- (void)didSuccessLoginOption{
+    
+    [self setSelectedPropertyForButton:_addressBtn];
+    [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0.2];
+
+}
+
+- (void)didSuccessAddressOption{
+    
+    [self setSelectedPropertyForButton:_paymentBtn];
+    [_swipeBaseview scrollToItemAtIndex:_paymentBtn.tag duration:0.2];
+}
+
 
 
 @end

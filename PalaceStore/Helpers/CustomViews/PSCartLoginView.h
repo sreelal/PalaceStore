@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PSCartLoginViewDelegate <NSObject>
+
+- (void)didSuccessLoginOption;
+
+@end
 @interface PSCartLoginView : UIView
+@property(nonatomic,assign)id <PSCartLoginViewDelegate> loginDelegate;
 
 @end
