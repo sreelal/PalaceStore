@@ -123,10 +123,9 @@
                                             <state key="normal" title="Button" image="checkbox-unchecked.png">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <state key="selected" image="checkbox-unchecked.png"/>
+                                            <state key="selected" image="checkbox-checked.png"/>
                                             <connections>
                                                 <action selector="didSelectBillingSameAddress:" destination="iN0-l3-epB" eventType="touchUpInside" id="w1Z-JO-lnx"/>
-                                                <action selector="didSelectGender:" destination="iN0-l3-epB" eventType="touchUpInside" id="S5g-hb-Q1W"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -226,6 +225,7 @@
         </view>
     </objects>
     <resources>
+        <image name="checkbox-checked.png" width="55" height="55"/>
         <image name="checkbox-unchecked.png" width="55" height="55"/>
         <image name="radio-normal.png" width="55" height="55"/>
         <image name="radio-slected.png" width="55" height="55"/>
