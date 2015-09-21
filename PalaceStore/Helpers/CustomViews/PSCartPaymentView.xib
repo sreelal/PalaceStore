@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -28,11 +28,17 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="0.0" y="0.0" width="380" height="40"/>
+                                            </variation>
                                         </label>
                                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Coupon Here" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-vY-FXu">
                                             <rect key="frame" x="20" y="60" width="450" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="20" y="60" width="270" height="30"/>
+                                            </variation>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mX0-HI-3es">
                                             <rect key="frame" x="480" y="60" width="60" height="30"/>
@@ -44,6 +50,9 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="300" y="60" width="60" height="30"/>
+                                            </variation>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" red="0.72336632010000002" green="0.71651700510000005" blue="0.72336632010000002" alpha="0.13" colorSpace="deviceRGB"/>
@@ -59,6 +68,9 @@
                                         <constraint firstAttribute="height" constant="150" id="gWI-i3-6pS"/>
                                         <constraint firstItem="MVp-JP-oNc" firstAttribute="top" secondItem="fiv-zb-GCy" secondAttribute="top" id="yTR-ad-j43"/>
                                     </constraints>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="-1" y="223" width="380" height="150"/>
+                                    </variation>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WcA-An-lz0">
                                     <rect key="frame" x="0.0" y="0.0" width="560" height="215"/>
@@ -68,8 +80,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="20" y="20" width="95" height="36"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Banks Deposit/Transfer" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwJ-8w-Xyp">
@@ -77,8 +90,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="20" y="77" width="130" height="15"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay with MTN Mobile Money" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cdf-X3-vwN">
@@ -86,8 +100,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="20" y="113" width="160" height="15"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tigo Cash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1aQ-Kq-2vy">
@@ -95,8 +110,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="20" y="149" width="57" height="15"/>
                                             </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pay with Airtel Money" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ol-w0-H4z">
@@ -104,8 +120,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
-                                            <variation key="heightClass=regular-widthClass=compact">
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <rect key="frame" x="20" y="185" width="121" height="19"/>
                                             </variation>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="scu-co-kOm">
@@ -118,6 +135,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="radio-slected.png"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="346" y="38" width="23" height="23"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="didSelectPaymentOption:" destination="iN0-l3-epB" eventType="touchUpInside" id="ggj-IH-F1L"/>
                                             </connections>
@@ -132,6 +152,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="radio-slected.png"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="346" y="73" width="23" height="23"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="didSelectPaymentOption:" destination="iN0-l3-epB" eventType="touchUpInside" id="jim-lg-ERj"/>
                                             </connections>
@@ -146,6 +169,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="radio-slected.png"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="346" y="110" width="23" height="23"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="didSelectPaymentOption:" destination="iN0-l3-epB" eventType="touchUpInside" id="8Ui-53-fKH"/>
                                             </connections>
@@ -160,6 +186,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="radio-slected.png"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="346" y="184" width="23" height="23"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="didSelectPaymentOption:" destination="iN0-l3-epB" eventType="touchUpInside" id="F63-TA-U8w"/>
                                             </connections>
@@ -174,6 +203,9 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="selected" image="radio-slected.png"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="346" y="145" width="23" height="23"/>
+                                            </variation>
                                             <connections>
                                                 <action selector="didSelectPaymentOption:" destination="iN0-l3-epB" eventType="touchUpInside" id="blm-QS-ZpC"/>
                                             </connections>
@@ -204,6 +236,9 @@
                                         <constraint firstItem="gwJ-8w-Xyp" firstAttribute="top" secondItem="Uat-US-cAE" secondAttribute="bottom" constant="21" id="tYr-ZF-h0q"/>
                                         <constraint firstAttribute="trailing" secondItem="PfL-rF-0pV" secondAttribute="trailing" constant="20" id="wIW-wQ-rDW"/>
                                     </constraints>
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="-1" y="-21" width="389" height="224"/>
+                                    </variation>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -215,6 +250,9 @@
                                 <constraint firstAttribute="trailing" secondItem="WcA-An-lz0" secondAttribute="trailing" id="S3d-ba-Ksf"/>
                                 <constraint firstItem="fiv-zb-GCy" firstAttribute="top" secondItem="WcA-An-lz0" secondAttribute="bottom" constant="20" id="n7B-Ez-i8G"/>
                             </constraints>
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="-20" y="0.0" width="380" height="760"/>
+                            </variation>
                         </view>
                     </subviews>
                     <constraints>
@@ -226,21 +264,58 @@
                         <constraint firstAttribute="centerY" secondItem="RUi-E2-ofq" secondAttribute="centerY" id="yB3-VB-Gob"/>
                     </constraints>
                 </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ced-mD-0Hp">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="OAM-bM-ehl"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="wjA-2t-zxf"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ymC-MA-5K8" secondAttribute="trailing" constant="20" id="5YI-ZR-Bf9"/>
+                <constraint firstItem="ced-mD-0Hp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KBU-6I-tDF"/>
+                <constraint firstAttribute="bottom" secondItem="ced-mD-0Hp" secondAttribute="bottom" id="Ufr-Jz-lIQ"/>
                 <constraint firstAttribute="bottom" secondItem="ymC-MA-5K8" secondAttribute="bottom" constant="20" id="Y9H-86-AM2"/>
+                <constraint firstItem="ced-mD-0Hp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bec-pl-vQi"/>
                 <constraint firstItem="ymC-MA-5K8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="rR5-qZ-eKI"/>
+                <constraint firstAttribute="trailing" secondItem="ced-mD-0Hp" secondAttribute="trailing" id="sHn-CU-mbm"/>
                 <constraint firstItem="ymC-MA-5K8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="yY4-LZ-RMy"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="ced-mD-0Hp"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="KBU-6I-tDF"/>
+                    <exclude reference="Ufr-Jz-lIQ"/>
+                    <exclude reference="bec-pl-vQi"/>
+                    <exclude reference="sHn-CU-mbm"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="ced-mD-0Hp"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="KBU-6I-tDF"/>
+                    <include reference="Ufr-Jz-lIQ"/>
+                    <include reference="bec-pl-vQi"/>
+                    <include reference="sHn-CU-mbm"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="airtelMoneyBtn" destination="R2j-35-NxJ" id="2VP-jO-PAI"/>
                 <outlet property="bankDepositBtn" destination="gPs-BF-Tc5" id="h2r-YU-Bga"/>
                 <outlet property="codBtn" destination="scu-co-kOm" id="ZUD-OM-KvP"/>
                 <outlet property="mtnBtn" destination="3Qu-1f-ZSS" id="Vqf-xu-3AQ"/>
+                <outlet property="payOptionsTableView" destination="ced-mD-0Hp" id="Hrm-wh-Czi"/>
                 <outlet property="tigoBtn" destination="PfL-rF-0pV" id="Lio-N8-W9s"/>
             </connections>
+            <point key="canvasLocation" x="139" y="153"/>
         </view>
     </objects>
     <resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -496,10 +496,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PcR-zZ-OgH">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" red="1" green="0.16001361959999999" blue="0.29033763959999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="91" id="cQO-2a-FuQ"/>
+                                        </constraints>
                                         <state key="normal" title="Checkout">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="cQO-2a-FuQ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="cQO-2a-FuQ"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <segue destination="g6q-6n-yje" kind="show" id="rof-lT-eje"/>
                                         </connections>
@@ -601,6 +614,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cartTableView" destination="tOe-H8-33m" id="PL6-yO-sMj"/>
+                        <outlet property="topConstraint" destination="YNm-6X-ahe" id="bPa-DG-9b8"/>
+                        <outlet property="total" destination="uBD-rs-PWv" id="7fP-dS-q1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GYS-Bc-UEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,6 +640,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yft-5Y-Tck">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -635,6 +651,7 @@
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-TC-A6g">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <state key="normal" title="Address">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -645,6 +662,7 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-2h-rdH">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                         <state key="normal" title="Payment">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -657,7 +675,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="118-Wm-g5e">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                                     </constraint>
                                     <constraint firstItem="yft-5Y-Tck" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="346-eg-63S"/>
                                     <constraint firstItem="yft-5Y-Tck" firstAttribute="leading" secondItem="xQO-bc-q28" secondAttribute="leading" id="7tK-5x-v8G">
@@ -733,7 +751,9 @@
                             <constraint firstAttribute="trailing" secondItem="xQO-bc-q28" secondAttribute="trailing" id="8JZ-oC-gT2"/>
                             <constraint firstItem="RdE-Dk-AxK" firstAttribute="leading" secondItem="TGS-wS-7kU" secondAttribute="leading" id="8wD-w5-a2b"/>
                             <constraint firstAttribute="trailing" secondItem="RdE-Dk-AxK" secondAttribute="trailing" id="V4Y-OA-DPQ"/>
-                            <constraint firstItem="RdE-Dk-AxK" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="bottom" id="aS8-mB-7t1"/>
+                            <constraint firstItem="RdE-Dk-AxK" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="bottom" id="aS8-mB-7t1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="plM-AE-I0t" firstAttribute="top" secondItem="RdE-Dk-AxK" secondAttribute="bottom" id="eOE-AO-yHp"/>
                             <constraint firstItem="xQO-bc-q28" firstAttribute="top" secondItem="toV-Id-IVg" secondAttribute="bottom" id="khx-lz-syH"/>
                             <constraint firstItem="xQO-bc-q28" firstAttribute="leading" secondItem="TGS-wS-7kU" secondAttribute="leading" id="zjq-zj-Fcj"/>

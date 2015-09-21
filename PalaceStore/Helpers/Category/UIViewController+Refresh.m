@@ -14,4 +14,8 @@
     
 }
 
+- (void)paymentOptionAcionWithTag:(NSInteger)tag {
+    
+}
+
 @end

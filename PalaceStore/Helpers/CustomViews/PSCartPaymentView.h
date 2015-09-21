@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+Refresh.h"
 
-@interface PSCartPaymentView : UIView
+@interface PSCartPaymentView : UIView <UITableViewDelegate, UITableViewDataSource> {
+    
+    IBOutlet UITableView *payOptionsTableView;
+}
+
+- (IBAction)didSelectPaymentOption:(id)sender;
 
 @end

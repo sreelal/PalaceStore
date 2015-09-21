@@ -12,6 +12,8 @@
 #import "PSCartAddressView.h"
 #import "PSCartPaymentView.h"
 #import "PSCartView.h"
+#import "HelperClass.h"
+#import "UIColor+CustomColor.h"
 
 @interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate>
 @property (weak, nonatomic) IBOutlet SwipeView *swipeBaseview;
@@ -37,9 +39,10 @@
     [super viewDidLoad];
     _viewIndex = 0;
     _swipeBaseview.scrollEnabled = NO;
-    [self setSelectedPropertyForButton:_loginBtn];
+    //[self setSelectedPropertyForButton:_loginBtn];
     _selectedIndex = _loginBtn.tag;
-    // Do any additional setup after loading the view.
+    
+    [self initView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,15 +50,25 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)initView {
+    
+    [HelperClass addBorderForView:contView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
+    
+    _loginBtn.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:1];
+    _addressBtn.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.4];
+    _paymentBtn.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.4];
+    
+    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+    leftBarItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+    
+//    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
+//    
+//    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+//    self.navigationItem.rightBarButtonItem.badgeValue = @"2";
+//    
+//    [self sortBtnAction:_azBtn];
 }
-*/
 
 #pragma mark - SwipeView Delegates
 
@@ -63,6 +76,7 @@
     
     return 4;
 }
+
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     
     UIView *targetView = nil;
@@ -113,12 +127,20 @@
     return targetView;
 }
 
+#pragma mark - Button Actions
+
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 #pragma mark - Navigation button Actins
+
 
 - (IBAction)didSelectNavigationButtonItem:(id)sender {
     
     UIButton *selectedButton = (UIButton*)sender;
-    [self setSelectedPropertyForButton:selectedButton];
+    //[self setSelectedPropertyForButton:selectedButton];
     [_swipeBaseview scrollToItemAtIndex:selectedButton.tag duration:0.2];
 }
 
@@ -143,17 +165,15 @@
 
 - (void)didSuccessLoginOption{
     
-    [self setSelectedPropertyForButton:_addressBtn];
+    //[self setSelectedPropertyForButton:_addressBtn];
     [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0.2];
 
 }
 
 - (void)didSuccessAddressOption{
     
-    [self setSelectedPropertyForButton:_paymentBtn];
+    //[self setSelectedPropertyForButton:_paymentBtn];
     [_swipeBaseview scrollToItemAtIndex:_paymentBtn.tag duration:0.2];
 }
-
-
 
 @end

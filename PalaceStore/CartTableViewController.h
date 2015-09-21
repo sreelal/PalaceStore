@@ -12,6 +12,8 @@
     
     IBOutlet UITableView *cartTableView;
     IBOutlet UILabel *total;
+    
+    IBOutlet NSLayoutConstraint *topConstraint;
 }
 
 @property(nonatomic, strong)NSArray * cartArray;

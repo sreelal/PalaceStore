@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PSCartPaymentHeaderview">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on Delivery" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8b-DJ-CGk">
+                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="Zfm-rv-S6I"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Zfm-rv-S6I"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="Zfm-rv-S6I"/>
+                        </mask>
+                    </variation>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8a-it-OAH">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="VBS-NO-OVy"/>
+                        <constraint firstAttribute="width" constant="22" id="drc-DF-hSJ"/>
+                    </constraints>
+                    <state key="normal" image="radio-normal.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="radio-slected.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="VBS-NO-OVy"/>
+                            <exclude reference="drc-DF-hSJ"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="VBS-NO-OVy"/>
+                            <include reference="drc-DF-hSJ"/>
+                        </mask>
+                    </variation>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Y8b-DJ-CGk" firstAttribute="centerY" secondItem="C8a-it-OAH" secondAttribute="centerY" id="8uq-Tn-pJE"/>
+                <constraint firstItem="C8a-it-OAH" firstAttribute="leading" secondItem="Y8b-DJ-CGk" secondAttribute="trailing" constant="15" id="JCa-GQ-fu2"/>
+                <constraint firstAttribute="centerY" secondItem="Y8b-DJ-CGk" secondAttribute="centerY" id="RHR-kp-ws7"/>
+                <constraint firstAttribute="trailing" secondItem="C8a-it-OAH" secondAttribute="trailing" constant="16" id="dou-wv-AFr"/>
+                <constraint firstItem="Y8b-DJ-CGk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="jva-dg-S6D"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="Y8b-DJ-CGk"/>
+                    <exclude reference="C8a-it-OAH"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="8uq-Tn-pJE"/>
+                    <exclude reference="RHR-kp-ws7"/>
+                    <exclude reference="jva-dg-S6D"/>
+                    <exclude reference="JCa-GQ-fu2"/>
+                    <exclude reference="dou-wv-AFr"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="Y8b-DJ-CGk"/>
+                    <include reference="C8a-it-OAH"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="8uq-Tn-pJE"/>
+                    <include reference="RHR-kp-ws7"/>
+                    <include reference="jva-dg-S6D"/>
+                    <include reference="JCa-GQ-fu2"/>
+                    <include reference="dou-wv-AFr"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="btn" destination="C8a-it-OAH" id="mWO-lZ-53p"/>
+                <outlet property="txtLabel" destination="Y8b-DJ-CGk" id="GBz-hp-fRY"/>
+            </connections>
+            <point key="canvasLocation" x="218" y="50"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="radio-normal.png" width="55" height="55"/>
+        <image name="radio-slected.png" width="55" height="55"/>
+    </resources>
+</document>

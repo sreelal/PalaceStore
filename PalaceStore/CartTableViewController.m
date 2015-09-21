@@ -11,7 +11,9 @@
 #import "Cart.h"
 #import "AppDelegate.h"
 
-@interface CartTableViewController ()
+@interface CartTableViewController () {
+    BOOL isRerendering;
+}
 
 @end
 
@@ -28,7 +30,19 @@
     
     [super viewWillAppear:animated];
     
+    if (isRerendering) {
+        topConstraint.constant = 0;
+        [self.view setNeedsLayout];
+    }
+    
     [self fetchCartObjecsFrom];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    isRerendering = YES;
 }
 
 #pragma mark - Button Actions

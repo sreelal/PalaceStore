@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSCheckoutBaseViewController : UIViewController
+@interface PSCheckoutBaseViewController : UIViewController {
+    IBOutlet UIView *contView;
+}
+
+
 
 @end

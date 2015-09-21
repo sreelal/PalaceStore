@@ -12,6 +12,8 @@
 		2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */; };
 		2E075BB61BA669D2000EB00F /* Home_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E075BB41BA669D2000EB00F /* Home_icon@2x.png */; };
 		2E075BB71BA669D2000EB00F /* Home_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E075BB51BA669D2000EB00F /* Home_icon@3x.png */; };
+		2E08C2311BAF336C0026A446 /* PSCartPaymentHeaderview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */; };
+		2E08C2331BAF338C0026A446 /* PSCartPaymentHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */; };
 		2E0FAAA31B6E34AA00384912 /* PSProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */; };
 		2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E127D911B6854FE005B0E1F /* PSSubCategoryViewController.m */; };
 		2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E127D931B68594D005B0E1F /* img_btn_back.png */; };
@@ -204,6 +206,9 @@
 		2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryView.xib; sourceTree = "<group>"; };
 		2E075BB41BA669D2000EB00F /* Home_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home_icon@2x.png"; sourceTree = "<group>"; };
 		2E075BB51BA669D2000EB00F /* Home_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home_icon@3x.png"; sourceTree = "<group>"; };
+		2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartPaymentHeaderview.h; sourceTree = "<group>"; };
+		2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartPaymentHeaderview.m; sourceTree = "<group>"; };
+		2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartPaymentHeaderView.xib; sourceTree = "<group>"; };
 		2E0AFACE1B6D3ED9008D51FF /* CommonHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeaders.h; sourceTree = "<group>"; };
 		2E0FAAA11B6E34AA00384912 /* PSProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSProductViewController.h; sourceTree = "<group>"; };
 		2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSProductViewController.m; sourceTree = "<group>"; };
@@ -768,20 +773,23 @@
 				2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */,
 				E955908B1B735D760019AA51 /* PSStarRatingView.h */,
 				E955908C1B735D760019AA51 /* PSStarRatingView.m */,
-				6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */,
-				6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */,
-				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
-				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
 				689521441BAB232100C9DDC6 /* PSCartLoginView.h */,
 				689521451BAB232100C9DDC6 /* PSCartLoginView.m */,
+				6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */,
 				689521471BAB233300C9DDC6 /* PSCartAddressView.h */,
 				689521481BAB233300C9DDC6 /* PSCartAddressView.m */,
+				6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */,
 				6895214A1BAB234300C9DDC6 /* PSCartView.h */,
 				6895214B1BAB234300C9DDC6 /* PSCartView.m */,
+				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
 				6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */,
 				6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */,
+				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
 				688ABC391BAF12990059110F /* PSCheckoutBaseView.h */,
 				688ABC3A1BAF12990059110F /* PSCheckoutBaseView.m */,
+				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
+				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
+				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
 			);
 			name = CustomViews;
 			path = Helpers/CustomViews;
@@ -1099,6 +1107,7 @@
 				2E497DA41B48DA8A00F3DCE4 /* Search.png in Resources */,
 				2E497D961B48DA8A00F3DCE4 /* Bottom-BG.png in Resources */,
 				2E127D981B68594D005B0E1F /* img_btn_back@2x.png in Resources */,
+				2E08C2331BAF338C0026A446 /* PSCartPaymentHeaderView.xib in Resources */,
 				687FF5421B48344300A99072 /* 3.png in Resources */,
 				688ABC141BAF056C0059110F /* addto-cart.png in Resources */,
 				2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */,
@@ -1208,6 +1217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E08C2311BAF336C0026A446 /* PSCartPaymentHeaderview.m in Sources */,
 				2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */,
 				FC0E70181B89F8C0004380BE /* WishList.m in Sources */,
 				68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */,
