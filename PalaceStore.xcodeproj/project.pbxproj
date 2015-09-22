@@ -24,6 +24,12 @@
 		2E1511BF1B64A62500D43865 /* Banner_Images.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511BE1B64A62500D43865 /* Banner_Images.m */; };
 		2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511C41B64A7F500D43865 /* LatestArrivals_Promotions.m */; };
 		2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511CA1B64A85E00D43865 /* DatabaseHandler.m */; };
+		2E16A6A31BB0E9F200553DCB /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6A21BB0E9F200553DCB /* test.xib */; };
+		2E16A6A51BB0EA8A00553DCB /* popt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6A41BB0EA8A00553DCB /* popt1.png */; };
+		2E16A6A91BB0EB1300553DCB /* PSCartPaymentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E16A6A71BB0EB1200553DCB /* PSCartPaymentCell.m */; };
+		2E16A6AA1BB0EB1300553DCB /* PSCartPaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6A81BB0EB1300553DCB /* PSCartPaymentCell.xib */; };
+		2E16A6AD1BB0F0C100553DCB /* PSSubCategoryProductView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */; };
+		2E16A6AF1BB0F0E100553DCB /* PSSubCategoryProductView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6AE1BB0F0E100553DCB /* PSSubCategoryProductView.xib */; };
 		2E17FE411B656322005D732A /* UIColor+CustomColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E17FE401B656322005D732A /* UIColor+CustomColor.m */; };
 		2E207C101B497EAA00F74840 /* ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E207C0F1B497EAA00F74840 /* ItemView.m */; };
 		2E207C121B497ED000F74840 /* ItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E207C111B497ED000F74840 /* ItemView.xib */; };
@@ -226,6 +232,14 @@
 		2E1511C41B64A7F500D43865 /* LatestArrivals_Promotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivals_Promotions.m; sourceTree = "<group>"; };
 		2E1511C91B64A85E00D43865 /* DatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHandler.h; sourceTree = "<group>"; };
 		2E1511CA1B64A85E00D43865 /* DatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHandler.m; sourceTree = "<group>"; };
+		2E16A6A21BB0E9F200553DCB /* test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
+		2E16A6A41BB0EA8A00553DCB /* popt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = popt1.png; sourceTree = "<group>"; };
+		2E16A6A61BB0EB1200553DCB /* PSCartPaymentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCartPaymentCell.h; sourceTree = "<group>"; };
+		2E16A6A71BB0EB1200553DCB /* PSCartPaymentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCartPaymentCell.m; sourceTree = "<group>"; };
+		2E16A6A81BB0EB1300553DCB /* PSCartPaymentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCartPaymentCell.xib; sourceTree = "<group>"; };
+		2E16A6AB1BB0F0C100553DCB /* PSSubCategoryProductView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSubCategoryProductView.h; sourceTree = "<group>"; };
+		2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSubCategoryProductView.m; sourceTree = "<group>"; };
+		2E16A6AE1BB0F0E100553DCB /* PSSubCategoryProductView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSSubCategoryProductView.xib; sourceTree = "<group>"; };
 		2E17FE3F1B656322005D732A /* UIColor+CustomColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CustomColor.h"; path = "Category/UIColor+CustomColor.h"; sourceTree = "<group>"; };
 		2E17FE401B656322005D732A /* UIColor+CustomColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CustomColor.m"; path = "Category/UIColor+CustomColor.m"; sourceTree = "<group>"; };
 		2E207C0E1B497EAA00F74840 /* ItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemView.h; sourceTree = "<group>"; };
@@ -790,6 +804,10 @@
 				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
 				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
 				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
+				2E16A6A21BB0E9F200553DCB /* test.xib */,
+				2E16A6AB1BB0F0C100553DCB /* PSSubCategoryProductView.h */,
+				2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */,
+				2E16A6AE1BB0F0E100553DCB /* PSSubCategoryProductView.xib */,
 			);
 			name = CustomViews;
 			path = Helpers/CustomViews;
@@ -831,6 +849,9 @@
 				E9E4E75D1B7371AF00030E25 /* ProductDescriptionCell.m */,
 				E9D20B071B74B03200B52BBA /* ProductSpecificationCell.h */,
 				E9D20B081B74B03200B52BBA /* ProductSpecificationCell.m */,
+				2E16A6A61BB0EB1200553DCB /* PSCartPaymentCell.h */,
+				2E16A6A71BB0EB1200553DCB /* PSCartPaymentCell.m */,
+				2E16A6A81BB0EB1300553DCB /* PSCartPaymentCell.xib */,
 			);
 			name = TableViewCells;
 			path = Helpers/TableViewCells;
@@ -867,6 +888,7 @@
 		688ABBEE1BAF056C0059110F /* checkout */ = {
 			isa = PBXGroup;
 			children = (
+				2E16A6A41BB0EA8A00553DCB /* popt1.png */,
 				688ABBEF1BAF056C0059110F /* addto-cart.png */,
 				688ABBF01BAF056C0059110F /* buy-now.png */,
 				688ABBF11BAF056C0059110F /* cart-white.png */,
@@ -1138,6 +1160,7 @@
 				687FF5411B48344300A99072 /* 2.png in Resources */,
 				E987AFE81B7A66A90050EADB /* favorite_Small.png in Resources */,
 				2E497DA01B48DA8A00F3DCE4 /* Nivea.png in Resources */,
+				2E16A6AF1BB0F0E100553DCB /* PSSubCategoryProductView.xib in Resources */,
 				688ABC231BAF056C0059110F /* gray_arrow03.png in Resources */,
 				2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */,
 				689FA5931B9342E500F65E3F /* fb-background.png in Resources */,
@@ -1145,6 +1168,7 @@
 				688ABC301BAF056C0059110F /* radio-normal.png in Resources */,
 				689FA5911B9342E500F65E3F /* btn-bg.png in Resources */,
 				2E497D991B48DA8A00F3DCE4 /* E--Gift-Vouchers.png in Resources */,
+				2E16A6A31BB0E9F200553DCB /* test.xib in Resources */,
 				688ABC371BAF056C0059110F /* user.png in Resources */,
 				B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */,
 				2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */,
@@ -1184,6 +1208,7 @@
 				2E497D9D1B48DA8A00F3DCE4 /* left-arrow.png in Resources */,
 				688ABC1A1BAF056C0059110F /* delete-down.png in Resources */,
 				689FA5971B9342E500F65E3F /* tick.png in Resources */,
+				2E16A6AA1BB0EB1300553DCB /* PSCartPaymentCell.xib in Resources */,
 				689FA5961B9342E500F65E3F /* textbox.png in Resources */,
 				2E497D971B48DA8A00F3DCE4 /* Cart.png in Resources */,
 				687FF5441B48344300A99072 /* 5.png in Resources */,
@@ -1197,6 +1222,7 @@
 				689FA59F1B9347CD00F65E3F /* palace_logo.png in Resources */,
 				58F37E1B1B454D68006F1810 /* Images.xcassets in Resources */,
 				2E065A791B7AE1FC00C209D4 /* no_image.png in Resources */,
+				2E16A6A51BB0EA8A00553DCB /* popt1.png in Resources */,
 				688ABC361BAF056C0059110F /* user-plus.png in Resources */,
 				2E497DA31B48DA8A00F3DCE4 /* Right-arrow.png in Resources */,
 				2E075BB71BA669D2000EB00F /* Home_icon@3x.png in Resources */,
@@ -1266,6 +1292,8 @@
 				68B5C8D41B47AC6000F3FD02 /* RequestHandler.m in Sources */,
 				2E1511BF1B64A62500D43865 /* Banner_Images.m in Sources */,
 				68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */,
+				2E16A6A91BB0EB1300553DCB /* PSCartPaymentCell.m in Sources */,
+				2E16A6AD1BB0F0C100553DCB /* PSSubCategoryProductView.m in Sources */,
 				68B5C8C71B47A79300F3FD02 /* SDImageCache.m in Sources */,
 				58F37E391B454E8D006F1810 /* LeftMenuViewController.m in Sources */,
 				2E0673791B4A0E27002FF5C3 /* CategoryView.m in Sources */,

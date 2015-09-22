@@ -27,14 +27,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    viewPinConstraint.constant = 0;
+    [self.view setNeedsLayout];
+    
     [self initView];
     
     
     _categoryLabel.text = [NSString stringWithFormat:@"%@ (%d)", _productCategory.name, [_productCategory.subcategory_count intValue]];
     
     [self loadCachedSubCategories];
-    
     [self getUpdatedSubCategoryForCategoryId:_productCategory.category_id];
+    
+    if ([_productCategory.product_count intValue] > 0) {
+        
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -226,6 +232,43 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section{
     
     return 0.0f;
+}
+
+#pragma mark - SwipeView Delegates
+
+- (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView {
+    
+    //generate 100 item views
+    //normally we'd use a backing array
+    //as shown in the basic iOS example
+    //but for this example we haven't bothered
+    
+    //NSInteger count = _categories.count;
+    
+    return 0;
+}
+
+- (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
+    
+    /*if (!view) {
+     //load new item view instance from nib
+     //control events are bound to view controller in nib file
+     //note that it is only safe to use the reusingView if we return the same nib for each
+     //item view, if different items have different contents, ignore the reusingView value
+     
+     
+     }*/
+    
+    /*Product_Category *category = _categories[index];
+    
+    ItemView *itemView = [[NSBundle mainBundle] loadNibNamed:@"ItemView" owner:self options:nil][0];
+    itemView.callingControllerInstance = _callingControllerInstance;
+    itemView.frame = CGRectMake(itemView.frame.origin.x, itemView.frame.origin.y, itemView.frame.size.width, itemView.frame.size.height);
+    [itemView loadCategory:category];
+    
+    view = itemView;*/
+    
+    return view;
 }
 
 - (void)managedObjectDidSave:(NSNotification *)notification {

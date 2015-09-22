@@ -1048,17 +1048,43 @@
                                     <outlet property="delegate" destination="a6c-gB-Lqn" id="BCh-U1-2v1"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hhj-Kl-fS2" customClass="SwipeView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="xZK-UC-gKR">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="xZK-UC-gKR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="xZK-UC-gKR"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="WTN-Gu-OZO" firstAttribute="leading" secondItem="wF9-ID-2Qt" secondAttribute="leading" id="2Ak-wN-hTy"/>
                             <constraint firstItem="FZ2-cr-fJZ" firstAttribute="top" secondItem="WTN-Gu-OZO" secondAttribute="bottom" constant="3" id="Cai-gX-gvJ"/>
                             <constraint firstItem="KT9-Pt-1YS" firstAttribute="leading" secondItem="wF9-ID-2Qt" secondAttribute="leading" constant="11" id="D6s-Kg-NuJ"/>
-                            <constraint firstAttribute="bottom" secondItem="FZ2-cr-fJZ" secondAttribute="bottom" id="IGH-qT-Qc4"/>
+                            <constraint firstItem="Hhj-Kl-fS2" firstAttribute="top" secondItem="FZ2-cr-fJZ" secondAttribute="bottom" id="OhN-xX-Vib">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="trailing" secondItem="Hhj-Kl-fS2" secondAttribute="trailing" id="QSH-Oy-UG1"/>
                             <constraint firstAttribute="trailing" secondItem="KT9-Pt-1YS" secondAttribute="trailing" constant="11" id="Ud8-d7-9tq"/>
                             <constraint firstItem="WTN-Gu-OZO" firstAttribute="top" secondItem="wF9-ID-2Qt" secondAttribute="top" constant="64" id="YCa-wm-zi0"/>
                             <constraint firstAttribute="trailing" secondItem="FZ2-cr-fJZ" secondAttribute="trailing" id="Zbz-NB-R6w"/>
+                            <constraint firstAttribute="bottom" secondItem="Hhj-Kl-fS2" secondAttribute="bottom" id="byM-v0-tcg">
+                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                            </constraint>
                             <constraint firstAttribute="trailing" secondItem="WTN-Gu-OZO" secondAttribute="trailing" id="cPS-nN-1OZ"/>
+                            <constraint firstItem="Hhj-Kl-fS2" firstAttribute="leading" secondItem="wF9-ID-2Qt" secondAttribute="leading" id="clm-Jl-tYS"/>
                             <constraint firstItem="FZ2-cr-fJZ" firstAttribute="leading" secondItem="wF9-ID-2Qt" secondAttribute="leading" id="fyg-5e-BU3"/>
                             <constraint firstItem="KT9-Pt-1YS" firstAttribute="top" secondItem="wF9-ID-2Qt" secondAttribute="top" constant="68" id="war-QJ-qvb"/>
                         </constraints>
@@ -1067,18 +1093,22 @@
                                 <exclude reference="WTN-Gu-OZO"/>
                                 <exclude reference="KT9-Pt-1YS"/>
                                 <exclude reference="FZ2-cr-fJZ"/>
+                                <exclude reference="Hhj-Kl-fS2"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="D6s-Kg-NuJ"/>
-                                <exclude reference="Ud8-d7-9tq"/>
-                                <exclude reference="war-QJ-qvb"/>
                                 <exclude reference="2Ak-wN-hTy"/>
                                 <exclude reference="YCa-wm-zi0"/>
                                 <exclude reference="cPS-nN-1OZ"/>
+                                <exclude reference="D6s-Kg-NuJ"/>
+                                <exclude reference="Ud8-d7-9tq"/>
+                                <exclude reference="war-QJ-qvb"/>
                                 <exclude reference="Cai-gX-gvJ"/>
-                                <exclude reference="IGH-qT-Qc4"/>
                                 <exclude reference="Zbz-NB-R6w"/>
                                 <exclude reference="fyg-5e-BU3"/>
+                                <exclude reference="OhN-xX-Vib"/>
+                                <exclude reference="QSH-Oy-UG1"/>
+                                <exclude reference="byM-v0-tcg"/>
+                                <exclude reference="clm-Jl-tYS"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1086,18 +1116,22 @@
                                 <include reference="WTN-Gu-OZO"/>
                                 <include reference="KT9-Pt-1YS"/>
                                 <include reference="FZ2-cr-fJZ"/>
+                                <include reference="Hhj-Kl-fS2"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="D6s-Kg-NuJ"/>
-                                <include reference="Ud8-d7-9tq"/>
-                                <include reference="war-QJ-qvb"/>
                                 <include reference="2Ak-wN-hTy"/>
                                 <include reference="YCa-wm-zi0"/>
                                 <include reference="cPS-nN-1OZ"/>
+                                <include reference="D6s-Kg-NuJ"/>
+                                <include reference="Ud8-d7-9tq"/>
+                                <include reference="war-QJ-qvb"/>
                                 <include reference="Cai-gX-gvJ"/>
-                                <include reference="IGH-qT-Qc4"/>
                                 <include reference="Zbz-NB-R6w"/>
                                 <include reference="fyg-5e-BU3"/>
+                                <include reference="OhN-xX-Vib"/>
+                                <include reference="QSH-Oy-UG1"/>
+                                <include reference="byM-v0-tcg"/>
+                                <include reference="clm-Jl-tYS"/>
                             </mask>
                         </variation>
                     </view>
@@ -1105,6 +1139,7 @@
                     <connections>
                         <outlet property="categoryLabel" destination="KT9-Pt-1YS" id="BWW-lK-n3D"/>
                         <outlet property="collectionView" destination="FZ2-cr-fJZ" id="SwD-md-1QZ"/>
+                        <outlet property="viewPinConstraint" destination="xZK-UC-gKR" id="Vfp-CM-yJP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gk-NQ-cxA" userLabel="First Responder" sceneMemberID="firstResponder"/>

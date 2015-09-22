@@ -8,9 +8,12 @@
 
 #import "PSCartPaymentView.h"
 #import "PSCartPaymentHeaderview.h"
+#import "PSCartPaymentCell.h"
 
 @interface PSCartPaymentView () {
     NSMutableArray *options;
+    NSInteger selecetedSectionIndex;
+    NSInteger lastSelectedIndex;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *codBtn;
@@ -38,14 +41,11 @@
 
 - (IBAction)didSelectPaymentOption:(id)sender {
     
-//    [_codBtn setSelected:NO];
-//    [_bankDepositBtn setSelected:NO];
-//    [_mtnBtn setSelected:NO];
-//    [_tigoBtn setSelected:NO];
-//    [_airtelMoneyBtn setSelected:NO];
-//
     UIButton *_selected = (UIButton*)sender;
-    [_selected setSelected:YES];
+    
+    selecetedSectionIndex = _selected.tag;
+    
+    [payOptionsTableView reloadData];
 }
 
 #pragma mark - Table View Data Source
@@ -55,9 +55,25 @@
     return options.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 200;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 0;
+    NSInteger count = 0;
+    
+    if (section > 0 && selecetedSectionIndex == section) {
+        count = 1;
+        lastSelectedIndex = selecetedSectionIndex;
+    }
+    
+//    if (lastSelectedIndex == selecetedSectionIndex) {
+//        count = lastSelectedIndex = 0;
+//    }
+    
+    return count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -74,20 +90,35 @@
     paymentHeaderView.txtLabel.text = options[section];
     paymentHeaderView.btn.tag  = section;
     
+    if (section == selecetedSectionIndex) {
+        [paymentHeaderView.btn setSelected:YES];
+    }
+    else {
+        [paymentHeaderView.btn setSelected:NO];
+    }
+    
     return paymentHeaderView;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    PSCartPaymentCell *cell = (PSCartPaymentCell*)[tableView dequeueReusableCellWithIdentifier:@"paymentOptionCell"];
+    
+    if (cell == nil)
+    {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    /*static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    
-    cell.textLabel.text = @"Test";
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = @"Test";*/
     return cell;
 }
 

@@ -11,7 +11,7 @@
 #import "Product_Category.h"
 
 @class PSSubCategoryViewController;
-@interface SubCategoryCollectionViewCell : UICollectionViewCell
+@interface SubCategoryCollectionViewCell : UICollectionViewCell 
 
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;

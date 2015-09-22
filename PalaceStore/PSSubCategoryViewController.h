@@ -10,8 +10,12 @@
 #import "Product_Category.h"
 #import "SubCategoryCollectionViewCell.h"
 #import "AppDelegate.h"
+#import "SwipeView.h"
 
-@interface PSSubCategoryViewController : UIViewController
+@interface PSSubCategoryViewController : UIViewController <SwipeViewDelegate, SwipeViewDataSource> {
+    
+    IBOutlet NSLayoutConstraint *viewPinConstraint;
+}
 
 @property (nonatomic, strong) Product_Category *productCategory;
 

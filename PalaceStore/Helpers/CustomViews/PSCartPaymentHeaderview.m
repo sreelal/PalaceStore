@@ -7,11 +7,14 @@
 //
 
 #import "PSCartPaymentHeaderview.h"
+#import "UIColor+CustomColor.h"
 
 @implementation PSCartPaymentHeaderview
 
 - (void)awakeFromNib {
     [self.btn addTarget:self.paymentView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.5];
 }
 
 /*
