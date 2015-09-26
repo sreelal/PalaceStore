@@ -47,6 +47,33 @@
     }
 }
 
++ (void)insertLogoImages:(NSArray *)logoImages {
+    
+    NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+    
+    for (NSDictionary *dict in logoImages) {
+        @autoreleasepool {
+            Banner_Images *bannerImage = nil;
+            
+            bannerImage = [NSEntityDescription insertNewObjectForEntityForName:TABLE_BANNER_IMAGES inManagedObjectContext:moc];
+            
+            bannerImage.title = dict[KEY_TITLE];
+            bannerImage.image_url = dict[KEY_BANNER_IMAGE_URL];
+            bannerImage.isBrands =  [NSNumber numberWithBool:YES];
+        }
+    }
+    
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"Sucessfully Saved Banner Images");
+    }
+}
+
+
 + (void)insertLatestArrivals:(NSArray *)latestArrivals andPromotions:(NSArray *)promotions {
     
     NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];

@@ -35,6 +35,7 @@
             [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
             
             [DatabaseHandler insertBannerImages:result[KEY_BANNER_IMAGES]];
+            [DatabaseHandler insertLogoImages:result[KEY_BRANDS]];
             [DatabaseHandler insertLatestArrivals:result[KEY_LATEST_ARRIVALS] andPromotions:result[KEY_PROMOIONS]];
             [DatabaseHandler insertProductCategories:result[KEY_CATEGORIES]];
         }

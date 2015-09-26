@@ -33,6 +33,7 @@
 @property (strong, nonatomic) NSArray *promotions;
 @property (strong, nonatomic) NSArray *categories;
 @property (strong, nonatomic) NSMutableArray *bannerCollection;
+@property (strong, nonatomic) NSMutableArray *logoCollection;
 
 @property (weak, nonatomic) IBOutlet UITableView *homeCollectionTable;
 
@@ -47,11 +48,13 @@
     [self initView];
     
     _bannerCollection = [[NSMutableArray alloc] init];
-    
+    _logoCollection = [[NSMutableArray alloc] init];
+
     [self loadLatestArrivalsAndPromotions];
     [self loadBannerImages];
     [self loadCategories];
-    
+    [self loadLogoImages];
+
     [self loadHomeData];
 }
 -(IBAction)ProfileView:(id)sender
@@ -128,6 +131,31 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [_homeCollectionTable reloadData];
         });
+    }
+}
+
+- (void)loadLogoImages {
+    
+    NSPredicate *predicte = [NSPredicate predicateWithFormat:@"isBrands == 1"];
+    NSArray *logoImages = [DatabaseHandler fetchItemsFromTable:TABLE_BANNER_IMAGES withPredicate:predicte];
+    
+    if ([logoImages count]) {
+        [_logoCollection removeAllObjects];
+        
+        [logoImages enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            Banner_Images *bannerImage = obj;
+            NSString *imgURL = bannerImage.image_url;
+            
+            NSString *encodedURL = [imgURL stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+            
+            if (imgURL) [_logoCollection addObject:encodedURL];
+        }];
+        
+        if ([_logoCollection count]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [_homeCollectionTable reloadData];
+            });
+        }
     }
 }
 
@@ -266,14 +294,7 @@
                 categoryCell.categories = _categories;
                 [categoryCell loadCategories];
             }
-            
-            NSMutableArray *marqueeImages= [[NSMutableArray alloc] init];
-            
-            for (int iIndex = 1; iIndex<=11; iIndex++) {
-                [marqueeImages addObject:[NSString stringWithFormat:@"%d.png",iIndex]];
-            }
-            
-            [categoryCell performSelector:@selector(loadMarqueeControlWith:) withObject:marqueeImages afterDelay:0.1];
+            [categoryCell performSelector:@selector(loadMarqueeControlWith:) withObject:_logoCollection afterDelay:0.1];
             
             cell = categoryCell;
         }
@@ -333,7 +354,8 @@
         [self loadBannerImages];
         [self loadLatestArrivalsAndPromotions];
         [self loadCategories];
-        
+        [self loadLogoImages];
+
         NSLog(@"Did Save Product Categories : \n%@", [obj class]);
     }
 }

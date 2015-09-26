@@ -9,7 +9,7 @@
 #import "CategoryTableViewCell.h"
 #import "HelperClass.h"
 #import "UIColor+CustomColor.h"
-
+#import "AOImageView.h"
 #import "Product_Category.h"
 #import "ItemView.h"
 
@@ -107,12 +107,12 @@
 
 - (id)viewForItemAtIndex:(NSInteger)index InMarqueeview:(SLMarqueeView*)marqueeView{
     
-    //NSLog(@"Loading Image At Index : %ld",(long)index);
-    UIImageView *_imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, [self widthForItemsInMarqueeview], _marqueeView.frame.size.height)];
-    
-    _imageView.image = [UIImage imageNamed:_marqueeViewItems[index]];
-    _imageView.backgroundColor = [UIColor clearColor];
-    
+    AOImageView *_imageView = [[AOImageView alloc]initWithImageName:_marqueeViewItems[index]
+                                                             title:@""
+                                                                 x:0
+                                                                 y:0
+                                                            height:_marqueeView.frame.size.height
+                                                             width:[self widthForItemsInMarqueeview]];
     return _imageView;
 }
 

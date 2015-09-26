@@ -43,6 +43,7 @@
 
 //------------------Dictionary Keys-----------------
 #define KEY_BANNER_IMAGES @"banner_images"
+#define KEY_BRANDS @"brands"
 #define KEY_LATEST_ARRIVALS @"latest"
 #define KEY_PROMOIONS @"promotions"
 #define KEY_CATEGORIES @"categories"

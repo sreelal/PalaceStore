@@ -16,6 +16,7 @@
 + (void)insertLatestArrivals:(NSArray *)latestArrivals andPromotions:(NSArray *)promotions;
 + (void)insertProductCategories:(NSArray *)categories;
 + (void)insertSubCategories:(NSArray *)subCategories forParentCategoryId:(NSNumber *)parentCategoryId;
++ (void)insertLogoImages:(NSArray *)logoImages;
 
 + (NSArray *)fetchItemsFromTable:(NSString *)tableName withPredicate:(NSPredicate *)predicate;
 
