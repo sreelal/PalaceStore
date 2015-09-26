@@ -86,7 +86,9 @@
 
 - (void)loadBannerImages {
     
-    NSArray *bannerimages = [DatabaseHandler fetchItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
+    NSPredicate *predicte = [NSPredicate predicateWithFormat:@"isBrands == 0"];
+
+    NSArray *bannerimages = [DatabaseHandler fetchItemsFromTable:TABLE_BANNER_IMAGES withPredicate:predicte];
     
     if ([bannerimages count]) {
         [_bannerCollection removeAllObjects];
