@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PSAddressListView.h"
 
 @interface PSCheckoutBaseViewController : UIViewController {
     IBOutlet UIView *contView;

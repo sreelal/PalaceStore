@@ -14,6 +14,7 @@
 #import "PSCartView.h"
 #import "HelperClass.h"
 #import "UIColor+CustomColor.h"
+#import "PSRegistrationView.h"
 
 @interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate>
 @property (weak, nonatomic) IBOutlet SwipeView *swipeBaseview;
@@ -23,6 +24,8 @@
 @property (weak, nonatomic)PSCartAddressView *cartAddressView;
 @property (weak, nonatomic)PSCartView *cartView;
 @property (weak, nonatomic)PSCartPaymentView *cartPaymentview;
+@property (weak, nonatomic)PSAddressListView *addressListView;
+@property (weak, nonatomic)PSRegistrationView *registrationView;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 @property (weak, nonatomic) IBOutlet UIButton *paymentBtn;
 @property (weak, nonatomic) IBOutlet UIButton *addressBtn;
@@ -62,6 +65,8 @@
     leftBarItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarItem;
     
+    _addressBtn.tag = 1;
+    
 //    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
 //    
 //    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
@@ -95,13 +100,26 @@
             
         case 1:
         {
-            if (!_cartAddressView) {
+            if (!_registrationView) {
                 
-                _cartAddressView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartAddressView"
+                _registrationView = [[[NSBundle mainBundle] loadNibNamed:@"PSRegistrationView"
                                                                   owner:self options:nil] firstObject];
-                _cartAddressView.cartAddressDelegate = self;
             }
-            targetView = _cartAddressView;
+            targetView = _registrationView;
+//            if (!_cartAddressView) {
+//                
+//                _cartAddressView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartAddressView"
+//                                                                  owner:self options:nil] firstObject];
+//                _cartAddressView.cartAddressDelegate = self;
+//            }
+//            targetView = _cartAddressView;
+            
+//            if (!_addressListView) {
+//                
+//                _addressListView = [[[NSBundle mainBundle] loadNibNamed:@"PSAddressListView"
+//                                                                  owner:self options:nil] firstObject];
+//            }
+//            targetView = _addressListView;
         }
             break;
             

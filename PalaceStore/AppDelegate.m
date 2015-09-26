@@ -38,6 +38,17 @@
     self.hud=nil;
 }
 
+#pragma mark - Public Methods
+
+- (InputAccessoryBar *)getInputAccesory {
+    
+    InputAccessoryBar *inputAccessoryBar = [[NSBundle mainBundle] loadNibNamed:@"InputAccessoryBar" owner:self options:nil][0];
+    //inputAccessoryBar.delegate = self;
+    inputAccessoryBar.frame = CGRectMake(inputAccessoryBar.frame.origin.x, inputAccessoryBar.frame.origin.y, [UIScreen mainScreen].bounds.size.width, inputAccessoryBar.frame.size.height);
+    
+    return inputAccessoryBar;
+}
+
 #pragma mark - Navigation Bar Buttons Helper Methods
 
 - (UIBarButtonItem *)getCartBarButtonItemWithTarget:(id)target andSelector:(SEL)cartAction {
@@ -66,10 +77,6 @@
      
     return homeButton;
 }
-
-
-
-
 
 - (NSArray *)getCartAndHomeButtonItemsWithTarget:(id)target andCartSelector:(SEL)cartAction andHomeSelector:(SEL)homeAction {
     

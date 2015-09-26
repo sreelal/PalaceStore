@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InputAccessoryBar.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -19,6 +20,8 @@
 - (void)hideBusyView;
 
 - (void)showBusyView:(NSString *)textToDisplay;
+
+- (InputAccessoryBar *)getInputAccesory;
 
 - (UIBarButtonItem *)getHomeBarButtonItemWithTarget:(id)target andSelector:(SEL)homeAction;
 

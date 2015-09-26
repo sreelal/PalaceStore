@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PSAddressListView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-p8-T1B">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="rbY-p8-T1B" secondAttribute="bottom" id="Dah-bK-e1O"/>
+                <constraint firstAttribute="trailing" secondItem="rbY-p8-T1B" secondAttribute="trailing" id="Dez-aK-JMR"/>
+                <constraint firstItem="rbY-p8-T1B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YKT-LU-P0d"/>
+                <constraint firstItem="rbY-p8-T1B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ezb-Oq-Zaa"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="rbY-p8-T1B"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="Dah-bK-e1O"/>
+                    <exclude reference="Dez-aK-JMR"/>
+                    <exclude reference="YKT-LU-P0d"/>
+                    <exclude reference="ezb-Oq-Zaa"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="rbY-p8-T1B"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="Dah-bK-e1O"/>
+                    <include reference="Dez-aK-JMR"/>
+                    <include reference="YKT-LU-P0d"/>
+                    <include reference="ezb-Oq-Zaa"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+</document>
