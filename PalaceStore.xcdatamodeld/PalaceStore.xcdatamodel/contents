@@ -3,6 +3,7 @@
     <entity name="Address" representedClassName="Address" syncable="YES">
         <attribute name="address_1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="address_2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="address_id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="company" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="firstname" optional="YES" attributeType="String" syncable="YES"/>
@@ -92,6 +93,7 @@
         <attribute name="thumb_image_url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
+        <element name="Address" positionX="135" positionY="-9" width="128" height="195"/>
         <element name="Banner_Images" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Cart" positionX="135" positionY="-9" width="128" height="150"/>
         <element name="LatestArrivals_Promotions" positionX="-36" positionY="63" width="128" height="180"/>
@@ -100,6 +102,5 @@
         <element name="Product_Details" positionX="315" positionY="108" width="128" height="193"/>
         <element name="Products" positionX="171" positionY="188" width="128" height="343"/>
         <element name="WishList" positionX="135" positionY="-9" width="128" height="135"/>
-        <element name="Address" positionX="135" positionY="-9" width="128" height="178"/>
     </elements>
 </model>

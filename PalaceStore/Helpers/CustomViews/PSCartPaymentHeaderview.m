@@ -19,7 +19,7 @@
 -(void)addTargetToAddressListView {
     
     if (self.addressListView) {
-        [self.btn addTarget:self.addressListView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
+        [self.btn addTarget:self.addressListView action:@selector(didSelectAddressOption:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 

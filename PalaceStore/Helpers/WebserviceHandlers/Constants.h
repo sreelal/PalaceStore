@@ -53,6 +53,7 @@
 #define KEY_USER_INFO_TELE @"telephone"
 #define KEY_USER_INFO @"user_info"
 #define KEY_USER_INFO_CUSTOMER_ID @"customer_id"
+#define KEY_USER_INFO_PAYMENT_OPTION @"payment_option"
 
 #define KEY_USER_NAME @"user_name"
 #define KEY_PASSWORD @"password"

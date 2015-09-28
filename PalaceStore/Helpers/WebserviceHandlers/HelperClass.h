@@ -44,6 +44,6 @@
 
 + (void)makeRoundedImageViewForView:(UIImageView *)imgView;
 
-- (NSString *) getTimeStamp;
++ (NSString *) getTimeStamp;
 
 @end

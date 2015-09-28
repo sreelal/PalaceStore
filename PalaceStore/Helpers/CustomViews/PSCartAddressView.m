@@ -79,6 +79,10 @@
     InputAccessoryBar *inputAccessoryView = [[AppDelegate instance] getInputAccesory];
     inputAccessoryView.delegate = self;
     
+    if (indexPath.row == fields.count - 1) {
+        [cell.txtField setKeyboardType:UIKeyboardTypeNumberPad];
+    }
+    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.txtField.placeholder = fields[indexPath.row];
     cell.txtField.delegate = self;
@@ -114,7 +118,7 @@
     NSString *postCode = dataDict[postKey];
     
     addressDict = nil;
-    addressDict = [NSDictionary dictionaryWithObjectsAndKeys:firstName, @"firstname", lastName, @"lastname", company, @"company", address1, @"address_1", city, @"city", postCode, @"postcode", nil];
+    addressDict = [NSDictionary dictionaryWithObjectsAndKeys:firstName, @"firstname", lastName, @"lastname", company, @"company", address1, @"address_1", city, @"city", postCode, @"postcode", [HelperClass getTimeStamp], @"address_id", nil];
     
     if ([[firstName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] || firstName == nil) {
         [self showAlertWithMessage:@"First Name is missing!"];

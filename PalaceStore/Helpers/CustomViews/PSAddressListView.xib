@@ -88,12 +88,12 @@
                     <exclude reference="Dez-aK-JMR"/>
                     <exclude reference="YKT-LU-P0d"/>
                     <exclude reference="ezb-Oq-Zaa"/>
-                    <exclude reference="EcN-5A-EHc"/>
-                    <exclude reference="IV3-dI-uY5"/>
                     <exclude reference="70Q-12-Eh9"/>
                     <exclude reference="BCy-fB-dw8"/>
                     <exclude reference="HB1-YO-gZB"/>
                     <exclude reference="N0U-Io-7Pt"/>
+                    <exclude reference="EcN-5A-EHc"/>
+                    <exclude reference="IV3-dI-uY5"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -106,12 +106,12 @@
                     <include reference="Dez-aK-JMR"/>
                     <include reference="YKT-LU-P0d"/>
                     <include reference="ezb-Oq-Zaa"/>
-                    <include reference="EcN-5A-EHc"/>
-                    <include reference="IV3-dI-uY5"/>
                     <include reference="70Q-12-Eh9"/>
                     <include reference="BCy-fB-dw8"/>
                     <include reference="HB1-YO-gZB"/>
                     <include reference="N0U-Io-7Pt"/>
+                    <include reference="EcN-5A-EHc"/>
+                    <include reference="IV3-dI-uY5"/>
                 </mask>
             </variation>
             <connections>

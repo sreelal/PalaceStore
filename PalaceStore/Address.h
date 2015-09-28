@@ -21,5 +21,6 @@
 @property (nonatomic, retain) NSString * postcode;
 @property (nonatomic, retain) NSNumber * is_billingaddress;
 @property (nonatomic, retain) NSNumber * user_id;
+@property (nonatomic, retain) NSString * address_id;
 
 @end

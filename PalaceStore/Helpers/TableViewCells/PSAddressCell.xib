@@ -83,7 +83,7 @@
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-AV-oXR">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULM-AV-oXR">
                         <rect key="frame" x="83" y="60" width="229" height="41"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -130,6 +130,13 @@
                     <constraint firstItem="wOt-zy-uQf" firstAttribute="trailing" secondItem="fOs-fd-LvE" secondAttribute="trailing" id="zmI-kN-f9K"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="lblCity" destination="cap-ue-WBw" id="uHf-XG-fFs"/>
+                <outlet property="lblFN" destination="y0u-Pe-f6U" id="VIz-TI-E50"/>
+                <outlet property="lblLN" destination="Hl0-RH-XTW" id="dJt-BD-7go"/>
+                <outlet property="lblPostCode" destination="zWz-ix-qCF" id="PBy-V3-2tO"/>
+                <outlet property="txtAddress" destination="ULM-AV-oXR" id="pNx-5e-Xo2"/>
+            </connections>
             <point key="canvasLocation" x="216" y="299.5"/>
         </tableViewCell>
     </objects>

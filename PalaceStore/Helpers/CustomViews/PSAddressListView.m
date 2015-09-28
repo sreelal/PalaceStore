@@ -10,6 +10,7 @@
 #import "PSAddressCell.h"
 #import "DatabaseHandler.h"
 #import "PSCartPaymentHeaderview.h"
+#import "Address.h"
 
 @interface PSAddressListView () {
     NSArray *addresses;
@@ -33,11 +34,17 @@
 
 #pragma mark - Button Actions
 
-- (IBAction)didSelectPaymentOption:(id)sender {
+- (IBAction)didSelectAddressOption:(id)sender {
     
     UIButton *_selected = (UIButton*)sender;
     
     selecetedSectionIndex = _selected.tag;
+    
+    Address *address = [addresses objectAtIndex:selecetedSectionIndex];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
+    [userDefaults synchronize];
     
     [addressTableView reloadData];
 }
@@ -113,11 +120,18 @@
     
     PSAddressCell *cell = (PSAddressCell*)[tableView dequeueReusableCellWithIdentifier:@"psAddresCell"];
     
-    if (cell == nil)
-    {
+    if (cell == nil) {
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PSAddressCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    Address *address = [addresses objectAtIndex:indexPath.row];
+    
+    cell.lblFN.text = address.firstname;
+    cell.lblLN.text = address.lastname;
+    cell.txtAddress.text = address.address_1;
+    cell.lblCity.text = address.city;
+    cell.lblPostCode.text = address.postcode;
     
     return cell;
 }

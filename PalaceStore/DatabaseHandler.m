@@ -360,6 +360,7 @@
     address.postcode = addressDict[@"postcode"];
     address.is_billingaddress = addressDict[@""];
     address.user_id = addressDict[@""];
+    address.address_id = addressDict[@"address_id"];
     
     NSError *error = nil;
     

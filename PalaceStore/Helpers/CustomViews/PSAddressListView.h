@@ -22,6 +22,7 @@
 
 @property(nonatomic,assign)id <PSAddressListViewDelegate> addressListViewDelegate;
 
+- (IBAction)didSelectAddressOption:(id)sender;
 - (void)loadAddresses;
 
 @end

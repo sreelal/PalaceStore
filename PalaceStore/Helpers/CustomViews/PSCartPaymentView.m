@@ -45,6 +45,10 @@
     
     selecetedSectionIndex = _selected.tag;
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:options[selecetedSectionIndex] forKey:KEY_USER_INFO_PAYMENT_OPTION];
+    [userDefaults synchronize];
+    
     [payOptionsTableView reloadData];
 }
 

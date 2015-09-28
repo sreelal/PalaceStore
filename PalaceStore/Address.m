@@ -20,5 +20,6 @@
 @dynamic postcode;
 @dynamic is_billingaddress;
 @dynamic user_id;
+@dynamic address_id;
 
 @end

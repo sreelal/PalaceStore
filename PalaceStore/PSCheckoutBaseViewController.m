@@ -142,6 +142,7 @@
                                                                       owner:self options:nil] firstObject];
                     _cartAddressView.cartAddressDelegate = self;
                 }
+                [_cartAddressView initView];
                 targetView = _cartAddressView;
             }
             else {
