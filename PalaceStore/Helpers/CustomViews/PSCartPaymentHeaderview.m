@@ -13,7 +13,8 @@
 
 - (void)awakeFromNib {
     
-    self.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.5];
+    self.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:1];
+    
 }
 
 -(void)addTargetToAddressListView {

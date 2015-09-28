@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Shopping",@"Categories",@"Offers",@"Budget",@"Cart",@"WishList", @"Profile", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Cart", @"WishList", @"Profile", @"Log Out", nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,7 +52,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftMenuCell"];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.textColor = [UIColor lightGrayColor];
     cell.textLabel.text = _leftmenuItems[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

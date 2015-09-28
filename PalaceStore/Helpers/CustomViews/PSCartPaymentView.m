@@ -39,6 +39,16 @@
 }
 */
 
+#pragma mark - Button Actions
+
+- (IBAction)nextAction:(id)sender {
+    
+    if (_paymentViewDelegate && ([_paymentViewDelegate respondsToSelector:@selector(addressListViewNextAction)])) {
+        
+        [_paymentViewDelegate paymentNextAction];
+    }
+}
+
 - (IBAction)didSelectPaymentOption:(id)sender {
     
     UIButton *_selected = (UIButton*)sender;

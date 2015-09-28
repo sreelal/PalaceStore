@@ -338,7 +338,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CtB-Js-F0M" firstAttribute="top" secondItem="iAZ-Xk-wr4" secondAttribute="bottom" constant="80" id="KQa-Mh-cUm"/>
                             <constraint firstAttribute="trailing" secondItem="CtB-Js-F0M" secondAttribute="trailing" id="Nko-bB-wP7"/>
@@ -640,21 +640,27 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yft-5Y-Tck">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="14"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="didSelectNavigationButtonItem:" destination="g6q-6n-yje" eventType="touchUpInside" id="Fqf-dQ-3Qa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-TC-A6g">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9a-TC-A6g">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="14"/>
                                         <state key="normal" title="Address">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="didSelectNavigationButtonItem:" destination="g6q-6n-yje" eventType="touchUpInside" id="FST-Eq-hFR"/>
@@ -662,56 +668,82 @@
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVx-2h-rdH">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="14"/>
                                         <state key="normal" title="Payment">
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="didSelectNavigationButtonItem:" destination="g6q-6n-yje" eventType="touchUpInside" id="fn5-1B-ZqQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMY-JE-IkX">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="14"/>
+                                        <state key="normal" title="Confirm">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didSelectNavigationButtonItem:" destination="g6q-6n-yje" eventType="touchUpInside" id="268-9v-hfi"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="118-Wm-g5e">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="30"/>
                                     </constraint>
                                     <constraint firstItem="yft-5Y-Tck" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="346-eg-63S"/>
                                     <constraint firstItem="yft-5Y-Tck" firstAttribute="leading" secondItem="xQO-bc-q28" secondAttribute="leading" id="7tK-5x-v8G">
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstAttribute="bottom" secondItem="yft-5Y-Tck" secondAttribute="bottom" id="973-5T-UKm"/>
+                                    <constraint firstAttribute="bottom" secondItem="wMY-JE-IkX" secondAttribute="bottom" id="Ds0-rK-5g4"/>
                                     <constraint firstItem="B9a-TC-A6g" firstAttribute="leading" secondItem="yft-5Y-Tck" secondAttribute="trailing" id="HJ8-yb-RmF"/>
-                                    <constraint firstAttribute="trailing" secondItem="IVx-2h-rdH" secondAttribute="trailing" id="IA8-bz-XeU"/>
                                     <constraint firstItem="B9a-TC-A6g" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="LYE-XU-42l"/>
                                     <constraint firstAttribute="bottom" secondItem="B9a-TC-A6g" secondAttribute="bottom" id="QxY-F1-6fb"/>
-                                    <constraint firstItem="B9a-TC-A6g" firstAttribute="width" secondItem="IVx-2h-rdH" secondAttribute="width" id="f3i-ZF-VZt"/>
+                                    <constraint firstItem="yft-5Y-Tck" firstAttribute="width" secondItem="B9a-TC-A6g" secondAttribute="width" id="acT-EG-MGU"/>
+                                    <constraint firstAttribute="trailing" secondItem="wMY-JE-IkX" secondAttribute="trailing" constant="-1" id="cBs-SR-CAB"/>
+                                    <constraint firstItem="wMY-JE-IkX" firstAttribute="leading" secondItem="IVx-2h-rdH" secondAttribute="trailing" id="jI4-of-imt"/>
                                     <constraint firstItem="IVx-2h-rdH" firstAttribute="leading" secondItem="B9a-TC-A6g" secondAttribute="trailing" id="jNF-zI-XGQ"/>
                                     <constraint firstAttribute="bottom" secondItem="IVx-2h-rdH" secondAttribute="bottom" id="lk4-Ny-yXh"/>
                                     <constraint firstItem="IVx-2h-rdH" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="pBx-TT-4te"/>
-                                    <constraint firstItem="B9a-TC-A6g" firstAttribute="width" secondItem="yft-5Y-Tck" secondAttribute="width" id="rm0-Qk-9H1"/>
+                                    <constraint firstItem="yft-5Y-Tck" firstAttribute="width" secondItem="IVx-2h-rdH" secondAttribute="width" id="pQg-0m-WVQ"/>
+                                    <constraint firstItem="wMY-JE-IkX" firstAttribute="top" secondItem="xQO-bc-q28" secondAttribute="top" id="saq-ko-jGI"/>
+                                    <constraint firstItem="yft-5Y-Tck" firstAttribute="width" secondItem="wMY-JE-IkX" secondAttribute="width" id="tDo-VJ-h3v"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
                                         <exclude reference="yft-5Y-Tck"/>
                                         <exclude reference="B9a-TC-A6g"/>
                                         <exclude reference="IVx-2h-rdH"/>
+                                        <exclude reference="wMY-JE-IkX"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="118-Wm-g5e"/>
-                                        <exclude reference="HJ8-yb-RmF"/>
-                                        <exclude reference="LYE-XU-42l"/>
-                                        <exclude reference="QxY-F1-6fb"/>
-                                        <exclude reference="f3i-ZF-VZt"/>
-                                        <exclude reference="rm0-Qk-9H1"/>
-                                        <exclude reference="IA8-bz-XeU"/>
-                                        <exclude reference="jNF-zI-XGQ"/>
-                                        <exclude reference="lk4-Ny-yXh"/>
-                                        <exclude reference="pBx-TT-4te"/>
                                         <exclude reference="346-eg-63S"/>
                                         <exclude reference="7tK-5x-v8G"/>
                                         <exclude reference="973-5T-UKm"/>
+                                        <exclude reference="acT-EG-MGU"/>
+                                        <exclude reference="pQg-0m-WVQ"/>
+                                        <exclude reference="tDo-VJ-h3v"/>
+                                        <exclude reference="HJ8-yb-RmF"/>
+                                        <exclude reference="LYE-XU-42l"/>
+                                        <exclude reference="QxY-F1-6fb"/>
+                                        <exclude reference="jNF-zI-XGQ"/>
+                                        <exclude reference="lk4-Ny-yXh"/>
+                                        <exclude reference="pBx-TT-4te"/>
+                                        <exclude reference="Ds0-rK-5g4"/>
+                                        <exclude reference="cBs-SR-CAB"/>
+                                        <exclude reference="jI4-of-imt"/>
+                                        <exclude reference="saq-ko-jGI"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -719,21 +751,26 @@
                                         <include reference="yft-5Y-Tck"/>
                                         <include reference="B9a-TC-A6g"/>
                                         <include reference="IVx-2h-rdH"/>
+                                        <include reference="wMY-JE-IkX"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="118-Wm-g5e"/>
-                                        <include reference="HJ8-yb-RmF"/>
-                                        <include reference="LYE-XU-42l"/>
-                                        <include reference="QxY-F1-6fb"/>
-                                        <include reference="f3i-ZF-VZt"/>
-                                        <include reference="rm0-Qk-9H1"/>
-                                        <include reference="IA8-bz-XeU"/>
-                                        <include reference="jNF-zI-XGQ"/>
-                                        <include reference="lk4-Ny-yXh"/>
-                                        <include reference="pBx-TT-4te"/>
                                         <include reference="346-eg-63S"/>
                                         <include reference="7tK-5x-v8G"/>
                                         <include reference="973-5T-UKm"/>
+                                        <include reference="acT-EG-MGU"/>
+                                        <include reference="pQg-0m-WVQ"/>
+                                        <include reference="tDo-VJ-h3v"/>
+                                        <include reference="HJ8-yb-RmF"/>
+                                        <include reference="LYE-XU-42l"/>
+                                        <include reference="QxY-F1-6fb"/>
+                                        <include reference="jNF-zI-XGQ"/>
+                                        <include reference="lk4-Ny-yXh"/>
+                                        <include reference="pBx-TT-4te"/>
+                                        <include reference="Ds0-rK-5g4"/>
+                                        <include reference="cBs-SR-CAB"/>
+                                        <include reference="jI4-of-imt"/>
+                                        <include reference="saq-ko-jGI"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -793,6 +830,7 @@
                     <connections>
                         <outlet property="addressBtn" destination="B9a-TC-A6g" id="zXV-h8-zPL"/>
                         <outlet property="addressLeftContainer" destination="HJ8-yb-RmF" id="ECg-F5-WN6"/>
+                        <outlet property="confirmBtn" destination="wMY-JE-IkX" id="O4b-MJ-gc4"/>
                         <outlet property="loginBtn" destination="yft-5Y-Tck" id="lRC-kC-V10"/>
                         <outlet property="loginLeftConstraint" destination="7tK-5x-v8G" id="Ndr-zh-1Gj"/>
                         <outlet property="paymentBtn" destination="IVx-2h-rdH" id="tc2-1B-scV"/>

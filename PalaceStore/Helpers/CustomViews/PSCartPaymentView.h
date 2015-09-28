@@ -9,10 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "UIViewController+Refresh.h"
 
+@protocol PSPaymentViewDelegate <NSObject>
+
+- (void)paymentNextAction;
+
+@end
+
 @interface PSCartPaymentView : UIView <UITableViewDelegate, UITableViewDataSource> {
     
     IBOutlet UITableView *payOptionsTableView;
 }
+
+@property(nonatomic,assign)id <PSPaymentViewDelegate> paymentViewDelegate;
 
 - (IBAction)didSelectPaymentOption:(id)sender;
 

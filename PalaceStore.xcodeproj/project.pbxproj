@@ -75,6 +75,8 @@
 		2EB842271BA5553C008228E4 /* Home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB842261BA5553C008228E4 /* Home_icon.png */; };
 		2EBCAC3A1BA5832D007B17AE /* UIViewController+Refresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCAC391BA5832D007B17AE /* UIViewController+Refresh.m */; };
 		2EBCAC401BA59904007B17AE /* BBBadgeBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBCAC3F1BA59904007B17AE /* BBBadgeBarButtonItem.m */; };
+		2EC38E0C1BB8F2C400EC596A /* PSCheckoutConfirmView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC38E0B1BB8F2C400EC596A /* PSCheckoutConfirmView.m */; };
+		2EC38E0E1BB8F2E500EC596A /* PSCheckoutConfirmView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2EC38E0D1BB8F2E500EC596A /* PSCheckoutConfirmView.xib */; };
 		2EFE41B81B6E03E0004711AF /* Product_Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFE41B71B6E03E0004711AF /* Product_Category.m */; };
 		58F37E101B454D68006F1810 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E0F1B454D68006F1810 /* main.m */; };
 		58F37E131B454D68006F1810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E121B454D68006F1810 /* AppDelegate.m */; };
@@ -299,6 +301,9 @@
 		2EBCAC391BA5832D007B17AE /* UIViewController+Refresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Refresh.m"; path = "Category/UIViewController+Refresh.m"; sourceTree = "<group>"; };
 		2EBCAC3E1BA59904007B17AE /* BBBadgeBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBadgeBarButtonItem.h; sourceTree = "<group>"; };
 		2EBCAC3F1BA59904007B17AE /* BBBadgeBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBadgeBarButtonItem.m; sourceTree = "<group>"; };
+		2EC38E0A1BB8F2C400EC596A /* PSCheckoutConfirmView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSCheckoutConfirmView.h; sourceTree = "<group>"; };
+		2EC38E0B1BB8F2C400EC596A /* PSCheckoutConfirmView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSCheckoutConfirmView.m; sourceTree = "<group>"; };
+		2EC38E0D1BB8F2E500EC596A /* PSCheckoutConfirmView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PSCheckoutConfirmView.xib; sourceTree = "<group>"; };
 		2EFE41B61B6E03E0004711AF /* Product_Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Product_Category.h; sourceTree = "<group>"; };
 		2EFE41B71B6E03E0004711AF /* Product_Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Product_Category.m; sourceTree = "<group>"; };
 		58F37E0A1B454D68006F1810 /* PalaceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalaceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -624,6 +629,9 @@
 				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
 				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
 				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
+				2EC38E0A1BB8F2C400EC596A /* PSCheckoutConfirmView.h */,
+				2EC38E0B1BB8F2C400EC596A /* PSCheckoutConfirmView.m */,
+				2EC38E0D1BB8F2E500EC596A /* PSCheckoutConfirmView.xib */,
 			);
 			name = Checkout;
 			sourceTree = "<group>";
@@ -1222,6 +1230,7 @@
 				2E16A6AA1BB0EB1300553DCB /* PSCartPaymentCell.xib in Resources */,
 				689FA5961B9342E500F65E3F /* textbox.png in Resources */,
 				2E497D971B48DA8A00F3DCE4 /* Cart.png in Resources */,
+				2EC38E0E1BB8F2E500EC596A /* PSCheckoutConfirmView.xib in Resources */,
 				2E2346A11BB652F200AED97E /* PSRegistrationView.xib in Resources */,
 				688ABC381BAF056C0059110F /* wishlist.png in Resources */,
 				688ABC171BAF056C0059110F /* cart_black.png in Resources */,
@@ -1306,6 +1315,7 @@
 				2E1511BF1B64A62500D43865 /* Banner_Images.m in Sources */,
 				68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */,
 				2E16A6A91BB0EB1300553DCB /* PSCartPaymentCell.m in Sources */,
+				2EC38E0C1BB8F2C400EC596A /* PSCheckoutConfirmView.m in Sources */,
 				2E16A6AD1BB0F0C100553DCB /* PSSubCategoryProductView.m in Sources */,
 				68B5C8C71B47A79300F3FD02 /* SDImageCache.m in Sources */,
 				58F37E391B454E8D006F1810 /* LeftMenuViewController.m in Sources */,

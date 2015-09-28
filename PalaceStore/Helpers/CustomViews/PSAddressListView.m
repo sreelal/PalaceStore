@@ -125,6 +125,8 @@
         cell = [nib objectAtIndex:0];
     }
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     Address *address = [addresses objectAtIndex:indexPath.row];
     
     cell.lblFN.text = address.firstname;
