@@ -27,6 +27,10 @@
 #define SEARCH_PRODUCT       @"product/search&search="
 #define SERVICE_FOOTER_TXT   @"status/text"
 #define SERVICE_PRODUCT_DETAIL  @"product/detail&product="
+#define SERVICE_SIGN_UP  @"user/register"
+#define SERVICE_LOGIN  @"user/login"
+#define SERVICE_ALL_ADDRESSES  @"user/all_addresses&user="
+#define SERVICE_ADD_ADDRESS  @"user/add_address&user="
 //--------------------------------------------------
 
 //-----------------CoreData Model---------------------
@@ -34,6 +38,7 @@
 #define TABLE_LATEST_ARRIVALS_PROMOTIONS @"LatestArrivals_Promotions"
 #define TABLE_PRODUCT_CATEGORY @"Product_Category"
 #define TABLE_PRODUCTS @"Products"
+#define TABLE_ADDRESS @"Address"
 #define TABLE_CART @"Cart"
 #define TABLE_PRODUCTS_DETAILS @"Product_Details"
 #define TABLE_PRODUCTS_ATTRIBUTES @"Product_Attributes"
@@ -42,6 +47,17 @@
 //----------------------------------------------------
 
 //------------------Dictionary Keys-----------------
+#define KEY_USER_INFO_ADDRESS_ID @"address_id"
+#define KEY_USER_INFO_FIRST_NAME @"firstname"
+#define KEY_USER_INFO_LAST_NAME @"lastname"
+#define KEY_USER_INFO_TELE @"telephone"
+#define KEY_USER_INFO @"user_info"
+#define KEY_USER_INFO_CUSTOMER_ID @"customer_id"
+
+#define KEY_USER_NAME @"user_name"
+#define KEY_PASSWORD @"password"
+#define KEY_REMEMBER_ME @"remember_me"
+
 #define KEY_BANNER_IMAGES @"banner_images"
 #define KEY_BRANDS @"brands"
 #define KEY_LATEST_ARRIVALS @"latest"

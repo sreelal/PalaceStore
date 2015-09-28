@@ -28,5 +28,6 @@
 + (void)updateProductDetailswithProductID:(int)productID
                             andCategoryID:(int)categoryID withData:(NSDictionary*)dictionaryData;
 + (void)addToCartWithObj:(Products *)product;
++ (void)addToAddressWithDict:(NSDictionary *)addressDict;
 
 @end

@@ -8,8 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PSAddressListViewDelegate <NSObject>
+
+- (void)addressListViewNextAction;
+- (void)addAddress;
+
+@end
+
 @interface PSAddressListView : UIView <UITableViewDelegate, UITableViewDataSource> {
+    IBOutlet NSLayoutConstraint *tableViewVerticalSpacing;
     IBOutlet UITableView *addressTableView;
 }
+
+@property(nonatomic,assign)id <PSAddressListViewDelegate> addressListViewDelegate;
+
+- (void)loadAddresses;
 
 @end

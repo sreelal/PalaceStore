@@ -2662,6 +2662,8 @@
                                         <connections>
                                             <outlet property="activity" destination="Nx3-4D-3S7" id="6d0-Ol-isN"/>
                                             <outlet property="bgView" destination="j6u-Ai-oJ8" id="tZu-M1-xlY"/>
+                                            <outlet property="cartButton" destination="Gbx-jj-sSx" id="DZb-bH-cSC"/>
+                                            <outlet property="favButton" destination="pG6-4k-wyM" id="n9F-XH-sRa"/>
                                             <outlet property="priceInfo" destination="6fY-qD-bXl" id="vdM-6I-7OH"/>
                                             <outlet property="productImage" destination="RFs-zD-9kV" id="cxX-mT-zh5"/>
                                             <outlet property="productInfo" destination="AB7-Ul-RPm" id="PMn-61-cBr"/>
@@ -2760,7 +2762,7 @@
         <!--Product Details View Controller-->
         <scene sceneID="eYJ-gc-13Q">
             <objects>
-                <viewController id="Xje-1i-joe" customClass="PSProductDetailsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PSProductDetailsViewController" id="Xje-1i-joe" customClass="PSProductDetailsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qJF-MY-bu1"/>
                         <viewControllerLayoutGuide type="bottom" id="yJC-Di-IKx"/>
@@ -2896,6 +2898,9 @@
                                                             <include reference="ar6-cE-FTe"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="wishlistAction:" destination="Xje-1i-joe" eventType="touchUpInside" id="pMR-SO-osK"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-LE-jRa">
                                                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -2922,6 +2927,9 @@
                                                             <include reference="uOx-NH-fMe"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="addToCartAction:" destination="Xje-1i-joe" eventType="touchUpInside" id="jOd-M9-0uC"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="priceInfo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iyr-vM-1ad">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>

@@ -67,7 +67,6 @@
     }];
 }
 
-
 + (void)getProductListWithCategoryId:(int)categoryId withCallback:(ResponseCallback)callback{
     
     if (![HelperClass hasNetwork]) {
@@ -119,6 +118,77 @@
         
         callback(result, error);
     }];
+}
+
++ (void)signUpWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback {
+    
+    if ([HelperClass hasNetwork]) {
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_SIGN_UP];
+        
+        NSLog(@"Service URL : %@", serviceURL);
+        
+        [RequestHandler postRequestWithURL:serviceURL andDictionary:dataDict withCallback:^(id result, NSError *error) {
+            callback(result, error);
+        }];
+    }
+    else {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        callback(nil, nil);
+    }    
+}
+
++ (void)loginWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback {
+    
+    if ([HelperClass hasNetwork]) {
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_LOGIN];
+        
+        NSLog(@"Service URL : %@", serviceURL);
+        
+        [RequestHandler postRequestWithURL:serviceURL andDictionary:dataDict withCallback:^(id result, NSError *error) {
+            callback(result, error);
+        }];
+    }
+    else {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        callback(nil, nil);
+    }
+}
+
++ (void)getAllAddressWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
+    
+    if (![HelperClass hasNetwork]) {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
+        return;
+    }
+    
+    NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ALL_ADDRESSES, userId];
+    [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
+        
+        if (result != nil) {
+            
+        }
+        
+        callback(result, error);
+    }];
+}
+
++ (void)addAddressWihDict:(NSDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
+    
+    if ([HelperClass hasNetwork]) {
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ADD_ADDRESS, userId];
+        
+        NSLog(@"Service URL : %@", serviceURL);
+        
+        [RequestHandler postRequestWithURL:serviceURL andDictionary:dataDict withCallback:^(id result, NSError *error) {
+            callback(result, error);
+        }];
+    }
+    else {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        callback(nil, nil);
+    }
 }
 
 @end

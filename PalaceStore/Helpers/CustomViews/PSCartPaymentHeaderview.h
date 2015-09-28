@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "PSCartPaymentView.h"
+#import "PSAddressListView.h"
 
 @interface PSCartPaymentHeaderview : UIView
 
 @property (nonatomic, strong) PSCartPaymentView *paymentView;
+@property (nonatomic, strong) PSAddressListView *addressListView;
 
 @property (nonatomic, strong) IBOutlet UILabel *txtLabel;
 @property (nonatomic, strong) IBOutlet UIButton *btn;
+
+-(void)addTargetToAddressListView;
+-(void)addTargetToPaymentView;
 
 @end

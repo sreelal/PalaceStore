@@ -8,10 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PSSignUpDelegate <NSObject>
+
+- (void)didSuccessSignUp;
+
+@end
+
 @interface PSRegistrationView : UIView <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
     
     IBOutlet UITableView *regTableView;
     IBOutlet NSLayoutConstraint *tableViewVerticalSpacing;
 }
+
+@property(nonatomic,assign)id <PSSignUpDelegate> signupDelegate;
 
 @end

@@ -44,6 +44,7 @@
 		2E2346A61BB6539700AED97E /* PSRegistrationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2346A41BB6539700AED97E /* PSRegistrationCell.xib */; };
 		2E2346AB1BB6615400AED97E /* InputAccessoryBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2346A91BB6615400AED97E /* InputAccessoryBar.m */; };
 		2E2346AC1BB6615400AED97E /* InputAccessoryBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2346AA1BB6615400AED97E /* InputAccessoryBar.xib */; };
+		2E2910A71BB866A7003FC73D /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2910A61BB866A7003FC73D /* Address.m */; };
 		2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3285731B670897006EB0C8 /* NSString+HTML.m */; };
 		2E3285761B671306006EB0C8 /* login1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3285751B671306006EB0C8 /* login1.png */; };
 		2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3DD2471B6679200043F33D /* CategoryTableViewCell.m */; };
@@ -163,8 +164,6 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		68DADAC91B96056F005F6C85 /* PSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DADAC61B96056F005F6C85 /* PSLoginViewController.m */; };
-		68DADACA1B96056F005F6C85 /* PSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */; };
 		B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */; };
 		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
 		B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */; };
@@ -260,6 +259,8 @@
 		2E2346A81BB6615400AED97E /* InputAccessoryBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAccessoryBar.h; sourceTree = "<group>"; };
 		2E2346A91BB6615400AED97E /* InputAccessoryBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAccessoryBar.m; sourceTree = "<group>"; };
 		2E2346AA1BB6615400AED97E /* InputAccessoryBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputAccessoryBar.xib; sourceTree = "<group>"; };
+		2E2910A51BB866A7003FC73D /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
+		2E2910A61BB866A7003FC73D /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		2E3285721B670897006EB0C8 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Category/NSString+HTML.h"; sourceTree = "<group>"; };
 		2E3285731B670897006EB0C8 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Category/NSString+HTML.m"; sourceTree = "<group>"; };
 		2E3285751B671306006EB0C8 /* login1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login1.png; sourceTree = "<group>"; };
@@ -428,10 +429,6 @@
 		68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		68B5C8E61B47B07100F3FD02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68B5C8E71B47B07100F3FD02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		68DADAC51B96056F005F6C85 /* PSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLoginViewController.h; sourceTree = "<group>"; };
-		68DADAC61B96056F005F6C85 /* PSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLoginViewController.m; sourceTree = "<group>"; };
-		68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSSignUpViewController.h; sourceTree = "<group>"; };
-		68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSSignUpViewController.m; sourceTree = "<group>"; };
 		B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		B7A427CD1B8AC8DC0054F1E0 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
@@ -503,6 +500,8 @@
 		2E1511B91B64A5ED00D43865 /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC0E70161B89F8C0004380BE /* WishList.h */,
+				FC0E70171B89F8C0004380BE /* WishList.m */,
 				2E1511BD1B64A62500D43865 /* Banner_Images.h */,
 				2E1511BE1B64A62500D43865 /* Banner_Images.m */,
 				2E1511C31B64A7F500D43865 /* LatestArrivals_Promotions.h */,
@@ -517,6 +516,8 @@
 				E9E4E7691B7386F100030E25 /* Products.m */,
 				B7B8BDC41B87468F00E90BEF /* Cart.h */,
 				B7B8BDC51B87468F00E90BEF /* Cart.m */,
+				2E2910A51BB866A7003FC73D /* Address.h */,
+				2E2910A61BB866A7003FC73D /* Address.m */,
 			);
 			name = "CoreData Models";
 			sourceTree = "<group>";
@@ -566,6 +567,10 @@
 		2E23469C1BB6515D00AED97E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58F37E141B454D68006F1810 /* MainViewController.h */,
+				58F37E151B454D68006F1810 /* MainViewController.m */,
+				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
+				58F37E381B454E8D006F1810 /* LeftMenuViewController.m */,
 				58F37E3A1B454F93006F1810 /* PSHomeViewController.h */,
 				58F37E3B1B454F93006F1810 /* PSHomeViewController.m */,
 				2E127D901B6854FE005B0E1F /* PSSubCategoryViewController.h */,
@@ -574,24 +579,14 @@
 				2E0FAAA21B6E34AA00384912 /* PSProductViewController.m */,
 				E989101A1B733B7D00F4466B /* PSProductDetailsViewController.h */,
 				E989101B1B733B7D00F4466B /* PSProductDetailsViewController.m */,
-				68DADAC51B96056F005F6C85 /* PSLoginViewController.h */,
-				68DADAC61B96056F005F6C85 /* PSLoginViewController.m */,
-				68DADAC71B96056F005F6C85 /* PSSignUpViewController.h */,
-				68DADAC81B96056F005F6C85 /* PSSignUpViewController.m */,
 				B7A427DB1B8AEC8D0054F1E0 /* WhishListViewController.h */,
 				B7A427DC1B8AEC8D0054F1E0 /* WhishListViewController.m */,
 				B7B8BDC11B87420200E90BEF /* CartTableViewController.h */,
 				B7B8BDC21B87420200E90BEF /* CartTableViewController.m */,
 				B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */,
 				B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */,
-				58F37E141B454D68006F1810 /* MainViewController.h */,
-				58F37E151B454D68006F1810 /* MainViewController.m */,
-				58F37E371B454E8D006F1810 /* LeftMenuViewController.h */,
-				58F37E381B454E8D006F1810 /* LeftMenuViewController.m */,
 				E97A478C1B787FB600DD3529 /* PSProductSpecificationsViewController.h */,
 				E97A478D1B787FB600DD3529 /* PSProductSpecificationsViewController.m */,
-				FC0E70161B89F8C0004380BE /* WishList.h */,
-				FC0E70171B89F8C0004380BE /* WishList.m */,
 				689521391BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.h */,
 				6895213A1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m */,
 			);
@@ -606,6 +601,31 @@
 				2E2346AA1BB6615400AED97E /* InputAccessoryBar.xib */,
 			);
 			path = InputAccessory;
+			sourceTree = "<group>";
+		};
+		2E4920E51BB7292800F924D0 /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				689521441BAB232100C9DDC6 /* PSCartLoginView.h */,
+				689521451BAB232100C9DDC6 /* PSCartLoginView.m */,
+				6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */,
+				2E23469D1BB652D400AED97E /* PSRegistrationView.h */,
+				2E23469E1BB652D400AED97E /* PSRegistrationView.m */,
+				2E2346A01BB652F200AED97E /* PSRegistrationView.xib */,
+				689521471BAB233300C9DDC6 /* PSCartAddressView.h */,
+				689521481BAB233300C9DDC6 /* PSCartAddressView.m */,
+				6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */,
+				2E1C10DA1BB33C9A00F792DA /* PSAddressListView.h */,
+				2E1C10DB1BB33C9A00F792DA /* PSAddressListView.m */,
+				2E1C10DC1BB33C9A00F792DA /* PSAddressListView.xib */,
+				6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */,
+				6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */,
+				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
+				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
+				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
+				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
+			);
+			name = Checkout;
 			sourceTree = "<group>";
 		};
 		2E497D781B48C96100F3DCE4 /* AppDelegate */ = {
@@ -800,6 +820,7 @@
 		58F37E3E1B455028006F1810 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				2E4920E51BB7292800F924D0 /* Checkout */,
 				2E207C0E1B497EAA00F74840 /* ItemView.h */,
 				2E207C0F1B497EAA00F74840 /* ItemView.m */,
 				2E207C111B497ED000F74840 /* ItemView.xib */,
@@ -808,29 +829,11 @@
 				2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */,
 				E955908B1B735D760019AA51 /* PSStarRatingView.h */,
 				E955908C1B735D760019AA51 /* PSStarRatingView.m */,
-				689521441BAB232100C9DDC6 /* PSCartLoginView.h */,
-				689521451BAB232100C9DDC6 /* PSCartLoginView.m */,
-				6895213E1BAB22E600C9DDC6 /* PSCartLoginView.xib */,
-				689521471BAB233300C9DDC6 /* PSCartAddressView.h */,
-				689521481BAB233300C9DDC6 /* PSCartAddressView.m */,
-				6895213C1BAB22CD00C9DDC6 /* PSCartAddressView.xib */,
-				2E23469D1BB652D400AED97E /* PSRegistrationView.h */,
-				2E23469E1BB652D400AED97E /* PSRegistrationView.m */,
-				2E2346A01BB652F200AED97E /* PSRegistrationView.xib */,
 				6895214A1BAB234300C9DDC6 /* PSCartView.h */,
 				6895214B1BAB234300C9DDC6 /* PSCartView.m */,
 				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
-				6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */,
-				6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */,
-				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
-				2E1C10DA1BB33C9A00F792DA /* PSAddressListView.h */,
-				2E1C10DB1BB33C9A00F792DA /* PSAddressListView.m */,
-				2E1C10DC1BB33C9A00F792DA /* PSAddressListView.xib */,
 				688ABC391BAF12990059110F /* PSCheckoutBaseView.h */,
 				688ABC3A1BAF12990059110F /* PSCheckoutBaseView.m */,
-				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
-				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
-				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
 				2E16A6A21BB0E9F200553DCB /* test.xib */,
 				2E16A6AB1BB0F0C100553DCB /* PSSubCategoryProductView.h */,
 				2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */,
@@ -1290,7 +1293,6 @@
 				2E2161B01B648932008CF219 /* PalaceStore.xcdatamodeld in Sources */,
 				2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */,
 				68B5C8D91B47AEB600F3FD02 /* Banner.m in Sources */,
-				68DADACA1B96056F005F6C85 /* PSSignUpViewController.m in Sources */,
 				2EFE41B81B6E03E0004711AF /* Product_Category.m in Sources */,
 				58F37E471B455028006F1810 /* RECommonFunctions.m in Sources */,
 				58F37E131B454D68006F1810 /* AppDelegate.m in Sources */,
@@ -1315,12 +1317,12 @@
 				6895214C1BAB234300C9DDC6 /* PSCartView.m in Sources */,
 				2EBCAC401BA59904007B17AE /* BBBadgeBarButtonItem.m in Sources */,
 				E9A0AB381B74DAAB000ED4D3 /* NSNull+Empty.m in Sources */,
+				2E2910A71BB866A7003FC73D /* Address.m in Sources */,
 				2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */,
 				FCC8AE841B86557D00F13B3C /* ProductCollectionViewCell.m in Sources */,
 				E989101C1B733B7D00F4466B /* PSProductDetailsViewController.m in Sources */,
 				B7B8BDC31B87420200E90BEF /* CartTableViewController.m in Sources */,
 				E9E4E76A1B7386F100030E25 /* Products.m in Sources */,
-				68DADAC91B96056F005F6C85 /* PSLoginViewController.m in Sources */,
 				2E207C101B497EAA00F74840 /* ItemView.m in Sources */,
 				B7B8BDC61B87468F00E90BEF /* Cart.m in Sources */,
 				2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */,

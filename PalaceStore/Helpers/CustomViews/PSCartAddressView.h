@@ -15,11 +15,14 @@
 
 @end
 
-@interface PSCartAddressView : UIView{
+@interface PSCartAddressView : UIView <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate> {
     
-    
+    IBOutlet NSLayoutConstraint *tableViewVerticalSpacing;
+    IBOutlet UITableView *addressTableView;
 }
 
 @property(nonatomic,assign)id <PSCartAddressViewDelegate> cartAddressDelegate;
+
+- (void)initView;
 
 @end

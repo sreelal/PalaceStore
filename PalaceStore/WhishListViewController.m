@@ -7,8 +7,11 @@
 //
 
 #import "WhishListViewController.h"
-
+#import "MyCartCell.h"
 #import "WishList.h"
+#import "Products.h"
+#import "DatabaseHandler.h"
+#import "PSProductDetailsViewController.h"
 
 @interface WhishListViewController ()
 
@@ -78,61 +81,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    static NSString * simpleTableIdentifier = @"MyCartCell";
     
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
+    MyCartCell * cell = (MyCartCell *) [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MyCartCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
-    WishList * wishObj = [self.whishListArray objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = wishObj.name;
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    WishList * wishObj = [self.whishListArray objectAtIndex:indexPath.row];
+    NSString *priceStr = [NSString stringWithFormat:@"GHS %d", [wishObj.price intValue]];
+    
+    cell.itemName.text = wishObj.name;
+    cell.itemCost.text = priceStr;
+    [cell loadProductImage:wishObj.thumb_image_url];
+    
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    WishList * wishObj = [self.whishListArray objectAtIndex:indexPath.row];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", wishObj.category_id, wishObj.product_id];
+    NSArray *selProducts = [DatabaseHandler fetchItemsFromTable:@"Products" withPredicate:predicate];
+    
+    Products *selProduct = [selProducts firstObject];
+    
+    PSProductDetailsViewController *_productDetailsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"PSProductDetailsViewController"];
+    _productDetailsVC.selectedProduct = selProduct;
+    _productDetailsVC.isFromMenu = YES;
+    [self.navigationController pushViewController:_productDetailsVC animated:YES];
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

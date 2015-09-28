@@ -177,6 +177,7 @@
         case 1:
         {
             CartTableViewController * cartObj = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
+            cartObj.isRerendering = YES;
             [self.navigationController pushViewController:cartObj animated:YES];
         }
             break;

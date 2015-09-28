@@ -28,17 +28,22 @@
                         </constraint>
                     </constraints>
                     <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
-                    <state key="normal" title="NEXT">
+                    <state key="normal" title="Sign Up">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="signUpAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="NhF-IG-cfV"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="uDV-R4-9q7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6V6-lN-14I"/>
                 <constraint firstItem="lca-o2-qgi" firstAttribute="top" secondItem="uDV-R4-9q7" secondAttribute="bottom" constant="13" id="Pkg-I8-Aa5"/>
-                <constraint firstItem="uDV-R4-9q7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="akq-VM-cGN"/>
+                <constraint firstItem="uDV-R4-9q7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="akq-VM-cGN">
+                    <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="lca-o2-qgi" secondAttribute="trailing" constant="11" id="eOp-84-Di3">
                     <variation key="heightClass=regular-widthClass=compact" constant="21"/>
                 </constraint>

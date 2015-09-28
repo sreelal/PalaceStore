@@ -11,6 +11,7 @@
 @interface UIViewController (Refresh)
 
 - (void)updateCartCount;
+- (void)removeCartItemAtIndex:(NSInteger)index;
 - (void)paymentOptionAcionWithTag:(NSInteger)tag;
 
 @end

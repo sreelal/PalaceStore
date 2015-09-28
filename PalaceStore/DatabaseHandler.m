@@ -19,6 +19,7 @@
 #import "Product_Attributes.h"
 #import "NSNull+Empty.h"
 #import "NSString+Empty.h"
+#import "Address.h"
 
 @implementation DatabaseHandler
 
@@ -332,6 +333,33 @@
         cart.thumb_image_url = product.thumb_image_url;
         cart.count = [NSNumber numberWithInt:1];
     }
+    
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"Sucessfully Saved Products");
+    }
+}
+
++ (void)addToAddressWithDict:(NSDictionary *)addressDict {
+    
+    NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+    
+    Address *address = nil;
+    address = [NSEntityDescription insertNewObjectForEntityForName:TABLE_ADDRESS inManagedObjectContext:moc];
+    
+    address.firstname = addressDict[@"firstname"];
+    address.lastname = addressDict[@"lastname"];
+    address.company = addressDict[@"company"];
+    address.address_1 = addressDict[@"address_1"];
+    address.address_2 = addressDict[@"address_2"];
+    address.city = addressDict[@"city"];
+    address.postcode = addressDict[@"postcode"];
+    address.is_billingaddress = addressDict[@""];
+    address.user_id = addressDict[@""];
     
     NSError *error = nil;
     

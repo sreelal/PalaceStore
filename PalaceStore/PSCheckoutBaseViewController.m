@@ -15,8 +15,15 @@
 #import "HelperClass.h"
 #import "UIColor+CustomColor.h"
 #import "PSRegistrationView.h"
+#import "AppDelegate.h"
+#import "WebHandler.h"
+#import "DatabaseHandler.h"
+#import "PSAddressListView.h"
 
-@interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate>
+@interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate, PSSignUpDelegate, PSAddressListViewDelegate> {
+    BOOL isSignUp;
+    BOOL isAddAddress;
+}
 @property (weak, nonatomic) IBOutlet SwipeView *swipeBaseview;
 @property (assign, nonatomic)NSInteger viewIndex;
 
@@ -65,11 +72,33 @@
     leftBarItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarItem;
     
-    _addressBtn.tag = 1;
+    UIBarButtonItem *rightBarButtonItem = [[AppDelegate instance] getHomeBarButtonItemWithTarget:self andSelector:@selector(homeAction:)];
     
-//    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
-//    
-//    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+
+    _loginBtn.tag = 0;
+    _addressBtn.tag = 1;
+    _paymentBtn.tag = 2;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+    
+    if (userId != nil) {
+        NSArray *addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+        
+        if (addresses.count) isAddAddress = NO;
+        else isAddAddress = YES;
+        
+        [self didSelectNavigationButtonItem:_addressBtn];
+        
+        //[[AppDelegate instance] showBusyView:@"Loading Addresses..."];
+        
+//        [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
+//            
+//        }];
+    }
+    
 //    self.navigationItem.rightBarButtonItem.badgeValue = @"2";
 //    
 //    [self sortBtnAction:_azBtn];
@@ -79,53 +108,56 @@
 
 - (NSInteger)numberOfItemsInSwipeView:(SwipeView *)swipeView{
     
-    return 4;
+    return 3;
 }
 
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view{
     
     UIView *targetView = nil;
     switch (index) {
-        case 0:
-        {
-            if (!_cartLoginView) {
-                
-                _cartLoginView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartLoginView" owner:self options:nil] firstObject];
-                _cartLoginView.loginDelegate = self;
-                //[ setTranslatesAutoresizingMaskIntoConstraints:NO];
+        case 0:{
+            if (isSignUp) {
+                if (!_registrationView) {
+                    _registrationView = [[[NSBundle mainBundle] loadNibNamed:@"PSRegistrationView"
+                                                                       owner:self options:nil] firstObject];
+                    _registrationView.signupDelegate = self;
+                }
+                targetView = _registrationView;
             }
-            targetView = _cartLoginView;
-        }
-            break;
-            
-        case 1:
-        {
-            if (!_registrationView) {
-                
-                _registrationView = [[[NSBundle mainBundle] loadNibNamed:@"PSRegistrationView"
-                                                                  owner:self options:nil] firstObject];
+            else {
+                if (!_cartLoginView) {
+                    _cartLoginView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartLoginView" owner:self options:nil] firstObject];
+                    _cartLoginView.loginDelegate = self;
+                }
+                targetView = _cartLoginView;
             }
-            targetView = _registrationView;
-//            if (!_cartAddressView) {
-//                
-//                _cartAddressView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartAddressView"
-//                                                                  owner:self options:nil] firstObject];
-//                _cartAddressView.cartAddressDelegate = self;
-//            }
-//            targetView = _cartAddressView;
-            
-//            if (!_addressListView) {
-//                
-//                _addressListView = [[[NSBundle mainBundle] loadNibNamed:@"PSAddressListView"
-//                                                                  owner:self options:nil] firstObject];
-//            }
-//            targetView = _addressListView;
         }
-            break;
+        break;
             
+        case 1:{
+            if (isAddAddress) {
+                if (!_cartAddressView) {
+                    
+                    _cartAddressView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartAddressView"
+                                                                      owner:self options:nil] firstObject];
+                    _cartAddressView.cartAddressDelegate = self;
+                }
+                targetView = _cartAddressView;
+            }
+            else {
+                if (!_addressListView) {
+                    
+                    _addressListView = [[[NSBundle mainBundle] loadNibNamed:@"PSAddressListView"
+                                                                      owner:self options:nil] firstObject];
+                    _addressListView.addressListViewDelegate = self;
+                }
+                [_addressListView loadAddresses];
+                targetView = _addressListView;
+            }
+        }
+        break;
             
-        case 2:
-        {
+        case 2:{
             if (!_cartPaymentview) {
                 
                 _cartPaymentview = [[[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentView"
@@ -152,6 +184,11 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)homeAction:(id)sender {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - Navigation button Actins
 
 
@@ -159,7 +196,7 @@
     
     UIButton *selectedButton = (UIButton*)sender;
     //[self setSelectedPropertyForButton:selectedButton];
-    [_swipeBaseview scrollToItemAtIndex:selectedButton.tag duration:0.2];
+    [_swipeBaseview scrollToItemAtIndex:selectedButton.tag duration:0];
 }
 
 - (void)setSelectedPropertyForButton:(UIButton*)btnSelected{
@@ -173,25 +210,51 @@
     [_paymentBtn setBackgroundImage:[UIImage imageNamed:@"gray_arrow.png"] forState:UIControlStateNormal];
     _paymentBtn.titleLabel.textColor = [UIColor darkGrayColor];
 
-
     [btnSelected setBackgroundImage:[UIImage imageNamed:@"red_arrow.png"] forState:UIControlStateNormal];
     btnSelected.titleLabel.textColor = [UIColor whiteColor];
 }
 
-#pragma mark - Login Delegate
+#pragma mark - Checkout Delegate
 
 
 - (void)didSuccessLoginOption{
     
     //[self setSelectedPropertyForButton:_addressBtn];
-    [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0.2];
+    isAddAddress = YES;
+    [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0];
 
 }
 
 - (void)didSuccessAddressOption{
-    
+    isAddAddress = NO;
+    [_swipeBaseview reloadData];
+    [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0];
+    [_swipeBaseview reloadData];
+
+    //
     //[self setSelectedPropertyForButton:_paymentBtn];
-    [_swipeBaseview scrollToItemAtIndex:_paymentBtn.tag duration:0.2];
+}
+
+- (void)signupClicked {
+    [_loginBtn setTitle:@"Sign Up" forState:UIControlStateNormal];
+    isSignUp = YES;
+    [_swipeBaseview reloadData];
+}
+
+- (void)didSuccessSignUp {
+    isSignUp = NO;
+    [_swipeBaseview reloadData];
+    //[self didSelectNavigationButtonItem:_addressBtn];
+}
+
+- (void)addAddress {
+    isAddAddress = YES;
+    [_swipeBaseview reloadData];
+}
+
+- (void)addressListViewNextAction {
+    
+    [self didSelectNavigationButtonItem:_paymentBtn];
 }
 
 @end

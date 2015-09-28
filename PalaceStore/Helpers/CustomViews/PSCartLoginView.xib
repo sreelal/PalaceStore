@@ -10,7 +10,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-8i-Zii">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hRe-8i-Zii">
                     <rect key="frame" x="20" y="121" width="335" height="120"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oMl-x6-xUi">
@@ -21,7 +21,7 @@
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hok-LX-iUq">
                             <rect key="frame" x="20" y="70" width="295" height="30"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" red="0.72336632013320923" green="0.71651700506471605" blue="0.72336632013320923" alpha="0.13" colorSpace="deviceRGB"/>
@@ -35,7 +35,7 @@
                         <constraint firstItem="hok-LX-iUq" firstAttribute="leading" secondItem="oMl-x6-xUi" secondAttribute="leading" id="rl9-dW-ElY"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKP-AW-Epz">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZKP-AW-Epz">
                     <rect key="frame" x="43" y="261" width="148" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="mff-19-0c7"/>
@@ -52,7 +52,7 @@
                         <action selector="didSelectRemember:" destination="iN0-l3-epB" eventType="touchUpInside" id="ur5-ba-7Fx"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-Nd-flv">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l8O-Nd-flv">
                     <rect key="frame" x="20" y="311" width="335" height="45"/>
                     <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="15"/>
                     <state key="normal" title="Login" backgroundImage="btn-bg.png">
@@ -63,7 +63,7 @@
                         <action selector="didSelectLogin:" destination="iN0-l3-epB" eventType="touchUpInside" id="I9k-K2-eB5"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-Mh-Qjf">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vA-Mh-Qjf">
                     <rect key="frame" x="20" y="386" width="335" height="1"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -73,7 +73,7 @@
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjQ-9C-CdI">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjQ-9C-CdI">
                     <rect key="frame" x="20" y="417" width="335" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="03u-21-8H4"/>
@@ -84,7 +84,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bug-Uv-av3">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bug-Uv-av3">
                     <rect key="frame" x="20" y="491" width="335" height="44"/>
                     <color key="backgroundColor" red="0.25098040699958801" green="0.50196081399917603" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
@@ -95,8 +95,11 @@
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="signupAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="I2r-ll-FG5"/>
+                    </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-JJ-cP6">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDE-JJ-cP6">
                     <rect key="frame" x="20" y="261" width="20" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="20" id="4OL-4x-5rB"/>
@@ -110,7 +113,7 @@
                         <action selector="didSelectRemember:" destination="iN0-l3-epB" eventType="touchUpInside" id="qB1-Qc-5wm"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="or.png" translatesAutoresizingMaskIntoConstraints="NO" id="PWA-za-j4C">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="or.png" translatesAutoresizingMaskIntoConstraints="NO" id="PWA-za-j4C">
                     <rect key="frame" x="172" y="372" width="30" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="2dG-Sf-tqd"/>
@@ -146,6 +149,8 @@
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
             <connections>
                 <outlet property="rememberPassword" destination="rDE-JJ-cP6" id="kX1-h6-wER"/>
+                <outlet property="txtPwd" destination="hok-LX-iUq" id="v6G-jS-Jie"/>
+                <outlet property="txtUserName" destination="oMl-x6-xUi" id="UvO-Ng-LRf"/>
             </connections>
             <point key="canvasLocation" x="222.5" y="326.5"/>
         </view>

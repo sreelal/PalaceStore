@@ -10,9 +10,11 @@
 #import "MyCartCell.h"
 #import "Cart.h"
 #import "AppDelegate.h"
+#import "DatabaseHandler.h"
+#import "UIViewController+Refresh.h"
 
 @interface CartTableViewController () {
-    BOOL isRerendering;
+
 }
 
 @end
@@ -30,22 +32,34 @@
     
     [super viewWillAppear:animated];
     
-    if (isRerendering) {
+    if (_isRerendering) {
         topConstraint.constant = 0;
-        [self.view setNeedsLayout];
+        [self.view setNeedsUpdateConstraints];
     }
     
-    [self fetchCartObjecsFrom];
+    [self fetchCartObjecs];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     
     [super viewWillDisappear:animated];
     
-    isRerendering = YES;
+    _isRerendering = YES;
 }
 
 #pragma mark - Button Actions
+
+- (void)removeCartItemAtIndex:(NSInteger)index {
+    
+    Cart * cartObj = [self.cartArray objectAtIndex:index];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", cartObj.category_id, cartObj.product_id];
+    
+    [DatabaseHandler deleteItemsFromTable:@"Cart" withPredicate:predicate];
+    
+    [self fetchCartObjecs];
+    
+    [cartTableView reloadData];
+}
 
 -(IBAction)leftAction:(id)sender {
     
@@ -62,7 +76,7 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-- (void)fetchCartObjecsFrom {
+- (void)fetchCartObjecs {
     
     NSFetchRequest * request = [NSFetchRequest fetchRequestWithEntityName:@"Cart"];
     
@@ -83,6 +97,11 @@
     
     if (_isFromMenu) {
         self.navigationItem.leftBarButtonItem = [HelperClass getMenuButtonItemWithTarget:self andAction:@selector(leftAction:)];
+    }
+    else if (_isFromMenuAndInnerView) {
+        UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+        leftBarItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem = leftBarItem;
     }
     else {
         UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
@@ -120,25 +139,12 @@
     int price = [cartObj.price intValue] * [cartObj.count intValue];
     NSString *priceStr = [NSString stringWithFormat:@"GHS %@ x %@ = GHS %d", cartObj.price, cartObj.count, price];
     
+    cell.callingController = self;
+    cell.cart = cartObj;
+    
     cell.itemName.text = cartObj.name;
     cell.itemCost.text = priceStr;
     [cell loadProductImage:cartObj.thumb_image_url];
-    
-    /*UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    if (cell == nil)
-    {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
-    }
-   
-    Cart * cartObj = [self.cartArray objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = cartObj.name;
-    
-    [HelperClass loadImageWithURL:cartObj.thumb_image_url andCompletionBlock:^(UIImage *img, NSData *imgData) {
-        cell.imageView.image = img;
-        [cell.imageView reloadInputViews];
-    }];*/
     
     return cell;
 }

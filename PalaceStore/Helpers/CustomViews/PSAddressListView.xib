@@ -13,12 +13,67 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rbY-p8-T1B">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="hu1-8q-s8k"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="AHj-4p-KmZ"/>
+                    </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuu-ae-eNk">
+                    <rect key="frame" x="469" y="370" width="91" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.16001361959999999" blue="0.29033763959999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="BAl-Ot-LmZ">
+                            <variation key="heightClass=regular-widthClass=compact" constant="28"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="91" id="X3b-49-f0P">
+                            <variation key="heightClass=regular-widthClass=compact" constant="119"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                    <state key="normal" title="Add Address">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addAddressAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="OUb-Eq-Id2"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8EH-VQ-wC2">
+                    <rect key="frame" x="469" y="370" width="91" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.16001361959999999" blue="0.29033763959999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="91" id="FUk-at-Isn">
+                            <variation key="heightClass=regular-widthClass=compact" constant="72"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="44" id="uqP-r0-3om">
+                            <variation key="heightClass=regular-widthClass=compact" constant="28"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nextAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="OX2-vn-GFe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="rbY-p8-T1B" secondAttribute="bottom" id="Dah-bK-e1O"/>
+                <constraint firstItem="8EH-VQ-wC2" firstAttribute="bottom" secondItem="iuu-ae-eNk" secondAttribute="bottom" id="70Q-12-Eh9"/>
+                <constraint firstAttribute="trailing" secondItem="8EH-VQ-wC2" secondAttribute="trailing" constant="17" id="BCy-fB-dw8">
+                    <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="rbY-p8-T1B" secondAttribute="trailing" id="Dez-aK-JMR"/>
+                <constraint firstItem="iuu-ae-eNk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="EcN-5A-EHc">
+                    <variation key="heightClass=regular-widthClass=compact" constant="21"/>
+                </constraint>
+                <constraint firstItem="8EH-VQ-wC2" firstAttribute="top" secondItem="rbY-p8-T1B" secondAttribute="bottom" constant="13" id="HB1-YO-gZB"/>
+                <constraint firstAttribute="bottom" secondItem="iuu-ae-eNk" secondAttribute="bottom" constant="12" id="IV3-dI-uY5">
+                    <variation key="heightClass=regular-widthClass=compact" constant="11"/>
+                </constraint>
+                <constraint firstItem="8EH-VQ-wC2" firstAttribute="top" secondItem="iuu-ae-eNk" secondAttribute="top" id="N0U-Io-7Pt"/>
                 <constraint firstItem="rbY-p8-T1B" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YKT-LU-P0d"/>
                 <constraint firstItem="rbY-p8-T1B" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ezb-Oq-Zaa"/>
             </constraints>
@@ -26,25 +81,42 @@
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="rbY-p8-T1B"/>
+                    <exclude reference="iuu-ae-eNk"/>
+                    <exclude reference="8EH-VQ-wC2"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="Dah-bK-e1O"/>
                     <exclude reference="Dez-aK-JMR"/>
                     <exclude reference="YKT-LU-P0d"/>
                     <exclude reference="ezb-Oq-Zaa"/>
+                    <exclude reference="EcN-5A-EHc"/>
+                    <exclude reference="IV3-dI-uY5"/>
+                    <exclude reference="70Q-12-Eh9"/>
+                    <exclude reference="BCy-fB-dw8"/>
+                    <exclude reference="HB1-YO-gZB"/>
+                    <exclude reference="N0U-Io-7Pt"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="rbY-p8-T1B"/>
+                    <include reference="iuu-ae-eNk"/>
+                    <include reference="8EH-VQ-wC2"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="Dah-bK-e1O"/>
                     <include reference="Dez-aK-JMR"/>
                     <include reference="YKT-LU-P0d"/>
                     <include reference="ezb-Oq-Zaa"/>
+                    <include reference="EcN-5A-EHc"/>
+                    <include reference="IV3-dI-uY5"/>
+                    <include reference="70Q-12-Eh9"/>
+                    <include reference="BCy-fB-dw8"/>
+                    <include reference="HB1-YO-gZB"/>
+                    <include reference="N0U-Io-7Pt"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="addressTableView" destination="rbY-p8-T1B" id="PgO-kP-opb"/>
+            </connections>
         </view>
     </objects>
 </document>

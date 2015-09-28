@@ -24,4 +24,13 @@ typedef void (^ResponseCallback) (id object, NSError *error);
 + (void)getproductdetailsWithproductID:(int)productID
                          andCategoryID:(int)categoryID
                           withCallback:(ResponseCallback)callback;
+
++ (void)signUpWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;
+
++ (void)loginWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;
+
++ (void)getAllAddressWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
+
++ (void)addAddressWihDict:(NSDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
+
 @end

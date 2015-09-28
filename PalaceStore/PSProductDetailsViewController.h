@@ -13,5 +13,6 @@
 @interface PSProductDetailsViewController : UIViewController
 
 @property (nonatomic,strong)Products *selectedProduct;
+@property (nonatomic, assign) BOOL isFromMenu;
 
 @end

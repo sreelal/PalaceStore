@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GHS 2499 X 1 = 2499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-tf-vUZ">
-                        <rect key="frame" x="63" y="36" width="249" height="20"/>
+                        <rect key="frame" x="63" y="36" width="221" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="d64-Ky-7q0"/>
                         </constraints>
@@ -40,10 +40,24 @@
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-9U-rno">
                         <rect key="frame" x="20" y="20" width="20" height="20"/>
                     </activityIndicatorView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgP-bp-bMe">
+                        <rect key="frame" x="292" y="35" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="DVV-DA-gV3"/>
+                            <constraint firstAttribute="width" constant="20" id="OFH-jj-8f3"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="delete-down.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LpP-7T-7Up"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="zKw-T5-ipI" firstAttribute="trailing" secondItem="vI8-tf-vUZ" secondAttribute="trailing" id="0Da-ps-gZc"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="top" secondItem="zKw-T5-ipI" secondAttribute="top" id="1no-fR-tbO"/>
+                    <constraint firstItem="KgP-bp-bMe" firstAttribute="top" secondItem="vI8-tf-vUZ" secondAttribute="top" constant="-1" id="2Tc-49-77G"/>
+                    <constraint firstItem="KgP-bp-bMe" firstAttribute="leading" secondItem="vI8-tf-vUZ" secondAttribute="trailing" constant="8" id="5lb-0Y-m3q"/>
                     <constraint firstItem="vI8-tf-vUZ" firstAttribute="top" secondItem="zKw-T5-ipI" secondAttribute="bottom" id="BVk-kc-uWp"/>
                     <constraint firstAttribute="bottom" secondItem="gCC-IV-M9G" secondAttribute="bottom" constant="3" id="Bd3-LR-Gr8"/>
                     <constraint firstItem="zKw-T5-ipI" firstAttribute="leading" secondItem="gCC-IV-M9G" secondAttribute="trailing" constant="8" id="ERd-uc-fUG"/>
@@ -51,6 +65,7 @@
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="bottom" secondItem="vI8-tf-vUZ" secondAttribute="bottom" id="KES-nt-MRd"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="N2u-7M-gG4"/>
                     <constraint firstAttribute="trailing" secondItem="zKw-T5-ipI" secondAttribute="trailing" constant="8" id="Qnt-Us-hWj"/>
+                    <constraint firstAttribute="trailing" secondItem="KgP-bp-bMe" secondAttribute="trailing" constant="8" id="WAz-3x-DJx"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="centerY" secondItem="oFe-9U-rno" secondAttribute="centerY" constant="1" id="eB4-H5-8zr"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="centerX" secondItem="oFe-9U-rno" secondAttribute="centerX" id="oim-Z1-tpc"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="u6V-1o-nZU"/>
@@ -58,14 +73,16 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="activity" destination="oFe-9U-rno" id="us5-jf-DtE"/>
+                <outlet property="btnDelete" destination="KgP-bp-bMe" id="5el-RN-IR0"/>
                 <outlet property="cartImage" destination="gCC-IV-M9G" id="z1J-CA-aU4"/>
                 <outlet property="itemCost" destination="vI8-tf-vUZ" id="2fk-Ny-T4x"/>
                 <outlet property="itemName" destination="zKw-T5-ipI" id="SjU-Uy-uv8"/>
             </connections>
-            <point key="canvasLocation" x="234" y="482"/>
+            <point key="canvasLocation" x="234" y="479"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Shoes.png" width="188" height="187"/>
+        <image name="delete-down.png" width="129" height="129"/>
     </resources>
 </document>

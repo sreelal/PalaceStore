@@ -7,6 +7,8 @@
 //
 
 #import "MyCartCell.h"
+#import "DatabaseHandler.h"
+#import "UIViewController+Refresh.h"
 
 @interface MyCartCell () {
     BOOL isLoading;
@@ -16,16 +18,19 @@
 
 @implementation MyCartCell
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
+    
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    
     [super setSelected:selected animated:animated];
 }
 
 - (void)loadProductImage:(NSString*)productURL {
+    
+    if (_cart == nil) _btnDelete.hidden = YES;
+    else _btnDelete.hidden = NO;
     
     NSArray *urlSplits = [productURL componentsSeparatedByString:@"/"];
     NSString *imageName = [urlSplits lastObject];
@@ -68,7 +73,9 @@
 
 - (IBAction)removeAction:(id)sender {
     
-    NSLog(@"%s",__func__);
+    if (_cart) {
+        [_callingController removeCartItemAtIndex:_cartItemIndex];
+    }
 }
 
 - (IBAction)placeOrderAction:(id)sender

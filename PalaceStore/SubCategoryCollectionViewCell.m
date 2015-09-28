@@ -33,7 +33,6 @@
     [_activity setHidden:NO];
     [_activity startAnimating];
 
-    
     _bgView.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.2];
     [HelperClass addBorderForView:_bgView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
     

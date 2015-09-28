@@ -8,28 +8,106 @@
 
 #import "PSAddressListView.h"
 #import "PSAddressCell.h"
+#import "DatabaseHandler.h"
+#import "PSCartPaymentHeaderview.h"
 
 @interface PSAddressListView () {
     NSArray *addresses;
+    NSInteger selecetedSectionIndex;
 }
 
 @end
 
 @implementation PSAddressListView
 
-#pragma mark - Table View Data Source
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)awakeFromNib {
     
-    return 200;
+    addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (void)loadAddresses {
+    
+    addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+    [addressTableView reloadData];
+}
+
+#pragma mark - Button Actions
+
+- (IBAction)didSelectPaymentOption:(id)sender {
+    
+    UIButton *_selected = (UIButton*)sender;
+    
+    selecetedSectionIndex = _selected.tag;
+    
+    [addressTableView reloadData];
+}
+
+- (IBAction)addAddressAction:(id)sender {
+    
+    if (_addressListViewDelegate && ([_addressListViewDelegate respondsToSelector:@selector(addAddress)])) {
+        
+        [_addressListViewDelegate addAddress];
+    }
+}
+
+- (IBAction)nextAction:(id)sender {
+    
+    if (_addressListViewDelegate && ([_addressListViewDelegate respondsToSelector:@selector(addressListViewNextAction)])) {
+        
+        [_addressListViewDelegate addressListViewNextAction];
+    }
+}
+
+#pragma mark - Table View Data Source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     return addresses.count;
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 167;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    return 40;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    NSInteger count = 0;
+    
+    if (selecetedSectionIndex == section) {
+        count = 1;
+    }
+    
+    return count;
+}
+
 #pragma mark - Table View Delegates
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    PSCartPaymentHeaderview *paymentHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentHeaderView" owner:self options:nil] lastObject];
+    
+    paymentHeaderView.addressListView = self;
+    [paymentHeaderView addTargetToAddressListView];
+    
+    paymentHeaderView.txtLabel.text = [NSString stringWithFormat:@"Address %ld", section + 1];
+    paymentHeaderView.btn.tag  = section;
+    
+    if (section == selecetedSectionIndex) {
+        [paymentHeaderView.btn setSelected:YES];
+    }
+    else {
+        [paymentHeaderView.btn setSelected:NO];
+    }
+    
+    return paymentHeaderView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -40,17 +118,6 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PSAddressCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    
-    /*static NSString *simpleTableIdentifier = @"SimpleTableItem";
-     
-     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-     
-     if (cell == nil) {
-     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-     }
-     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-     cell.textLabel.text = @"Test";*/
     
     return cell;
 }

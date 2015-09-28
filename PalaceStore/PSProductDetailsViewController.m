@@ -21,6 +21,7 @@
 #import "PSProductSpecificationsViewController.h"
 #import "UIBarButtonItem+Badge.h"
 #import "CartTableViewController.h"
+#import "WishList.h"
 
 @interface PSProductDetailsViewController ()
 
@@ -70,9 +71,15 @@
     leftBarItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = leftBarItem;
     
-    NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
-    
-    self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    if (_isFromMenu) {
+        UIBarButtonItem *rightBarItem = [[AppDelegate instance] getCartBarButtonItemWithTarget:self andSelector:@selector(cartAction:)];
+        self.navigationItem.rightBarButtonItem = rightBarItem;
+    }
+    else {
+        NSArray *rightBarButtonItems = [[AppDelegate instance] getCartAndHomeButtonItemsWithTarget:self andCartSelector:@selector(cartAction:) andHomeSelector:@selector(homeAction:)];
+        
+        self.navigationItem.rightBarButtonItems = rightBarButtonItems;
+    }
 }
 
 - (void)loadCachedDetails{
@@ -128,7 +135,49 @@
     
     CartTableViewController * cartObj = (CartTableViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"CartTableViewController"];
     
+    if (_isFromMenu) {
+        cartObj.isFromMenuAndInnerView = YES;
+    }
+    
     [self.navigationController pushViewController:cartObj animated:YES];
+}
+
+- (IBAction)addToCartAction:(id)sender
+{
+    [DatabaseHandler addToCartWithObj:self.selectedProduct];
+    
+    [self updateCartCount];
+}
+
+- (IBAction)wishlistAction:(id)sender {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", _selectedProduct.category_id, _selectedProduct.product_id];
+    NSArray *hasItem = [DatabaseHandler fetchItemsFromTable:@"WishList" withPredicate:predicate];
+    
+    if (![hasItem count]) {
+        WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
+        
+        wishObj.category_id = self.selectedProduct.category_id;
+        wishObj.price = self.selectedProduct.price;
+        wishObj.product_id = self.selectedProduct.product_id;
+        wishObj.model = self.selectedProduct.model;
+        wishObj.name = self.selectedProduct.name;
+        wishObj.thumb_image_url = self.selectedProduct.thumb_image_url;
+        
+        [[DatabaseManager sharedInstance]saveContext];
+    }
+    else {
+        [DatabaseHandler deleteItemsFromTable:@"WishList" withPredicate:predicate];
+    }
+
+//    NSArray *items = [DatabaseHandler fetchItemsFromTable:@"WishList" withPredicate:predicate];
+//    
+//    if (items.count) {
+//        _favButton.alpha = 1;
+//    }
+//    else {
+//        _favButton.alpha = 0.3;
+//    }
 }
 
 - (IBAction)homeAction:(id)sender {
@@ -142,12 +191,6 @@
 }
 
 #pragma mark -  Tableview delegates
-
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-//    
-//    return 4;
-//}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

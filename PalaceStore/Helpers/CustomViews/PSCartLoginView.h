@@ -11,9 +11,15 @@
 @protocol PSCartLoginViewDelegate <NSObject>
 
 - (void)didSuccessLoginOption;
+- (void)signupClicked;
 
 @end
-@interface PSCartLoginView : UIView
+
+@interface PSCartLoginView : UIView  {
+    IBOutlet UITextField *txtUserName;
+    IBOutlet UITextField *txtPwd;
+}
+
 @property(nonatomic,assign)id <PSCartLoginViewDelegate> loginDelegate;
 
 @end

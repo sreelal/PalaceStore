@@ -12,9 +12,22 @@
 @implementation PSCartPaymentHeaderview
 
 - (void)awakeFromNib {
-    [self.btn addTarget:self.paymentView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
     
     self.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.5];
+}
+
+-(void)addTargetToAddressListView {
+    
+    if (self.addressListView) {
+        [self.btn addTarget:self.addressListView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+-(void)addTargetToPaymentView {
+    
+    if (self.paymentView) {
+        [self.btn addTarget:self.paymentView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
+    }
 }
 
 /*

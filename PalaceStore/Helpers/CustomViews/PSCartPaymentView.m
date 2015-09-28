@@ -87,6 +87,9 @@
     
     PSCartPaymentHeaderview *paymentHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentHeaderView" owner:self options:nil] lastObject];
     
+    paymentHeaderView.paymentView = self;
+    [paymentHeaderView addTargetToPaymentView];
+    
     paymentHeaderView.txtLabel.text = options[section];
     paymentHeaderView.btn.tag  = section;
     

@@ -18,5 +18,6 @@
 
 @property(nonatomic, strong)NSArray * cartArray;
 @property (nonatomic, assign) BOOL isFromMenu;
-
+@property (nonatomic, assign) BOOL isFromMenuAndInnerView;
+@property (nonatomic, assign) BOOL isRerendering;
 @end

@@ -18,4 +18,8 @@
     
 }
 
+- (void)removeCartItemAtIndex:(NSInteger)index {
+    
+}
+
 @end

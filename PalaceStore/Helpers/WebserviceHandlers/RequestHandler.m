@@ -36,6 +36,10 @@ static NSOperationQueue *reqQueue;
         
         if (data != nil) {
             responseObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
+            if (responseObject == nil) {
+                responseObject = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            }
         }
         
         NSLog(@"Response : %@\nError : %@", responseObject, error.description);
@@ -82,7 +86,12 @@ static NSOperationQueue *reqQueue;
         id  responseObject = nil;
         
         if (data != nil) {
+            
             responseObject = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            
+            if (responseObject == nil) {
+                responseObject = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+            }
         }        
         
         NSLog(@"Response : %@", responseObject);

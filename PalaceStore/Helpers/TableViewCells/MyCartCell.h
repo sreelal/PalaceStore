@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Cart.h"
 
 @interface MyCartCell : UITableViewCell
+
+@property (strong, nonatomic) id callingController;
+@property (assign, nonatomic) NSInteger cartItemIndex;
 
 @property (strong, nonatomic) IBOutlet UIImageView *cartImage;
 @property (strong, nonatomic) IBOutlet UILabel *itemName;
@@ -17,7 +21,10 @@
 @property (strong, nonatomic) IBOutlet UIImageView *ratingImage;
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *offerLabel;
+@property (strong, nonatomic) IBOutlet UIButton *btnDelete;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
+
+@property (strong, nonatomic) Cart *cart;
 
 - (void)loadProductImage:(NSString*)productURL;
 
