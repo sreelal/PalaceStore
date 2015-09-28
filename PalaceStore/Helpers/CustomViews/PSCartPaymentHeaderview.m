@@ -9,6 +9,7 @@
 #import "PSCartPaymentHeaderview.h"
 #import "UIColor+CustomColor.h"
 
+
 @implementation PSCartPaymentHeaderview
 
 - (void)awakeFromNib {
@@ -16,6 +17,18 @@
     self.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:1];
     
 }
+
+- (void)initHeaderViewForConfirmOrder:(PSCheckoutConfirmView *)confirmOrderView {
+    
+    _btn.hidden = YES;
+    _btnEdit.hidden = NO;
+    
+    if (confirmOrderView) {
+        [self.btnEdit addTarget:confirmOrderView action:@selector(orderViewEditAction:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+#pragma mark - Button Actions
 
 -(void)addTargetToAddressListView {
     
@@ -30,13 +43,5 @@
         [self.btn addTarget:self.paymentView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

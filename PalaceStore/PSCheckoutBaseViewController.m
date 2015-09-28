@@ -21,7 +21,7 @@
 #import "PSAddressListView.h"
 #import "PSCheckoutConfirmView.h"
 
-@interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate, PSSignUpDelegate, PSAddressListViewDelegate, PSPaymentViewDelegate> {
+@interface PSCheckoutBaseViewController ()<PSCartLoginViewDelegate,PSCartAddressViewDelegate, PSSignUpDelegate, PSAddressListViewDelegate, PSPaymentViewDelegate, PSConfirmViewDelegate> {
     BOOL isSignUp;
     BOOL isAddAddress;
 }
@@ -126,6 +126,7 @@
                                                                        owner:self options:nil] firstObject];
                     _registrationView.signupDelegate = self;
                 }
+                
                 targetView = _registrationView;
             }
             else {
@@ -133,6 +134,7 @@
                     _cartLoginView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartLoginView" owner:self options:nil] firstObject];
                     _cartLoginView.loginDelegate = self;
                 }
+                
                 targetView = _cartLoginView;
             }
         }
@@ -146,6 +148,7 @@
                                                                       owner:self options:nil] firstObject];
                     _cartAddressView.cartAddressDelegate = self;
                 }
+                
                 [_cartAddressView initView];
                 targetView = _cartAddressView;
             }
@@ -156,6 +159,7 @@
                                                                       owner:self options:nil] firstObject];
                     _addressListView.addressListViewDelegate = self;
                 }
+                
                 [_addressListView loadAddresses];
                 targetView = _addressListView;
             }
@@ -168,6 +172,7 @@
                 _cartPaymentview = [[[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentView"
                                                                   owner:self options:nil] firstObject];
             }
+            
             _cartPaymentview.paymentViewDelegate = self;
             targetView = _cartPaymentview;
         }
@@ -178,7 +183,10 @@
                 
                 _checkoutConfirmView = [[[NSBundle mainBundle] loadNibNamed:@"PSCheckoutConfirmView"
                                                                   owner:self options:nil] firstObject];
+                _checkoutConfirmView.confirmViewDelegate = self;
             }
+            
+            [_checkoutConfirmView initView];
             targetView = _checkoutConfirmView;
         }
             break;
@@ -325,7 +333,6 @@
 - (void)didSuccessSignUp {
     isSignUp = NO;
     [_swipeBaseview reloadData];
-    //[self didSelectNavigationButtonItem:_addressBtn];
 }
 
 - (void)addAddress {
@@ -344,6 +351,13 @@
     
     [self setSelectedPropertyForButton:_confirmBtn];
     [self didSelectNavigationButtonItem:_confirmBtn];
+}
+
+- (void)didSuccessCheckout {
+    
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    [DatabaseHandler deleteItemsFromTable:TABLE_CART withPredicate:nil];
 }
 
 @end

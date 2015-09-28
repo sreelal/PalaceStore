@@ -54,6 +54,31 @@
                         </mask>
                     </variation>
                 </button>
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znq-BW-APb">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="F0H-e0-WbY"/>
+                        <constraint firstAttribute="width" constant="22" id="JFP-Uo-FQE"/>
+                    </constraints>
+                    <state key="normal" image="edit-down.png">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected" image="radio-slected.png">
+                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="F0H-e0-WbY"/>
+                            <exclude reference="JFP-Uo-FQE"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="F0H-e0-WbY"/>
+                            <include reference="JFP-Uo-FQE"/>
+                        </mask>
+                    </variation>
+                </button>
                 <imageView userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ALs-bF-olf">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -75,13 +100,17 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ALs-bF-olf" secondAttribute="trailing" id="4Kj-OY-24i"/>
+                <constraint firstItem="znq-BW-APb" firstAttribute="leading" secondItem="C8a-it-OAH" secondAttribute="leading" id="6BL-3v-yw0"/>
                 <constraint firstItem="Y8b-DJ-CGk" firstAttribute="centerY" secondItem="C8a-it-OAH" secondAttribute="centerY" id="8uq-Tn-pJE"/>
+                <constraint firstItem="znq-BW-APb" firstAttribute="trailing" secondItem="C8a-it-OAH" secondAttribute="trailing" id="A4x-kO-kdM"/>
                 <constraint firstItem="C8a-it-OAH" firstAttribute="leading" secondItem="Y8b-DJ-CGk" secondAttribute="trailing" constant="15" id="JCa-GQ-fu2"/>
                 <constraint firstAttribute="centerY" secondItem="Y8b-DJ-CGk" secondAttribute="centerY" id="RHR-kp-ws7"/>
                 <constraint firstAttribute="bottom" secondItem="ALs-bF-olf" secondAttribute="bottom" id="U1f-df-xaB"/>
                 <constraint firstItem="ALs-bF-olf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WCP-YT-ubH"/>
                 <constraint firstAttribute="trailing" secondItem="C8a-it-OAH" secondAttribute="trailing" constant="16" id="dou-wv-AFr"/>
+                <constraint firstItem="znq-BW-APb" firstAttribute="top" secondItem="C8a-it-OAH" secondAttribute="top" id="fyh-pO-lGR"/>
                 <constraint firstItem="Y8b-DJ-CGk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="jva-dg-S6D"/>
+                <constraint firstItem="znq-BW-APb" firstAttribute="bottom" secondItem="C8a-it-OAH" secondAttribute="bottom" id="qwJ-Hf-kK1"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -89,44 +118,56 @@
                 <mask key="subviews">
                     <exclude reference="Y8b-DJ-CGk"/>
                     <exclude reference="C8a-it-OAH"/>
+                    <exclude reference="znq-BW-APb"/>
                     <exclude reference="ALs-bF-olf"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="8uq-Tn-pJE"/>
                     <exclude reference="RHR-kp-ws7"/>
                     <exclude reference="jva-dg-S6D"/>
-                    <exclude reference="JCa-GQ-fu2"/>
-                    <exclude reference="dou-wv-AFr"/>
                     <exclude reference="4Kj-OY-24i"/>
                     <exclude reference="U1f-df-xaB"/>
                     <exclude reference="WCP-YT-ubH"/>
+                    <exclude reference="JCa-GQ-fu2"/>
+                    <exclude reference="dou-wv-AFr"/>
+                    <exclude reference="6BL-3v-yw0"/>
+                    <exclude reference="A4x-kO-kdM"/>
+                    <exclude reference="fyh-pO-lGR"/>
+                    <exclude reference="qwJ-Hf-kK1"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="Y8b-DJ-CGk"/>
                     <include reference="C8a-it-OAH"/>
+                    <include reference="znq-BW-APb"/>
                     <include reference="ALs-bF-olf"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="8uq-Tn-pJE"/>
                     <include reference="RHR-kp-ws7"/>
                     <include reference="jva-dg-S6D"/>
-                    <include reference="JCa-GQ-fu2"/>
-                    <include reference="dou-wv-AFr"/>
                     <include reference="4Kj-OY-24i"/>
                     <include reference="U1f-df-xaB"/>
                     <include reference="WCP-YT-ubH"/>
+                    <include reference="JCa-GQ-fu2"/>
+                    <include reference="dou-wv-AFr"/>
+                    <include reference="6BL-3v-yw0"/>
+                    <include reference="A4x-kO-kdM"/>
+                    <include reference="fyh-pO-lGR"/>
+                    <include reference="qwJ-Hf-kK1"/>
                 </mask>
             </variation>
             <connections>
                 <outlet property="btn" destination="C8a-it-OAH" id="mWO-lZ-53p"/>
+                <outlet property="btnEdit" destination="znq-BW-APb" id="YnO-ae-VQU"/>
                 <outlet property="txtLabel" destination="Y8b-DJ-CGk" id="GBz-hp-fRY"/>
             </connections>
             <point key="canvasLocation" x="218" y="50"/>
         </view>
     </objects>
     <resources>
+        <image name="edit-down.png" width="129" height="129"/>
         <image name="radio-normal.png" width="55" height="55"/>
         <image name="radio-slected.png" width="55" height="55"/>
     </resources>

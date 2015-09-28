@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PSCartPaymentView.h"
 #import "PSAddressListView.h"
+#import "PSCheckoutConfirmView.h"
 
 @interface PSCartPaymentHeaderview : UIView
 
@@ -17,8 +18,10 @@
 
 @property (nonatomic, strong) IBOutlet UILabel *txtLabel;
 @property (nonatomic, strong) IBOutlet UIButton *btn;
+@property (nonatomic, strong) IBOutlet UIButton *btnEdit;
 
--(void)addTargetToAddressListView;
--(void)addTargetToPaymentView;
+- (void)initHeaderViewForConfirmOrder:(PSCheckoutConfirmView *)confirmOrderView;
+- (void)addTargetToAddressListView;
+- (void)addTargetToPaymentView;
 
 @end

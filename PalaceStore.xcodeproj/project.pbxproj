@@ -626,12 +626,12 @@
 				6895214D1BAB235600C9DDC6 /* PSCartPaymentView.h */,
 				6895214E1BAB235600C9DDC6 /* PSCartPaymentView.m */,
 				689521421BAB230D00C9DDC6 /* PSCartPaymentView.xib */,
-				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
-				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
-				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
 				2EC38E0A1BB8F2C400EC596A /* PSCheckoutConfirmView.h */,
 				2EC38E0B1BB8F2C400EC596A /* PSCheckoutConfirmView.m */,
 				2EC38E0D1BB8F2E500EC596A /* PSCheckoutConfirmView.xib */,
+				2E08C22F1BAF336C0026A446 /* PSCartPaymentHeaderview.h */,
+				2E08C2301BAF336C0026A446 /* PSCartPaymentHeaderview.m */,
+				2E08C2321BAF338C0026A446 /* PSCartPaymentHeaderView.xib */,
 			);
 			name = Checkout;
 			sourceTree = "<group>";

@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MyCartCell.h"
 
-@interface PSCheckoutConfirmView : UIView
+@protocol PSConfirmViewDelegate <NSObject>
+
+- (void)didSuccessCheckout;
+
+@end
+
+@interface PSCheckoutConfirmView : UIView {
+    IBOutlet UITableView *orderConfirmTableView;
+}
+
+@property(nonatomic,assign)id <PSConfirmViewDelegate> confirmViewDelegate;
+
+- (void)initView;
+- (IBAction)orderViewEditAction:(id)sender;
 
 @end

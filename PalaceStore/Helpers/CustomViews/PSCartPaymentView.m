@@ -29,6 +29,10 @@
 - (void)awakeFromNib {
     
     options = [[NSMutableArray alloc] initWithObjects:@"Cash on Delivery", @"Bank Deposit / Transfer", @"Pay with MTN Mobile Money", @"Tigo Cash", @"Pay with Airtel Money", nil];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:options[selecetedSectionIndex] forKey:KEY_USER_INFO_PAYMENT_OPTION];
+    [userDefaults synchronize];
 }
 
 /*

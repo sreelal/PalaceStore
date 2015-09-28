@@ -29,6 +29,13 @@
 - (void)loadAddresses {
     
     addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+    
+    Address *address = [addresses objectAtIndex:selecetedSectionIndex];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
+    [userDefaults synchronize];
+    
     [addressTableView reloadData];
 }
 
@@ -127,7 +134,7 @@
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    Address *address = [addresses objectAtIndex:indexPath.row];
+    Address *address = [addresses objectAtIndex:indexPath.section];
     
     cell.lblFN.text = address.firstname;
     cell.lblLN.text = address.lastname;

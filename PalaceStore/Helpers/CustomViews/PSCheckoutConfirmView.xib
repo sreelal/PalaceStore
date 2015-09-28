@@ -10,42 +10,99 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-ab-3aI">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hV9-ab-3aI">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="puv-id-eaL"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="FgP-2D-5at"/>
+                    </connections>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ff-R9-9UA">
+                    <rect key="frame" x="469" y="370" width="91" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.16001361959999999" blue="0.29033763959999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="91" id="Hr7-oI-U23">
+                            <variation key="heightClass=regular-widthClass=compact" constant="72"/>
+                        </constraint>
+                        <constraint firstAttribute="height" constant="28" id="SFu-Rv-gDk"/>
+                        <constraint firstAttribute="height" constant="44" id="fNw-Yw-VIp">
+                            <variation key="heightClass=regular-widthClass=compact" constant="28"/>
+                        </constraint>
+                        <constraint firstAttribute="width" constant="72" id="vpp-11-pAX">
+                            <variation key="heightClass=regular-widthClass=compact" constant="116"/>
+                        </constraint>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="15"/>
+                    <state key="normal" title="Confirm order">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="SFu-Rv-gDk"/>
+                            <exclude reference="vpp-11-pAX"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="SFu-Rv-gDk"/>
+                            <include reference="vpp-11-pAX"/>
+                            <exclude reference="Hr7-oI-U23"/>
+                            <exclude reference="fNw-Yw-VIp"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="confirmOrderAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="PMQ-a7-2df"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hV9-ab-3aI" secondAttribute="trailing" id="7AY-ef-oxY"/>
+                <constraint firstAttribute="bottom" secondItem="5Ff-R9-9UA" secondAttribute="bottom" constant="8" id="BKz-zb-ro6">
+                    <variation key="heightClass=regular-widthClass=compact" constant="11"/>
+                </constraint>
                 <constraint firstItem="hV9-ab-3aI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="IaA-HN-gca"/>
-                <constraint firstAttribute="bottom" secondItem="hV9-ab-3aI" secondAttribute="bottom" constant="65" id="bZ3-IC-Uge"/>
+                <constraint firstAttribute="trailing" secondItem="5Ff-R9-9UA" secondAttribute="trailing" constant="19" id="Py9-1C-1mB">
+                    <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                </constraint>
                 <constraint firstItem="hV9-ab-3aI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dhE-Zg-RbN"/>
+                <constraint firstItem="5Ff-R9-9UA" firstAttribute="top" secondItem="hV9-ab-3aI" secondAttribute="bottom" constant="13" id="er4-O8-xgQ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="hV9-ab-3aI"/>
+                    <exclude reference="5Ff-R9-9UA"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="7AY-ef-oxY"/>
                     <exclude reference="IaA-HN-gca"/>
-                    <exclude reference="bZ3-IC-Uge"/>
                     <exclude reference="dhE-Zg-RbN"/>
+                    <exclude reference="BKz-zb-ro6"/>
+                    <exclude reference="Py9-1C-1mB"/>
+                    <exclude reference="er4-O8-xgQ"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
                 <mask key="subviews">
                     <include reference="hV9-ab-3aI"/>
+                    <include reference="5Ff-R9-9UA"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="7AY-ef-oxY"/>
                     <include reference="IaA-HN-gca"/>
-                    <include reference="bZ3-IC-Uge"/>
                     <include reference="dhE-Zg-RbN"/>
+                    <include reference="BKz-zb-ro6"/>
+                    <include reference="Py9-1C-1mB"/>
+                    <include reference="er4-O8-xgQ"/>
                 </mask>
             </variation>
+            <connections>
+                <outlet property="orderConfirmTableView" destination="hV9-ab-3aI" id="lwS-Se-dBA"/>
+            </connections>
             <point key="canvasLocation" x="199" y="111"/>
         </view>
     </objects>
