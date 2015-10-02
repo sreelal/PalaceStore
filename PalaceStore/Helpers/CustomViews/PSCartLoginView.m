@@ -125,8 +125,12 @@
                 }
             });
         }
-        else
-            [self showAlertWithMessage:@"Login Failed!"];
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+                [self showAlertWithMessage:@"Login Failed!"];
+            });
+        }
     }];
 }
 

@@ -43,6 +43,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *paymentLeftConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *loginLeftConstraint;
 @property (assign, nonatomic) NSInteger selectedIndex;
+@property (strong, nonatomic) NSString *userId;
 
 @end
 
@@ -78,7 +79,7 @@
     UIBarButtonItem *rightBarButtonItem = [[AppDelegate instance] getHomeBarButtonItemWithTarget:self andSelector:@selector(homeAction:)];
     
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-
+    
     _loginBtn.tag   = 0;
     _addressBtn.tag = 1;
     _paymentBtn.tag = 2;
@@ -86,9 +87,9 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
-    NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+    _userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
     
-    if (userId != nil) {
+    if (_userId != nil) {
         NSArray *addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
         
         if (addresses.count) isAddAddress = NO;
@@ -218,6 +219,8 @@
 
 - (IBAction)didSelectNavigationButtonItem:(id)sender {
     
+    if (_userId == nil) return;
+    
     UIButton *selectedButton = (UIButton*)sender;
     [self setSelectedPropertyForButton:selectedButton];
     [_swipeBaseview scrollToItemAtIndex:selectedButton.tag duration:0];
@@ -306,7 +309,7 @@
 - (void)didSuccessLoginOption{
     
     [self setSelectedPropertyForButton:_addressBtn];
-    isAddAddress = YES;
+    isAddAddress = NO;
     [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0];
 
 }

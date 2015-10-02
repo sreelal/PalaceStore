@@ -24,7 +24,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home",@"Cart", @"WishList", @"Log Out", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", nil];
 }
 
 - (void)didReceiveMemoryWarning {

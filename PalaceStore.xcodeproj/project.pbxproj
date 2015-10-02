@@ -81,9 +81,7 @@
 		58F37E101B454D68006F1810 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E0F1B454D68006F1810 /* main.m */; };
 		58F37E131B454D68006F1810 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E121B454D68006F1810 /* AppDelegate.m */; };
 		58F37E161B454D68006F1810 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E151B454D68006F1810 /* MainViewController.m */; };
-		58F37E191B454D68006F1810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58F37E171B454D68006F1810 /* Main.storyboard */; };
 		58F37E1B1B454D68006F1810 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58F37E1A1B454D68006F1810 /* Images.xcassets */; };
-		58F37E1E1B454D68006F1810 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58F37E1C1B454D68006F1810 /* LaunchScreen.xib */; };
 		58F37E2A1B454D69006F1810 /* PalaceStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E291B454D69006F1810 /* PalaceStoreTests.m */; };
 		58F37E391B454E8D006F1810 /* LeftMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E381B454E8D006F1810 /* LeftMenuViewController.m */; };
 		58F37E3C1B454F93006F1810 /* PSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E3B1B454F93006F1810 /* PSHomeViewController.m */; };
@@ -166,10 +164,10 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		9D8A678D1BBA79BA00D0EE35 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678A1BBA79BA00D0EE35 /* FBSDKCoreKit.framework */; settings = {ASSET_TAGS = (); }; };
-		9D8A678E1BBA79BA00D0EE35 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678B1BBA79BA00D0EE35 /* FBSDKLoginKit.framework */; settings = {ASSET_TAGS = (); }; };
-		9D8A678F1BBA79BA00D0EE35 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678C1BBA79BA00D0EE35 /* FBSDKShareKit.framework */; settings = {ASSET_TAGS = (); }; };
-		9D8A67921BBA7B2800D0EE35 /* PSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A67911BBA7B2800D0EE35 /* PSLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
+		9D8A678D1BBA79BA00D0EE35 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678A1BBA79BA00D0EE35 /* FBSDKCoreKit.framework */; };
+		9D8A678E1BBA79BA00D0EE35 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678B1BBA79BA00D0EE35 /* FBSDKLoginKit.framework */; };
+		9D8A678F1BBA79BA00D0EE35 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A678C1BBA79BA00D0EE35 /* FBSDKShareKit.framework */; };
+		9D8A67921BBA7B2800D0EE35 /* PSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A67911BBA7B2800D0EE35 /* PSLoginViewController.m */; };
 		B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */; };
 		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
 		B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7A427CF1B8AC8DC0054F1E0 /* ProfileCell.xib */; };
@@ -1224,10 +1222,8 @@
 				2E497D9F1B48DA8A00F3DCE4 /* Mobile.png in Resources */,
 				2E497DAE1B48E05000F3DCE4 /* HeaderBg.png in Resources */,
 				688ABC311BAF056C0059110F /* radio-slected.png in Resources */,
-				58F37E191B454D68006F1810 /* Main.storyboard in Resources */,
 				2E075BB61BA669D2000EB00F /* Home_icon@2x.png in Resources */,
 				2EB842251BA5535B008228E4 /* cart_icon.png in Resources */,
-				58F37E1E1B454D68006F1810 /* LaunchScreen.xib in Resources */,
 				688ABC351BAF056C0059110F /* start_red_arrow.png in Resources */,
 				E987AFE61B7A665B0050EADB /* Cart_small.png in Resources */,
 				688ABC201BAF056C0059110F /* facebook.png in Resources */,

@@ -31,6 +31,6 @@ typedef void (^ResponseCallback) (id object, NSError *error);
 
 + (void)getAllAddressWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
 
-+ (void)addAddressWihDict:(NSDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
++ (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
 
 @end

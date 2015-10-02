@@ -49,13 +49,13 @@
     
     _bannerCollection = [[NSMutableArray alloc] init];
     _logoCollection = [[NSMutableArray alloc] init];
-
-    [self loadLatestArrivalsAndPromotions];
-    [self loadBannerImages];
-    [self loadCategories];
-    [self loadLogoImages];
-
-    [self loadHomeData];
+    
+    if (![HelperClass hasNetwork]) {
+        [self getCachedData];
+    }
+    else {
+        [self loadHomeData];
+    }
 }
 -(IBAction)ProfileView:(id)sender
 {
@@ -82,6 +82,14 @@
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
+}
+
+- (void)getCachedData {
+    
+    [self loadLatestArrivalsAndPromotions];
+    [self loadBannerImages];
+    [self loadCategories];
+    [self loadLogoImages];
 }
 
 - (void)loadBannerImages {
@@ -170,9 +178,9 @@
         if (object == nil || error != nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[AppDelegate instance] hideBusyView];
+                
+                [self getCachedData];
             });
-            
-            //To Do:- Show Alert
         }
     }];
 }
@@ -339,8 +347,6 @@
     
     id obj = [insertObjects anyObject];
     
-    
-    
     if ([[obj class] isSubclassOfClass:[Banner_Images class]]) {
         NSLog(@"Did Save Banner Images : \n%@", [obj class]);
     }
@@ -349,16 +355,26 @@
     }
     else if ([[obj class] isSubclassOfClass:[Product_Category class]]) {
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[AppDelegate instance] hideBusyView];
-        });
+        @try {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+            });
+            
+            [self loadBannerImages];
+            [self loadLatestArrivalsAndPromotions];
+            [self loadCategories];
+            [self loadLogoImages];
+            
+            NSLog(@"Did Save Product Categories : \n%@", [obj class]);
+        }
+        @catch (NSException *exception) {
+            NSLog(@"Exception : %@", exception.description);
+        }
+        @finally {
+            
+        }
         
-        [self loadBannerImages];
-        [self loadLatestArrivalsAndPromotions];
-        [self loadCategories];
-        [self loadLogoImages];
-
-        NSLog(@"Did Save Product Categories : \n%@", [obj class]);
+        
     }
 }
 

@@ -31,13 +31,19 @@
         if (result != nil) {
             
             [DatabaseHandler deleteItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
+            //sleep(1);
             [DatabaseHandler deleteItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS withPredicate:nil];
+            //sleep(1);
             [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
-            
+            //sleep(1);
             [DatabaseHandler insertBannerImages:result[KEY_BANNER_IMAGES]];
+            //sleep(1);
             [DatabaseHandler insertLogoImages:result[KEY_BRANDS]];
+            //sleep(1);
             [DatabaseHandler insertLatestArrivals:result[KEY_LATEST_ARRIVALS] andPromotions:result[KEY_PROMOIONS]];
+            //sleep(1);
             [DatabaseHandler insertProductCategories:result[KEY_CATEGORIES]];
+            //sleep(1);
         }
         
         callback(result, error);
@@ -166,15 +172,11 @@
     NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ALL_ADDRESSES, userId];
     [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
         
-        if (result != nil) {
-            
-        }
-        
         callback(result, error);
     }];
 }
 
-+ (void)addAddressWihDict:(NSDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
++ (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
     
     if ([HelperClass hasNetwork]) {
         NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ADD_ADDRESS, userId];

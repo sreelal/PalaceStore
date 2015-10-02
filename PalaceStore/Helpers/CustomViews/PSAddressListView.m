@@ -11,6 +11,7 @@
 #import "DatabaseHandler.h"
 #import "PSCartPaymentHeaderview.h"
 #import "Address.h"
+#import "WebHandler.h"
 
 @interface PSAddressListView () {
     NSArray *addresses;
@@ -28,15 +29,25 @@
 
 - (void)loadAddresses {
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
     addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
     
-    Address *address = [addresses objectAtIndex:selecetedSectionIndex];
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
-    [userDefaults synchronize];
-    
-    [addressTableView reloadData];
+    if (addresses.count) {
+        Address *address = [addresses objectAtIndex:selecetedSectionIndex];
+        
+        [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
+        [userDefaults synchronize];
+        
+        [addressTableView reloadData];
+    }
+    else {
+        NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+        
+        [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
+            
+        }];
+    }
 }
 
 #pragma mark - Button Actions

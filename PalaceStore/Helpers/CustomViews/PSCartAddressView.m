@@ -19,7 +19,7 @@
 @interface PSCartAddressView ()<InputAccessoryDelegate> {
     NSArray *fields;
     NSMutableDictionary *dataDict;
-    NSDictionary *addressDict;
+    NSMutableDictionary *addressDict;
     
     UITextField *activeTextField;
     NSIndexPath *activeIndexPath;
@@ -118,7 +118,7 @@
     NSString *postCode = dataDict[postKey];
     
     addressDict = nil;
-    addressDict = [NSDictionary dictionaryWithObjectsAndKeys:firstName, @"firstname", lastName, @"lastname", company, @"company", address1, @"address_1", city, @"city", postCode, @"postcode", [HelperClass getTimeStamp], @"address_id", nil];
+    addressDict = [NSMutableDictionary dictionaryWithObjectsAndKeys:firstName, @"firstname", lastName, @"lastname", company, @"company", address1, @"address_1", @"", @"address_2", city, @"city", postCode, @"postcode", [HelperClass getTimeStamp], @"address_id", nil];
     
     if ([[firstName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]] isEqualToString:@""] || firstName == nil) {
         [self showAlertWithMessage:@"First Name is missing!"];
@@ -173,44 +173,36 @@
     
     [[AppDelegate instance] showBusyView:@"Adding Address..."];
     
-    //NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    //NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+//    [DatabaseHandler addToAddressWithDict:addressDict];
+//        
+//    if (_cartAddressDelegate&&([_cartAddressDelegate respondsToSelector:@selector(didSuccessAddressOption)])) {
+//        
+//        [_cartAddressDelegate didSuccessAddressOption];
+//    }
+//    
+//    [[AppDelegate instance] hideBusyView];
     
-    [DatabaseHandler addToAddressWithDict:addressDict];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
     
-    [[AppDelegate instance] hideBusyView];
-    
-    if (_cartAddressDelegate&&([_cartAddressDelegate respondsToSelector:@selector(didSuccessAddressOption)])) {
+    [WebHandler addAddressWihDict:addressDict withUserId:userId withCallback:^(id object, NSError *error) {
         
-        [_cartAddressDelegate didSuccessAddressOption];
-    }
-
-    
-//    [WebHandler addAddressWihDict:addressDict withUserId:userId withCallback:^(id object, NSError *error) {
-//        
-//    }];
-    
-//    [WebHandler signUpWihDict:signupDict withCallback:^(id object, NSError *error) {
-//        NSDictionary *signUpRespDict = (NSDictionary *)object;
-//        
-//        if ([signUpRespDict[@"status"] isEqualToString:@"OK"] && signUpRespDict[@"user"] != nil) {
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                [[AppDelegate instance] hideBusyView];
-//                
-//                [self showAlertWithMessage:@"Registration Successfull!"];
-//                
-//                if (_signupDelegate != nil && [_signupDelegate respondsToSelector:@selector(didSuccessSignUp)]) {
-//                    [_signupDelegate didSuccessSignUp];
-//                }
-//            });
-//            
-//            [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillShowNotification" object:nil];
-//            [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillHideNotification" object:nil];
-//        }
-//        else
-//            [self showAlertWithMessage:@"Registration Failed!"];
-//    }];
-    
+        NSDictionary *addressResponseDict = (NSDictionary *)object;
+        
+        if (addressResponseDict)
+            [addressDict setValue:addressResponseDict[KEY_USER_INFO_ADDRESS_ID] forKey:KEY_USER_INFO_ADDRESS_ID];
+        
+        [DatabaseHandler addToAddressWithDict:addressDict];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+            
+            if (_cartAddressDelegate&&([_cartAddressDelegate respondsToSelector:@selector(didSuccessAddressOption)])) {
+                
+                [_cartAddressDelegate didSuccessAddressOption];
+            }
+        });
+    }];
 }
 
 - (IBAction)didSelectBillingSameAddress:(id)sender {
