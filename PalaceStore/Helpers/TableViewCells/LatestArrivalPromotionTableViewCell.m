@@ -106,6 +106,24 @@
     return count;
 }
 
+- (BOOL)swipeView:(SwipeView *)swipeView shouldSelectItemAtIndex:(NSInteger)index {
+    
+    return NO;
+}
+
+- (void)swipeView:(SwipeView *)swipeView didSelectItemAtIndex:(NSInteger)index {
+    NSLog(@"index : %ld", index);
+    
+    LatestArrivals_Promotions *latestArrivalPromotion = nil;
+    
+    if (_isLatestArrival)
+        latestArrivalPromotion = _latestArrivals[index];
+    else
+        latestArrivalPromotion = _promotionalItems[index];
+    
+    [_callingController promotionLatestItemBtnActionWithObj:latestArrivalPromotion];
+}
+
 - (UIView *)swipeView:(SwipeView *)swipeView viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     
     /*if (!view) {
@@ -125,6 +143,9 @@
         latestArrivalPromotion = _promotionalItems[index];
     
     ItemView *itemView = [[NSBundle mainBundle] loadNibNamed:@"ItemView" owner:self options:nil][0];
+    itemView.callingControllerInstance = _callingController;
+    itemView.islatestPromotionItem = YES;
+    
     itemView.frame = CGRectMake(itemView.frame.origin.x, itemView.frame.origin.y, itemView.frame.size.width, itemView.frame.size.height);
     [itemView loadItem:latestArrivalPromotion];
     

@@ -72,36 +72,45 @@
     _addressBtn.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.4];
     _paymentBtn.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.4];
     
-    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
-    leftBarItem.tintColor = [UIColor whiteColor];
-    self.navigationItem.leftBarButtonItem = leftBarItem;
-    
-    UIBarButtonItem *rightBarButtonItem = [[AppDelegate instance] getHomeBarButtonItemWithTarget:self andSelector:@selector(homeAction:)];
-    
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-    
-    _loginBtn.tag   = 0;
-    _addressBtn.tag = 1;
-    _paymentBtn.tag = 2;
-    _confirmBtn.tag = 3;
-    
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    
-    _userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
-    
-    if (_userId != nil) {
-        NSArray *addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+    if (_isLeftMenu) {
+        UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+        leftBarItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem = leftBarItem;
+    }
+    else {
+        UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+        leftBarItem.tintColor = [UIColor whiteColor];
+        self.navigationItem.leftBarButtonItem = leftBarItem;
         
-        if (addresses.count) isAddAddress = NO;
-        else isAddAddress = YES;
+        UIBarButtonItem *rightBarButtonItem = [[AppDelegate instance] getHomeBarButtonItemWithTarget:self andSelector:@selector(homeAction:)];
         
-        [self didSelectNavigationButtonItem:_addressBtn];
+        self.navigationItem.rightBarButtonItem = rightBarButtonItem;
         
-        //[[AppDelegate instance] showBusyView:@"Loading Addresses..."];
+        _loginBtn.tag   = 0;
+        _addressBtn.tag = 1;
+        _paymentBtn.tag = 2;
+        _confirmBtn.tag = 3;
         
-//        [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        
+        _userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+        
+        if (_userId != nil) {
+//            NSArray *addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
 //            
-//        }];
+//            if (addresses.count) isAddAddress = NO;
+//            else isAddAddress = YES;
+            
+            isAddAddress = NO;
+            
+            [self didSelectNavigationButtonItem:_addressBtn];
+            
+            //[[AppDelegate instance] showBusyView:@"Loading Addresses..."];
+            
+            //        [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
+            //            
+            //        }];
+        }
     }
     
 //    self.navigationItem.rightBarButtonItem.badgeValue = @"2";
@@ -206,7 +215,11 @@
 
 - (IBAction)navgationBackClicked:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if (_isLeftMenu) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else
+        [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)homeAction:(id)sender {
@@ -306,12 +319,17 @@
 #pragma mark - Checkout Delegate
 
 
-- (void)didSuccessLoginOption{
+- (void)didSuccessLoginOption {
     
-    [self setSelectedPropertyForButton:_addressBtn];
-    isAddAddress = NO;
-    [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0];
-
+    if (_leftMenuVC) {
+        [_leftMenuVC changeLoginTitle];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else {
+        [self setSelectedPropertyForButton:_addressBtn];
+        isAddAddress = NO;
+        [_swipeBaseview scrollToItemAtIndex:_addressBtn.tag duration:0];
+    }
 }
 
 - (void)didSuccessAddressOption{

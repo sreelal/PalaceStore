@@ -19,5 +19,6 @@
 @interface PSHomeViewController : UIViewController
 
 - (void)categoryBtnClick:(Product_Category *)category;
+- (void)promotionLatestItemBtnActionWithObj:(LatestArrivals_Promotions *)item;
 
 @end

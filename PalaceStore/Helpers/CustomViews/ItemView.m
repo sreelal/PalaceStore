@@ -9,10 +9,12 @@
 #import "ItemView.h"
 #import "HelperClass.h"
 #import "UIColor+CustomColor.h"
+#import "LatestArrivals_Promotions.h"
 
 @interface ItemView ()
 
 @property (strong, nonatomic) Product_Category *productCategory;
+@property (strong, nonatomic) LatestArrivals_Promotions *lateArrPromotion;
 
 @end
 
@@ -33,6 +35,8 @@
 }
 
 - (void)loadItem:(LatestArrivals_Promotions *)item {
+    
+    _lateArrPromotion = item;
     
     label.text = item.name;
     
@@ -146,6 +150,9 @@
     
     if (_productCategory) {
         [_callingControllerInstance categoryBtnClick:_productCategory];
+    }
+    else if (_islatestPromotionItem) {
+        [_callingControllerInstance promotionLatestItemBtnActionWithObj:_lateArrPromotion];
     }
 }
 

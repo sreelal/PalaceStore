@@ -12,6 +12,7 @@
 #import "PSHomeViewController.h"
 #import "WhishListViewController.h"
 #import "ProfileViewController.h"
+#import "PSCheckoutBaseViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -24,7 +25,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    if ([HelperClass is4thGeneration] || [HelperClass is5thGeneration]) {
+        trailingPin.constant = 110;
+    }
+    else if ([HelperClass isIphone6]) {
+        trailingPin.constant = 140;
+    }
+    
+    [self.view setNeedsUpdateConstraints];
+    
     _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", nil];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+    
+    if (userId)
+        [loginBtn setTitle:@"Logout" forState:UIControlStateNormal];
+    else
+        [loginBtn setTitle:@"Login" forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,6 +60,47 @@
 }
 */
 
+- (void)showAlertWithMessage:(NSString *)message {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Palace Stores" message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    
+    [alert show];
+}
+
+#pragma mark - Button Actions
+
+- (void)changeLoginTitle {
+    
+    [loginBtn setTitle:@"Logout" forState:UIControlStateNormal];
+}
+
+- (IBAction)logIn_Out:(id)sender {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+    
+    if (userId != nil) {
+        [userDefaults removeObjectForKey:KEY_USER_INFO_CUSTOMER_ID];
+        [userDefaults removeObjectForKey:KEY_USER_INFO_ADDRESS_ID];
+        [userDefaults removeObjectForKey:KEY_USER_INFO_FIRST_NAME];
+        [userDefaults removeObjectForKey:KEY_USER_INFO_LAST_NAME];
+        [userDefaults removeObjectForKey:KEY_USER_INFO_TELE];
+        
+        [loginBtn setTitle:@"Login" forState:UIControlStateNormal];
+        
+        [self showAlertWithMessage:@"Successfully logged out!"];
+    }
+    else {
+        PSCheckoutBaseViewController *psCheckoutView = (PSCheckoutBaseViewController*)[[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"PSCheckoutBaseViewController"];
+        UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:psCheckoutView];
+        psCheckoutView.leftMenuVC = self;
+        psCheckoutView.isLeftMenu = YES;
+        
+        [self presentViewController:navVC animated:YES completion:nil];
+    }
+}
+
 #pragma mark - Tableview delegates
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -52,9 +111,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"leftMenuCell"];
+    
     cell.textLabel.textColor = [UIColor lightGrayColor];
     cell.textLabel.text = _leftmenuItems[indexPath.row];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.imageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"menu_%ld", (long)indexPath.row]];
+    
     return cell;
 }
 

@@ -15,7 +15,13 @@
 
 @end
 
-@interface LeftMenuViewController : UIViewController
+@interface LeftMenuViewController : UIViewController {
+    IBOutlet NSLayoutConstraint *trailingPin;
+    IBOutlet UIButton *loginBtn;
+}
 
 @property (nonatomic,assign) id <LeftMenuViewControllerDelegate> delegate;
+
+- (void)changeLoginTitle;
+
 @end

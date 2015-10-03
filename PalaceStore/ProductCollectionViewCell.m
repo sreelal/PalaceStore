@@ -37,14 +37,13 @@
         _favButton.alpha = 0.3;
     }
     
-    NSString *_priceinformation = [NSString stringWithFormat:@"%0.2f $",[product.price doubleValue]];
+    NSString *_priceinformation = [NSString stringWithFormat:@"GHS %0.2f",[product.price doubleValue]];
     self.priceInfo.text = _priceinformation;
     self.productInfo.text = product.name;
     
     [_activity setHidesWhenStopped:YES];
     [_activity setHidden:NO];
     [_activity startAnimating];
-
     
     [HelperClass addBorderForView:_bgView withHexCodeg:COLOR_HEX_LIGHT_GRAY andAlpha:0.5];
     _bgView.backgroundColor = [UIColor getUIColorObjectFromHexString:COLOR_HEX_LIGHT_GRAY alpha:0.2];

@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SwipeView.h"
 
+@class PSHomeViewController;
 @interface LatestArrivalPromotionTableViewCell : UITableViewCell <SwipeViewDelegate, SwipeViewDataSource>
+
+@property (strong, nonatomic) PSHomeViewController *callingController;
 
 @property (strong, nonatomic) NSArray *latestArrivals;
 @property (strong, nonatomic) NSArray *promotionalItems;

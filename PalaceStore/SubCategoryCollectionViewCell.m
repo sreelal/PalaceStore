@@ -80,8 +80,10 @@
 
 - (IBAction)btnClicked:(id)sender {
     
-    if (sub_Category) {
-        [_callingControllerInstance categoryBtnClick:sub_Category];
+    if (SYSTEM_VERSION_LESS_THAN(@"9.0")) {
+        if (sub_Category) {
+            [_callingControllerInstance categoryBtnClick:sub_Category];
+        }
     }
 }
 

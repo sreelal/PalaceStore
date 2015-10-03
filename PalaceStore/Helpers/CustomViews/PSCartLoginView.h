@@ -15,7 +15,7 @@
 
 @end
 
-@interface PSCartLoginView : UIView  {
+@interface PSCartLoginView : UIView <UITextFieldDelegate> {
     IBOutlet UITextField *txtUserName;
     IBOutlet UITextField *txtPwd;
 }

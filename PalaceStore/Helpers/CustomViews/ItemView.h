@@ -21,6 +21,8 @@
     BOOL isLoading;
 }
 
+@property (assign, nonatomic) BOOL islatestPromotionItem;
+
 @property (strong, nonatomic) PSHomeViewController *callingControllerInstance;
 
 @property (nonatomic) IBInspectable CGFloat borderWidth;

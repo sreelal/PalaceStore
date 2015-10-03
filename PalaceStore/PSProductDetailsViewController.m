@@ -38,7 +38,14 @@
 
     [self initView];
     [self loadCachedDetails];
-    [self getProductDetailsForProductID:_selectedProduct.product_id andCategoryID:_selectedProduct.category_id];
+    
+    if (_latestArrivalPromotion) {
+        [self getProductDetailsForProductID:_latestArrivalPromotion.product_id andCategoryID:nil];
+    }
+    else {
+        [self getProductDetailsForProductID:_selectedProduct.product_id andCategoryID:_selectedProduct.category_id];
+    }
+    
     
     _productName.text = _selectedProduct.name;
 }

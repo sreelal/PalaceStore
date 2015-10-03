@@ -10,7 +10,7 @@
 #import "WebHandler.h"
 #import "AppDelegate.h"
 
-@interface PSCartLoginView ()
+@interface PSCartLoginView () 
 
 @property (weak, nonatomic) IBOutlet UIButton *rememberPassword;
 
@@ -142,5 +142,21 @@
     }
 }
 
+#pragma mark - TextField Delegates
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    
+    return YES;
+}
 
 @end

@@ -34,6 +34,10 @@
 
 + (BOOL)is6thGeneration;
 
++ (BOOL)is5thGeneration;
+
++ (BOOL)is4thGeneration;
+
 + (void)showAlertWithMessage:(NSString *)message;
 
 + (void)addBorderForView:(UIView *)view withHexCodeg:(NSString *)hexCode andAlpha:(CGFloat)alpha;

@@ -23,6 +23,7 @@
 #import "UIBarButtonItem+Badge.h"
 #import "BBBadgeBarButtonItem.h"
 #import "CartTableViewController.h"
+#import "PSProductDetailsViewController.h"
 
 @class DatabaseHandler;
 @interface PSHomeViewController ()
@@ -215,6 +216,14 @@
 
 #pragma mark - Button Actions
 
+- (void)promotionLatestItemBtnActionWithObj:(LatestArrivals_Promotions *)item {
+    
+//    PSProductDetailsViewController *_productDetailsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"PSProductDetailsViewController"];
+//    _productDetailsVC.latestArrivalPromotion = item;
+//    _productDetailsVC.isFromMenu = YES;
+//    [self.navigationController pushViewController:_productDetailsVC animated:YES];
+}
+
 - (void)categoryBtnClick:(Product_Category *)category {
         
     int subCategoryCount = [category.subcategory_count intValue];
@@ -284,6 +293,7 @@
         
         case 1: {
             LatestArrivalPromotionTableViewCell *latestAndpromotionCell = (LatestArrivalPromotionTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"LatestArrivalPromotionCell" forIndexPath:indexPath];
+            latestAndpromotionCell.callingController = self;
             
             if ([_latestArrivals count] || [_promotions count]) {
                 latestAndpromotionCell.latestArrivals = _latestArrivals;

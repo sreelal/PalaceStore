@@ -189,8 +189,10 @@
         
         NSDictionary *addressResponseDict = (NSDictionary *)object;
         
-        if (addressResponseDict)
-            [addressDict setValue:addressResponseDict[KEY_USER_INFO_ADDRESS_ID] forKey:KEY_USER_INFO_ADDRESS_ID];
+        if (addressResponseDict) {
+            NSString *addressId = [NSString stringWithFormat:@"%@", addressResponseDict[KEY_USER_INFO_ADDRESS_ID]];
+            [addressDict setValue:addressId forKey:KEY_USER_INFO_ADDRESS_ID];
+        }
         
         [DatabaseHandler addToAddressWithDict:addressDict];
         

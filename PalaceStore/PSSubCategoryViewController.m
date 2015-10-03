@@ -195,12 +195,22 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    /*ProductCategory *selectedCategory = self.subCategories[indexPath.row];
-    SFProductViewController *productVC = [self.storyboard instantiateViewControllerWithIdentifier:@"productViewController"];
-    productVC.type = kViewCategoryProducts;
-    productVC.category = selectedCategory;
-    
-    [self.navigationController pushViewController:productVC animated:YES];*/
+    if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"9.0")) {
+        Product_Category *subCategory = self.subCategories[indexPath.row];
+        
+        int subCategoryCount = [subCategory.subcategory_count intValue];
+        
+        if (subCategoryCount > 0) {
+            PSSubCategoryViewController *subCategoryVC = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoryVC"];
+            subCategoryVC.productCategory = subCategory;
+            [self.navigationController pushViewController:subCategoryVC animated:YES];
+        }
+        else {
+            PSProductViewController *productVC = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductVC"];
+            productVC.productCategory = subCategory;
+            [self.navigationController pushViewController:productVC animated:YES];
+        }
+    }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -133,6 +133,15 @@
     return status;
 }
 
++ (BOOL)is5thGeneration {
+    
+    BOOL status = NO;
+    
+    if ([UIScreen mainScreen].bounds.size.height == 568) status = YES;
+    
+    return status;
+}
+
 + (BOOL)isIphone6 {
     
     BOOL status = NO;
@@ -147,6 +156,15 @@
     BOOL status = NO;
     
     if ([UIScreen mainScreen].bounds.size.width == 414) status = YES;
+    
+    return status;
+}
+
++ (BOOL)is4thGeneration {
+    
+    BOOL status = NO;
+    
+    if ([UIScreen mainScreen].bounds.size.height == 480) status = YES;
     
     return status;
 }
