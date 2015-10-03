@@ -193,4 +193,36 @@
     }
 }
 
++ (void)orderProductsWithDic:(NSDictionary*)orderData withCallBack:(ResponseCallback)callback{
+    
+    
+    if ([HelperClass hasNetwork]) {
+        
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT,SERVICE_ORDER];
+        [RequestHandler postRequestWithURL:serviceURL
+                             andDictionary:orderData
+                              withCallback:^(id result, NSError *error) {
+                                  if (!error) {
+                                      NSDictionary *_responseDictonary = (NSDictionary*)result;
+                                   
+                                      //Send second request
+                                      NSString *serviceOrderURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT,SERVICE_CONFIRM,_responseDictonary[@"order_id"]];
+
+                                      [RequestHandler getRequestWithURL:serviceOrderURL withCallback:^(id result, NSError *error) {
+                                         
+                                          callback(result, error);
+                                      }];
+                                  }
+                                  else{
+                                      
+                                      callback(result, error);
+                                  }
+        }];
+    }
+    else {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        callback(nil, nil);
+    }
+}
+
 @end

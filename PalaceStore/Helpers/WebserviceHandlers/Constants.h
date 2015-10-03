@@ -32,6 +32,8 @@
 #define SERVICE_LOGIN  @"user/login"
 #define SERVICE_ALL_ADDRESSES  @"user/all_addresses&user="
 #define SERVICE_ADD_ADDRESS  @"user/add_address&user="
+#define SERVICE_ORDER       @"order/add"
+#define SERVICE_CONFIRM     @"order/confirm&order="
 //--------------------------------------------------
 
 //-----------------CoreData Model---------------------

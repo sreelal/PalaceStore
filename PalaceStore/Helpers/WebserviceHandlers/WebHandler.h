@@ -33,4 +33,5 @@ typedef void (^ResponseCallback) (id object, NSError *error);
 
 + (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
 
++ (void)orderProductsWithDic:(NSDictionary*)orderData withCallBack:(ResponseCallback)callback;
 @end

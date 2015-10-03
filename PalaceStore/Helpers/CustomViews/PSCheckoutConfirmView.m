@@ -13,6 +13,7 @@
 #import "Cart.h"
 #import "Address.h"
 #import "AppDelegate.h"
+#import "WebHandler.h"
 
 @interface PSCheckoutConfirmView () {
     NSArray *sections;
@@ -45,6 +46,26 @@
     addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:predicate];
 }
 
+- (NSDictionary*)prepareOrderData{
+    
+    NSDictionary *_orderData;// = @{@{@"user_id":""},@"products":@[@{}]}
+    NSDictionary *_cartsDictionary;
+    NSMutableArray *_products= [NSMutableArray array];
+    for (Cart *cart in carts) {
+        //totalPrice = totalPrice + ([cart.price intValue] * [cart.count intValue]);
+        //_cartsDictionary = [NSMutableDictionary dictionary];
+        _cartsDictionary = @{@"product_id":[cart.product_id stringValue],@"name":cart.name,@"model":cart.model,@"quantity":[cart.count stringValue],@"price":[cart.price stringValue],@"total":[cart.count stringValue]};
+        [_products addObject:[_cartsDictionary mutableCopy]];
+        _cartsDictionary=nil;
+        
+    }
+    Address *address = [addresses lastObject];
+    NSDictionary *_addressDictionary =  @{@"firstname":address.firstname,@"lastname":address.lastname,@"company":address.company,@"address_1":address.address_1,@"address_2":address.address_2,@"city":address.city,@"postcode":address.postcode};
+    //KEY_USER_INFO_CUSTOMER_ID
+    _orderData = @{@"user_id":([[NSUserDefaults standardUserDefaults] valueForKey:KEY_USER_INFO_CUSTOMER_ID]?[[NSUserDefaults standardUserDefaults] valueForKey:KEY_USER_INFO_CUSTOMER_ID]:@""),@"products":_products,@"payment_address":_addressDictionary,@"payment_method":[[NSUserDefaults standardUserDefaults] valueForKey:KEY_USER_INFO_PAYMENT_OPTION],@"shipping_address":_addressDictionary,@"shipping_method":[[NSUserDefaults standardUserDefaults] valueForKey:KEY_USER_INFO_PAYMENT_OPTION],@"comments":@""};
+    return _orderData;
+}
+
 #pragma mark - Private Actions
 
 - (void)showAlertWithMessage:(NSString *)message {
@@ -63,7 +84,22 @@
 - (IBAction)confirmOrderAction:(id)sender {
     [[AppDelegate instance] showBusyView:@"Confirming Order..."];
     
-    [self performSelector:@selector(hideBusyView) withObject:nil afterDelay:8];
+    //[self performSelector:@selector(hideBusyView) withObject:nil afterDelay:8];
+    NSDictionary *preparedDic = [self prepareOrderData];
+    [WebHandler orderProductsWithDic:preparedDic withCallBack:^(id object, NSError *error) {
+        
+        if (!error) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self hideBusyView];
+            });
+        }
+        else{
+            
+            [self showAlertWithMessage:@"Error occured.Please try again"];
+
+        }
+    }];
 }
 
 - (void)hideBusyView {
