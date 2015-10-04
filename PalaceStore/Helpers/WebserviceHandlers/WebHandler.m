@@ -103,7 +103,10 @@
     [alert show];
 }
 
-+ (void)getproductdetailsWithproductID:(int)productID andCategoryID:(int)categoryID  withCallback:(ResponseCallback)callback{
++ (void)getproductdetailsWithproductID:(int)productID
+                         andCategoryID:(int)categoryID
+                   andIsLatestArrrival:(BOOL)isLatest
+                          withCallback:(ResponseCallback)callback{
     
     if (![HelperClass hasNetwork]) {
         [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
@@ -118,6 +121,7 @@
         if (result != nil) {
 
             [DatabaseHandler updateProductDetailswithProductID:productID
+                                                andIsLatestArrival:isLatest
                                                  andCategoryID:categoryID
                                                       withData:result];
         }

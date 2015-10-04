@@ -22,7 +22,6 @@
 		2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E127D961B68594D005B0E1F /* img_btn_next@2x.png */; };
 		2E1511B81B649EAC00D43865 /* DatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511B71B649EAC00D43865 /* DatabaseManager.m */; };
 		2E1511BF1B64A62500D43865 /* Banner_Images.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511BE1B64A62500D43865 /* Banner_Images.m */; };
-		2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511C41B64A7F500D43865 /* LatestArrivals_Promotions.m */; };
 		2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1511CA1B64A85E00D43865 /* DatabaseHandler.m */; };
 		2E16A6A31BB0E9F200553DCB /* test.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6A21BB0E9F200553DCB /* test.xib */; };
 		2E16A6A51BB0EA8A00553DCB /* popt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E16A6A41BB0EA8A00553DCB /* popt1.png */; };
@@ -101,9 +100,10 @@
 		58F37E471B455028006F1810 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E411B455028006F1810 /* RECommonFunctions.m */; };
 		58F37E481B455028006F1810 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E431B455028006F1810 /* RESideMenu.m */; };
 		58F37E491B455028006F1810 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E451B455028006F1810 /* UIViewController+RESideMenu.m */; };
-		687727781BBFF76A00A2ECC6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727751BBFF76A00A2ECC6 /* FBSDKCoreKit.framework */; };
-		687727791BBFF76A00A2ECC6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727761BBFF76A00A2ECC6 /* FBSDKLoginKit.framework */; };
-		6877277A1BBFF76A00A2ECC6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727771BBFF76A00A2ECC6 /* FBSDKShareKit.framework */; };
+		681468871BC12216005A51A6 /* LatestArrivals_Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */; };
+		687727781BBFF76A00A2ECC6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727751BBFF76A00A2ECC6 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		687727791BBFF76A00A2ECC6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727761BBFF76A00A2ECC6 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		6877277A1BBFF76A00A2ECC6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727771BBFF76A00A2ECC6 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		687FF52B1B48316700A99072 /* SLMarqueeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 687FF52A1B48316700A99072 /* SLMarqueeView.m */; };
 		688ABC141BAF056C0059110F /* addto-cart.png in Resources */ = {isa = PBXBuildFile; fileRef = 688ABBEF1BAF056C0059110F /* addto-cart.png */; };
 		688ABC151BAF056C0059110F /* buy-now.png in Resources */ = {isa = PBXBuildFile; fileRef = 688ABBF01BAF056C0059110F /* buy-now.png */; };
@@ -243,8 +243,6 @@
 		2E1511B71B649EAC00D43865 /* DatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseManager.m; sourceTree = "<group>"; };
 		2E1511BD1B64A62500D43865 /* Banner_Images.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Banner_Images.h; sourceTree = "<group>"; };
 		2E1511BE1B64A62500D43865 /* Banner_Images.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Banner_Images.m; sourceTree = "<group>"; };
-		2E1511C31B64A7F500D43865 /* LatestArrivals_Promotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestArrivals_Promotions.h; sourceTree = "<group>"; };
-		2E1511C41B64A7F500D43865 /* LatestArrivals_Promotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivals_Promotions.m; sourceTree = "<group>"; };
 		2E1511C91B64A85E00D43865 /* DatabaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseHandler.h; sourceTree = "<group>"; };
 		2E1511CA1B64A85E00D43865 /* DatabaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseHandler.m; sourceTree = "<group>"; };
 		2E16A6A21BB0E9F200553DCB /* test.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = test.xib; sourceTree = "<group>"; };
@@ -356,6 +354,8 @@
 		58F37E431B455028006F1810 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		58F37E441B455028006F1810 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		58F37E451B455028006F1810 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		681468851BC12216005A51A6 /* LatestArrivals_Promotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestArrivals_Promotions.h; sourceTree = "<group>"; };
+		681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivals_Promotions.m; sourceTree = "<group>"; };
 		687727751BBFF76A00A2ECC6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		687727761BBFF76A00A2ECC6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		687727771BBFF76A00A2ECC6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -540,12 +540,12 @@
 		2E1511B91B64A5ED00D43865 /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
+				681468851BC12216005A51A6 /* LatestArrivals_Promotions.h */,
+				681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */,
 				FC0E70161B89F8C0004380BE /* WishList.h */,
 				FC0E70171B89F8C0004380BE /* WishList.m */,
 				2E1511BD1B64A62500D43865 /* Banner_Images.h */,
 				2E1511BE1B64A62500D43865 /* Banner_Images.m */,
-				2E1511C31B64A7F500D43865 /* LatestArrivals_Promotions.h */,
-				2E1511C41B64A7F500D43865 /* LatestArrivals_Promotions.m */,
 				2EFE41B61B6E03E0004711AF /* Product_Category.h */,
 				2EFE41B71B6E03E0004711AF /* Product_Category.m */,
 				E9E4E76E1B7386F100030E25 /* Product_Attributes.h */,
@@ -1335,7 +1335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E08C2311BAF336C0026A446 /* PSCartPaymentHeaderview.m in Sources */,
-				2E1511C51B64A7F500D43865 /* LatestArrivals_Promotions.m in Sources */,
 				FC0E70181B89F8C0004380BE /* WishList.m in Sources */,
 				9D8A67921BBA7B2800D0EE35 /* PSLoginViewController.m in Sources */,
 				68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */,
@@ -1357,6 +1356,7 @@
 				2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */,
 				2E2346A51BB6539700AED97E /* PSRegistrationCell.m in Sources */,
 				68B5C8CA1B47A79300F3FD02 /* UrlImageButton.m in Sources */,
+				681468871BC12216005A51A6 /* LatestArrivals_Promotions.m in Sources */,
 				2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */,
 				6895214F1BAB235600C9DDC6 /* PSCartPaymentView.m in Sources */,
 				6895213B1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m in Sources */,

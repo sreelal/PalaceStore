@@ -23,6 +23,7 @@ typedef void (^ResponseCallback) (id object, NSError *error);
 
 + (void)getproductdetailsWithproductID:(int)productID
                          andCategoryID:(int)categoryID
+                   andIsLatestArrrival:(BOOL)isLatest
                           withCallback:(ResponseCallback)callback;
 
 + (void)signUpWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;

@@ -218,10 +218,10 @@
 
 - (void)promotionLatestItemBtnActionWithObj:(LatestArrivals_Promotions *)item {
     
-//    PSProductDetailsViewController *_productDetailsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"PSProductDetailsViewController"];
-//    _productDetailsVC.latestArrivalPromotion = item;
-//    _productDetailsVC.isFromMenu = YES;
-//    [self.navigationController pushViewController:_productDetailsVC animated:YES];
+    PSProductDetailsViewController *_productDetailsVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"PSProductDetailsViewController"];
+    _productDetailsVC.latestArrivalPromotion = item;
+    _productDetailsVC.isFromMenu = YES;
+    [self.navigationController pushViewController:_productDetailsVC animated:YES];
 }
 
 - (void)categoryBtnClick:(Product_Category *)category {

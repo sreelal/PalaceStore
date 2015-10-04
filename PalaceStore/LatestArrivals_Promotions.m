@@ -1,24 +1,26 @@
 //
 //  LatestArrivals_Promotions.m
-//  PalaceStore
+//  
 //
-//  Created by Sreelash S on 26/07/15.
-//  Copyright (c) 2015 Sreelal  Hamsavahanan. All rights reserved.
+//  Created by Sreelal H on 04/10/15.
+//
 //
 
 #import "LatestArrivals_Promotions.h"
+#import "Product_Details.h"
 
 
 @implementation LatestArrivals_Promotions
 
-@dynamic product_id;
 @dynamic is_latest;
 @dynamic is_promotion;
 @dynamic name;
 @dynamic price;
 @dynamic product_description;
+@dynamic product_id;
 @dynamic raing;
 @dynamic tax;
 @dynamic thumb_image_url;
+@dynamic relationship;
 
 @end

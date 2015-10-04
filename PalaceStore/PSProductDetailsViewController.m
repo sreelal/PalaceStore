@@ -91,10 +91,21 @@
 
 - (void)loadCachedDetails{
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %d && product_id == %d", [_selectedProduct.category_id intValue],[_selectedProduct.product_id intValue]];
-    NSLog(@"Fetching started");
-    NSArray *results = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS
-                                                 withPredicate:predicate];
+    NSPredicate *predicate ;
+    NSArray *results;
+    if (!_selectedProduct) {
+        
+        predicate = [NSPredicate predicateWithFormat:@"product_id == %d",[_latestArrivalPromotion.product_id intValue]];
+        results = [DatabaseHandler fetchItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS
+                                         withPredicate:predicate];
+    }
+    else{
+        
+      predicate = [NSPredicate predicateWithFormat:@"category_id == %d && product_id == %d", [_selectedProduct.category_id intValue],[_selectedProduct.product_id intValue]];
+
+        results = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS
+                                         withPredicate:predicate];
+    }
     _productSelected = (Products*)[results lastObject];
     NSLog(@"Fetching over");
     if (_productSelected) {
@@ -111,15 +122,16 @@
     
     [WebHandler getproductdetailsWithproductID:[productID intValue]
                                  andCategoryID:[categoryID intValue]
+                                  andIsLatestArrrival:_latestArrivalPromotion
                                   withCallback:^(id object, NSError *error) {
-                                      if (object == nil || error != nil) {
-                                          dispatch_async(dispatch_get_main_queue(), ^{
-                                              [[AppDelegate instance] hideBusyView];
-                                          });
-                                          
-                                          //To Do:- Show Alert
-                                      }
-                                      
+          if (object == nil || error != nil) {
+              dispatch_async(dispatch_get_main_queue(), ^{
+                  [[AppDelegate instance] hideBusyView];
+              });
+              
+              [self loadCachedDetails];
+          }
+              
     }];
 }
 

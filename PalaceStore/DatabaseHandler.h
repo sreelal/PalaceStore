@@ -26,6 +26,7 @@
 
 + (void)insertProductsDetails:(NSArray*)productsCollection forParentCategory:(NSNumber *)parentCategoryId;
 + (void)updateProductDetailswithProductID:(int)productID
+                       andIsLatestArrival:(BOOL)latestArrival
                             andCategoryID:(int)categoryID withData:(NSDictionary*)dictionaryData;
 + (void)addToCartWithObj:(Products *)product;
 + (void)addToAddressWithDict:(NSMutableDictionary *)addressDict;

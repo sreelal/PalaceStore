@@ -270,11 +270,25 @@
 }
 
 + (void)updateProductDetailswithProductID:(int)productID
+                       andIsLatestArrival:(BOOL)latestArrival
                             andCategoryID:(int)categoryID withData:(NSDictionary*)dictionaryData{
     
     NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", [NSNumber numberWithInt:categoryID], [NSNumber numberWithInt:productID]];
-    NSArray *results = [DatabaseHandler fetchItemsFromTable:TABLE_PRODUCTS withPredicate:predicate];
+    NSPredicate *predicate;
+    NSString *tableName=@"";
+    if (latestArrival) {
+        
+        predicate = [NSPredicate predicateWithFormat:@"product_id == %@", [NSNumber numberWithInt:productID]];
+        tableName = TABLE_LATEST_ARRIVALS_PROMOTIONS;
+
+    }
+    else{
+        predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", [NSNumber numberWithInt:categoryID], [NSNumber numberWithInt:productID]];
+
+        tableName = TABLE_PRODUCTS;
+
+    }
+    NSArray *results = [DatabaseHandler fetchItemsFromTable:tableName withPredicate:predicate];
     Products* products = (Products*)[results lastObject];
     if (products) {
         
