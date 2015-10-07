@@ -13,6 +13,7 @@
 #import "WhishListViewController.h"
 #import "ProfileViewController.h"
 #import "PSCheckoutBaseViewController.h"
+#import "OrderTrackViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -147,6 +148,20 @@
         profileView.isFromMenu = YES;
         UINavigationController * profNav = [[UINavigationController alloc]initWithRootViewController:profileView];
         [self.sideMenuViewController setContentViewController:profNav];
+    }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Track Order"]) {
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+        
+        if (!userId) {
+            [self showAlertWithMessage:@"User is not logged in!"];
+        }
+        else {
+            OrderTrackViewController * orderView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"OrderTrackViewController"];
+            UINavigationController * orderNav = [[UINavigationController alloc]initWithRootViewController:orderView];
+            [self.sideMenuViewController setContentViewController:orderNav];
+        }
+        
     }
     
     [self.sideMenuViewController hideMenuViewController];

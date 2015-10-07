@@ -204,11 +204,21 @@ typedef enum {
             [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillShowNotification" object:nil];
             [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIKeyboardWillHideNotification" object:nil];
         }
-        else
-            [self showAlertWithMessage:@"Registration Failed!"];
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+                
+                NSString *errorMessage = signUpRespDict[@"message"];
+                                          
+                if (signUpRespDict[@"message"])
+                    errorMessage = signUpRespDict[@"message"];
+                else
+                    errorMessage = @"Registration Failed!";
+                
+                [self showAlertWithMessage:errorMessage];
+            });
+        }
     }];
-    
-    
 }
 
 #pragma mark - TextField Delegates

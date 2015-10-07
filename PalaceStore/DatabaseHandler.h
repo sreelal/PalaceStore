@@ -20,6 +20,7 @@
 
 + (NSArray *)fetchItemsFromTable:(NSString *)tableName withPredicate:(NSPredicate *)predicate;
 
++ (void)deleteItemsFromTableWithDictionary:(NSDictionary *)dictionaryObj;
 + (void)deleteItemsFromTable:(NSString *)tableName withPredicate:(NSPredicate *)predicate;
 
 //Products handling methods

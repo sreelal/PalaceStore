@@ -9,6 +9,7 @@
 #import "PSProductSpecificationsViewController.h"
 #import "Product_Details.h"
 #import "Product_Attributes.h"
+#import "AppDelegate.h"
 
 @interface PSProductSpecificationsViewController ()
 
@@ -23,6 +24,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
     [self prepareSpecificationsData];
 }
 

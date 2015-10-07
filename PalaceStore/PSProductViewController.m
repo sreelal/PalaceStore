@@ -36,6 +36,8 @@
     
     _categoryLabel.text = [NSString stringWithFormat:@"%@ (%d)", _productCategory.name, [_productCategory.product_count intValue]];
     
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
     [self initView];
     [self loadCachedProducts];
     
@@ -48,7 +50,7 @@
     
     [super viewWillAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] managedObjectContext]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
     
     [self updateCartCount];
 }
@@ -286,6 +288,11 @@
 }
 
 - (void)managedObjectDidSave:(NSNotification *)notification {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
+    });
     
     NSSet *insertObjects = [notification userInfo][@"inserted"];
     NSSet *updatedObjects = [notification userInfo][@"updated"];

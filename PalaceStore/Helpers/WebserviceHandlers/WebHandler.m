@@ -30,20 +30,28 @@
         
         if (result != nil) {
             
-            [DatabaseHandler deleteItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
-            //sleep(1);
-            [DatabaseHandler deleteItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS withPredicate:nil];
-            //sleep(1);
-            [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
-            //sleep(1);
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [DatabaseHandler deleteItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
+                [DatabaseHandler deleteItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS withPredicate:nil];
+                [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
+            });
+            
+//            NSDictionary *
+//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_BANNER_IMAGES afterDelay:1];
+//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_LATEST_ARRIVALS_PROMOTIONS afterDelay:1];
+//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_PRODUCT_CATEGORY afterDelay:1];
+            
+//            [DatabaseHandler deleteItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
+//            sleep(1);
+//            [DatabaseHandler deleteItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS withPredicate:nil];
+//            sleep(1);
+//            [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
+//            sleep(1);
+            
             [DatabaseHandler insertBannerImages:result[KEY_BANNER_IMAGES]];
-            //sleep(1);
             [DatabaseHandler insertLogoImages:result[KEY_BRANDS]];
-            //sleep(1);
             [DatabaseHandler insertLatestArrivals:result[KEY_LATEST_ARRIVALS] andPromotions:result[KEY_PROMOIONS]];
-            //sleep(1);
             [DatabaseHandler insertProductCategories:result[KEY_CATEGORIES]];
-            //sleep(1);
         }
         
         callback(result, error);
@@ -87,8 +95,11 @@
     [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
         
         if (result != nil) {
-            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %d", categoryId];
-            [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCTS withPredicate:predicate];
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %d", categoryId];
+                [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCTS withPredicate:predicate];
+            });
+            
             [DatabaseHandler insertProductsDetails:result
                                forParentCategory:[NSNumber numberWithInt:categoryId]];
         }
@@ -180,10 +191,26 @@
     }];
 }
 
++ (void)getTrackOrdersWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
+    
+    if (![HelperClass hasNetwork]) {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
+        return;
+    }
+    
+    NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_TRACK_ORDERS, userId];
+    [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
+        
+        callback(result, error);
+    }];
+}
+
 + (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
     
     if ([HelperClass hasNetwork]) {
-        NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ADD_ADDRESS, userId];
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_TRACK_ORDERS, userId];
         
         NSLog(@"Service URL : %@", serviceURL);
         

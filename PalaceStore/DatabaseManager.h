@@ -11,7 +11,8 @@
 
 @interface DatabaseManager : NSObject
 
-@property (readonly, nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (readonly, nonatomic, strong) NSManagedObjectContext *mainManagedObjectContext;
+@property (readonly, nonatomic, strong) NSManagedObjectContext *privateManagedObjectContext;
 @property (readonly, nonatomic, strong) NSManagedObjectModel *managedObjectModel;
 @property (readonly, nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 

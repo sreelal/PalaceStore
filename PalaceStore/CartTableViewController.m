@@ -25,6 +25,8 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
     [self setupView];
     
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -34,10 +36,14 @@
     
     [super viewWillAppear:animated];
     
-    if (_isRerendering) {
+    if (_isRerendering) 
+        topConstraint.constant = 64;
+    else if (_isFromMenu) {
+        self.automaticallyAdjustsScrollViewInsets = YES;
         topConstraint.constant = 0;
-        [self.view setNeedsUpdateConstraints];
     }
+    
+    [self.view setNeedsUpdateConstraints];
     
     [self fetchCartObjecs];
 }

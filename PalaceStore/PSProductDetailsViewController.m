@@ -36,6 +36,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
     [self initView];
     [self loadCachedDetails];
     
@@ -278,12 +280,14 @@
     NSSet *deletedObjects = [notification userInfo][@"deleted"];
     id obj = [insertObjects anyObject];
     
-    if ([[obj class] isSubclassOfClass:[Product_Details class]]||[[obj class] isSubclassOfClass:[Product_Attributes class]]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[AppDelegate instance] hideBusyView];
-        });
+    if ([[obj class] isSubclassOfClass:[Product_Details class]]||[[obj class] isSubclassOfClass:[Product_Attributes class]] ||[[obj class] isSubclassOfClass:[Products class]]) {
         
         [self loadCachedDetails];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+            
+        });
         NSLog(@"Did Save Sub Categories : \n%@", [obj class]);
     }
     
@@ -305,7 +309,5 @@
         _productSpecVC.selectedProduct = _productSelected;
     }
 }
-
-
 
 @end

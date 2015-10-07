@@ -29,5 +29,7 @@
 
 - (NSArray *)getCartAndHomeButtonItemsWithTarget:(id)target andCartSelector:(SEL)cartAction andHomeSelector:(SEL)homeAction;
 
+- (UIImageView *)getNavigationBarImageView;
+
 @end
 

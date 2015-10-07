@@ -25,137 +25,145 @@
 
 + (void)insertBannerImages:(NSArray *)bannerImages {
     
-    @synchronized(self) {
-        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-        
-        for (NSDictionary *dict in bannerImages) {
-            @autoreleasepool {
-                Banner_Images *bannerImage = nil;
-                
-                bannerImage = [NSEntityDescription insertNewObjectForEntityForName:TABLE_BANNER_IMAGES inManagedObjectContext:moc];
-                
-                bannerImage.title = dict[KEY_TITLE];
-                bannerImage.image_url = dict[KEY_BANNER_IMAGE_URL];
+    NSManagedObjectContext *privateMOC = [[DatabaseManager sharedInstance] privateManagedObjectContext];
+    
+    for (NSDictionary *dict in bannerImages) {
+        @autoreleasepool {
+            Banner_Images *bannerImage = nil;
+            
+            bannerImage = [NSEntityDescription insertNewObjectForEntityForName:TABLE_BANNER_IMAGES inManagedObjectContext:privateMOC];
+            
+            bannerImage.title = dict[KEY_TITLE];
+            bannerImage.image_url = dict[KEY_BANNER_IMAGE_URL];
+        }
+    }
+    
+    if ([privateMOC hasChanges]) {
+        [privateMOC performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![privateMOC save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
             }
-        }
-        
-        NSError *error = nil;
-        
-        if (![moc save:&error]) {
-            NSLog(@"Error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Sucessfully Saved Banner Images");
-        }
+            else {
+                NSLog(@"Sucessfully Saved Banner Images");
+            }
+        }];
     }
 }
 
 + (void)insertLogoImages:(NSArray *)logoImages {
     
-    @synchronized(self) {
-        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-        
-        for (NSDictionary *dict in logoImages) {
-            @autoreleasepool {
-                Banner_Images *bannerImage = nil;
-                
-                bannerImage = [NSEntityDescription insertNewObjectForEntityForName:TABLE_BANNER_IMAGES inManagedObjectContext:moc];
-                
-                bannerImage.title = dict[KEY_TITLE];
-                bannerImage.image_url = dict[KEY_BANNER_IMAGE_URL];
-                bannerImage.isBrands =  [NSNumber numberWithBool:YES];
+    NSManagedObjectContext *privateMOC = [[DatabaseManager sharedInstance] privateManagedObjectContext];
+    
+    for (NSDictionary *dict in logoImages) {
+        @autoreleasepool {
+            Banner_Images *bannerImage = nil;
+            
+            bannerImage = [NSEntityDescription insertNewObjectForEntityForName:TABLE_BANNER_IMAGES inManagedObjectContext:privateMOC];
+            
+            bannerImage.title = dict[KEY_TITLE];
+            bannerImage.image_url = dict[KEY_BANNER_IMAGE_URL];
+            bannerImage.isBrands =  [NSNumber numberWithBool:YES];
+        }
+    }
+    
+    if ([privateMOC hasChanges]) {
+        [privateMOC performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![privateMOC save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
             }
-        }
-        
-        NSError *error = nil;
-        
-        if (![moc save:&error]) {
-            NSLog(@"Error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Sucessfully Saved Banner Images");
-        }
+            else {
+                NSLog(@"Sucessfully Saved Banner Images");
+            }
+        }];
     }
 }
 
 
 + (void)insertLatestArrivals:(NSArray *)latestArrivals andPromotions:(NSArray *)promotions {
     
-    @synchronized(self) {
-        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-        
-        for (NSDictionary *dict in latestArrivals) {
-            @autoreleasepool {
-                LatestArrivals_Promotions *latestArrival = nil;
-                
-                latestArrival = [NSEntityDescription insertNewObjectForEntityForName:TABLE_LATEST_ARRIVALS_PROMOTIONS inManagedObjectContext:moc];
-                
-                latestArrival.product_description = dict[KEY_PROD_DESCRIPTION];
-                latestArrival.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
-                latestArrival.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
-                latestArrival.price = dict[KEY_PRICE];
-                latestArrival.raing = dict[KEY_RATING];
-                latestArrival.tax = dict[KEY_TAX];
-                latestArrival.thumb_image_url = dict[KEY_THUMB_URL];
-                latestArrival.is_latest = [NSNumber numberWithBool:1];
+    NSManagedObjectContext *privateMOC = [[DatabaseManager sharedInstance] privateManagedObjectContext];
+    
+    for (NSDictionary *dict in latestArrivals) {
+        @autoreleasepool {
+            LatestArrivals_Promotions *latestArrival = nil;
+            
+            latestArrival = [NSEntityDescription insertNewObjectForEntityForName:TABLE_LATEST_ARRIVALS_PROMOTIONS inManagedObjectContext:privateMOC];
+            
+            latestArrival.product_description = dict[KEY_PROD_DESCRIPTION];
+            latestArrival.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
+            latestArrival.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
+            latestArrival.price = dict[KEY_PRICE];
+            latestArrival.raing = dict[KEY_RATING];
+            latestArrival.tax = dict[KEY_TAX];
+            latestArrival.thumb_image_url = dict[KEY_THUMB_URL];
+            latestArrival.is_latest = [NSNumber numberWithBool:1];
+        }
+    }
+    
+    for (NSDictionary *dict in promotions) {
+        @autoreleasepool {
+            LatestArrivals_Promotions *promotion = nil;
+            
+            promotion = [NSEntityDescription insertNewObjectForEntityForName:TABLE_LATEST_ARRIVALS_PROMOTIONS inManagedObjectContext:privateMOC];
+            
+            promotion.product_description = dict[KEY_PROD_DESCRIPTION];
+            promotion.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
+            promotion.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
+            promotion.price = dict[KEY_PRICE];
+            promotion.raing = dict[KEY_RATING];
+            promotion.tax = dict[KEY_TAX];
+            promotion.thumb_image_url = dict[KEY_THUMB_URL];
+            promotion.is_promotion = [NSNumber numberWithBool:1];
+        }
+    }
+    
+    if ([privateMOC hasChanges]) {
+        [privateMOC performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![privateMOC save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
             }
-        }
-        
-        for (NSDictionary *dict in promotions) {
-            @autoreleasepool {
-                LatestArrivals_Promotions *promotion = nil;
-                
-                promotion = [NSEntityDescription insertNewObjectForEntityForName:TABLE_LATEST_ARRIVALS_PROMOTIONS inManagedObjectContext:moc];
-                
-                promotion.product_description = dict[KEY_PROD_DESCRIPTION];
-                promotion.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
-                promotion.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
-                promotion.price = dict[KEY_PRICE];
-                promotion.raing = dict[KEY_RATING];
-                promotion.tax = dict[KEY_TAX];
-                promotion.thumb_image_url = dict[KEY_THUMB_URL];
-                promotion.is_promotion = [NSNumber numberWithBool:1];
+            else {
+                NSLog(@"Sucessfully Saved Banner Images");
             }
-        }
-        
-        NSError *error = nil;
-        
-        if (![moc save:&error]) {
-            NSLog(@"Error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Sucessfully Saved Latest Arrivals");
-        }
+        }];
     }
 }
 
 + (void)insertProductCategories:(NSArray *)categories {
     
-    @synchronized(self) {
-        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-        
-        for (NSDictionary *dict in categories) {
-            @autoreleasepool {
-                Product_Category *category = nil;
-                
-                category = [NSEntityDescription insertNewObjectForEntityForName:TABLE_PRODUCT_CATEGORY inManagedObjectContext:moc];
-                
-                category.category_id = [NSNumber numberWithInt:[dict[@"category_id"] intValue]];
-                category.subcategory_count = [NSNumber numberWithInt:[dict[@"categories"] intValue]];
-                category.image_url = dict[@"image"];
-                category.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
-                category.product_count = [NSNumber numberWithInt:[dict[@"products"] intValue]];
+    NSManagedObjectContext *privateMOC = [[DatabaseManager sharedInstance] privateManagedObjectContext];
+    
+    for (NSDictionary *dict in categories) {
+        @autoreleasepool {
+            Product_Category *category = nil;
+            
+            category = [NSEntityDescription insertNewObjectForEntityForName:TABLE_PRODUCT_CATEGORY inManagedObjectContext:privateMOC];
+            
+            category.category_id = [NSNumber numberWithInt:[dict[@"category_id"] intValue]];
+            category.subcategory_count = [NSNumber numberWithInt:[dict[@"categories"] intValue]];
+            category.image_url = dict[@"image"];
+            category.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
+            category.product_count = [NSNumber numberWithInt:[dict[@"products"] intValue]];
+        }
+    }
+    
+    if ([privateMOC hasChanges]) {
+        [privateMOC performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![privateMOC save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
             }
-        }
-        
-        NSError *error = nil;
-        
-        if (![moc save:&error]) {
-            NSLog(@"Error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Sucessfully Saved Categories");
-        }
+            else {
+                NSLog(@"Sucessfully Saved Banner Images");
+            }
+        }];
     }
 }
 
@@ -205,34 +213,61 @@
 
 + (void)deleteItemsFromTable:(NSString *)tableName withPredicate:(NSPredicate *)predicate {
     
-    @synchronized(self) {
-        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-        NSArray *items = [self fetchItemsFromTable:tableName withPredicate:predicate];
-        
-        for (NSManagedObject *object in items) {
-            [moc deleteObject:object];
-        }
+    
+    NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+    NSArray *items = [self fetchItemsFromTable:tableName withPredicate:predicate];
+    
+    for (NSManagedObject *object in items) {
+        [mainMOC deleteObject:object];
+    }
+    
+    [mainMOC performBlockAndWait:^{
         
         NSError *error = nil;
         
-        if (![moc save:&error]) {
+        if (![mainMOC save:&error]) {
             NSLog(@"Error %@", [error localizedDescription]);
         }
         else {
             NSLog(@"Sucessfully Deleted items");
         }
-    }    
+    }];
+}
+
++ (void)deleteItemsFromTableWithDictionary:(NSDictionary *)dictionaryObj {
+    
+    NSString *tableName = dictionaryObj[@"tableName"];
+    NSPredicate *predicate = dictionaryObj[@"predicate"];
+    
+    NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+    NSArray *items = [self fetchItemsFromTable:tableName withPredicate:predicate];
+    
+    for (NSManagedObject *object in items) {
+        [mainMOC deleteObject:object];
+    }
+    
+    [mainMOC performBlockAndWait:^{
+        
+        NSError *error = nil;
+        
+        if (![mainMOC save:&error]) {
+            NSLog(@"Error %@", [error localizedDescription]);
+        }
+        else {
+            NSLog(@"Sucessfully Deleted items");
+        }
+    }];
 }
 
 + (void)insertProductsDetails:(NSArray*)productsCollection forParentCategory:(NSNumber *)parentCategoryId{
     
-    NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+    NSManagedObjectContext *privateMOC = [[DatabaseManager sharedInstance] privateManagedObjectContext];
     
     for (NSDictionary *dict in productsCollection) {
         @autoreleasepool {
             Products *products = nil;
             
-            products = [NSEntityDescription insertNewObjectForEntityForName:TABLE_PRODUCTS inManagedObjectContext:moc];
+            products = [NSEntityDescription insertNewObjectForEntityForName:TABLE_PRODUCTS inManagedObjectContext:privateMOC];
             
             products.category_id = parentCategoryId;
             products.ean = dict[@"ean"];
@@ -255,17 +290,20 @@
             products.weight = [NSNumber numberWithDouble: [dict[@"weight"] doubleValue]];
             products.width = [NSNumber numberWithDouble: [dict[@"width"] doubleValue]];
             products.price = [NSNumber numberWithDouble: [dict[@"price"] doubleValue]];
-
         }
     }
     
-    NSError *error = nil;
-    
-    if (![moc save:&error]) {
-        NSLog(@"Error %@", [error localizedDescription]);
-    }
-    else {
-        NSLog(@"Sucessfully Saved Products");
+    if ([privateMOC hasChanges]) {
+        [privateMOC performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![privateMOC save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
+            }
+            else {
+                NSLog(@"Sucessfully Saved Banner Images");
+            }
+        }];
     }
 }
 
@@ -282,7 +320,7 @@
         tableName = TABLE_LATEST_ARRIVALS_PROMOTIONS;
 
     }
-    else{
+    else {
         predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", [NSNumber numberWithInt:categoryID], [NSNumber numberWithInt:productID]];
 
         tableName = TABLE_PRODUCTS;

@@ -9,9 +9,10 @@
 #import "DatabaseManager.h"
 
 @implementation DatabaseManager
-@synthesize managedObjectContext = _managedObjectContext;
+@synthesize mainManagedObjectContext = _mainManagedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize privateManagedObjectContext = _privateManagedObjectContext;
 
 + (id)sharedInstance {
     
@@ -72,25 +73,37 @@
 
 - (NSManagedObjectContext *)managedObjectContext {
     
-    if (_managedObjectContext != nil) {
-        return _managedObjectContext;
+    if (_mainManagedObjectContext != nil) {
+        return _mainManagedObjectContext;
     }
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     
     if (!coordinator) return nil;
     
-    _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    _mainManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [_mainManagedObjectContext setPersistentStoreCoordinator:coordinator];
     
-    return _managedObjectContext;
+    return _mainManagedObjectContext;
+}
+
+- (NSManagedObjectContext *)privateManagedObjectContext {
+    
+    if (_privateManagedObjectContext != nil) {
+        return _privateManagedObjectContext;
+    }
+    
+    _privateManagedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [_privateManagedObjectContext setParentContext:[self managedObjectContext]];
+    
+    return _privateManagedObjectContext;
 }
 
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
     
-    NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
+    NSManagedObjectContext *managedObjectContext = self.privateManagedObjectContext;
     if (managedObjectContext != nil) {
         NSError *error = nil;
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {

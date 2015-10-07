@@ -28,6 +28,10 @@
 
 - (void)loadSubCategory:(Product_Category *)subCategory {
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(btnClicked:)];
+    
+    [self addGestureRecognizer:tap];
+    
     sub_Category = subCategory;
     [_activity setHidesWhenStopped:YES];
     [_activity setHidden:NO];
@@ -80,11 +84,11 @@
 
 - (IBAction)btnClicked:(id)sender {
     
-    if (SYSTEM_VERSION_LESS_THAN(@"9.0")) {
+    //if (SYSTEM_VERSION_LESS_THAN(@"9.0")) {
         if (sub_Category) {
             [_callingControllerInstance categoryBtnClick:sub_Category];
         }
-    }
+    //}
 }
 
 @end

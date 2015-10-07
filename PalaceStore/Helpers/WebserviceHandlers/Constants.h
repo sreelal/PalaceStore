@@ -34,6 +34,7 @@
 #define SERVICE_ADD_ADDRESS  @"user/add_address&user="
 #define SERVICE_ORDER       @"order/add"
 #define SERVICE_CONFIRM     @"order/confirm&order="
+#define SERVICE_TRACK_ORDERS  @"order/all&user="
 //--------------------------------------------------
 
 //-----------------CoreData Model---------------------
@@ -130,6 +131,7 @@
 
 //---------------------Color hex Code-----------------
 #define COLOR_HEX_LIGHT_GRAY @"#e9e9e9"
+#define COLOR_HEX_HEADER_BLUE @"#422874"
 //----------------------------------------------------
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)

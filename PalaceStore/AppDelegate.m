@@ -50,6 +50,15 @@
     return inputAccessoryBar;
 }
 
+- (UIImageView *)getNavigationBarImageView {
+    
+    UIImageView *navBgImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"palace_logo.png"]];
+    navBgImage.frame = CGRectMake(0, 0, navBgImage.frame.size.width, 30);
+    navBgImage.contentMode = UIViewContentModeScaleAspectFit;
+    
+    return navBgImage;
+}
+
 #pragma mark - Navigation Bar Buttons Helper Methods
 
 - (UIBarButtonItem *)getCartBarButtonItemWithTarget:(id)target andSelector:(SEL)cartAction {

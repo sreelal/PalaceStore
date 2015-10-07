@@ -55,7 +55,7 @@
     _swipeBaseview.scrollEnabled = NO;
     //[self setSelectedPropertyForButton:_loginBtn];
     _selectedIndex = _loginBtn.tag;
-    
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
     [self initView];
 }
 

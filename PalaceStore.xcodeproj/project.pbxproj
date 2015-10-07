@@ -67,6 +67,10 @@
 		2E497DAF1B48E05000F3DCE4 /* NavigationBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E497DAD1B48E05000F3DCE4 /* NavigationBg.png */; };
 		2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E497DB11B48E15300F3DCE4 /* MenuIcon.png */; };
 		2E497DB51B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E497DB41B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m */; };
+		2E5A0EC61BC449CE0056ECF7 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5A0EC41BC449CE0056ECF7 /* OrderCell.m */; settings = {ASSET_TAGS = (); }; };
+		2E5A0EC71BC449CE0056ECF7 /* OrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A0EC51BC449CE0056ECF7 /* OrderCell.xib */; settings = {ASSET_TAGS = (); }; };
+		2E5A0ECA1BC4545F0056ECF7 /* Palace_Header_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A0EC81BC4545F0056ECF7 /* Palace_Header_Logo.png */; settings = {ASSET_TAGS = (); }; };
+		2E5A0ECB1BC4545F0056ECF7 /* palace_left_menu_logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2E5A0EC91BC4545F0056ECF7 /* palace_left_menu_logo.jpg */; settings = {ASSET_TAGS = (); }; };
 		2E76182A1BBEE0D100CFF4A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7618281BBEE0D100CFF4A8 /* Main.storyboard */; };
 		2E76183C1BBEF5EB00CFF4A8 /* menu_0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7618301BBEF5EB00CFF4A8 /* menu_0.png */; };
 		2E76183D1BBEF5EB00CFF4A8 /* menu_0@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7618311BBEF5EB00CFF4A8 /* menu_0@2x.png */; };
@@ -80,6 +84,7 @@
 		2E7618451BBEF5EB00CFF4A8 /* menu_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7618391BBEF5EB00CFF4A8 /* menu_3.png */; };
 		2E7618461BBEF5EB00CFF4A8 /* menu_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E76183A1BBEF5EB00CFF4A8 /* menu_3@2x.png */; };
 		2E7618471BBEF5EB00CFF4A8 /* menu_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E76183B1BBEF5EB00CFF4A8 /* menu_3@3x.png */; };
+		2E8B7B971BC3FDE90092D3E1 /* OrderTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B7B961BC3FDE90092D3E1 /* OrderTrackViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */; };
 		2EB842221BA54F9B008228E4 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8421F1BA54F9B008228E4 /* UIBarButtonItem+Badge.m */; };
 		2EB842231BA54F9B008228E4 /* UIButton+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB842211BA54F9B008228E4 /* UIButton+Badge.m */; };
@@ -302,6 +307,11 @@
 		2E497DB11B48E15300F3DCE4 /* MenuIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MenuIcon.png; sourceTree = "<group>"; };
 		2E497DB31B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestArrivalPromotionTableViewCell.h; sourceTree = "<group>"; };
 		2E497DB41B48E58100F3DCE4 /* LatestArrivalPromotionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivalPromotionTableViewCell.m; sourceTree = "<group>"; };
+		2E5A0EC31BC449CE0056ECF7 /* OrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderCell.h; sourceTree = "<group>"; };
+		2E5A0EC41BC449CE0056ECF7 /* OrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderCell.m; sourceTree = "<group>"; };
+		2E5A0EC51BC449CE0056ECF7 /* OrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrderCell.xib; sourceTree = "<group>"; };
+		2E5A0EC81BC4545F0056ECF7 /* Palace_Header_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Palace_Header_Logo.png; sourceTree = "<group>"; };
+		2E5A0EC91BC4545F0056ECF7 /* palace_left_menu_logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = palace_left_menu_logo.jpg; sourceTree = "<group>"; };
 		2E7618291BBEE0D100CFF4A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E7618301BBEF5EB00CFF4A8 /* menu_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_0.png; path = LeftMenuIcons/menu_0.png; sourceTree = "<group>"; };
 		2E7618311BBEF5EB00CFF4A8 /* menu_0@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_0@2x.png"; path = "LeftMenuIcons/menu_0@2x.png"; sourceTree = "<group>"; };
@@ -315,6 +325,8 @@
 		2E7618391BBEF5EB00CFF4A8 /* menu_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_3.png; path = LeftMenuIcons/menu_3.png; sourceTree = "<group>"; };
 		2E76183A1BBEF5EB00CFF4A8 /* menu_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_3@2x.png"; path = "LeftMenuIcons/menu_3@2x.png"; sourceTree = "<group>"; };
 		2E76183B1BBEF5EB00CFF4A8 /* menu_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_3@3x.png"; path = "LeftMenuIcons/menu_3@3x.png"; sourceTree = "<group>"; };
+		2E8B7B951BC3FDE90092D3E1 /* OrderTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTrackViewController.h; sourceTree = "<group>"; };
+		2E8B7B961BC3FDE90092D3E1 /* OrderTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTrackViewController.m; sourceTree = "<group>"; };
 		2EB7BBFC1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCollectionViewCell.h; sourceTree = "<group>"; };
 		2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubCategoryCollectionViewCell.m; sourceTree = "<group>"; };
 		2EB8421E1BA54F9B008228E4 /* UIBarButtonItem+Badge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Badge.h"; sourceTree = "<group>"; };
@@ -631,6 +643,8 @@
 				E97A478D1B787FB600DD3529 /* PSProductSpecificationsViewController.m */,
 				689521391BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.h */,
 				6895213A1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m */,
+				2E8B7B951BC3FDE90092D3E1 /* OrderTrackViewController.h */,
+				2E8B7B961BC3FDE90092D3E1 /* OrderTrackViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -696,6 +710,8 @@
 		2E497D7A1B48DA8A00F3DCE4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2E5A0EC81BC4545F0056ECF7 /* Palace_Header_Logo.png */,
+				2E5A0EC91BC4545F0056ECF7 /* palace_left_menu_logo.jpg */,
 				B7A427D91B8AE2C00054F1E0 /* Shoes.png */,
 				B7A427D21B8ACAD30054F1E0 /* Profile.png */,
 				E987AFE71B7A66A90050EADB /* favorite_Small.png */,
@@ -956,6 +972,9 @@
 				2E2346A21BB6539700AED97E /* PSRegistrationCell.h */,
 				2E2346A31BB6539700AED97E /* PSRegistrationCell.m */,
 				2E2346A41BB6539700AED97E /* PSRegistrationCell.xib */,
+				2E5A0EC31BC449CE0056ECF7 /* OrderCell.h */,
+				2E5A0EC41BC449CE0056ECF7 /* OrderCell.m */,
+				2E5A0EC51BC449CE0056ECF7 /* OrderCell.xib */,
 			);
 			name = TableViewCells;
 			path = Helpers/TableViewCells;
@@ -1226,6 +1245,7 @@
 				688ABC1B1BAF056C0059110F /* delete.png in Resources */,
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
 				2E497DA81B48DA8A00F3DCE4 /* Summer-Shoes.png in Resources */,
+				2E5A0ECA1BC4545F0056ECF7 /* Palace_Header_Logo.png in Resources */,
 				B7A427DA1B8AE2C00054F1E0 /* Shoes.png in Resources */,
 				2EB842271BA5553C008228E4 /* Home_icon.png in Resources */,
 				689FA5981B9342E500F65E3F /* btn-bg.png in Resources */,
@@ -1236,6 +1256,7 @@
 				688ABC341BAF056C0059110F /* reward.png in Resources */,
 				6895213F1BAB22E600C9DDC6 /* PSCartLoginView.xib in Resources */,
 				688ABC271BAF056C0059110F /* lock-black.png in Resources */,
+				2E5A0EC71BC449CE0056ECF7 /* OrderCell.xib in Resources */,
 				688ABC161BAF056C0059110F /* cart-white.png in Resources */,
 				688ABC1E1BAF056C0059110F /* edit-down.png in Resources */,
 				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
@@ -1243,6 +1264,7 @@
 				688ABC251BAF056C0059110F /* last_gray.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				688ABC1C1BAF056C0059110F /* dollor-white.png in Resources */,
+				2E5A0ECB1BC4545F0056ECF7 /* palace_left_menu_logo.jpg in Resources */,
 				688ABC2A1BAF056C0059110F /* mail.png in Resources */,
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
 				E987AFE81B7A66A90050EADB /* favorite_Small.png in Resources */,
@@ -1387,6 +1409,8 @@
 				2E1511BF1B64A62500D43865 /* Banner_Images.m in Sources */,
 				68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */,
 				2E16A6A91BB0EB1300553DCB /* PSCartPaymentCell.m in Sources */,
+				2E8B7B971BC3FDE90092D3E1 /* OrderTrackViewController.m in Sources */,
+				2E5A0EC61BC449CE0056ECF7 /* OrderCell.m in Sources */,
 				2EC38E0C1BB8F2C400EC596A /* PSCheckoutConfirmView.m in Sources */,
 				2E16A6AD1BB0F0C100553DCB /* PSSubCategoryProductView.m in Sources */,
 				68B5C8C71B47A79300F3FD02 /* SDImageCache.m in Sources */,
@@ -1552,7 +1576,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "779462b4-7225-48c0-adfb-716cf8124975";
+				PROVISIONING_PROFILE = "f402504d-d7ea-44b0-8e0b-e5640a511b09";
 			};
 			name = Debug;
 		};
@@ -1571,7 +1595,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "779462b4-7225-48c0-adfb-716cf8124975";
+				PROVISIONING_PROFILE = "f402504d-d7ea-44b0-8e0b-e5640a511b09";
 			};
 			name = Release;
 		};

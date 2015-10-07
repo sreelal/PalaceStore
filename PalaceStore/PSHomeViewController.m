@@ -46,6 +46,8 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
     [self initView];
     
     _bannerCollection = [[NSMutableArray alloc] init];
@@ -69,13 +71,9 @@
     
     [super viewWillAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] managedObjectContext]];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
     
     [self updateCartCount];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -355,6 +353,11 @@
     NSLog(@"Updated Obj : %@", updatedObjects);
     NSLog(@"Deleted Obj : %@", deletedObjects);*/
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
+    });
+    
     id obj = [insertObjects anyObject];
     
     if ([[obj class] isSubclassOfClass:[Banner_Images class]]) {
@@ -382,9 +385,7 @@
         }
         @finally {
             
-        }
-        
-        
+        }        
     }
 }
 

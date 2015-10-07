@@ -23,6 +23,8 @@
     
     [super viewDidLoad];
     
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
     [self setupView];
 }
 
