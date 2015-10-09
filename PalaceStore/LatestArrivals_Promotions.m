@@ -1,26 +1,16 @@
 //
 //  LatestArrivals_Promotions.m
-//  
+//  PalaceStore
 //
-//  Created by Sreelal H on 04/10/15.
-//
+//  Created by MTT User 1 Balasiva on 09/10/15.
+//  Copyright © 2015 Sreelal  Hamsavahanan. All rights reserved.
 //
 
 #import "LatestArrivals_Promotions.h"
 #import "Product_Details.h"
 
-
 @implementation LatestArrivals_Promotions
 
-@dynamic is_latest;
-@dynamic is_promotion;
-@dynamic name;
-@dynamic price;
-@dynamic product_description;
-@dynamic product_id;
-@dynamic raing;
-@dynamic tax;
-@dynamic thumb_image_url;
-@dynamic relationship;
+// Insert code here to add functionality to your managed object subclass
 
 @end

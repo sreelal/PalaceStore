@@ -44,13 +44,15 @@
     
     if (_latestArrivalPromotion) {
         [self getProductDetailsForProductID:_latestArrivalPromotion.product_id andCategoryID:nil];
+        _productName.text = _latestArrivalPromotion.name;
+
     }
     else {
         [self getProductDetailsForProductID:_selectedProduct.product_id andCategoryID:_selectedProduct.category_id];
+        _productName.text = _selectedProduct.name;
     }
     
     
-    _productName.text = _selectedProduct.name;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -166,27 +168,55 @@
 
 - (IBAction)addToCartAction:(id)sender
 {
-    [DatabaseHandler addToCartWithObj:self.selectedProduct];
-    
+    //[DatabaseHandler addToCartWithObj:self.selectedProduct];
+    [DatabaseHandler addToCartWithObj:_productSelected];
     [self updateCartCount];
 }
 
 - (IBAction)wishlistAction:(id)sender {
+   
+    NSPredicate *predicate;
+    LatestArrivals_Promotions *latestArrivals=nil;
+    Products *products=nil;
+    if ([_productSelected isKindOfClass:[Products class]]) {
+        
+        predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", _selectedProduct.category_id, _selectedProduct.product_id];
+        products = (Products*)_productSelected;
+    }
+    else{
+        
+        predicate = [NSPredicate predicateWithFormat:@"product_id == %@",_productSelected.product_id];
+        latestArrivals = (LatestArrivals_Promotions*)_productSelected;
+    }
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", _selectedProduct.category_id, _selectedProduct.product_id];
     NSArray *hasItem = [DatabaseHandler fetchItemsFromTable:@"WishList" withPredicate:predicate];
     
     if (![hasItem count]) {
-        WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
         
-        wishObj.category_id = self.selectedProduct.category_id;
-        wishObj.price = self.selectedProduct.price;
-        wishObj.product_id = self.selectedProduct.product_id;
-        wishObj.model = self.selectedProduct.model;
-        wishObj.name = self.selectedProduct.name;
-        wishObj.thumb_image_url = self.selectedProduct.thumb_image_url;
+        NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+
         
-        [[DatabaseManager sharedInstance]saveContext];
+        WishList * wishObj = [NSEntityDescription insertNewObjectForEntityForName:@"WishList" inManagedObjectContext:moc];
+        
+        wishObj.category_id = products?products.category_id:0;
+       // wishObj.price = products?products.category_id:latestArrivals.price;
+        wishObj.product_id = products?products.product_id:latestArrivals.product_id;
+        wishObj.model = products?products.model:latestArrivals.model;
+        wishObj.name = products?products.name:latestArrivals.name;
+        wishObj.thumb_image_url = products?products.thumb_image_url:latestArrivals.thumb_image_url;
+        
+       // [[DatabaseManager sharedInstance] saveContext];
+        
+        [moc performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![moc save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
+            }
+            else {
+                NSLog(@"Sucessfully Saved Wishlist");
+            }
+        }];
     }
     else {
         [DatabaseHandler deleteItemsFromTable:@"WishList" withPredicate:predicate];

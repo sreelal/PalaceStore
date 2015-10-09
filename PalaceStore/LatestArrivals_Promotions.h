@@ -1,9 +1,9 @@
 //
 //  LatestArrivals_Promotions.h
-//  
+//  PalaceStore
 //
-//  Created by Sreelal H on 04/10/15.
-//
+//  Created by MTT User 1 Balasiva on 09/10/15.
+//  Copyright © 2015 Sreelal  Hamsavahanan. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,17 +11,14 @@
 
 @class Product_Details;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LatestArrivals_Promotions : NSManagedObject
 
-@property (nonatomic, retain) NSNumber * is_latest;
-@property (nonatomic, retain) NSNumber * is_promotion;
-@property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSString * price;
-@property (nonatomic, retain) NSString * product_description;
-@property (nonatomic, retain) NSNumber * product_id;
-@property (nonatomic, retain) NSNumber * raing;
-@property (nonatomic, retain) NSString * tax;
-@property (nonatomic, retain) NSString * thumb_image_url;
-@property (nonatomic, retain) Product_Details *relationship;
+// Insert code here to declare functionality of your managed object subclass
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+#import "LatestArrivals_Promotions+CoreDataProperties.h"
