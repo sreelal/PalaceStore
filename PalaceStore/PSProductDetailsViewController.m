@@ -39,6 +39,7 @@
     self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
     
     [self initView];
+    
     [self loadCachedDetails];
     
     if (_latestArrivalPromotion) {
@@ -58,14 +59,9 @@
     
     [self updateCartCount];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:[[DatabaseManager sharedInstance] managedObjectContext]];
-    
     _productDetailstable.rowHeight = UITableViewAutomaticDimension;
     _productDetailstable.estimatedRowHeight = 200.0;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -109,12 +105,15 @@
                                          withPredicate:predicate];
     }
     _productSelected = (Products*)[results lastObject];
+    
     NSLog(@"Fetching over");
+    
     if (_productSelected) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [_productDetailstable reloadData];
         });
     }
+    
     predicate = nil;
 }
 
@@ -126,14 +125,16 @@
                                  andCategoryID:[categoryID intValue]
                                   andIsLatestArrrival:_latestArrivalPromotion
                                   withCallback:^(id object, NSError *error) {
-          if (object == nil || error != nil) {
+          if (object != nil || error == nil) {
               dispatch_async(dispatch_get_main_queue(), ^{
                   [[AppDelegate instance] hideBusyView];
               });
               
               [self loadCachedDetails];
           }
-              
+          else {
+              //Alert with the failure message.
+          }
     }];
 }
 
@@ -190,15 +191,6 @@
     else {
         [DatabaseHandler deleteItemsFromTable:@"WishList" withPredicate:predicate];
     }
-
-//    NSArray *items = [DatabaseHandler fetchItemsFromTable:@"WishList" withPredicate:predicate];
-//    
-//    if (items.count) {
-//        _favButton.alpha = 1;
-//    }
-//    else {
-//        _favButton.alpha = 0.3;
-//    }
 }
 
 - (IBAction)homeAction:(id)sender {
@@ -259,21 +251,11 @@
     return cell;
 }
 
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    if (indexPath.row==2) {
-//        
-//        return 100;
-//    }
-//    return UITableViewAutomaticDimension;
-//}
-
-
 #pragma mark - Coredata notifications
 
-
-- (void)managedObjectDidSave:(NSNotification *)notification {
+/*
+//Not using
+- (void)managedObjectDidSaveProdDetails:(NSNotification *)notification {
     
     NSSet *insertObjects = [notification userInfo][@"inserted"];
     NSSet *updatedObjects = [notification userInfo][@"updated"];
@@ -296,7 +278,7 @@
     deletedObjects = nil;
     obj = nil;
 }
-
+*/
 
 #pragma mark - Navigation
 

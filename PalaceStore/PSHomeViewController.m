@@ -53,12 +53,12 @@
     _bannerCollection = [[NSMutableArray alloc] init];
     _logoCollection = [[NSMutableArray alloc] init];
     
-    if (![HelperClass hasNetwork]) {
+    //if (![HelperClass hasNetwork]) {
         [self getCachedData];
-    }
-    else {
+    //}
+    //else {
         [self loadHomeData];
-    }
+    //}
 }
 -(IBAction)ProfileView:(id)sender
 {

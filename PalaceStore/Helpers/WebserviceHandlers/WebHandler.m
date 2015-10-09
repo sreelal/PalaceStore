@@ -130,9 +130,8 @@
     [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
         
         if (result != nil) {
-
             [DatabaseHandler updateProductDetailswithProductID:productID
-                                                andIsLatestArrival:isLatest
+                                            andIsLatestArrival:isLatest
                                                  andCategoryID:categoryID
                                                       withData:result];
         }
@@ -210,7 +209,7 @@
 + (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {
     
     if ([HelperClass hasNetwork]) {
-        NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_TRACK_ORDERS, userId];
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ADD_ADDRESS, userId];
         
         NSLog(@"Service URL : %@", serviceURL);
         

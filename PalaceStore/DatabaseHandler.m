@@ -359,16 +359,16 @@
             products.relationship = prodDetails;
         }
         
-        
-        NSError *error = nil;
-        
-        if (![moc save:&error]) {
-            NSLog(@"Error %@", [error localizedDescription]);
-        }
-        else {
-            NSLog(@"Sucessfully Saved Products");
-        }
-        
+        [moc performBlockAndWait:^{
+            NSError *error = nil;
+            
+            if (![moc save:&error]) {
+                NSLog(@"Error %@", [error localizedDescription]);
+            }
+            else {
+                NSLog(@"Sucessfully Saved Products");
+            }
+        }];
     }
 }
 

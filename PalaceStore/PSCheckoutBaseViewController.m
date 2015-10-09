@@ -321,6 +321,9 @@
 
 - (void)didSuccessLoginOption {
     
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
+    
     if (_leftMenuVC) {
         [_leftMenuVC changeLoginTitle];
         [self dismissViewControllerAnimated:YES completion:nil];

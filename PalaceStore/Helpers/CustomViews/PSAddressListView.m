@@ -24,6 +24,7 @@
 
 - (void)awakeFromNib {
     
+    //selecetedSectionIndex = -1;
     addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
 }
 
@@ -76,6 +77,11 @@
 }
 
 - (IBAction)nextAction:(id)sender {
+    
+    if (addresses.count == 0) {
+        [HelperClass showAlertWithMessage:@"Please add an address!"];
+        return;
+    }
     
     if (_addressListViewDelegate && ([_addressListViewDelegate respondsToSelector:@selector(addressListViewNextAction)])) {
         
