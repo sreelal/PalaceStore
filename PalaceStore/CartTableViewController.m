@@ -16,7 +16,8 @@
 @interface CartTableViewController () {
 
 }
-
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn;
+@property (nonatomic,retain)NSMutableArray *deletionList;
 @end
 
 @implementation CartTableViewController
@@ -28,7 +29,7 @@
     self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
     
     [self setupView];
-    
+    _deleteBtn.hidden=YES;
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
@@ -57,6 +58,25 @@
 
 #pragma mark - Button Actions
 
+- (IBAction)deleteMultipleCartItems:(UIButton *)sender {
+
+    dispatch_queue_t deleteQueue = dispatch_queue_create("com.deleteQueue", NULL);
+
+    for (NSNumber *index in _deletionList) {
+        dispatch_sync(deleteQueue, ^{
+
+            Cart * cartObj = [self.cartArray objectAtIndex:[index intValue]];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", cartObj.category_id, cartObj.product_id];
+            
+            [DatabaseHandler deleteItemsFromTable:@"Cart" withPredicate:predicate];
+            
+            [self fetchCartObjecs];
+            
+            [cartTableView reloadData];
+        });
+    }
+}
+
 - (void)removeCartItemAtIndex:(NSInteger)index {
     
     Cart * cartObj = [self.cartArray objectAtIndex:index];
@@ -66,6 +86,19 @@
     
     [self fetchCartObjecs];
     
+    [cartTableView reloadData];
+}
+
+- (void)updateDeleteCartList:(NSInteger)index {
+    
+    if (!_deletionList) {
+        
+        self.deletionList = [NSMutableArray array];
+    }
+
+    [_deletionList containsObject:[NSNumber numberWithInteger:index]]? [_deletionList removeObject:[NSNumber numberWithInteger:index]]:[_deletionList addObject:[NSNumber numberWithInteger:index]];
+
+    (_deletionList.count>0)?(_deleteBtn.hidden=NO):(_deleteBtn.hidden=YES);
     [cartTableView reloadData];
 }
 
@@ -149,17 +182,26 @@
     
     cell.callingController = self;
     cell.cart = cartObj;
-    
+    cell.cartItemIndex = indexPath.row;
     cell.itemName.text = cartObj.name;
     cell.itemCost.text = priceStr;
     [cell loadProductImage:cartObj.thumb_image_url];
     
+    //Check whether selected for deletion
+    if (_deletionList && [_deletionList containsObject:[NSNumber numberWithInteger:indexPath.row]]) {
+        
+        [cell setSelectedForDeletion:YES];
+    }
+    else{
+        
+        [cell setSelectedForDeletion:NO];
+    }
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return 60;
+    return 95;
 }
 
 - (void)didReceiveMemoryWarning {

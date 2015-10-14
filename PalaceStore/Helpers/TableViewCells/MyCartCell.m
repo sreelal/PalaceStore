@@ -78,8 +78,21 @@
     }
 }
 
+
+- (IBAction)addSelectedForDeletion:(id)sender {
+    
+    if (_cart) {
+        [_callingController updateDeleteCartList:_cartItemIndex];
+    }
+}
+
 - (IBAction)placeOrderAction:(id)sender
 {
         NSLog(@"%s",__func__);
+}
+
+- (void)setSelectedForDeletion:(BOOL)bStatus{
+    
+    [_btnSelect setSelected:bStatus];
 }
 @end

@@ -107,9 +107,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="212" y="109" width="88" height="42"/>
-                                </variation>
                                 <connections>
                                     <segue destination="HRL-IQ-wrx" kind="show" id="jDs-nx-c7W"/>
                                 </connections>
@@ -693,6 +690,31 @@
                                             <segue destination="g6q-6n-yje" kind="show" id="rof-lT-eje"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvs-4q-RPm">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="1" green="0.16001361959999999" blue="0.29033763959999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="91" id="H90-um-7c0"/>
+                                        </constraints>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="H90-um-7c0"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="H90-um-7c0"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="deleteMultipleCartItems:" destination="e7v-sP-bYA" eventType="touchUpInside" id="tt0-Du-MRZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -701,6 +723,8 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="uBD-rs-PWv" firstAttribute="top" secondItem="PcR-zZ-OgH" secondAttribute="top" id="DlX-IV-f15"/>
+                                    <constraint firstItem="cvs-4q-RPm" firstAttribute="centerX" secondItem="zt9-On-Rll" secondAttribute="centerX" id="P6q-lJ-HsX"/>
+                                    <constraint firstItem="cvs-4q-RPm" firstAttribute="centerY" secondItem="zt9-On-Rll" secondAttribute="centerY" id="TH1-w7-KhK"/>
                                     <constraint firstItem="uBD-rs-PWv" firstAttribute="height" secondItem="PcR-zZ-OgH" secondAttribute="height" id="Zjc-4x-2RB"/>
                                     <constraint firstAttribute="trailing" secondItem="PcR-zZ-OgH" secondAttribute="trailing" constant="10" id="aNu-y6-QwD"/>
                                     <constraint firstItem="uBD-rs-PWv" firstAttribute="bottom" secondItem="e0S-rI-bxV" secondAttribute="bottom" id="eT7-zu-gxD">
@@ -720,6 +744,7 @@
                                         <exclude reference="e0S-rI-bxV"/>
                                         <exclude reference="uBD-rs-PWv"/>
                                         <exclude reference="PcR-zZ-OgH"/>
+                                        <exclude reference="cvs-4q-RPm"/>
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="oGn-6k-akx"/>
@@ -731,6 +756,8 @@
                                         <exclude reference="eVG-87-Skl"/>
                                         <exclude reference="kNS-D8-k6f"/>
                                         <exclude reference="aNu-y6-QwD"/>
+                                        <exclude reference="P6q-lJ-HsX"/>
+                                        <exclude reference="TH1-w7-KhK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -738,6 +765,7 @@
                                         <include reference="e0S-rI-bxV"/>
                                         <include reference="uBD-rs-PWv"/>
                                         <include reference="PcR-zZ-OgH"/>
+                                        <include reference="cvs-4q-RPm"/>
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="oGn-6k-akx"/>
@@ -749,10 +777,12 @@
                                         <include reference="eVG-87-Skl"/>
                                         <include reference="kNS-D8-k6f"/>
                                         <include reference="aNu-y6-QwD"/>
+                                        <include reference="P6q-lJ-HsX"/>
+                                        <include reference="TH1-w7-KhK"/>
                                     </mask>
                                 </variation>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tOe-H8-33m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="95" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tOe-H8-33m">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -811,6 +841,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="cartTableView" destination="tOe-H8-33m" id="PL6-yO-sMj"/>
+                        <outlet property="deleteBtn" destination="cvs-4q-RPm" id="sIK-29-ahs"/>
                         <outlet property="topConstraint" destination="YNm-6X-ahe" id="bPa-DG-9b8"/>
                         <outlet property="total" destination="uBD-rs-PWv" id="7fP-dS-q1Z"/>
                     </connections>
@@ -2348,7 +2379,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2rd-HN-HiJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="789"/>
+            <point key="canvasLocation" x="-69" y="710"/>
         </scene>
         <!--Order Track View Controller-->
         <scene sceneID="2YA-O4-jZK">
@@ -3229,7 +3260,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-TE-6hw">
+                                                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="x Reviews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0t-TE-6hw">
                                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -3361,13 +3392,13 @@
                                                     <exclude reference="z48-v6-GdF"/>
                                                     <exclude reference="p37-p8-2I2"/>
                                                     <exclude reference="xOA-YQ-QXG"/>
-                                                    <exclude reference="3Tg-Q2-L3W"/>
-                                                    <exclude reference="gsU-FB-4aT"/>
-                                                    <exclude reference="tRx-xH-qHi"/>
                                                     <exclude reference="V94-dq-bhI"/>
                                                     <exclude reference="XKr-Nl-NIS"/>
                                                     <exclude reference="cyU-P6-RTf"/>
                                                     <exclude reference="j58-m3-GM4"/>
+                                                    <exclude reference="3Tg-Q2-L3W"/>
+                                                    <exclude reference="gsU-FB-4aT"/>
+                                                    <exclude reference="tRx-xH-qHi"/>
                                                     <exclude reference="CXx-N5-Fff"/>
                                                     <exclude reference="HZU-IM-VV5"/>
                                                 </mask>
@@ -3386,13 +3417,13 @@
                                                     <include reference="z48-v6-GdF"/>
                                                     <include reference="p37-p8-2I2"/>
                                                     <include reference="xOA-YQ-QXG"/>
-                                                    <include reference="3Tg-Q2-L3W"/>
-                                                    <include reference="gsU-FB-4aT"/>
-                                                    <include reference="tRx-xH-qHi"/>
                                                     <include reference="V94-dq-bhI"/>
                                                     <include reference="XKr-Nl-NIS"/>
                                                     <include reference="cyU-P6-RTf"/>
                                                     <include reference="j58-m3-GM4"/>
+                                                    <include reference="3Tg-Q2-L3W"/>
+                                                    <include reference="gsU-FB-4aT"/>
+                                                    <include reference="tRx-xH-qHi"/>
                                                     <include reference="CXx-N5-Fff"/>
                                                     <include reference="HZU-IM-VV5"/>
                                                 </mask>

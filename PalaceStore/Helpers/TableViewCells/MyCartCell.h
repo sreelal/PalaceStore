@@ -22,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *offerLabel;
 @property (strong, nonatomic) IBOutlet UIButton *btnDelete;
+@property (strong, nonatomic) IBOutlet UIButton *btnSelect;
+
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activity;
 
 @property (strong, nonatomic) Cart *cart;
@@ -30,5 +32,5 @@
 
 - (IBAction)removeAction:(id)sender;
 - (IBAction)placeOrderAction:(id)sender;
-
+- (void)setSelectedForDeletion:(BOOL)bStatus;
 @end
