@@ -22,4 +22,8 @@
     
 }
 
+- (void)updateDeleteCartList:(NSInteger)index {
+
+}
+
 @end

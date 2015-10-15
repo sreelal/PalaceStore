@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="60" id="KGk-i7-Jjw" customClass="MyCartCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="92" id="KGk-i7-Jjw" customClass="MyCartCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-IV-M9G">
                         <rect key="frame" x="5" y="6" width="50" height="50"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="BPP-4C-D4N"/>
+                            <constraint firstAttribute="height" constant="50" id="QY3-Ne-f80"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lotto Pacer Running (blue)" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKw-T5-ipI">
                         <rect key="frame" x="63" y="6" width="249" height="30"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="1nl-Y0-Gfy"/>
                         </constraints>
@@ -29,7 +33,8 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GHS 2499 X 1 = 2499" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vI8-tf-vUZ">
-                        <rect key="frame" x="63" y="36" width="221" height="20"/>
+                        <rect key="frame" x="63" y="36" width="255" height="20"/>
+                        <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="d64-Ky-7q0"/>
                         </constraints>
@@ -39,50 +44,85 @@
                     </label>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-9U-rno">
                         <rect key="frame" x="20" y="20" width="20" height="20"/>
+                        <animations/>
                     </activityIndicatorView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KgP-bp-bMe">
-                        <rect key="frame" x="292" y="35" width="20" height="20"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsj-mr-ywy">
+                        <rect key="frame" x="285" y="53" width="30" height="30"/>
+                        <animations/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="20" id="DVV-DA-gV3"/>
-                            <constraint firstAttribute="width" constant="20" id="OFH-jj-8f3"/>
+                            <constraint firstAttribute="height" constant="30" id="Zd3-nR-vFT"/>
+                            <constraint firstAttribute="width" constant="30" id="qDV-Fj-8VJ"/>
                         </constraints>
                         <state key="normal" backgroundImage="delete-down.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <connections>
-                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LpP-7T-7Up"/>
+                            <action selector="removeAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="CoE-8k-0CG"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVD-O8-b18">
+                        <rect key="frame" x="247" y="53" width="30" height="30"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="E8y-iG-Xjw"/>
+                            <constraint firstAttribute="height" constant="30" id="S8R-6b-JRs"/>
+                            <constraint firstAttribute="height" constant="30" id="Tb5-1v-XbX"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="radio-normal.png">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="selected" backgroundImage="radio-slected.png"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S8R-6b-JRs"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="addSelectedForDeletion:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bsn-D8-KaC"/>
                         </connections>
                     </button>
                 </subviews>
+                <animations/>
                 <constraints>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="top" secondItem="zKw-T5-ipI" secondAttribute="top" id="1no-fR-tbO"/>
-                    <constraint firstItem="KgP-bp-bMe" firstAttribute="top" secondItem="vI8-tf-vUZ" secondAttribute="top" constant="-1" id="2Tc-49-77G"/>
-                    <constraint firstItem="KgP-bp-bMe" firstAttribute="leading" secondItem="vI8-tf-vUZ" secondAttribute="trailing" constant="8" id="5lb-0Y-m3q"/>
                     <constraint firstItem="vI8-tf-vUZ" firstAttribute="top" secondItem="zKw-T5-ipI" secondAttribute="bottom" id="BVk-kc-uWp"/>
                     <constraint firstAttribute="bottom" secondItem="gCC-IV-M9G" secondAttribute="bottom" constant="3" id="Bd3-LR-Gr8"/>
+                    <constraint firstItem="QVD-O8-b18" firstAttribute="top" secondItem="vI8-tf-vUZ" secondAttribute="bottom" constant="-3" id="DY5-dX-BaC"/>
                     <constraint firstItem="zKw-T5-ipI" firstAttribute="leading" secondItem="gCC-IV-M9G" secondAttribute="trailing" constant="8" id="ERd-uc-fUG"/>
+                    <constraint firstItem="Zsj-mr-ywy" firstAttribute="top" secondItem="vI8-tf-vUZ" secondAttribute="bottom" constant="-3" id="EYp-pL-WIv"/>
                     <constraint firstItem="zKw-T5-ipI" firstAttribute="leading" secondItem="vI8-tf-vUZ" secondAttribute="leading" id="GNj-2f-Wz8"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="bottom" secondItem="vI8-tf-vUZ" secondAttribute="bottom" id="KES-nt-MRd"/>
+                    <constraint firstItem="Zsj-mr-ywy" firstAttribute="leading" secondItem="QVD-O8-b18" secondAttribute="trailing" constant="8" id="MLX-86-1zy"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="N2u-7M-gG4"/>
                     <constraint firstAttribute="trailing" secondItem="zKw-T5-ipI" secondAttribute="trailing" constant="8" id="Qnt-Us-hWj"/>
-                    <constraint firstAttribute="trailing" secondItem="KgP-bp-bMe" secondAttribute="trailing" constant="8" id="WAz-3x-DJx"/>
+                    <constraint firstAttribute="trailing" secondItem="vI8-tf-vUZ" secondAttribute="trailing" constant="2" id="deu-lO-Gpp"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="centerY" secondItem="oFe-9U-rno" secondAttribute="centerY" constant="1" id="eB4-H5-8zr"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="centerX" secondItem="oFe-9U-rno" secondAttribute="centerX" id="oim-Z1-tpc"/>
                     <constraint firstItem="gCC-IV-M9G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="u6V-1o-nZU"/>
+                    <constraint firstAttribute="trailing" secondItem="Zsj-mr-ywy" secondAttribute="trailing" constant="5" id="v6G-Kx-KhL"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Bd3-LR-Gr8"/>
+                        <exclude reference="KES-nt-MRd"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
+            <animations/>
             <connections>
                 <outlet property="activity" destination="oFe-9U-rno" id="us5-jf-DtE"/>
-                <outlet property="btnDelete" destination="KgP-bp-bMe" id="5el-RN-IR0"/>
+                <outlet property="btnSelect" destination="QVD-O8-b18" id="Zct-NY-viZ"/>
                 <outlet property="cartImage" destination="gCC-IV-M9G" id="z1J-CA-aU4"/>
                 <outlet property="itemCost" destination="vI8-tf-vUZ" id="2fk-Ny-T4x"/>
                 <outlet property="itemName" destination="zKw-T5-ipI" id="SjU-Uy-uv8"/>
             </connections>
-            <point key="canvasLocation" x="234" y="479"/>
+            <point key="canvasLocation" x="234" y="495"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Shoes.png" width="188" height="187"/>
         <image name="delete-down.png" width="129" height="129"/>
+        <image name="radio-normal.png" width="55" height="55"/>
+        <image name="radio-slected.png" width="55" height="55"/>
     </resources>
 </document>

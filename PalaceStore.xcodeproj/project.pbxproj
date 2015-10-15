@@ -105,7 +105,6 @@
 		58F37E471B455028006F1810 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E411B455028006F1810 /* RECommonFunctions.m */; };
 		58F37E481B455028006F1810 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E431B455028006F1810 /* RESideMenu.m */; };
 		58F37E491B455028006F1810 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F37E451B455028006F1810 /* UIViewController+RESideMenu.m */; };
-		681468871BC12216005A51A6 /* LatestArrivals_Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */; };
 		687727781BBFF76A00A2ECC6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727751BBFF76A00A2ECC6 /* FBSDKCoreKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		687727791BBFF76A00A2ECC6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727761BBFF76A00A2ECC6 /* FBSDKLoginKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		6877277A1BBFF76A00A2ECC6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 687727771BBFF76A00A2ECC6 /* FBSDKShareKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -185,6 +184,8 @@
 		68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8DE1B47AFC500F3FD02 /* HelperClass.m */; };
 		68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		68B5C8E81B47B07100F3FD02 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B5C8E71B47B07100F3FD02 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		9D5C88311BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C882E1BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		9D5C88321BC7916A00829B97 /* LatestArrivals_Promotions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5C88301BC7916A00829B97 /* LatestArrivals_Promotions.m */; settings = {ASSET_TAGS = (); }; };
 		9D8A67921BBA7B2800D0EE35 /* PSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D8A67911BBA7B2800D0EE35 /* PSLoginViewController.m */; };
 		B7A427CC1B8AC4CB0054F1E0 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CB1B8AC4CB0054F1E0 /* ProfileViewController.m */; };
 		B7A427D01B8AC8DC0054F1E0 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B7A427CE1B8AC8DC0054F1E0 /* ProfileCell.m */; };
@@ -366,8 +367,6 @@
 		58F37E431B455028006F1810 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
 		58F37E441B455028006F1810 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
 		58F37E451B455028006F1810 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
-		681468851BC12216005A51A6 /* LatestArrivals_Promotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestArrivals_Promotions.h; sourceTree = "<group>"; };
-		681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivals_Promotions.m; sourceTree = "<group>"; };
 		687727751BBFF76A00A2ECC6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		687727761BBFF76A00A2ECC6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		687727771BBFF76A00A2ECC6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -476,6 +475,10 @@
 		68B5C8E31B47B04D00F3FD02 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		68B5C8E61B47B07100F3FD02 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		68B5C8E71B47B07100F3FD02 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		9D5C882D1BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LatestArrivals_Promotions+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9D5C882E1BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LatestArrivals_Promotions+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9D5C882F1BC7916A00829B97 /* LatestArrivals_Promotions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestArrivals_Promotions.h; sourceTree = "<group>"; };
+		9D5C88301BC7916A00829B97 /* LatestArrivals_Promotions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestArrivals_Promotions.m; sourceTree = "<group>"; };
 		9D8A67901BBA7B2800D0EE35 /* PSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLoginViewController.h; sourceTree = "<group>"; };
 		9D8A67911BBA7B2800D0EE35 /* PSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLoginViewController.m; sourceTree = "<group>"; };
 		B7A427CA1B8AC4CB0054F1E0 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -552,8 +555,6 @@
 		2E1511B91B64A5ED00D43865 /* CoreData Models */ = {
 			isa = PBXGroup;
 			children = (
-				681468851BC12216005A51A6 /* LatestArrivals_Promotions.h */,
-				681468861BC12216005A51A6 /* LatestArrivals_Promotions.m */,
 				FC0E70161B89F8C0004380BE /* WishList.h */,
 				FC0E70171B89F8C0004380BE /* WishList.m */,
 				2E1511BD1B64A62500D43865 /* Banner_Images.h */,
@@ -570,6 +571,10 @@
 				B7B8BDC51B87468F00E90BEF /* Cart.m */,
 				2E2910A51BB866A7003FC73D /* Address.h */,
 				2E2910A61BB866A7003FC73D /* Address.m */,
+				9D5C882D1BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.h */,
+				9D5C882E1BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.m */,
+				9D5C882F1BC7916A00829B97 /* LatestArrivals_Promotions.h */,
+				9D5C88301BC7916A00829B97 /* LatestArrivals_Promotions.m */,
 			);
 			name = "CoreData Models";
 			sourceTree = "<group>";
@@ -1360,6 +1365,7 @@
 				FC0E70181B89F8C0004380BE /* WishList.m in Sources */,
 				9D8A67921BBA7B2800D0EE35 /* PSLoginViewController.m in Sources */,
 				68B5C8C51B47A79300F3FD02 /* AOScrollerView.m in Sources */,
+				9D5C88321BC7916A00829B97 /* LatestArrivals_Promotions.m in Sources */,
 				2EB842231BA54F9B008228E4 /* UIButton+Badge.m in Sources */,
 				E95590921B7361580019AA51 /* PriceInfoCell.m in Sources */,
 				68B5C8C91B47A79300F3FD02 /* SDWebImageManager.m in Sources */,
@@ -1378,7 +1384,6 @@
 				2E127D921B6854FE005B0E1F /* PSSubCategoryViewController.m in Sources */,
 				2E2346A51BB6539700AED97E /* PSRegistrationCell.m in Sources */,
 				68B5C8CA1B47A79300F3FD02 /* UrlImageButton.m in Sources */,
-				681468871BC12216005A51A6 /* LatestArrivals_Promotions.m in Sources */,
 				2E1511CB1B64A85E00D43865 /* DatabaseHandler.m in Sources */,
 				6895214F1BAB235600C9DDC6 /* PSCartPaymentView.m in Sources */,
 				6895213B1BAB21DD00C9DDC6 /* PSCheckoutBaseViewController.m in Sources */,
@@ -1402,6 +1407,7 @@
 				2EB842221BA54F9B008228E4 /* UIBarButtonItem+Badge.m in Sources */,
 				68B5C8E01B47AFC500F3FD02 /* HelperClass.m in Sources */,
 				68B5C8C81B47A79300F3FD02 /* SDWebImageDownloader.m in Sources */,
+				9D5C88311BC7916A00829B97 /* LatestArrivals_Promotions+CoreDataProperties.m in Sources */,
 				B7A427DD1B8AEC8D0054F1E0 /* WhishListViewController.m in Sources */,
 				68B5C8CB1B47A79300F3FD02 /* UrlImageView.m in Sources */,
 				68B5C8E41B47B04D00F3FD02 /* MBProgressHUD.m in Sources */,

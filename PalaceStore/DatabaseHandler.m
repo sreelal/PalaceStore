@@ -372,10 +372,26 @@
     }
 }
 
-+ (void)addToCartWithObj:(Products *)product {
++ (void)addToCartWithObj:(id)item {
     
     NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", product.category_id, product.product_id];
+    NSPredicate *predicate;
+    LatestArrivals_Promotions *latestArrivals=nil;
+    Products *product=nil;
+    if ([item isKindOfClass:[Products class]]) {
+    
+        product = (Products*)item;
+        predicate = [NSPredicate predicateWithFormat:@"category_id == %@ && product_id == %@", product.category_id, product.product_id];
+        
+
+    }
+    else{
+        
+        latestArrivals = (LatestArrivals_Promotions*)item;
+        predicate = [NSPredicate predicateWithFormat:@"product_id == %@", latestArrivals.product_id];
+
+    }
+
     NSArray *cartItems = [DatabaseHandler fetchItemsFromTable:TABLE_CART withPredicate:predicate];
     Cart *cart = nil;
     
@@ -387,12 +403,12 @@
     else {
         cart = [NSEntityDescription insertNewObjectForEntityForName:TABLE_CART inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
         
-        cart.category_id = product.category_id;
-        cart.price = product.price;
-        cart.product_id = product.product_id;
-        cart.model = product.model;
-        cart.name = product.name;
-        cart.thumb_image_url = product.thumb_image_url;
+        cart.category_id = product?product.category_id:0;
+      //  cart.price = product?product.price:latestArrivals.price;
+        cart.product_id = product?product.product_id:latestArrivals.product_id;
+        cart.model = product?product.model:latestArrivals.model;
+        cart.name = product?product.name:latestArrivals.name;
+        cart.thumb_image_url = product?product.thumb_image_url:latestArrivals.thumb_image_url;;
         cart.count = [NSNumber numberWithInt:1];
     }
     

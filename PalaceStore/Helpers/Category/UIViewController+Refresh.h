@@ -13,5 +13,5 @@
 - (void)updateCartCount;
 - (void)removeCartItemAtIndex:(NSInteger)index;
 - (void)paymentOptionAcionWithTag:(NSInteger)tag;
-
+- (void)updateDeleteCartList:(NSInteger)index;
 @end

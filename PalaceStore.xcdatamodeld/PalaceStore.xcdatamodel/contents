@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7549" systemVersion="15A284" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 4.3">
     <entity name="Address" representedClassName="Address" syncable="YES">
         <attribute name="address_1" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="address_2" optional="YES" attributeType="String" syncable="YES"/>
@@ -27,15 +27,29 @@
         <attribute name="thumb_image_url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="LatestArrivals_Promotions" representedClassName="LatestArrivals_Promotions" syncable="YES">
+        <attribute name="ean" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="height" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="is_latest" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="is_promotion" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isbn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jan" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="length" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mpn" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="points" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_description" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product_id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="raing" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sku" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tax" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="thumb_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="upc" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product_Details" syncable="YES"/>
     </entity>
     <entity name="Product_Attributes" representedClassName="Product_Attributes" syncable="YES">
@@ -97,7 +111,7 @@
         <element name="Address" positionX="135" positionY="-9" width="128" height="195"/>
         <element name="Banner_Images" positionX="-63" positionY="-18" width="128" height="88"/>
         <element name="Cart" positionX="135" positionY="-9" width="128" height="150"/>
-        <element name="LatestArrivals_Promotions" positionX="-36" positionY="63" width="128" height="193"/>
+        <element name="LatestArrivals_Promotions" positionX="-36" positionY="63" width="128" height="405"/>
         <element name="Product_Attributes" positionX="421" positionY="-36" width="128" height="88"/>
         <element name="Product_Category" positionX="124" positionY="-153" width="128" height="135"/>
         <element name="Product_Details" positionX="315" positionY="108" width="128" height="193"/>
