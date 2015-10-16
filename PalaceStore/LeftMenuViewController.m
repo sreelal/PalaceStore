@@ -35,7 +35,7 @@
     
     [self.view setNeedsUpdateConstraints];
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", @"Branches", @"About Us", @"Contact Us", nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];

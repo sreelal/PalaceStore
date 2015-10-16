@@ -46,6 +46,18 @@
 		2E2910A71BB866A7003FC73D /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2910A61BB866A7003FC73D /* Address.m */; };
 		2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3285731B670897006EB0C8 /* NSString+HTML.m */; };
 		2E3285761B671306006EB0C8 /* login1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3285751B671306006EB0C8 /* login1.png */; };
+		2E34FDD31BD08D470084605A /* palaceLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD01BD08D470084605A /* palaceLogo.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDD41BD08D470084605A /* palaceLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD11BD08D470084605A /* palaceLogo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDD51BD08D470084605A /* palaceLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD21BD08D470084605A /* palaceLogo@3x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDDC1BD08E190084605A /* menu_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD61BD08E190084605A /* menu_4.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDDD1BD08E190084605A /* menu_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD71BD08E190084605A /* menu_4@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDDE1BD08E190084605A /* menu_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD81BD08E190084605A /* menu_4@3x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDDF1BD08E190084605A /* menu_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD91BD08E190084605A /* menu_5.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDE01BD08E190084605A /* menu_5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDDA1BD08E190084605A /* menu_5@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDE11BD08E190084605A /* menu_5@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDDB1BD08E190084605A /* menu_5@3x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDE51BD08EA60084605A /* menu_6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDE21BD08EA60084605A /* menu_6.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDE61BD08EA60084605A /* menu_6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDE31BD08EA60084605A /* menu_6@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E34FDE71BD08EA60084605A /* menu_6@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDE41BD08EA60084605A /* menu_6@3x.png */; settings = {ASSET_TAGS = (); }; };
 		2E3DD2481B6679200043F33D /* CategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3DD2471B6679200043F33D /* CategoryTableViewCell.m */; };
 		2E497D941B48DA8A00F3DCE4 /* Adidas.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E497D7C1B48DA8A00F3DCE4 /* Adidas.png */; };
 		2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E497D7D1B48DA8A00F3DCE4 /* Arrow.png */; };
@@ -285,6 +297,18 @@
 		2E3285721B670897006EB0C8 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Category/NSString+HTML.h"; sourceTree = "<group>"; };
 		2E3285731B670897006EB0C8 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Category/NSString+HTML.m"; sourceTree = "<group>"; };
 		2E3285751B671306006EB0C8 /* login1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login1.png; sourceTree = "<group>"; };
+		2E34FDD01BD08D470084605A /* palaceLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palaceLogo.png; sourceTree = "<group>"; };
+		2E34FDD11BD08D470084605A /* palaceLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@2x.png"; sourceTree = "<group>"; };
+		2E34FDD21BD08D470084605A /* palaceLogo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@3x.png"; sourceTree = "<group>"; };
+		2E34FDD61BD08E190084605A /* menu_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_4.png; path = LeftMenuIcons/menu_4.png; sourceTree = "<group>"; };
+		2E34FDD71BD08E190084605A /* menu_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_4@2x.png"; path = "LeftMenuIcons/menu_4@2x.png"; sourceTree = "<group>"; };
+		2E34FDD81BD08E190084605A /* menu_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_4@3x.png"; path = "LeftMenuIcons/menu_4@3x.png"; sourceTree = "<group>"; };
+		2E34FDD91BD08E190084605A /* menu_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_5.png; path = LeftMenuIcons/menu_5.png; sourceTree = "<group>"; };
+		2E34FDDA1BD08E190084605A /* menu_5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_5@2x.png"; path = "LeftMenuIcons/menu_5@2x.png"; sourceTree = "<group>"; };
+		2E34FDDB1BD08E190084605A /* menu_5@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_5@3x.png"; path = "LeftMenuIcons/menu_5@3x.png"; sourceTree = "<group>"; };
+		2E34FDE21BD08EA60084605A /* menu_6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_6.png; path = LeftMenuIcons/menu_6.png; sourceTree = "<group>"; };
+		2E34FDE31BD08EA60084605A /* menu_6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_6@2x.png"; path = "LeftMenuIcons/menu_6@2x.png"; sourceTree = "<group>"; };
+		2E34FDE41BD08EA60084605A /* menu_6@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_6@3x.png"; path = "LeftMenuIcons/menu_6@3x.png"; sourceTree = "<group>"; };
 		2E3DD2461B6679200043F33D /* CategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryTableViewCell.h; sourceTree = "<group>"; };
 		2E3DD2471B6679200043F33D /* CategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryTableViewCell.m; sourceTree = "<group>"; };
 		2E497D7C1B48DA8A00F3DCE4 /* Adidas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Adidas.png; sourceTree = "<group>"; };
@@ -731,6 +755,9 @@
 				2E127D951B68594D005B0E1F /* img_btn_next.png */,
 				2E127D961B68594D005B0E1F /* img_btn_next@2x.png */,
 				689FA59E1B9347CD00F65E3F /* palace_logo.png */,
+				2E34FDD01BD08D470084605A /* palaceLogo.png */,
+				2E34FDD11BD08D470084605A /* palaceLogo@2x.png */,
+				2E34FDD21BD08D470084605A /* palaceLogo@3x.png */,
 				2E76182F1BBEF5DC00CFF4A8 /* LeftMenuIcons */,
 				688ABBEE1BAF056C0059110F /* checkout */,
 				689FA5841B9342E500F65E3F /* loginpage */,
@@ -783,6 +810,15 @@
 				2E7618391BBEF5EB00CFF4A8 /* menu_3.png */,
 				2E76183A1BBEF5EB00CFF4A8 /* menu_3@2x.png */,
 				2E76183B1BBEF5EB00CFF4A8 /* menu_3@3x.png */,
+				2E34FDD61BD08E190084605A /* menu_4.png */,
+				2E34FDD71BD08E190084605A /* menu_4@2x.png */,
+				2E34FDD81BD08E190084605A /* menu_4@3x.png */,
+				2E34FDD91BD08E190084605A /* menu_5.png */,
+				2E34FDDA1BD08E190084605A /* menu_5@2x.png */,
+				2E34FDDB1BD08E190084605A /* menu_5@3x.png */,
+				2E34FDE21BD08EA60084605A /* menu_6.png */,
+				2E34FDE31BD08EA60084605A /* menu_6@2x.png */,
+				2E34FDE41BD08EA60084605A /* menu_6@3x.png */,
 			);
 			name = LeftMenuIcons;
 			sourceTree = "<group>";
@@ -1241,11 +1277,14 @@
 				2E497D961B48DA8A00F3DCE4 /* Bottom-BG.png in Resources */,
 				2E127D981B68594D005B0E1F /* img_btn_back@2x.png in Resources */,
 				2E08C2331BAF338C0026A446 /* PSCartPaymentHeaderView.xib in Resources */,
+				2E34FDD31BD08D470084605A /* palaceLogo.png in Resources */,
 				688ABC141BAF056C0059110F /* addto-cart.png in Resources */,
 				2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */,
 				2E497D9A1B48DA8A00F3DCE4 /* Fruit.png in Resources */,
+				2E34FDE51BD08EA60084605A /* menu_6.png in Resources */,
 				2E7618411BBEF5EB00CFF4A8 /* menu_1@3x.png in Resources */,
 				689521431BAB230D00C9DDC6 /* PSCartPaymentView.xib in Resources */,
+				2E34FDDD1BD08E190084605A /* menu_4@2x.png in Resources */,
 				2E7618461BBEF5EB00CFF4A8 /* menu_3@2x.png in Resources */,
 				688ABC1B1BAF056C0059110F /* delete.png in Resources */,
 				2E207C121B497ED000F74840 /* ItemView.xib in Resources */,
@@ -1262,6 +1301,7 @@
 				6895213F1BAB22E600C9DDC6 /* PSCartLoginView.xib in Resources */,
 				688ABC271BAF056C0059110F /* lock-black.png in Resources */,
 				2E5A0EC71BC449CE0056ECF7 /* OrderCell.xib in Resources */,
+				2E34FDE01BD08E190084605A /* menu_5@2x.png in Resources */,
 				688ABC161BAF056C0059110F /* cart-white.png in Resources */,
 				688ABC1E1BAF056C0059110F /* edit-down.png in Resources */,
 				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
@@ -1274,6 +1314,7 @@
 				2E497D951B48DA8A00F3DCE4 /* Arrow.png in Resources */,
 				E987AFE81B7A66A90050EADB /* favorite_Small.png in Resources */,
 				2E497DA01B48DA8A00F3DCE4 /* Nivea.png in Resources */,
+				2E34FDE11BD08E190084605A /* menu_5@3x.png in Resources */,
 				2E16A6AF1BB0F0E100553DCB /* PSSubCategoryProductView.xib in Resources */,
 				688ABC231BAF056C0059110F /* gray_arrow03.png in Resources */,
 				2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */,
@@ -1290,6 +1331,7 @@
 				688ABC221BAF056C0059110F /* gray_arrow.png in Resources */,
 				2E497DA21B48DA8A00F3DCE4 /* Real-Orange.png in Resources */,
 				B7A427D11B8AC8DC0054F1E0 /* ProfileCell.xib in Resources */,
+				2E34FDDE1BD08E190084605A /* menu_4@3x.png in Resources */,
 				688ABC281BAF056C0059110F /* lock-white.png in Resources */,
 				689521411BAB22FD00C9DDC6 /* PSCartView.xib in Resources */,
 				2E497D941B48DA8A00F3DCE4 /* Adidas.png in Resources */,
@@ -1318,6 +1360,8 @@
 				688ABC2E1BAF056C0059110F /* or.png in Resources */,
 				2E127D991B68594D005B0E1F /* img_btn_next.png in Resources */,
 				2E1C10DE1BB33C9A00F792DA /* PSAddressListView.xib in Resources */,
+				2E34FDD41BD08D470084605A /* palaceLogo@2x.png in Resources */,
+				2E34FDE71BD08EA60084605A /* menu_6@3x.png in Resources */,
 				688ABC151BAF056C0059110F /* buy-now.png in Resources */,
 				688ABC321BAF056C0059110F /* red-star.png in Resources */,
 				2E497D9D1B48DA8A00F3DCE4 /* left-arrow.png in Resources */,
@@ -1329,8 +1373,11 @@
 				2E7618401BBEF5EB00CFF4A8 /* menu_1@2x.png in Resources */,
 				2EC38E0E1BB8F2E500EC596A /* PSCheckoutConfirmView.xib in Resources */,
 				2E2346A11BB652F200AED97E /* PSRegistrationView.xib in Resources */,
+				2E34FDDF1BD08E190084605A /* menu_5.png in Resources */,
+				2E34FDD51BD08D470084605A /* palaceLogo@3x.png in Resources */,
 				688ABC381BAF056C0059110F /* wishlist.png in Resources */,
 				688ABC171BAF056C0059110F /* cart_black.png in Resources */,
+				2E34FDDC1BD08E190084605A /* menu_4.png in Resources */,
 				688ABC2F1BAF056C0059110F /* phone.png in Resources */,
 				2E497DAF1B48E05000F3DCE4 /* NavigationBg.png in Resources */,
 				689FA59A1B9342E500F65E3F /* star.png in Resources */,
@@ -1341,6 +1388,7 @@
 				2E065A791B7AE1FC00C209D4 /* no_image.png in Resources */,
 				2E16A6A51BB0EA8A00553DCB /* popt1.png in Resources */,
 				688ABC361BAF056C0059110F /* user-plus.png in Resources */,
+				2E34FDE61BD08EA60084605A /* menu_6@2x.png in Resources */,
 				2E497DA31B48DA8A00F3DCE4 /* Right-arrow.png in Resources */,
 				2E075BB71BA669D2000EB00F /* Home_icon@3x.png in Resources */,
 				2E7618471BBEF5EB00CFF4A8 /* menu_3@3x.png in Resources */,
