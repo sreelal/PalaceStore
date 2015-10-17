@@ -106,8 +106,13 @@
     
     self.currentProductObj = productInfo;
     
-   // _piceInfo.text =  [NSString stringWithFormat:@"GHS %0.2f",[productInfo.price doubleValue]];
-    _piceInfo.text =  [NSString stringWithFormat:@"%@",productInfo.price];
+   //
+    if ([productInfo.price doubleValue]) {
+        _piceInfo.text =  [NSString stringWithFormat:@"GHS %0.2f",[productInfo.price doubleValue]];
+    }
+    else{
+        _piceInfo.text =  [NSString stringWithFormat:@"%@",productInfo.price];
+    }
     _ratingsLabel.text = [NSString stringWithFormat:@"%d Ratings",[productInfo.relationship.rating intValue]];
     _reviewsLabel.text = [NSString stringWithFormat:@"%d Ratings",[productInfo.relationship.reviews intValue]];
     _ratingsView.ratingValue = [productInfo.relationship.rating intValue];

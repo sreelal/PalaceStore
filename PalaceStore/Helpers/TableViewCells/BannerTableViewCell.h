@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SwipeView.h"
 #import "LatestArrivals_Promotions.h"
+#import "PSHomeViewController.h"
 
 @interface BannerTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) PSHomeViewController *callingController;
 
 @property (weak, nonatomic) IBOutlet UIView *bannerContainer;
 @property (weak, nonatomic) IBOutlet UIView *OfferContainer;

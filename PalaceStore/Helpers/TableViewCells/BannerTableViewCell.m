@@ -15,6 +15,10 @@
     BOOL isPromotionImgLoading;
     BOOL isLatestArrivalImgLoading;
 }
+
+@property (nonatomic,retain) LatestArrivals_Promotions *offerOftheDay;
+@property (nonatomic,retain) LatestArrivals_Promotions *latestArrivals;
+
 @end
 @implementation BannerTableViewCell
 
@@ -53,6 +57,7 @@
 
 - (void)loadPromotion:(LatestArrivals_Promotions *)promotion {
     
+    _offerOftheDay = promotion;
     self.OfferLabel.text = promotion.name;
     
     [self.offerActivity setHidesWhenStopped:YES];
@@ -101,6 +106,7 @@
 
 - (void)loadLatestArrival:(LatestArrivals_Promotions *)latestArrival {
     
+    _latestArrivals = latestArrival;
     self.latestLabel.text = latestArrival.name;
     
     [self.latestActivity setHidesWhenStopped:YES];
@@ -146,5 +152,16 @@
         self.latestImgView.image = [UIImage imageNamed:@"no_image.png"];
     }
 }
+- (IBAction)offerOftheDayButtonAction:(id)sender {
+    
+    [_callingController promotionLatestItemBtnActionWithObj:_offerOftheDay];
+}
+
+- (IBAction)newArrivalBtnAction:(id)sender {
+    
+    [_callingController promotionLatestItemBtnActionWithObj:_latestArrivals];
+}
+
+
 
 @end

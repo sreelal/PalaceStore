@@ -274,7 +274,8 @@
     switch (indexPath.row) {
         case 0: {
             BannerTableViewCell *bannerCell = (BannerTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"bannerCell" forIndexPath:indexPath];
-            
+            bannerCell.callingController = self;
+
             [bannerCell loadBannerImagesWith:self.bannerCollection];
             
             if ([_latestArrivals count]) {

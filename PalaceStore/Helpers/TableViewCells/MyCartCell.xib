@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Shoes.png" translatesAutoresizingMaskIntoConstraints="NO" id="gCC-IV-M9G">
@@ -39,7 +39,7 @@
                             <constraint firstAttribute="height" constant="20" id="d64-Ky-7q0"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oFe-9U-rno">
@@ -65,18 +65,12 @@
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="E8y-iG-Xjw"/>
-                            <constraint firstAttribute="height" constant="30" id="S8R-6b-JRs"/>
                             <constraint firstAttribute="height" constant="30" id="Tb5-1v-XbX"/>
                         </constraints>
                         <state key="normal" backgroundImage="radio-normal.png">
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <state key="selected" backgroundImage="radio-slected.png"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="S8R-6b-JRs"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <action selector="addSelectedForDeletion:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bsn-D8-KaC"/>
                         </connections>
