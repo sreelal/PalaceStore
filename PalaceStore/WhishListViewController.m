@@ -23,8 +23,6 @@
     
     [super viewDidLoad];
     
-    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
-    
     [self setupView];
 }
 
@@ -63,6 +61,8 @@
 }
 
 - (void)setupView {
+    
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
     
     if (_isFromMenu) {
         self.navigationItem.leftBarButtonItem = [HelperClass getMenuButtonItemWithTarget:self andAction:@selector(leftAction:)];

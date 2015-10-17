@@ -15,26 +15,29 @@
 
 //------------------Webservice----------------------
 //#define SERVICE_URL_ROOT     @"http://ezcomdesign.com/demo/palace/index.php?route=service/"
-#define SERVICE_URL_ROOT     @"http://www.palacestores.com/index.php?route=service/"
-#define SERVICE_HOME         @"home"
-#define SERVICE_CATEGORY     @"category"
-#define SERVICE_SUB_CATEGORY @"category&category="
-#define SERVICE_PRODUCT      @"product&category="
-#define SERVICE_PRODUCT_INFO @"product/info&product="
-#define SERVICE_BANNER       @"banner&banner=7"
-#define SERVICE_POST_TOKEN   @"device/register"
-#define SERVICE_NOTIFICATION @"notification"
-#define SERVICE_ENQUIRY      @"enquiry/submit"
-#define SEARCH_PRODUCT       @"product/search&search="
-#define SERVICE_FOOTER_TXT   @"status/text"
-#define SERVICE_PRODUCT_DETAIL  @"product/detail&product="
-#define SERVICE_SIGN_UP  @"user/register"
-#define SERVICE_LOGIN  @"user/login"
+#define SERVICE_URL_ROOT       @"http://www.palacestores.com/index.php?route=service/"
+#define SERVICE_HOME           @"home"
+#define SERVICE_CATEGORY       @"category"
+#define SERVICE_SUB_CATEGORY   @"category&category="
+#define SERVICE_PRODUCT        @"product&category="
+#define SERVICE_PRODUCT_INFO   @"product/info&product="
+#define SERVICE_BANNER         @"banner&banner=7"
+#define SERVICE_POST_TOKEN     @"device/register"
+#define SERVICE_NOTIFICATION   @"notification"
+#define SERVICE_ENQUIRY        @"enquiry/submit"
+#define SEARCH_PRODUCT         @"product/search&search="
+#define SERVICE_FOOTER_TXT     @"status/text"
+#define SERVICE_PRODUCT_DETAIL @"product/detail&product="
+#define SERVICE_SIGN_UP        @"user/register"
+#define SERVICE_LOGIN          @"user/login"
 #define SERVICE_ALL_ADDRESSES  @"user/all_addresses&user="
-#define SERVICE_ADD_ADDRESS  @"user/add_address&user="
-#define SERVICE_ORDER       @"order/add"
-#define SERVICE_CONFIRM     @"order/confirm&order="
-#define SERVICE_TRACK_ORDERS  @"order/all&user="
+#define SERVICE_ADD_ADDRESS    @"user/add_address&user="
+#define SERVICE_ORDER          @"order/add"
+#define SERVICE_CONFIRM        @"order/confirm&order="
+#define SERVICE_TRACK_ORDERS   @"order/all&user="
+#define SERVICE_ABOUT_US       @"info"
+#define SERVICE_CONTACT_US     @"info/contact"
+#define SERVICE_BRANCHES       @"stores/locations"
 //--------------------------------------------------
 
 //-----------------CoreData Model---------------------
@@ -88,6 +91,12 @@
 #define KEY_ENQUIRE_PRODUCTS @"enquire_products"
 #define KEY_DEVICE_TOKEN     @"DeviceToken"
 #define KEY_FOOTER           @"Footer"
+
+#define KEY_FIRST_NAME @"first_name"
+#define KEY_LAST_NAME @"last_name"
+#define KEY_EMAIL @"email"
+#define KEY_NAME @"name"
+#define KEY_ENQUIRY @"enquiry"
 //--------------------------------------------------
 
 //-----------------Soryboard Ids--------------------
@@ -130,7 +139,7 @@
 //----------------------------------------------------
 
 //---------------------Color hex Code-----------------
-#define COLOR_HEX_LIGHT_GRAY @"#e9e9e9"
+#define COLOR_HEX_LIGHT_GRAY  @"#e9e9e9"
 #define COLOR_HEX_HEADER_BLUE @"#422874"
 //----------------------------------------------------
 

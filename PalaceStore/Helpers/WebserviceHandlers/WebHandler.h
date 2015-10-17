@@ -26,11 +26,17 @@ typedef void (^ResponseCallback) (id object, NSError *error);
                    andIsLatestArrrival:(BOOL)isLatest
                           withCallback:(ResponseCallback)callback;
 
++ (void)getAllAddressWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
+
++ (void)getBranchesWithCallback:(ResponseCallback)callback;
+
++ (void)getAboutUsWithCallback:(ResponseCallback)callback;
+
++ (void)sendEnquiryWihDict:(NSMutableDictionary *)dataDict withCallback:(ResponseCallback)callback;
+
 + (void)signUpWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;
 
 + (void)loginWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;
-
-+ (void)getAllAddressWithUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
 
 + (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback;
 

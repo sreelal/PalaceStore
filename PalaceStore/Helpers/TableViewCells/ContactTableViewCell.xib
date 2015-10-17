@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="240" id="3Dq-c0-KGq" userLabel="Contact Cell" customClass="ContactTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="240"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Dq-c0-KGq" id="Pen-OG-lJW">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="239"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WGn-C1-7IP">
+                        <rect key="frame" x="23" y="12" width="275" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="a37-oo-7Mk"/>
+                        </constraints>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MVr-Eg-CHA">
+                        <rect key="frame" x="23" y="52" width="275" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="Xsw-rj-sqV"/>
+                        </constraints>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OI9-TZ-R7V">
+                        <rect key="frame" x="23" y="92" width="275" height="30"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="B9N-Za-Osh"/>
+                        </constraints>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-6y-oeA">
+                        <rect key="frame" x="23" y="130" width="275" height="101"/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="MVr-Eg-CHA" firstAttribute="trailing" secondItem="WGn-C1-7IP" secondAttribute="trailing" id="1fU-tw-WzN"/>
+                    <constraint firstItem="exZ-6y-oeA" firstAttribute="leading" secondItem="OI9-TZ-R7V" secondAttribute="leading" id="9fB-Zq-YGF"/>
+                    <constraint firstItem="WGn-C1-7IP" firstAttribute="leading" secondItem="Pen-OG-lJW" secondAttribute="leading" constant="23" id="9z0-rx-CkH"/>
+                    <constraint firstItem="exZ-6y-oeA" firstAttribute="trailing" secondItem="OI9-TZ-R7V" secondAttribute="trailing" id="BpF-dO-up3"/>
+                    <constraint firstItem="MVr-Eg-CHA" firstAttribute="leading" secondItem="WGn-C1-7IP" secondAttribute="leading" id="Ktv-e5-Zsg"/>
+                    <constraint firstItem="exZ-6y-oeA" firstAttribute="top" secondItem="OI9-TZ-R7V" secondAttribute="bottom" constant="8" id="L8a-eP-pe1"/>
+                    <constraint firstAttribute="trailing" secondItem="WGn-C1-7IP" secondAttribute="trailing" constant="22" id="M4M-k0-Nva"/>
+                    <constraint firstItem="OI9-TZ-R7V" firstAttribute="leading" secondItem="MVr-Eg-CHA" secondAttribute="leading" id="PCZ-MO-j8C"/>
+                    <constraint firstItem="WGn-C1-7IP" firstAttribute="top" secondItem="Pen-OG-lJW" secondAttribute="top" constant="12" id="dFQ-oS-64q"/>
+                    <constraint firstItem="OI9-TZ-R7V" firstAttribute="trailing" secondItem="MVr-Eg-CHA" secondAttribute="trailing" id="ea7-BX-9xL"/>
+                    <constraint firstItem="MVr-Eg-CHA" firstAttribute="top" secondItem="WGn-C1-7IP" secondAttribute="bottom" constant="10" id="hYF-dE-ZTZ"/>
+                    <constraint firstItem="OI9-TZ-R7V" firstAttribute="top" secondItem="MVr-Eg-CHA" secondAttribute="bottom" constant="10" id="lAa-4v-NLU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="exZ-6y-oeA" secondAttribute="bottom" id="qyd-NW-uy3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="txtEmail" destination="WGn-C1-7IP" id="09Q-Aa-Obb"/>
+                <outlet property="txtEnquiry" destination="exZ-6y-oeA" id="hXD-qg-jjv"/>
+                <outlet property="txtFirstName" destination="MVr-Eg-CHA" id="QWV-Wz-bEC"/>
+                <outlet property="txtLastName" destination="OI9-TZ-R7V" id="6Ye-cN-tv4"/>
+            </connections>
+            <point key="canvasLocation" x="642" y="504"/>
+        </tableViewCell>
+    </objects>
+</document>

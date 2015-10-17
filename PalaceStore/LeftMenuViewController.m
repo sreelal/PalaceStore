@@ -14,6 +14,9 @@
 #import "ProfileViewController.h"
 #import "PSCheckoutBaseViewController.h"
 #import "OrderTrackViewController.h"
+#import "PSAboutUsViewController.h"
+#import "PSBranchesViewController.h"
+#import "PSContactUsViewController.h"
 
 @interface LeftMenuViewController ()
 
@@ -161,7 +164,21 @@
             UINavigationController * orderNav = [[UINavigationController alloc]initWithRootViewController:orderView];
             [self.sideMenuViewController setContentViewController:orderNav];
         }
-        
+    }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Branches"]) {
+        PSBranchesViewController * branchesVC = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"BranchesVC"];
+        UINavigationController * branchNav = [[UINavigationController alloc]initWithRootViewController:branchesVC];
+        [self.sideMenuViewController setContentViewController:branchNav];
+    }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Contact Us"]) {
+        PSContactUsViewController * contactUsView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"ContactUsVC"];
+        UINavigationController * contactusNav = [[UINavigationController alloc]initWithRootViewController:contactUsView];
+        [self.sideMenuViewController setContentViewController:contactusNav];
+    }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"About Us"]) {
+        PSAboutUsViewController * aboutView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"AboutUsVC"];
+        UINavigationController * aboutNav = [[UINavigationController alloc]initWithRootViewController:aboutView];
+        [self.sideMenuViewController setContentViewController:aboutNav];
     }
     
     [self.sideMenuViewController hideMenuViewController];

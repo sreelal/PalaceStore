@@ -11,6 +11,13 @@
 #import "PSAddressListView.h"
 #import "PSCheckoutConfirmView.h"
 
+@protocol HeaderViewDelegate <NSObject>
+
+@optional
+- (void)aboutTappedWithTag:(long)tag;
+
+@end
+
 @interface PSCartPaymentHeaderview : UIView
 
 @property (nonatomic, strong) PSCartPaymentView *paymentView;
@@ -19,6 +26,9 @@
 @property (nonatomic, strong) IBOutlet UILabel *txtLabel;
 @property (nonatomic, strong) IBOutlet UIButton *btn;
 @property (nonatomic, strong) IBOutlet UIButton *btnEdit;
+@property (nonatomic, strong) IBOutlet UIButton *btnAboutUs;
+
+@property (nonatomic, weak) id <HeaderViewDelegate> delegate;
 
 - (void)initHeaderViewForConfirmOrder:(PSCheckoutConfirmView *)confirmOrderView;
 - (void)addTargetToAddressListView;

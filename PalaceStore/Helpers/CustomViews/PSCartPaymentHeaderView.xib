@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -96,6 +97,12 @@
                         </mask>
                     </variation>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhy-PV-ft2">
+                    <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <connections>
+                        <action selector="aboutUsAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="3O6-hL-8LQ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -104,13 +111,17 @@
                 <constraint firstItem="Y8b-DJ-CGk" firstAttribute="centerY" secondItem="C8a-it-OAH" secondAttribute="centerY" id="8uq-Tn-pJE"/>
                 <constraint firstItem="znq-BW-APb" firstAttribute="trailing" secondItem="C8a-it-OAH" secondAttribute="trailing" id="A4x-kO-kdM"/>
                 <constraint firstItem="C8a-it-OAH" firstAttribute="leading" secondItem="Y8b-DJ-CGk" secondAttribute="trailing" constant="15" id="JCa-GQ-fu2"/>
+                <constraint firstItem="Zhy-PV-ft2" firstAttribute="leading" secondItem="Y8b-DJ-CGk" secondAttribute="leading" id="Ok4-oE-XRy"/>
                 <constraint firstAttribute="centerY" secondItem="Y8b-DJ-CGk" secondAttribute="centerY" id="RHR-kp-ws7"/>
                 <constraint firstAttribute="bottom" secondItem="ALs-bF-olf" secondAttribute="bottom" id="U1f-df-xaB"/>
+                <constraint firstItem="Zhy-PV-ft2" firstAttribute="trailing" secondItem="Y8b-DJ-CGk" secondAttribute="trailing" id="UVJ-1r-bZd"/>
                 <constraint firstItem="ALs-bF-olf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WCP-YT-ubH"/>
                 <constraint firstAttribute="trailing" secondItem="C8a-it-OAH" secondAttribute="trailing" constant="16" id="dou-wv-AFr"/>
                 <constraint firstItem="znq-BW-APb" firstAttribute="top" secondItem="C8a-it-OAH" secondAttribute="top" id="fyh-pO-lGR"/>
                 <constraint firstItem="Y8b-DJ-CGk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="jva-dg-S6D"/>
                 <constraint firstItem="znq-BW-APb" firstAttribute="bottom" secondItem="C8a-it-OAH" secondAttribute="bottom" id="qwJ-Hf-kK1"/>
+                <constraint firstItem="Zhy-PV-ft2" firstAttribute="bottom" secondItem="Y8b-DJ-CGk" secondAttribute="bottom" id="vLB-CC-4mS"/>
+                <constraint firstItem="Zhy-PV-ft2" firstAttribute="top" secondItem="Y8b-DJ-CGk" secondAttribute="top" id="vRO-va-Atv"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -120,11 +131,16 @@
                     <exclude reference="C8a-it-OAH"/>
                     <exclude reference="znq-BW-APb"/>
                     <exclude reference="ALs-bF-olf"/>
+                    <exclude reference="Zhy-PV-ft2"/>
                 </mask>
                 <mask key="constraints">
                     <exclude reference="8uq-Tn-pJE"/>
                     <exclude reference="RHR-kp-ws7"/>
                     <exclude reference="jva-dg-S6D"/>
+                    <exclude reference="Ok4-oE-XRy"/>
+                    <exclude reference="UVJ-1r-bZd"/>
+                    <exclude reference="vLB-CC-4mS"/>
+                    <exclude reference="vRO-va-Atv"/>
                     <exclude reference="4Kj-OY-24i"/>
                     <exclude reference="U1f-df-xaB"/>
                     <exclude reference="WCP-YT-ubH"/>
@@ -142,11 +158,16 @@
                     <include reference="C8a-it-OAH"/>
                     <include reference="znq-BW-APb"/>
                     <include reference="ALs-bF-olf"/>
+                    <include reference="Zhy-PV-ft2"/>
                 </mask>
                 <mask key="constraints">
                     <include reference="8uq-Tn-pJE"/>
                     <include reference="RHR-kp-ws7"/>
                     <include reference="jva-dg-S6D"/>
+                    <include reference="Ok4-oE-XRy"/>
+                    <include reference="UVJ-1r-bZd"/>
+                    <include reference="vLB-CC-4mS"/>
+                    <include reference="vRO-va-Atv"/>
                     <include reference="4Kj-OY-24i"/>
                     <include reference="U1f-df-xaB"/>
                     <include reference="WCP-YT-ubH"/>
@@ -160,6 +181,7 @@
             </variation>
             <connections>
                 <outlet property="btn" destination="C8a-it-OAH" id="mWO-lZ-53p"/>
+                <outlet property="btnAboutUs" destination="Zhy-PV-ft2" id="SU0-qe-4Wr"/>
                 <outlet property="btnEdit" destination="znq-BW-APb" id="YnO-ae-VQU"/>
                 <outlet property="txtLabel" destination="Y8b-DJ-CGk" id="GBz-hp-fRY"/>
             </connections>

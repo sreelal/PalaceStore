@@ -36,18 +36,6 @@
                 [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
             });
             
-//            NSDictionary *
-//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_BANNER_IMAGES afterDelay:1];
-//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_LATEST_ARRIVALS_PROMOTIONS afterDelay:1];
-//            [[DatabaseManager sharedInstance] performSelector:@selector(deleteItemsFromTable:withPredicate:) withObject:TABLE_PRODUCT_CATEGORY afterDelay:1];
-            
-//            [DatabaseHandler deleteItemsFromTable:TABLE_BANNER_IMAGES withPredicate:nil];
-//            sleep(1);
-//            [DatabaseHandler deleteItemsFromTable:TABLE_LATEST_ARRIVALS_PROMOTIONS withPredicate:nil];
-//            sleep(1);
-//            [DatabaseHandler deleteItemsFromTable:TABLE_PRODUCT_CATEGORY withPredicate:nil];
-//            sleep(1);
-            
             [DatabaseHandler insertBannerImages:result[KEY_BANNER_IMAGES]];
             [DatabaseHandler insertLogoImages:result[KEY_BRANDS]];
             [DatabaseHandler insertLatestArrivals:result[KEY_LATEST_ARRIVALS] andPromotions:result[KEY_PROMOIONS]];
@@ -204,6 +192,57 @@
         
         callback(result, error);
     }];
+}
+
++ (void)getBranchesWithCallback:(ResponseCallback)callback {
+    
+    if (![HelperClass hasNetwork]) {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
+        return;
+    }
+    
+    NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_BRANCHES];
+    
+    [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
+        
+        callback(result, error);
+    }];
+}
+
++ (void)getAboutUsWithCallback:(ResponseCallback)callback {
+    
+    if (![HelperClass hasNetwork]) {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        [[AppDelegate instance] hideBusyView];
+        
+        return;
+    }
+    
+    NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_ABOUT_US];
+    
+    [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
+        
+        callback(result, error);
+    }];
+}
+
++ (void)sendEnquiryWihDict:(NSMutableDictionary *)dataDict withCallback:(ResponseCallback)callback {
+    
+    if ([HelperClass hasNetwork]) {
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_CONTACT_US];
+        
+        NSLog(@"Service URL : %@", serviceURL);
+        
+        [RequestHandler postRequestWithURL:serviceURL andDictionary:dataDict withCallback:^(id result, NSError *error) {
+            callback(result, error);
+        }];
+    }
+    else {
+        [self showAlertWithMessage:ALERT_INTERNET_FAILURE];
+        callback(nil, nil);
+    }
 }
 
 + (void)addAddressWihDict:(NSMutableDictionary *)dataDict withUserId:(NSString *)userId withCallback:(ResponseCallback)callback {

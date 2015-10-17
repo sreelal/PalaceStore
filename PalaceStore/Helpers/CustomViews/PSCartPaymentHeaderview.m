@@ -30,17 +30,24 @@
 
 #pragma mark - Button Actions
 
--(void)addTargetToAddressListView {
+- (void)addTargetToAddressListView {
     
     if (self.addressListView) {
         [self.btn addTarget:self.addressListView action:@selector(didSelectAddressOption:) forControlEvents:UIControlEventTouchUpInside];
     }
 }
 
--(void)addTargetToPaymentView {
+- (void)addTargetToPaymentView {
     
     if (self.paymentView) {
         [self.btn addTarget:self.paymentView action:@selector(didSelectPaymentOption:) forControlEvents:UIControlEventTouchUpInside];
+    }
+}
+
+- (IBAction)aboutUsAction:(id)sender {
+    
+    if (_delegate != nil && [_delegate respondsToSelector:@selector(aboutTappedWithTag:)]) {
+        [_delegate aboutTappedWithTag:_btnAboutUs.tag];
     }
 }
 
