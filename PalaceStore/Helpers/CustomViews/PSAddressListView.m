@@ -45,8 +45,26 @@
     else {
         NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
         
+        [[AppDelegate instance] showBusyView:@"Loading Address..."];
+        
         [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
-            
+            if (object != nil) {
+                addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+                Address *address = [addresses objectAtIndex:selecetedSectionIndex];
+                
+                [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
+                [userDefaults synchronize];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[AppDelegate instance] hideBusyView];
+                    [addressTableView reloadData];
+                });
+            }
+            else {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [[AppDelegate instance] hideBusyView];
+                });
+            }
         }];
     }
 }

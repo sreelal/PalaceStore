@@ -13,6 +13,7 @@
 #import "PSBranchDetialsViewController.h"
 
 @interface PSBranchesViewController ()
+
 @property (weak, nonatomic) IBOutlet UITableView *branchesTable;
 @property (retain, nonatomic) NSDictionary *branchesData;
 
@@ -72,11 +73,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     NSArray *_arr = (NSArray*)_branchesData[@"stores"];
     return [_arr count];
 }
 
 #pragma mark - Table View Delegates
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    PSCartPaymentHeaderview *paymentHeaderView = [[[NSBundle mainBundle] loadNibNamed:@"PSCartPaymentHeaderView" owner:self options:nil] lastObject];
+    
+    paymentHeaderView.txtLabel.text = [NSString stringWithFormat:@"Store %ld", section+1];
+    
+    [paymentHeaderView.btn setHidden:YES];
+    [paymentHeaderView.btnEdit setHidden:YES];
+    
+    return paymentHeaderView;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -89,9 +107,10 @@
     cell.emailLabel.text = _branchDetails[@"email"]?_branchDetails[@"email"]:@"";
     cell.telephoneLabel.text = _branchDetails[@"telephone"]?_branchDetails[@"telephone"]:@"";
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
-
 
 #pragma mark - Navigation
 

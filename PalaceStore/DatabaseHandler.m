@@ -196,6 +196,45 @@
     }
 }
 
++ (void)insertAddresses:(NSDictionary *)addressesDict {
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
+    f.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *userId = [f numberFromString:[userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID]];
+    
+    NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
+    
+    for (NSString *key in addressesDict) {
+        NSDictionary *addressDict = addressesDict[key];
+        
+        if ([addressDict[@"address_1"] isEqualToString:@""]) continue;
+        
+        @autoreleasepool {
+            Address *address = nil;
+            
+            address = [NSEntityDescription insertNewObjectForEntityForName:TABLE_ADDRESS inManagedObjectContext:moc];
+            address.firstname = addressDict[@"firstname"];
+            address.lastname = addressDict[@"lastname"];
+            address.address_1 = addressDict[@"address_1"];
+            address.address_id = [NSString stringWithFormat:@"%@", addressDict[@"address_id"]];
+            address.company = addressDict[@"company"];
+            address.postcode = addressDict[@"postcode"];
+            address.city = addressDict[@"city"];
+            address.user_id = userId;
+        }
+    }
+    
+    NSError *error = nil;
+    
+    if (![moc save:&error]) {
+        NSLog(@"Error %@", [error localizedDescription]);
+    }
+    else {
+        NSLog(@"Sucessfully Saved Sub Categories");
+    }
+}
+
 + (NSArray *)fetchItemsFromTable:(NSString *)tableName withPredicate:(NSPredicate *)predicate {
     
     NSManagedObjectContext *moc = [[DatabaseManager sharedInstance] managedObjectContext];
@@ -404,7 +443,7 @@
         cart = [NSEntityDescription insertNewObjectForEntityForName:TABLE_CART inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
         
         cart.category_id = product?product.category_id:0;
-      //  cart.price = product?product.price:latestArrivals.price;
+//        cart.price = product?product.price:latestArrivals.price;
         cart.product_id = product?product.product_id:latestArrivals.product_id;
         cart.model = product?product.model:latestArrivals.model;
         cart.name = product?product.name:latestArrivals.name;

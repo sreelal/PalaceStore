@@ -76,6 +76,11 @@
 
 #pragma mark - Table view data source
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 60;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [self.whishListArray count];
@@ -93,6 +98,8 @@
     }
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.btnDelete.hidden = YES;
+    cell.btnSelect.hidden = YES;
     
     WishList * wishObj = [self.whishListArray objectAtIndex:indexPath.row];
     NSString *priceStr = [NSString stringWithFormat:@"GHS %d", [wishObj.price intValue]];

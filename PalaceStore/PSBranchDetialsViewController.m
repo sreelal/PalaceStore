@@ -18,13 +18,30 @@
 @implementation PSBranchDetialsViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self performSelector:@selector(loadMapData) withObject:nil afterDelay:0.2];
-    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
+    [self initView];
 
+    [self performSelector:@selector(loadMapData) withObject:nil afterDelay:0.2];
 }
 
+- (void)didReceiveMemoryWarning {
+    
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Private Methods
+
+- (void)initView {
+    
+    self.navigationItem.titleView = [[AppDelegate instance] getNavigationBarImageView];
+    
+    UIBarButtonItem *leftBarItem = [HelperClass getBackButtonItemWithTarget:self andAction:@selector(navgationBackClicked:)];
+    leftBarItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem = leftBarItem;
+}
 
 - (void)loadMapData{
     
@@ -44,19 +61,12 @@
         }
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
+#pragma mark - Button Actions
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)navgationBackClicked:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
-*/
 
 @end

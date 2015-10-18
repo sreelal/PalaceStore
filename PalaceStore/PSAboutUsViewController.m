@@ -86,21 +86,8 @@
     return _aboutUsDetails.count;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    return 200;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    NSInteger count = 0;
-    
-    if (selecetedSectionIndex == section) {
-        count = 1;
-        lastSelectedIndex = selecetedSectionIndex;
-    }
-    
-    //return count;
     return 1;
 }
 

@@ -833,6 +833,30 @@
 			path = slice;
 			sourceTree = "<group>";
 		};
+		2E4DEAF91BD35C5D00349F61 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				2E207C0E1B497EAA00F74840 /* ItemView.h */,
+				2E207C0F1B497EAA00F74840 /* ItemView.m */,
+				2E207C111B497ED000F74840 /* ItemView.xib */,
+				2E0673771B4A0E27002FF5C3 /* CategoryView.h */,
+				2E0673781B4A0E27002FF5C3 /* CategoryView.m */,
+				2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */,
+				E955908B1B735D760019AA51 /* PSStarRatingView.h */,
+				E955908C1B735D760019AA51 /* PSStarRatingView.m */,
+				6895214A1BAB234300C9DDC6 /* PSCartView.h */,
+				6895214B1BAB234300C9DDC6 /* PSCartView.m */,
+				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
+				688ABC391BAF12990059110F /* PSCheckoutBaseView.h */,
+				688ABC3A1BAF12990059110F /* PSCheckoutBaseView.m */,
+				2E16A6A21BB0E9F200553DCB /* test.xib */,
+				2E16A6AB1BB0F0C100553DCB /* PSSubCategoryProductView.h */,
+				2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */,
+				2E16A6AE1BB0F0E100553DCB /* PSSubCategoryProductView.xib */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
 		2E76182F1BBEF5DC00CFF4A8 /* LeftMenuIcons */ = {
 			isa = PBXGroup;
 			children = (
@@ -983,24 +1007,8 @@
 		58F37E3E1B455028006F1810 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				2E4DEAF91BD35C5D00349F61 /* Others */,
 				2E4920E51BB7292800F924D0 /* Checkout */,
-				2E207C0E1B497EAA00F74840 /* ItemView.h */,
-				2E207C0F1B497EAA00F74840 /* ItemView.m */,
-				2E207C111B497ED000F74840 /* ItemView.xib */,
-				2E0673771B4A0E27002FF5C3 /* CategoryView.h */,
-				2E0673781B4A0E27002FF5C3 /* CategoryView.m */,
-				2E06737A1B4A0E48002FF5C3 /* CategoryView.xib */,
-				E955908B1B735D760019AA51 /* PSStarRatingView.h */,
-				E955908C1B735D760019AA51 /* PSStarRatingView.m */,
-				6895214A1BAB234300C9DDC6 /* PSCartView.h */,
-				6895214B1BAB234300C9DDC6 /* PSCartView.m */,
-				689521401BAB22FD00C9DDC6 /* PSCartView.xib */,
-				688ABC391BAF12990059110F /* PSCheckoutBaseView.h */,
-				688ABC3A1BAF12990059110F /* PSCheckoutBaseView.m */,
-				2E16A6A21BB0E9F200553DCB /* test.xib */,
-				2E16A6AB1BB0F0C100553DCB /* PSSubCategoryProductView.h */,
-				2E16A6AC1BB0F0C100553DCB /* PSSubCategoryProductView.m */,
-				2E16A6AE1BB0F0E100553DCB /* PSSubCategoryProductView.xib */,
 			);
 			name = CustomViews;
 			path = Helpers/CustomViews;

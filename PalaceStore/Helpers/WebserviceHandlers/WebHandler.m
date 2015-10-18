@@ -174,6 +174,12 @@
     NSString *serviceURL = [NSString stringWithFormat:@"%@%@%@", SERVICE_URL_ROOT, SERVICE_ALL_ADDRESSES, userId];
     [RequestHandler getRequestWithURL:serviceURL withCallback:^(id result, NSError *error) {
         
+        if (result != nil) {
+            NSLog(@"Type : %@", [result class]);
+            [DatabaseHandler deleteItemsFromTable:TABLE_ADDRESS withPredicate:nil];
+            [DatabaseHandler insertAddresses:result];
+        }
+        
         callback(result, error);
     }];
 }
@@ -282,7 +288,7 @@
                                           callback(result, error);
                                       }];
                                   }
-                                  else{
+                                  else {
                                       
                                       callback(result, error);
                                   }
