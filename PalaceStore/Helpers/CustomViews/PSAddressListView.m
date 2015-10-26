@@ -50,11 +50,12 @@
         [WebHandler getAllAddressWithUserId:userId withCallback:^(id object, NSError *error) {
             if (object != nil) {
                 addresses = [DatabaseHandler fetchItemsFromTable:TABLE_ADDRESS withPredicate:nil];
-                Address *address = [addresses objectAtIndex:selecetedSectionIndex];
+                if(addresses.count>0){
+                    Address *address = [addresses objectAtIndex:selecetedSectionIndex];
                 
-                [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
-                [userDefaults synchronize];
-                
+                    [userDefaults setValue:address.address_id forKey:KEY_USER_INFO_ADDRESS_ID];
+                    [userDefaults synchronize];
+                }
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [[AppDelegate instance] hideBusyView];
                     [addressTableView reloadData];

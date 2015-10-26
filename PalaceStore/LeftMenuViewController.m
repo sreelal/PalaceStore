@@ -38,7 +38,7 @@
     
     [self.view setNeedsUpdateConstraints];
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", @"Branches", @"About Us", @"Contact Us", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", @"Branches", @"About Us", @"Contact Us",@"Call Us", nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
@@ -179,6 +179,10 @@
         PSAboutUsViewController * aboutView = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]]instantiateViewControllerWithIdentifier:@"AboutUsVC"];
         UINavigationController * aboutNav = [[UINavigationController alloc]initWithRootViewController:aboutView];
         [self.sideMenuViewController setContentViewController:aboutNav];
+    }
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Call Us"]){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:0302814370"]];
+
     }
     
     [self.sideMenuViewController hideMenuViewController];
