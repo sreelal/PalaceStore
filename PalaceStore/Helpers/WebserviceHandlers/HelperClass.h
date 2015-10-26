@@ -50,5 +50,7 @@
 
 + (NSString *) getTimeStamp;
 
++ (NSNumber *)getNSNumberFromString:(NSString *)string;
+
 @end
 

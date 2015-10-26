@@ -50,7 +50,7 @@
     
     [super viewWillAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
     
     [self updateCartCount];
 }
@@ -67,6 +67,13 @@
             });
             
             //To Do:- Show Alert
+        }
+        else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[AppDelegate instance] hideBusyView];
+            });
+            
+            [self loadCachedProducts];
         }
     }];
 }
@@ -287,33 +294,33 @@
     categoryPredicate = nil;
 }
 
-- (void)managedObjectDidSave:(NSNotification *)notification {
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
-        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
-    });
-    
-    NSSet *insertObjects = [notification userInfo][@"inserted"];
-    NSSet *updatedObjects = [notification userInfo][@"updated"];
-    NSSet *deletedObjects = [notification userInfo][@"deleted"];
-    id obj = [insertObjects anyObject];
-    
-    if ([[obj class] isSubclassOfClass:[Products class]]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[AppDelegate instance] hideBusyView];
-        });
-        
-        [self loadCachedProducts];
-        
-        NSLog(@"Did Save Sub Categories : \n%@", [obj class]);
-    }
-    
-    insertObjects = nil;
-    updatedObjects = nil;
-    deletedObjects = nil;
-    obj = nil;
-}
+//- (void)managedObjectDidSave:(NSNotification *)notification {
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+//        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
+//    });
+//    
+//    NSSet *insertObjects = [notification userInfo][@"inserted"];
+//    NSSet *updatedObjects = [notification userInfo][@"updated"];
+//    NSSet *deletedObjects = [notification userInfo][@"deleted"];
+//    id obj = [insertObjects anyObject];
+//    
+//    if ([[obj class] isSubclassOfClass:[Products class]]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [[AppDelegate instance] hideBusyView];
+//        });
+//        
+//        [self loadCachedProducts];
+//        
+//        NSLog(@"Did Save Sub Categories : \n%@", [obj class]);
+//    }
+//    
+//    insertObjects = nil;
+//    updatedObjects = nil;
+//    deletedObjects = nil;
+//    obj = nil;
+//}
 
 #pragma mark - Navigation
 

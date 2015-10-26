@@ -132,7 +132,7 @@
                   moduleName = "PalaceStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sreelash/Documents/Sreelash/Projects/Ezcom/Palace%20Store/Git/PalaceStore/Helpers/WebserviceHandlers/WebHandler.m"
-                  timestampString = "466840361.740793"
+                  timestampString = "466882846.124484"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "295"
@@ -147,7 +147,7 @@
                   moduleName = "PalaceStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sreelash/Documents/Sreelash/Projects/Ezcom/Palace%20Store/Git/PalaceStore/Helpers/WebserviceHandlers/WebHandler.m"
-                  timestampString = "466840361.741238"
+                  timestampString = "466882846.124727"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -180,7 +180,7 @@
                   moduleName = "PalaceStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sreelash/Documents/Sreelash/Projects/Ezcom/Palace%20Store/Git/PalaceStore/Helpers/WebserviceHandlers/WebHandler.m"
-                  timestampString = "466840361.743389"
+                  timestampString = "466882846.126224"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "290"
@@ -195,7 +195,7 @@
                   moduleName = "PalaceStore"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Sreelash/Documents/Sreelash/Projects/Ezcom/Palace%20Store/Git/PalaceStore/Helpers/WebserviceHandlers/WebHandler.m"
-                  timestampString = "466840361.743667"
+                  timestampString = "466882846.126407"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "290"
@@ -203,6 +203,22 @@
                   offsetFromSymbolStart = "489">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PalaceStore/CartTableViewController.m"
+            timestampString = "466882806.201078"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "-viewWillAppear:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

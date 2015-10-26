@@ -12,5 +12,6 @@
 
 + (NSString *)stringByConvertingHTMLToPlainTextWith:(NSString *)string;
 + (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)str;
++ (NSAttributedString *)getAttributedStringFor:(NSString *)string;
 
 @end

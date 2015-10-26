@@ -53,12 +53,13 @@
     NSMutableArray *_products= [NSMutableArray array];
     
     for (Cart *cart in carts) {
-        _cartsDictionary = @{@"product_id":[cart.product_id stringValue], @"name":cart.name, @"quantity":[cart.count stringValue], @"price":[cart.price stringValue], @"total":[cart.count stringValue]};
+        _cartsDictionary = @{@"product_id":[cart.product_id stringValue], @"name":cart.name, @"quantity":[cart.count stringValue], @"price":[cart.price stringValue], @"total":[cart.count stringValue], @"model":@""};
         
         [_products addObject:[_cartsDictionary mutableCopy]];
         
         _cartsDictionary=nil;
     }
+    
     Address *address = [addresses lastObject];
     
     if (address == nil) return nil;

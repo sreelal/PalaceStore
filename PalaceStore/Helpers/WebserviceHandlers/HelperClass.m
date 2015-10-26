@@ -214,4 +214,13 @@
     return [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
 }
 
++ (NSNumber *)getNSNumberFromString:(NSString *)string {
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
+    NSNumber *nsNumber = [numberFormatter numberFromString:string];
+    
+    return nsNumber;
+}
+
 @end

@@ -96,7 +96,7 @@
             latestArrival.product_description = dict[KEY_PROD_DESCRIPTION];
             latestArrival.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
             latestArrival.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
-            latestArrival.price = dict[KEY_PRICE];
+            latestArrival.price = [dict[KEY_PRICE] stringByReplacingOccurrencesOfString:@"GHs" withString:@""];
             latestArrival.raing = dict[KEY_RATING];
             latestArrival.tax = dict[KEY_TAX];
             latestArrival.thumb_image_url = dict[KEY_THUMB_URL];
@@ -113,7 +113,7 @@
             promotion.product_description = dict[KEY_PROD_DESCRIPTION];
             promotion.product_id = [NSNumber numberWithInt:[dict[KEY_PROD_ID] intValue]];
             promotion.name = [NSString stringByConvertingHTMLToPlainTextWith:dict[KEY_NAME]];
-            promotion.price = dict[KEY_PRICE];
+            promotion.price = [dict[KEY_PRICE] stringByReplacingOccurrencesOfString:@"GHs" withString:@""];
             promotion.raing = dict[KEY_RATING];
             promotion.tax = dict[KEY_TAX];
             promotion.thumb_image_url = dict[KEY_THUMB_URL];
@@ -424,10 +424,11 @@
         
 
     }
-    else{
+    else {
         
         latestArrivals = (LatestArrivals_Promotions*)item;
         predicate = [NSPredicate predicateWithFormat:@"product_id == %@", latestArrivals.product_id];
+        
 
     }
 
@@ -443,7 +444,7 @@
         cart = [NSEntityDescription insertNewObjectForEntityForName:TABLE_CART inManagedObjectContext:[[DatabaseManager sharedInstance] managedObjectContext]];
         
         cart.category_id = product?product.category_id:0;
-//        cart.price = product?product.price:latestArrivals.price;
+        cart.price = product?product.price:[HelperClass getNSNumberFromString:latestArrivals.price];
         cart.product_id = product?product.product_id:latestArrivals.product_id;
         cart.model = product?product.model:latestArrivals.model;
         cart.name = product?product.name:latestArrivals.name;

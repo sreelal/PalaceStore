@@ -71,7 +71,7 @@
     
     [super viewWillAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(managedObjectDidSave:) name:NSManagedObjectContextDidSaveNotification object:[[DatabaseManager sharedInstance] privateManagedObjectContext]];
     
     [self updateCartCount];
 }
@@ -80,7 +80,7 @@
     
     [super viewWillDisappear:animated];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:nil];
 }
 
 - (void)getCachedData {
@@ -174,12 +174,14 @@
     
     [WebHandler getHomeDetailsWithCallback:^(id object, NSError *error) {
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[AppDelegate instance] hideBusyView];
+            
+            [self getCachedData];
+        });
+        
         if (object == nil || error != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[AppDelegate instance] hideBusyView];
-                
-                [self getCachedData];
-            });
+            [HelperClass showAlertWithMessage:@"Failed to load data!"];
         }
     }];
 }
@@ -344,50 +346,50 @@
 
 #pragma mark - Core Data Notification
 
-- (void)managedObjectDidSave:(NSNotification *)notification {
-    
-    NSSet *insertObjects = [notification userInfo][@"inserted"];
-    /*NSSet *updatedObjects = [notification userInfo][@"updated"];
-    NSSet *deletedObjects = [notification userInfo][@"deleted"];
-    
-    NSLog(@"Inserted Obj : %@", insertObjects);
-    NSLog(@"Updated Obj : %@", updatedObjects);
-    NSLog(@"Deleted Obj : %@", deletedObjects);*/
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
-        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
-    });
-    
-    id obj = [insertObjects anyObject];
-    
-    if ([[obj class] isSubclassOfClass:[Banner_Images class]]) {
-        NSLog(@"Did Save Banner Images : \n%@", [obj class]);
-    }
-    else if ([[obj class] isSubclassOfClass:[LatestArrivals_Promotions class]]) {
-        NSLog(@"Did Save Latest Arrivals : \n%@", [obj class]);
-    }
-    else if ([[obj class] isSubclassOfClass:[Product_Category class]]) {
-        
-        @try {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [[AppDelegate instance] hideBusyView];
-            });
-            
-            [self loadBannerImages];
-            [self loadLatestArrivalsAndPromotions];
-            [self loadCategories];
-            [self loadLogoImages];
-            
-            NSLog(@"Did Save Product Categories : \n%@", [obj class]);
-        }
-        @catch (NSException *exception) {
-            NSLog(@"Exception : %@", exception.description);
-        }
-        @finally {
-            
-        }        
-    }
-}
+//- (void)managedObjectDidSave:(NSNotification *)notification {
+//    
+//    NSSet *insertObjects = [notification userInfo][@"inserted"];
+//    /*NSSet *updatedObjects = [notification userInfo][@"updated"];
+//    NSSet *deletedObjects = [notification userInfo][@"deleted"];
+//    
+//    NSLog(@"Inserted Obj : %@", insertObjects);
+//    NSLog(@"Updated Obj : %@", updatedObjects);
+//    NSLog(@"Deleted Obj : %@", deletedObjects);*/
+//    
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        NSManagedObjectContext *mainMOC = [[DatabaseManager sharedInstance] mainManagedObjectContext];
+//        [mainMOC mergeChangesFromContextDidSaveNotification:notification];
+//    });
+//    
+//    id obj = [insertObjects anyObject];
+//    
+//    if ([[obj class] isSubclassOfClass:[Banner_Images class]]) {
+//        NSLog(@"Did Save Banner Images : \n%@", [obj class]);
+//    }
+//    else if ([[obj class] isSubclassOfClass:[LatestArrivals_Promotions class]]) {
+//        NSLog(@"Did Save Latest Arrivals : \n%@", [obj class]);
+//    }
+//    else if ([[obj class] isSubclassOfClass:[Product_Category class]]) {
+//        
+//        @try {
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                [[AppDelegate instance] hideBusyView];
+//            });
+//            
+//            [self loadBannerImages];
+//            [self loadLatestArrivalsAndPromotions];
+//            [self loadCategories];
+//            [self loadLogoImages];
+//            
+//            NSLog(@"Did Save Product Categories : \n%@", [obj class]);
+//        }
+//        @catch (NSException *exception) {
+//            NSLog(@"Exception : %@", exception.description);
+//        }
+//        @finally {
+//            
+//        }        
+//    }
+//}
 
 @end

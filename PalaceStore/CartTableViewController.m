@@ -40,8 +40,8 @@
     if (_isRerendering) 
         topConstraint.constant = 64;
     else if (_isFromMenu) {
-        self.automaticallyAdjustsScrollViewInsets = YES;
-        topConstraint.constant = 0;
+        //self.automaticallyAdjustsScrollViewInsets = YES;
+        topConstraint.constant = 200;
     }
     
     [self.view setNeedsUpdateConstraints];
@@ -75,6 +75,10 @@
             [cartTableView reloadData];
         });
     }
+    
+    [_deletionList removeAllObjects];
+    
+    (_deletionList.count>0)?(_deleteBtn.hidden=NO):(_deleteBtn.hidden=YES);
 }
 
 - (void)removeCartItemAtIndex:(NSInteger)index {

@@ -133,4 +133,19 @@
     return string;
 }
 
++ (NSAttributedString *)getAttributedStringFor:(NSString *)string {
+    
+    NSString *htmlString = [NSString decodeHtmlUnicodeCharactersToString:string];
+    NSData *stringData = [htmlString dataUsingEncoding:NSUTF8StringEncoding];
+    
+    NSDictionary *options = @{NSDocumentTypeDocumentAttribute:NSHTMLTextDocumentType};
+    NSAttributedString *decodedString;
+    decodedString = [[NSAttributedString alloc] initWithData:stringData
+                                                     options:options
+                                          documentAttributes:NULL
+                                                       error:NULL];
+    
+    return decodedString;
+}
+
 @end
