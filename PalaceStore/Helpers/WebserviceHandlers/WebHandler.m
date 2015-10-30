@@ -234,6 +234,21 @@
     }];
 }
 
++ (void)sendDeviceToken:(NSString *)deviceToken withCallback:(ResponseCallback)callback {
+    
+    if ([HelperClass hasNetwork]) {
+        NSString *serviceURL = [NSString stringWithFormat:@"%@%@", SERVICE_URL_ROOT, SERVICE_POST_TOKEN];
+        
+        NSLog(@"Service URL : %@", serviceURL);
+        
+        NSDictionary *deviceTokenDict = [NSDictionary dictionaryWithObjectsAndKeys:deviceToken, @"token", @"iOS", @"type", nil];
+        
+        [RequestHandler postRequestWithURL:serviceURL andDictionary:deviceTokenDict withCallback:^(id result, NSError *error) {
+            callback(result, error);
+        }];
+    }
+}
+
 + (void)sendEnquiryWihDict:(NSMutableDictionary *)dataDict withCallback:(ResponseCallback)callback {
     
     if ([HelperClass hasNetwork]) {

@@ -32,6 +32,8 @@ typedef void (^ResponseCallback) (id object, NSError *error);
 
 + (void)getAboutUsWithCallback:(ResponseCallback)callback;
 
++ (void)sendDeviceToken:(NSString *)deviceToken withCallback:(ResponseCallback)callback;
+
 + (void)sendEnquiryWihDict:(NSMutableDictionary *)dataDict withCallback:(ResponseCallback)callback;
 
 + (void)signUpWihDict:(NSDictionary *)dataDict withCallback:(ResponseCallback)callback;

@@ -43,6 +43,9 @@
 		2E2346A61BB6539700AED97E /* PSRegistrationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2346A41BB6539700AED97E /* PSRegistrationCell.xib */; };
 		2E2346AB1BB6615400AED97E /* InputAccessoryBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2346A91BB6615400AED97E /* InputAccessoryBar.m */; };
 		2E2346AC1BB6615400AED97E /* InputAccessoryBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E2346AA1BB6615400AED97E /* InputAccessoryBar.xib */; };
+		2E2609EB1BE1489500CC6D98 /* palaceLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2609E81BE1489500CC6D98 /* palaceLogo.png */; settings = {ASSET_TAGS = (); }; };
+		2E2609EC1BE1489500CC6D98 /* palaceLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2609E91BE1489500CC6D98 /* palaceLogo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E2609ED1BE1489500CC6D98 /* palaceLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E2609EA1BE1489500CC6D98 /* palaceLogo@3x.png */; settings = {ASSET_TAGS = (); }; };
 		2E2910A71BB866A7003FC73D /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E2910A61BB866A7003FC73D /* Address.m */; };
 		2E3095951BD2189C0013E181 /* PSContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3095941BD2189C0013E181 /* PSContactUsViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2E3095981BD218CB0013E181 /* PSBranchesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3095971BD218CB0013E181 /* PSBranchesViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -51,9 +54,6 @@
 		2E3095A01BD21A270013E181 /* ContactUsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E30959E1BD21A270013E181 /* ContactUsCell.xib */; settings = {ASSET_TAGS = (); }; };
 		2E3285741B670897006EB0C8 /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E3285731B670897006EB0C8 /* NSString+HTML.m */; };
 		2E3285761B671306006EB0C8 /* login1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E3285751B671306006EB0C8 /* login1.png */; };
-		2E34FDD31BD08D470084605A /* palaceLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD01BD08D470084605A /* palaceLogo.png */; settings = {ASSET_TAGS = (); }; };
-		2E34FDD41BD08D470084605A /* palaceLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD11BD08D470084605A /* palaceLogo@2x.png */; settings = {ASSET_TAGS = (); }; };
-		2E34FDD51BD08D470084605A /* palaceLogo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD21BD08D470084605A /* palaceLogo@3x.png */; settings = {ASSET_TAGS = (); }; };
 		2E34FDDC1BD08E190084605A /* menu_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD61BD08E190084605A /* menu_4.png */; settings = {ASSET_TAGS = (); }; };
 		2E34FDDD1BD08E190084605A /* menu_4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD71BD08E190084605A /* menu_4@2x.png */; settings = {ASSET_TAGS = (); }; };
 		2E34FDDE1BD08E190084605A /* menu_4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E34FDD81BD08E190084605A /* menu_4@3x.png */; settings = {ASSET_TAGS = (); }; };
@@ -105,6 +105,9 @@
 		2E7618451BBEF5EB00CFF4A8 /* menu_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E7618391BBEF5EB00CFF4A8 /* menu_3.png */; };
 		2E7618461BBEF5EB00CFF4A8 /* menu_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E76183A1BBEF5EB00CFF4A8 /* menu_3@2x.png */; };
 		2E7618471BBEF5EB00CFF4A8 /* menu_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E76183B1BBEF5EB00CFF4A8 /* menu_3@3x.png */; };
+		2E8127F41BDE9333003F0A1B /* menu_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8127F11BDE9333003F0A1B /* menu_7.png */; settings = {ASSET_TAGS = (); }; };
+		2E8127F51BDE9333003F0A1B /* menu_7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8127F21BDE9333003F0A1B /* menu_7@2x.png */; settings = {ASSET_TAGS = (); }; };
+		2E8127F61BDE9333003F0A1B /* menu_7@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E8127F31BDE9333003F0A1B /* menu_7@3x.png */; settings = {ASSET_TAGS = (); }; };
 		2E8B7B971BC3FDE90092D3E1 /* OrderTrackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B7B961BC3FDE90092D3E1 /* OrderTrackViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2EB7BBFE1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB7BBFD1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.m */; };
 		2EB842221BA54F9B008228E4 /* UIBarButtonItem+Badge.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EB8421F1BA54F9B008228E4 /* UIBarButtonItem+Badge.m */; };
@@ -303,6 +306,9 @@
 		2E2346A81BB6615400AED97E /* InputAccessoryBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputAccessoryBar.h; sourceTree = "<group>"; };
 		2E2346A91BB6615400AED97E /* InputAccessoryBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputAccessoryBar.m; sourceTree = "<group>"; };
 		2E2346AA1BB6615400AED97E /* InputAccessoryBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputAccessoryBar.xib; sourceTree = "<group>"; };
+		2E2609E81BE1489500CC6D98 /* palaceLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palaceLogo.png; sourceTree = "<group>"; };
+		2E2609E91BE1489500CC6D98 /* palaceLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@2x.png"; sourceTree = "<group>"; };
+		2E2609EA1BE1489500CC6D98 /* palaceLogo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@3x.png"; sourceTree = "<group>"; };
 		2E2910A51BB866A7003FC73D /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Address.h; sourceTree = "<group>"; };
 		2E2910A61BB866A7003FC73D /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Address.m; sourceTree = "<group>"; };
 		2E3095931BD2189C0013E181 /* PSContactUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSContactUsViewController.h; sourceTree = "<group>"; };
@@ -317,9 +323,6 @@
 		2E3285721B670897006EB0C8 /* NSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+HTML.h"; path = "Category/NSString+HTML.h"; sourceTree = "<group>"; };
 		2E3285731B670897006EB0C8 /* NSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+HTML.m"; path = "Category/NSString+HTML.m"; sourceTree = "<group>"; };
 		2E3285751B671306006EB0C8 /* login1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login1.png; sourceTree = "<group>"; };
-		2E34FDD01BD08D470084605A /* palaceLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = palaceLogo.png; sourceTree = "<group>"; };
-		2E34FDD11BD08D470084605A /* palaceLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@2x.png"; sourceTree = "<group>"; };
-		2E34FDD21BD08D470084605A /* palaceLogo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "palaceLogo@3x.png"; sourceTree = "<group>"; };
 		2E34FDD61BD08E190084605A /* menu_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_4.png; path = LeftMenuIcons/menu_4.png; sourceTree = "<group>"; };
 		2E34FDD71BD08E190084605A /* menu_4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_4@2x.png"; path = "LeftMenuIcons/menu_4@2x.png"; sourceTree = "<group>"; };
 		2E34FDD81BD08E190084605A /* menu_4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_4@3x.png"; path = "LeftMenuIcons/menu_4@3x.png"; sourceTree = "<group>"; };
@@ -376,6 +379,9 @@
 		2E7618391BBEF5EB00CFF4A8 /* menu_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_3.png; path = LeftMenuIcons/menu_3.png; sourceTree = "<group>"; };
 		2E76183A1BBEF5EB00CFF4A8 /* menu_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_3@2x.png"; path = "LeftMenuIcons/menu_3@2x.png"; sourceTree = "<group>"; };
 		2E76183B1BBEF5EB00CFF4A8 /* menu_3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_3@3x.png"; path = "LeftMenuIcons/menu_3@3x.png"; sourceTree = "<group>"; };
+		2E8127F11BDE9333003F0A1B /* menu_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = menu_7.png; path = LeftMenuIcons/menu_7.png; sourceTree = "<group>"; };
+		2E8127F21BDE9333003F0A1B /* menu_7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_7@2x.png"; path = "LeftMenuIcons/menu_7@2x.png"; sourceTree = "<group>"; };
+		2E8127F31BDE9333003F0A1B /* menu_7@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_7@3x.png"; path = "LeftMenuIcons/menu_7@3x.png"; sourceTree = "<group>"; };
 		2E8B7B951BC3FDE90092D3E1 /* OrderTrackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTrackViewController.h; sourceTree = "<group>"; };
 		2E8B7B961BC3FDE90092D3E1 /* OrderTrackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTrackViewController.m; sourceTree = "<group>"; };
 		2EB7BBFC1B6CF2FA007BBD58 /* SubCategoryCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubCategoryCollectionViewCell.h; sourceTree = "<group>"; };
@@ -785,6 +791,9 @@
 				E987AFE51B7A665A0050EADB /* Cart_small.png */,
 				E955908E1B735E2D0019AA51 /* 5starsgray.png */,
 				2E065A781B7AE1FC00C209D4 /* no_image.png */,
+				2E2609E81BE1489500CC6D98 /* palaceLogo.png */,
+				2E2609E91BE1489500CC6D98 /* palaceLogo@2x.png */,
+				2E2609EA1BE1489500CC6D98 /* palaceLogo@3x.png */,
 				2E3285751B671306006EB0C8 /* login1.png */,
 				2E497DB11B48E15300F3DCE4 /* MenuIcon.png */,
 				2E497DAD1B48E05000F3DCE4 /* NavigationBg.png */,
@@ -793,9 +802,6 @@
 				2E127D951B68594D005B0E1F /* img_btn_next.png */,
 				2E127D961B68594D005B0E1F /* img_btn_next@2x.png */,
 				689FA59E1B9347CD00F65E3F /* palace_logo.png */,
-				2E34FDD01BD08D470084605A /* palaceLogo.png */,
-				2E34FDD11BD08D470084605A /* palaceLogo@2x.png */,
-				2E34FDD21BD08D470084605A /* palaceLogo@3x.png */,
 				2E76182F1BBEF5DC00CFF4A8 /* LeftMenuIcons */,
 				688ABBEE1BAF056C0059110F /* checkout */,
 				689FA5841B9342E500F65E3F /* loginpage */,
@@ -881,6 +887,9 @@
 				2E34FDE21BD08EA60084605A /* menu_6.png */,
 				2E34FDE31BD08EA60084605A /* menu_6@2x.png */,
 				2E34FDE41BD08EA60084605A /* menu_6@3x.png */,
+				2E8127F11BDE9333003F0A1B /* menu_7.png */,
+				2E8127F21BDE9333003F0A1B /* menu_7@2x.png */,
+				2E8127F31BDE9333003F0A1B /* menu_7@3x.png */,
 			);
 			name = LeftMenuIcons;
 			sourceTree = "<group>";
@@ -1334,7 +1343,6 @@
 				2E497D961B48DA8A00F3DCE4 /* Bottom-BG.png in Resources */,
 				2E127D981B68594D005B0E1F /* img_btn_back@2x.png in Resources */,
 				2E08C2331BAF338C0026A446 /* PSCartPaymentHeaderView.xib in Resources */,
-				2E34FDD31BD08D470084605A /* palaceLogo.png in Resources */,
 				688ABC141BAF056C0059110F /* addto-cart.png in Resources */,
 				2E06737B1B4A0E48002FF5C3 /* CategoryView.xib in Resources */,
 				2E497D9A1B48DA8A00F3DCE4 /* Fruit.png in Resources */,
@@ -1365,6 +1373,7 @@
 				689FA5951B9342E500F65E3F /* profile-icon.png in Resources */,
 				688ABC2C1BAF056C0059110F /* map-small.png in Resources */,
 				688ABC251BAF056C0059110F /* last_gray.png in Resources */,
+				2E2609EB1BE1489500CC6D98 /* palaceLogo.png in Resources */,
 				2E127D9A1B68594D005B0E1F /* img_btn_next@2x.png in Resources */,
 				688ABC1C1BAF056C0059110F /* dollor-white.png in Resources */,
 				2E5A0ECB1BC4545F0056ECF7 /* palace_left_menu_logo.jpg in Resources */,
@@ -1373,18 +1382,21 @@
 				E987AFE81B7A66A90050EADB /* favorite_Small.png in Resources */,
 				2E497DA01B48DA8A00F3DCE4 /* Nivea.png in Resources */,
 				2E34FDE11BD08E190084605A /* menu_5@3x.png in Resources */,
+				2E8127F61BDE9333003F0A1B /* menu_7@3x.png in Resources */,
 				2E16A6AF1BB0F0E100553DCB /* PSSubCategoryProductView.xib in Resources */,
 				688ABC231BAF056C0059110F /* gray_arrow03.png in Resources */,
 				2E127D971B68594D005B0E1F /* img_btn_back.png in Resources */,
 				689FA5931B9342E500F65E3F /* fb-background.png in Resources */,
 				E955908F1B735E2D0019AA51 /* 5starsgray.png in Resources */,
 				688ABC301BAF056C0059110F /* radio-normal.png in Resources */,
+				2E8127F51BDE9333003F0A1B /* menu_7@2x.png in Resources */,
 				689FA5911B9342E500F65E3F /* btn-bg.png in Resources */,
 				2E497D991B48DA8A00F3DCE4 /* E--Gift-Vouchers.png in Resources */,
 				2E16A6A31BB0E9F200553DCB /* test.xib in Resources */,
 				688ABC371BAF056C0059110F /* user.png in Resources */,
 				B7A427D31B8ACAD30054F1E0 /* Profile.png in Resources */,
 				2E497DB21B48E15300F3DCE4 /* MenuIcon.png in Resources */,
+				2E2609EC1BE1489500CC6D98 /* palaceLogo@2x.png in Resources */,
 				2E3285761B671306006EB0C8 /* login1.png in Resources */,
 				2E40B3651BD2722500D98B9D /* ContactTableViewCell.xib in Resources */,
 				688ABC221BAF056C0059110F /* gray_arrow.png in Resources */,
@@ -1418,8 +1430,8 @@
 				2E7618421BBEF5EB00CFF4A8 /* menu_2.png in Resources */,
 				688ABC2E1BAF056C0059110F /* or.png in Resources */,
 				2E127D991B68594D005B0E1F /* img_btn_next.png in Resources */,
+				2E8127F41BDE9333003F0A1B /* menu_7.png in Resources */,
 				2E1C10DE1BB33C9A00F792DA /* PSAddressListView.xib in Resources */,
-				2E34FDD41BD08D470084605A /* palaceLogo@2x.png in Resources */,
 				2E34FDE71BD08EA60084605A /* menu_6@3x.png in Resources */,
 				688ABC151BAF056C0059110F /* buy-now.png in Resources */,
 				688ABC321BAF056C0059110F /* red-star.png in Resources */,
@@ -1433,7 +1445,6 @@
 				2EC38E0E1BB8F2E500EC596A /* PSCheckoutConfirmView.xib in Resources */,
 				2E2346A11BB652F200AED97E /* PSRegistrationView.xib in Resources */,
 				2E34FDDF1BD08E190084605A /* menu_5.png in Resources */,
-				2E34FDD51BD08D470084605A /* palaceLogo@3x.png in Resources */,
 				688ABC381BAF056C0059110F /* wishlist.png in Resources */,
 				688ABC171BAF056C0059110F /* cart_black.png in Resources */,
 				2E34FDDC1BD08E190084605A /* menu_4.png in Resources */,
@@ -1441,6 +1452,7 @@
 				2E40B3601BD2672000D98B9D /* AboutUsTableViewCell.xib in Resources */,
 				2E497DAF1B48E05000F3DCE4 /* NavigationBg.png in Resources */,
 				689FA59A1B9342E500F65E3F /* star.png in Resources */,
+				2E2609ED1BE1489500CC6D98 /* palaceLogo@3x.png in Resources */,
 				2E497DA11B48DA8A00F3DCE4 /* Raincoats.png in Resources */,
 				688ABC2D1BAF056C0059110F /* map-white.png in Resources */,
 				689FA59F1B9347CD00F65E3F /* palace_logo.png in Resources */,
@@ -1687,8 +1699,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: EZCOM (6P32L7S8RB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: EZCOM (6P32L7S8RB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PalaceStore",
@@ -1697,8 +1709,9 @@
 				INFOPLIST_FILE = PalaceStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.palacestores.palace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f402504d-d7ea-44b0-8e0b-e5640a511b09";
+				PROVISIONING_PROFILE = "d0f613d9-557e-4593-942b-2b531c07f914";
 			};
 			name = Debug;
 		};
@@ -1706,8 +1719,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: sreelash bruce (EWV4EX7QX6)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: EZCOM (6P32L7S8RB)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: EZCOM (6P32L7S8RB)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PalaceStore",
@@ -1716,8 +1729,9 @@
 				INFOPLIST_FILE = PalaceStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.palacestores.palace;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f402504d-d7ea-44b0-8e0b-e5640a511b09";
+				PROVISIONING_PROFILE = "d0f613d9-557e-4593-942b-2b531c07f914";
 			};
 			name = Release;
 		};

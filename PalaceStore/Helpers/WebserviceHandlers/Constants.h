@@ -49,8 +49,6 @@
 #define TABLE_CART @"Cart"
 #define TABLE_PRODUCTS_DETAILS @"Product_Details"
 #define TABLE_PRODUCTS_ATTRIBUTES @"Product_Attributes"
-
-
 //----------------------------------------------------
 
 //------------------Dictionary Keys-----------------

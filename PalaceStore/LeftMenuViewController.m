@@ -38,7 +38,7 @@
     
     [self.view setNeedsUpdateConstraints];
     
-    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"Track Order", @"Branches", @"About Us", @"Contact Us",@"Call Us", nil];
+    _leftmenuItems = [[NSMutableArray alloc] initWithObjects:@"Home", @"Cart", @"WishList", @"My Orders", @"Branches", @"About Us", @"Contact Us",@"Call Us", nil];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
@@ -152,7 +152,7 @@
         UINavigationController * profNav = [[UINavigationController alloc]initWithRootViewController:profileView];
         [self.sideMenuViewController setContentViewController:profNav];
     }
-    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Track Order"]) {
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"My Orders"]) {
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *userId = [userDefaults valueForKey:KEY_USER_INFO_CUSTOMER_ID];
         
@@ -180,9 +180,19 @@
         UINavigationController * aboutNav = [[UINavigationController alloc]initWithRootViewController:aboutView];
         [self.sideMenuViewController setContentViewController:aboutNav];
     }
-    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Call Us"]){
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:0302814370"]];
-
+    else if ([[_leftmenuItems objectAtIndexedSubscript:indexPath.row] isEqualToString:@"Call Us"]) {
+        NSString *phNo = @"0302814370";
+        UIAlertView *calert;
+        
+        NSURL *phoneUrl = [NSURL URLWithString:[NSString  stringWithFormat:@"telprompt:%@",phNo]];
+        
+        if ([[UIApplication sharedApplication] canOpenURL:phoneUrl]) {
+            [[UIApplication sharedApplication] openURL:phoneUrl];
+        }
+        else {
+            calert = [[UIAlertView alloc]initWithTitle:@"Alert" message:@"Call facility is not available!!!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+            [calert show];
+        }
     }
     
     [self.sideMenuViewController hideMenuViewController];
